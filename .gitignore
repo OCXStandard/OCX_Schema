@@ -1,0 +1,6 @@
+# ignore all files in named directories
+Documentation/
+Notebooks/
+Models/
+#Ignore the XMLSpy project files
+*.spp

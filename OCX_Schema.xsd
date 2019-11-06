@@ -7,6 +7,12 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2019-10-29" version="2.8.3">
+				<ocx:Description>
+				Changed from sequence to choice representation for all Vessel children.
+				</ocx:Description>
+				<ocx:Reference element="Vessel" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-10-10" version="2.8.2">
 				<ocx:Description>
 				Changed name Origin to Center on the parametric Circle3D definition for clarity.
@@ -1812,9 +1818,9 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DocumentBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:Form" minOccurs="0"/>
-					<xs:element ref="ocx:ClassCatalogue" minOccurs="0">
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="ocx:Form"/>
+					<xs:element ref="ocx:ClassCatalogue">
 						<xs:annotation>
 							<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society's definitions of cross sections, materials, hole shapes etc.</xs:documentation>
 						</xs:annotation>
@@ -1825,12 +1831,12 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="unitsml:UnitsML"/>
-					<xs:element ref="ocx:ProductView" minOccurs="0">
+					<xs:element ref="ocx:ProductView">
 						<xs:annotation>
 							<xs:documentation>The purpose of the product view is to provide applications with a mechanism to uniquely identify occurrences and configurations within the instance graph.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2486,35 +2492,33 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Form_T">
-				<xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
 					<xs:element ref="ocx:ClassificationData"/>
 					<xs:element ref="ocx:BuilderInformation"/>
-					<xs:element ref="ocx:TonnageData" minOccurs="0"/>
-					<xs:element ref="ocx:StatutoryData" minOccurs="0"/>
-					<xs:element ref="ocx:ShipDesignation" minOccurs="0"/>
-					<xs:element ref="ocx:Arrangement" minOccurs="0"/>
-					<xs:element ref="ocx:CoordinateSystem" minOccurs="0">
+					<xs:element ref="ocx:TonnageData"/>
+					<xs:element ref="ocx:StatutoryData"/>
+					<xs:element ref="ocx:ShipDesignation"/>
+					<xs:element ref="ocx:Arrangement"/>
+					<xs:element ref="ocx:CoordinateSystem">
 						<xs:annotation>
 							<xs:documentation>The vessel coordinate system definition. If not present, it is assumed that the Vessel is modelled in the global coordinate frame</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:ReferenceSurfaces" minOccurs="0">
+					<xs:element ref="ocx:ReferenceSurfaces">
 						<xs:annotation>
 							<xs:documentation>Collection of frequently used surfaces which are referenced by more than one object. Will typically contain th eouter shell definition.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:choice minOccurs="0" maxOccurs="unbounded">
-						<xs:element ref="ocx:Panel">
-							<xs:annotation>
-								<xs:documentation>The panels making up this Structure part</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element ref="ocx:Plate"/>
-						<xs:element ref="ocx:Bracket"/>
-						<xs:element ref="ocx:Stiffener"/>
-						<xs:element ref="ocx:Member"/>
-					</xs:choice>
-				</xs:sequence>
+					<xs:element ref="ocx:Panel">
+						<xs:annotation>
+							<xs:documentation>The panels making up this Structure part</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:Plate"/>
+					<xs:element ref="ocx:Bracket"/>
+					<xs:element ref="ocx:Stiffener"/>
+					<xs:element ref="ocx:Member"/>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2660,16 +2664,16 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:TopologyItem_T">
-				<xs:sequence>
-					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="unbounded">
+					<xs:element ref="ocx:PhysicalProperties"/>
 					<xs:element ref="ocx:UnboundedGeometry">
 						<xs:annotation>
 							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element ref="ocx:ComposedOf" minOccurs="0"/>
 					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
-					<xs:element ref="ocx:ComposedOf"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
@@ -2677,7 +2681,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute ref="ocx:functionType" use="required"/>
 				<xs:attribute ref="ocx:tightness" use="required"/>
 			</xs:extension>
@@ -2699,8 +2703,8 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:TopologyItem_T">
-				<xs:sequence>
-					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="ocx:PhysicalProperties"/>
 					<xs:element ref="ocx:PlateMaterial">
 						<xs:annotation>
 							<xs:documentation>Material of parent element</xs:documentation>
@@ -2711,16 +2715,16 @@ information are derived.</xs:documentation>
 							<xs:documentation>The plate material offset is measured  positive along the parent surface normal vector.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element ref="ocx:OuterContour"/>
 					<xs:element ref="ocx:UnboundedGeometry" minOccurs="0"/>
 					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
-					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove materail of the parent plate, no other parts.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -4438,11 +4442,11 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
-					<xs:element ref="ocx:FrameTables" minOccurs="0"/>
+					<xs:element ref="ocx:FrameTables"/>
 				</xs:sequence>
-				<xs:attribute name="isGlobal" type="xs:boolean" use="required">
+				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
-						<xs:documentation>If set to true, the coordinate system is the global world coordinate frame with right handed convention</xs:documentation>
+						<xs:documentation>If set to true, the coordinate system is the global world coordinate frame with right handed convention. This is the default.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -5256,7 +5260,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>Type definition of the  main vessel particulars required by the Society</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:Lpp"/>
 			<xs:element ref="ocx:RuleLength"/>
 			<xs:element ref="ocx:BlockCoefficient"/>
@@ -5280,7 +5284,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:WaterPlaneArea" minOccurs="0"/>
 			<xs:element ref="ocx:ZPosDeckline" minOccurs="0"/>
 			<xs:element ref="ocx:SpeedFactor" minOccurs="0"/>
-		</xs:sequence>
+		</xs:choice>
 		<xs:attribute name="hasDeadweightLessThan">
 			<xs:annotation>
 				<xs:documentation>The ship has dead-weight less than 50000 tonnes (boolean)</xs:documentation>
@@ -5566,14 +5570,14 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:Density"/>
 					<xs:element ref="ocx:YoungsModulus"/>
 					<xs:element ref="ocx:PoissonRatio"/>
 					<xs:element ref="ocx:YieldStress"/>
 					<xs:element ref="ocx:UltimateStress"/>
 					<xs:element ref="ocx:ThermalExpansionCoefficient" minOccurs="0"/>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute ref="ocx:grade" use="required"/>
 				<xs:attribute ref="ocx:GUIDRef"/>
 			</xs:extension>

@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Ole Christian Astrup (DNV GL) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="http://data.dnvgl.com/Schemas/ocxXMLSchema" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="http://data.dnvgl.com/Schemas/ocxXMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="http://data.dnvgl.com/Schemas/ocxXMLSchema" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="http://data.dnvgl.com/Schemas/ocxXMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
-		refType
+			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+				<ocx:Description>
+				ComposedOf is made optional on Panel. A Panel with no ComposedOf element is treted as a "virtual" Panel and is only used to limit other objects. It wil not be in scope for verification.
+				</ocx:Description>
+				<ocx:Reference element="Panel" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+				<ocx:Description>
+				Revised EntityRefBase_T so that the OCX export is valid using either a localRef or a GUIDRef, or both. But at least one must be present. This requirees validation by XSD Version 1.1
+				</ocx:Description>
+				<ocx:Reference element="EntityRefBase_T" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				Added OccorrenceGroup to the itemRef enumerator. RootRef can now also reference an OccurrenceGroup which means that the root node can be a folder.
@@ -19,6 +30,12 @@
 				The Occurrence is now defined as an OcxItemPtr and is a direct reference to a part in the DesignView.
 				</ocx:Description>
 				<ocx:Reference element="DesignView" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+				<ocx:Description>
+				Deleted ProductView from ocxXML to reside directly under the Vessel item.
+				</ocx:Description>
+				<ocx:Reference element="ocxXML" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
@@ -1934,11 +1951,6 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="unitsml:UnitsML"/>
-					<xs:element ref="ocx:ProductView">
-						<xs:annotation>
-							<xs:documentation>The purpose of the product view is to provide applications with a mechanism to uniquely identify occurrences and configurations within the instance graph.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
@@ -1979,7 +1991,7 @@ This attribute is required in many OCX XML elements and an application should ge
 				<xs:sequence>
 					<xs:element ref="ocx:Description" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="name" type="xs:string" use="required">
+				<xs:attribute name="name" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>An optional descriptive or display name.</xs:documentation>
 					</xs:annotation>
@@ -2050,7 +2062,7 @@ information are derived.</xs:documentation>
 				<xs:documentation>Reference to a GUID provided by the authoring application. Used to establish a unique reference to a part between applications</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-        <xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef)"/>            
+		<xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
 	</xs:complexType>
 	<xs:element name="OcxItemPtr" type="ocx:OcxItemPtr_T">
 		<xs:annotation>
@@ -2612,7 +2624,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>The vessel coordinate system definition. If not present, it is assumed that the Vessel is modelled in the global coordinate frame</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:ProductView"/>
+					<xs:element ref="ocx:ProductView" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:element ref="ocx:Arrangement"/>
 						<xs:element ref="ocx:ReferenceSurfaces">
@@ -2791,10 +2803,10 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
-					<xs:element ref="ocx:ComposedOf" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
-					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
+					<xs:element ref="ocx:ComposedOf" minOccurs="0"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
+					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape.</xs:documentation>
@@ -4686,16 +4698,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>Type definition of a reference plane used to define unbounded planar geometry</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:restriction base="ocx:EntityBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:Description" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attribute name="name" type="xs:string" use="required">
-					<xs:annotation>
-						<xs:documentation>An optional descriptive or display name.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:restriction>
+			<xs:extension base="ocx:EntityBase_T"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ===================================================  -->

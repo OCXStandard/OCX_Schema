@@ -7,11 +7,114 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
-			<ocx:SchemaChange author="oca" date="2019-10-29" version="2.8.3">
+		refType
+			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
-				Changed from sequence to choice representation for all Vessel children.
+				Added OccorrenceGroup to the itemRef enumerator. RootRef can now also reference an OccurrenceGroup which means that the root node can be a folder.
+				</ocx:Description>
+				<ocx:Reference element="RootRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+				<ocx:Description>
+				The Occurrence is now defined as an OcxItemPtr and is a direct reference to a part in the DesignView.
+				</ocx:Description>
+				<ocx:Reference element="DesignView" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+				<ocx:Description>
+				Moved ProductView from ocxXML to reside directly under the Vessel item.
 				</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Removed enum bracketType from BracketParameters. The Bracket has its own values in the functionType enumerator which shall be used to set the type. This is now the same pattern for Panel, Stiffener, Plate and Bracket.
+				</ocx:Description>
+				<ocx:Reference element="BracketParameters" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Extended the functionType with BRACKET types. This makes it more consistent as we will only have one source for function tyes in the schema.
+				</ocx:Description>
+				<ocx:Reference element="functionType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Made Bracket a sub-type of Plate. The Bracket elements inherit all Plate elements and extends the Plate with one additional element BracketParameters
+				</ocx:Description>
+				<ocx:Reference element="Bracket" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Added GasTight value to tightness enumerator. WaterTight will always be GasTight, but GasTight does not mean WaterTight.
+				</ocx:Description>
+				<ocx:Reference element="tightness" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Renamed enum value RefPlane to GridRef in the enumerator refType.
+				</ocx:Description>
+				<ocx:Reference element="refType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Added the WebNoseHeight to the EndCut_T type.
+				</ocx:Description>
+				<ocx:Reference element="EndCut_T" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+				<ocx:Description>
+				Added the FlangeNoseHeight to the EndCut_T type. 
+				</ocx:Description>
+				<ocx:Reference element="EndCut_T" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Added an explicit TraceLine element under Pillar representing the Pillar trace curve in space as a Curve3D type. This improves the readability of the schema
+				</ocx:Description>
+				<ocx:Reference element="Pillar" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Added an explicit TraceLine element under Seam representing the landing curve (Curve3D) of the Seam on the parent surface. This improves the readability of the schema
+				</ocx:Description>
+				<ocx:Reference element="Seam" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Made PhysicalProperty mandatory for all elements inheriting from StructurePart.
+				</ocx:Description>
+				<ocx:Reference element="StructurePart_T" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Renamed TopologyItem_T to StrucurePart_T as this is a more meaningful description of the element.
+				</ocx:Description>
+				<ocx:Reference element="StructurePart_T" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Renamed TopologyItem_T to StrucurePart_T as this is a more meaningful description of the element.
+				</ocx:Description>
+				<ocx:Reference element="StructurePart_T" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Deleted the DetailedFlangeContour under Stiffener as it is duplicated by the FlangeContour element.
+				</ocx:Description>
+				<ocx:Reference element="Stiffener" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Deleted the DetailedWebContour under Stiffener as it is duplicated by the WebContour element.
+				</ocx:Description>
+				<ocx:Reference element="Stiffener" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+				<ocx:Description>
+				Added an explicit TraceLine element under Stiffener representing the landing curve (Curve3D) of the stiffener on the parent surfce. This improves the readability of the schema
+				</ocx:Description>
+				<ocx:Reference element="Stiffener" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-10-10" version="2.8.2">
 				<ocx:Description>
@@ -173,7 +276,7 @@
 				<ocx:Description>
 				Added new reference ExternalGeometryRef as optional element for all structure parts inheriting from StructureItem.
 				</ocx:Description>
-				<ocx:Reference element="TopologyItem" locationRef="Link"/>
+				<ocx:Reference element="StructurePart" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
 				<ocx:Description>
@@ -1876,7 +1979,7 @@ This attribute is required in many OCX XML elements and an application should ge
 				<xs:sequence>
 					<xs:element ref="ocx:Description" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="name" type="xs:string" use="optional">
+				<xs:attribute name="name" type="xs:string" use="required">
 					<xs:annotation>
 						<xs:documentation>An optional descriptive or display name.</xs:documentation>
 					</xs:annotation>
@@ -1937,7 +2040,7 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Abstract base class for defining a reference to an entity. All entity reference elements should be based on this type.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="localRef" type="xs:IDREF" use="required">
+		<xs:attribute name="localRef" type="xs:IDREF">
 			<xs:annotation>
 				<xs:documentation>Reference to a unique ID within the scope of this XML file</xs:documentation>
 			</xs:annotation>
@@ -1947,6 +2050,7 @@ information are derived.</xs:documentation>
 				<xs:documentation>Reference to a GUID provided by the authoring application. Used to establish a unique reference to a part between applications</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+        <xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef)"/>            
 	</xs:complexType>
 	<xs:element name="OcxItemPtr" type="ocx:OcxItemPtr_T">
 		<xs:annotation>
@@ -2048,7 +2152,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:restriction base="ocx:OcxItemPtr_T">
-				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:RefPlane"/>
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:GridRef"/>
 			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2300,7 +2404,7 @@ information are derived.</xs:documentation>
 				<xs:enumeration value="ocx:Pillar"/>
 				<xs:enumeration value="ocx:ConnectionConfiguration"/>
 				<xs:enumeration value="ocx:Hole2D"/>
-				<xs:enumeration value="ocx:RefPlane"/>
+				<xs:enumeration value="ocx:GridRef"/>
 				<xs:enumeration value="ocx:Material"/>
 				<xs:enumeration value="ocx:BarSection"/>
 				<xs:enumeration value="ocx:Cell"/>
@@ -2308,6 +2412,7 @@ information are derived.</xs:documentation>
 				<xs:enumeration value="ocx:FreeEdgeCurve3D"/>
 				<xs:enumeration value="ocx:Surface"/>
 				<xs:enumeration value="ocx:EndCut"/>
+				<xs:enumeration value="ocx:OccurenceGroup"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -2354,8 +2459,10 @@ information are derived.</xs:documentation>
 							<xs:documentation>The top level instance in a ProductView</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:Occurrence" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:OccurrenceGroup" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="ocx:Occurrence"/>
+						<xs:element ref="ocx:OccurrenceGroup"/>
+					</xs:choice>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -2367,21 +2474,16 @@ information are derived.</xs:documentation>
 	</xs:element>
 	<xs:element name="Occurrence" type="ocx:Occurrence_T">
 		<xs:annotation>
-			<xs:documentation>A part's occurrence in a defined view or configuration</xs:documentation>
+			<xs:documentation>The refence to the part's occurrence in a defined view or configuration</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Occurrence_T">
 		<xs:annotation>
-			<xs:documentation>The type definition for the Occurrence</xs:documentation>
+			<xs:documentation>The type definition for the Occurrence reference</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:IdBase_T">
+			<xs:extension base="ocx:OcxItemPtr_T">
 				<xs:sequence>
-					<xs:element name="InstanceRef" type="ocx:OcxItemPtr_T">
-						<xs:annotation>
-							<xs:documentation>Reference to an instantiated OCX item.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="ChildRef" type="ocx:OcxItemPtr_T" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
@@ -2402,10 +2504,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:Occurrence" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:OccurrenceGroup" minOccurs="0"/>
-				</xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="ocx:Occurrence"/>
+					<xs:element ref="ocx:OccurrenceGroup"/>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2481,10 +2583,17 @@ information are derived.</xs:documentation>
 	<!-- ========================================================================================  -->
 	<!-- Shipbuilding structures concepts-->
 	<!-- ========================================================================================  -->
-	<xs:element name="Vessel" type="ocx:Vessel_T" substitutionGroup="ocx:Form">
+	<xs:element name="Vessel" substitutionGroup="ocx:Form">
 		<xs:annotation>
 			<xs:documentation>Vessel asset subject to Classification</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:Vessel_T">
+					<xs:sequence/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="Vessel_T">
 		<xs:annotation>
@@ -2492,37 +2601,36 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Form_T">
-				<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:sequence>
 					<xs:element ref="ocx:ClassificationData"/>
-					<xs:element ref="ocx:BuilderInformation"/>
-					<xs:element ref="ocx:TonnageData"/>
-					<xs:element ref="ocx:StatutoryData"/>
-					<xs:element ref="ocx:ShipDesignation"/>
-					<xs:element ref="ocx:Arrangement"/>
+					<xs:element ref="ocx:BuilderInformation" minOccurs="0"/>
+					<xs:element ref="ocx:TonnageData" minOccurs="0"/>
+					<xs:element ref="ocx:StatutoryData" minOccurs="0"/>
+					<xs:element ref="ocx:ShipDesignation" minOccurs="0"/>
 					<xs:element ref="ocx:CoordinateSystem">
 						<xs:annotation>
 							<xs:documentation>The vessel coordinate system definition. If not present, it is assumed that the Vessel is modelled in the global coordinate frame</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:ReferenceSurfaces">
-						<xs:annotation>
-							<xs:documentation>Collection of frequently used surfaces which are referenced by more than one object. Will typically contain th eouter shell definition.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:Panel">
-						<xs:annotation>
-							<xs:documentation>The panels making up this Structure part</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:Plate"/>
-					<xs:element ref="ocx:Bracket"/>
-					<xs:element ref="ocx:Stiffener"/>
-					<xs:element ref="ocx:Member"/>
-				</xs:choice>
+					<xs:element ref="ocx:ProductView"/>
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:element ref="ocx:Arrangement"/>
+						<xs:element ref="ocx:ReferenceSurfaces">
+							<xs:annotation>
+								<xs:documentation>Collection of frequently used surfaces which are referenced by more than one object. Will typically contain th eouter shell definition.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="ocx:Panel"/>
+						<xs:element ref="ocx:Plate"/>
+						<xs:element ref="ocx:Stiffener"/>
+						<xs:element ref="ocx:Bracket"/>
+						<xs:element ref="ocx:Member"/>
+					</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Seam" type="ocx:Seam_T" substitutionGroup="ocx:TopologyItem">
+	<xs:element name="Seam" type="ocx:Seam_T">
 		<xs:annotation>
 			<xs:documentation>Element describing the structure concept of a plate seam </xs:documentation>
 		</xs:annotation>
@@ -2532,14 +2640,14 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of the Seam element describing plate seams</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:TopologyItem_T">
-				<xs:choice>
-					<xs:element ref="ocx:Curve3D"/>
-				</xs:choice>
+			<xs:extension base="ocx:EntityBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:TraceLine"/>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Member" type="ocx:Member_T" abstract="true" substitutionGroup="ocx:TopologyItem">
+	<xs:element name="Member" type="ocx:Member_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract element describing structure concept parts like columns, pillars, beams ...</xs:documentation>
 		</xs:annotation>
@@ -2549,15 +2657,14 @@ information are derived.</xs:documentation>
 			<xs:documentation>Abstract type definition fro the Member element</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:TopologyItem_T">
+			<xs:extension base="ocx:StructurePart_T">
 				<xs:sequence>
 					<xs:element ref="ocx:LimitedBy"/>
-					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Stiffener" type="ocx:Stiffener_T" substitutionGroup="ocx:TopologyItem">
+	<xs:element name="Stiffener" type="ocx:Stiffener_T">
 		<xs:annotation>
 			<xs:documentation>Element describing the structure concept of type stiffeners which are attached to plating and constitutes the scantlings</xs:documentation>
 		</xs:annotation>
@@ -2567,25 +2674,20 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of the Stiffener structure concept</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:TopologyItem_T">
+			<xs:extension base="ocx:StructurePart_T">
 				<xs:sequence>
-					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
-					<xs:element ref="ocx:Curve3D" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Stiffener trace in the panel mould surface</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+					<xs:element ref="ocx:TraceLine"/>
 					<xs:element ref="ocx:Inclination" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:EndCutEnd1" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Stiffener end cut detailing at end 1</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element ref="ocx:EndCutEnd2" minOccurs="0"/>
 					<xs:element name="WebContour" type="ocx:Contour3D_T" minOccurs="0"/>
 					<xs:element name="FlangeContour" type="ocx:Contour3D_T" minOccurs="0" maxOccurs="2"/>
-					<xs:element ref="ocx:EndCutEnd2" minOccurs="0"/>
 					<xs:element name="Offset" type="ocx:Quantity_T" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Offset from the mould plane to the true trace along the normal vector</xs:documentation>
@@ -2599,8 +2701,6 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:Penetration" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0"/>
 					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
-					<xs:element name="DetailedWebContour" type="ocx:Contour3D_T" minOccurs="0"/>
-					<xs:element name="DetailedFlangeContour" type="ocx:Contour3D_T" minOccurs="0" maxOccurs="2"/>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
@@ -2621,6 +2721,25 @@ information are derived.</xs:documentation>
 			<xs:element ref="ocx:Position"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:element name="TraceLine">
+		<xs:annotation>
+			<xs:documentation>The stiffener landing curve on the moulded panel surface represented by any Curve3D type</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:TraceLine_T">
+					<xs:sequence>
+						<xs:element ref="ocx:Curve3D"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TraceLine_T">
+		<xs:annotation>
+			<xs:documentation>The type definition of the stiffener TraceLine</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
 	<xs:element name="Pillar" type="ocx:Pillar_T" substitutionGroup="ocx:Member">
 		<xs:annotation>
 			<xs:documentation>Structural concept for pillars used as vertical support in ship building.</xs:documentation>
@@ -2635,9 +2754,9 @@ information are derived.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
-					<xs:element ref="ocx:Curve3D" maxOccurs="unbounded">
+					<xs:element ref="ocx:TraceLine">
 						<xs:annotation>
-							<xs:documentation>Pillar trace line geometry</xs:documentation>
+							<xs:documentation>The pillar traceline represented by a Curve3D type</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Inclination" minOccurs="0" maxOccurs="unbounded"/>
@@ -2653,7 +2772,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Panel" type="ocx:Panel_T" substitutionGroup="ocx:TopologyItem">
+	<xs:element name="Panel" type="ocx:Panel_T">
 		<xs:annotation>
 			<xs:documentation>Structural concept of shipbuilding panels. Panels can typically be composed of plates, seams and stiffeners.</xs:documentation>
 		</xs:annotation>
@@ -2663,16 +2782,16 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of Structural concept of shipbuilding panels. Panels can typically be composed of plates, seams and stiffeners.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:TopologyItem_T">
-				<xs:choice minOccurs="2" maxOccurs="unbounded">
-					<xs:element ref="ocx:PhysicalProperties"/>
+			<xs:extension base="ocx:EntityBase_T">
+				<xs:sequence minOccurs="1">
+					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
 					<xs:element ref="ocx:UnboundedGeometry">
 						<xs:annotation>
 							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:ComposedOf" minOccurs="0"/>
 					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
+					<xs:element ref="ocx:ComposedOf" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
@@ -2681,9 +2800,30 @@ information are derived.</xs:documentation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:functionType" use="required"/>
 				<xs:attribute ref="ocx:tightness" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="VirtualPanel" type="ocx:VirtualPanel_T">
+		<xs:annotation>
+			<xs:documentation>A VirtualPanel can limit other structure parts but is not exported as a xomplete structure Panel composition because it is only needed for the topology information</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="VirtualPanel_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of a VirtualPanel</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:EntityBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:UnboundedGeometry">
+						<xs:annotation>
+							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2692,7 +2832,7 @@ information are derived.</xs:documentation>
 			<xs:documentation>Element representing the structural concepts which composes a structure Panel</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="Plate" type="ocx:Plate_T" substitutionGroup="ocx:TopologyItem">
+	<xs:element name="Plate" type="ocx:Plate_T">
 		<xs:annotation>
 			<xs:documentation>Structural concept of  plates used in shipbuilding.</xs:documentation>
 		</xs:annotation>
@@ -2702,9 +2842,8 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of Structural concept of  plates used in shipbuilding.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:TopologyItem_T">
+			<xs:extension base="ocx:StructurePart_T">
 				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:PhysicalProperties"/>
 					<xs:element ref="ocx:PlateMaterial">
 						<xs:annotation>
 							<xs:documentation>Material of parent element</xs:documentation>
@@ -2729,7 +2868,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Bracket" type="ocx:Bracket_T" substitutionGroup="ocx:TopologyItem">
+	<xs:element name="Bracket" type="ocx:Bracket_T">
 		<xs:annotation>
 			<xs:documentation>Structural concept of brackets used in shipbuilding.</xs:documentation>
 		</xs:annotation>
@@ -2739,51 +2878,21 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition  of Structural concept of brackets used in shipbuilding.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:TopologyItem_T">
+			<xs:extension base="ocx:Plate_T">
 				<xs:sequence>
-					<xs:element ref="ocx:PhysicalProperties"/>
-					<xs:element ref="ocx:PlateMaterial">
-						<xs:annotation>
-							<xs:documentation>Material of parent element</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="Offset" type="ocx:Quantity_T" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Offset of the plate material along the panel surface normal vector relative to the panel mould-plane</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:UnboundedGeometry">
-						<xs:annotation>
-							<xs:documentation>The unbounded surface geometry of the bracket</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:OuterContour">
-						<xs:annotation>
-							<xs:documentation>The geometry of the closed contour of the bracket</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:StiffenedBy" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>The bracket may have stiffening</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element ref="ocx:BracketParameters"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="TopologyItem" type="ocx:TopologyItem_T" abstract="true">
-		<xs:annotation>
-			<xs:documentation>Abstract base class for structure objects representing a structure concept</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="TopologyItem_T" abstract="true">
+	<xs:complexType name="StructurePart_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Type definition of  the abstract base class for structure objects representing structure concepts</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
+					<xs:element ref="ocx:PhysicalProperties"/>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -2934,7 +3043,11 @@ information are derived.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:SlotParameters" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute ref="ocx:tightness"/>
+				<xs:attribute ref="ocx:tightness">
+					<xs:annotation>
+						<xs:documentation>Setting the tighness type of the penetration</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2969,7 +3082,6 @@ information are derived.</xs:documentation>
 			<xs:element ref="ocx:FeatureCope" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute ref="ocx:hasEdgeReinforcement" use="required"/>
-		<xs:attribute ref="ocx:bracketType" use="required"/>
 	</xs:complexType>
 	<xs:attribute name="bracketType" default="Conventional">
 		<xs:annotation>
@@ -3005,11 +3117,13 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:sequence>
+					<xs:element ref="ocx:SectionRef"/>
 					<xs:element ref="ocx:CutbackDistance" minOccurs="0"/>
 					<xs:element ref="ocx:WebCutBackAngle" minOccurs="0"/>
+					<xs:element ref="ocx:WebNoseHeight" minOccurs="0"/>
 					<xs:element ref="ocx:FlangeCutBackAngle" minOccurs="0"/>
+					<xs:element ref="ocx:FlangeNoseHeight" minOccurs="0"/>
 					<xs:element ref="ocx:FeatureCope" minOccurs="0"/>
-					<xs:element ref="ocx:SectionRef"/>
 				</xs:sequence>
 				<xs:attribute name="symmetricFlange" type="xs:boolean" default="false"/>
 				<xs:attribute name="sniped" type="xs:boolean" use="optional" default="false"/>
@@ -4441,8 +4555,8 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
 					<xs:element ref="ocx:FrameTables"/>
+					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
@@ -4710,6 +4824,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="NonTight"/>
 				<xs:enumeration value="WaterTight"/>
+				<xs:enumeration value="GasTight"/>
 				<xs:enumeration value="Undefined"/>
 			</xs:restriction>
 		</xs:simpleType>
@@ -4728,6 +4843,21 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
+				<xs:enumeration value="BRACKET">
+					<xs:annotation>
+						<xs:documentation>A supporting plate</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="BRACKET: End bracket">
+					<xs:annotation>
+						<xs:documentation>A bracket attached to the end of stiffener.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="BRACKET: Tripping">
+					<xs:annotation>
+						<xs:documentation>A bracket used to support a load bearing element in between primary supporting memebers.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 				<xs:enumeration value="CASING">
 					<xs:annotation>
 						<xs:documentation>Casing is the covering or bulkhead around or about any space for protection.</xs:documentation>
@@ -4956,6 +5086,11 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				<xs:enumeration value="LONGITUDINAL: Wash bulkhead">
 					<xs:annotation>
 						<xs:documentation>Wash Bulkhead is a perforated or partial bulkhead in a tank.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="PLATING: Lug">
+					<xs:annotation>
+						<xs:documentation>A lug or collar plate used to support a stiffener penetrating a primary supporting memeber.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="PLATING: Gusset">
@@ -6581,9 +6716,14 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 			<xs:documentation>Sniped angle of stiffener web </xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:element name="FlangeNoseHeight" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>Nose height of sniped stiffener flange </xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="WebNoseHeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Sniped angle of stiffener web </xs:documentation>
+			<xs:documentation>Nose height of sniped stiffener web </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CutbackDistance" type="ocx:Quantity_T">
@@ -6601,8 +6741,16 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 			<xs:documentation>The total dry weight of the parent member</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="UpperRadius" type="ocx:Quantity_T"/>
-	<xs:element name="LowerRadius" type="ocx:Quantity_T"/>
+	<xs:element name="UpperRadius" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The upper radius of an ipening or a slot</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="LowerRadius" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The lower radious of an opening or slot</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="Tonnage" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>She numerical value resulting from the tonnage calculation (see ISO 10303-215, section 4.2.165.3).</xs:documentation>
@@ -6673,7 +6821,11 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 			<xs:documentation>Circle diameter</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="Contour" type="ocx:Contour3D_T"/>
+	<xs:element name="Contour" type="ocx:Contour3D_T">
+		<xs:annotation>
+			<xs:documentation>The contour of a sorface or structure part</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="Lpp" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>Length of vessel between Perpendiculars, Lpp</xs:documentation>
@@ -6905,12 +7057,12 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="OffsetU" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Optional offset from stiffener trace line of cross section in local U direction </xs:documentation>
+			<xs:documentation>The offset from stiffener trace line of cross section in local U direction </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="OffsetV" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>optional offset from stiffener trace-line of cross section in local V direction </xs:documentation>
+			<xs:documentation>The offset from stiffener trace-line of cross section in local V direction </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="WebDirection" type="ocx:Vector3D_T">
@@ -6925,7 +7077,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="Position" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>Position of inclination</xs:documentation>
+			<xs:documentation>Position of the inclination of the cross section</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="DistanceAbove" type="ocx:Quantity_T">
@@ -6948,5 +7100,9 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 			<xs:documentation>Overshoot of the flange beyond the web. Included in Width. </xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="UDirection" type="ocx:Vector3D_T"/>
+	<xs:element name="UDirection" type="ocx:Vector3D_T">
+		<xs:annotation>
+			<xs:documentation>Local U in a local coordinate system</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>

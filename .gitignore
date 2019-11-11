@@ -4,5 +4,8 @@ Notebooks/
 Models/
 #Ignore the XMLSpy project files
 *.spp
-*.zip
 *.xml
+#And some more files
+*.zip
+*.html
+*.nb

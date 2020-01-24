@@ -2,6 +2,8 @@
 Documentation/
 Notebooks/
 Models/
+Tables/
+Archive/
 #Ignore the XMLSpy project files
 *.spp
 *.xml

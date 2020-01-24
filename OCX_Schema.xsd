@@ -7,15 +7,117 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Introduced a new attribute edgeReinforcmentType on BracketParameters describing the different bracket reinforcement types.
+			</ocx:Description>
+				<ocx:Reference element="BracketParameters" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Added a new sub-element EdgeReinforcement to BracketParameters.
+				</ocx:Description>
+				<ocx:Reference element="BracketParameters" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Introduced a new sub-element EdgeReinforcement containing additional parameters for reinforced brackets.
+				</ocx:Description>
+				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made SpeedFactor a Quantity_T type (carries a unit).
+			</ocx:Description>
+				<ocx:Reference element="SpeedFactor" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made Cyl_Group a global element.
+				</ocx:Description>
+				<ocx:Reference element="Cyl_Group" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made SectionOuterShape a global element.
+				</ocx:Description>
+				<ocx:Reference element="SectionOuterShape" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made SectionInnerShape a global element.
+				</ocx:Description>
+				<ocx:Reference element="SectionInnerShape" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made FlangeContour a global element.
+				</ocx:Description>
+				<ocx:Reference element="FlangeContour" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made WebContour a global element.
+				</ocx:Description>
+				<ocx:Reference element="WebContour" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made ChildRef a global element.
+				</ocx:Description>
+				<ocx:Reference element="ChildRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made ExternalGeometryRef a global element.
+				</ocx:Description>
+				<ocx:Reference element="ExternalGeometryRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made ApplicationRef a global element.
+				</ocx:Description>
+				<ocx:Reference element="ApplicationRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+				<ocx:Description>
+				Made Reference a global element.
+				</ocx:Description>
+				<ocx:Reference element="Reference" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+				<ocx:Description>
+				Corrected bug in ExternalGeometryRef (wrong implementation of super-type).
+				</ocx:Description>
+				<ocx:Reference element="ExternalGeometryRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+				<ocx:Description>
+				Added missing StiffenedBy to Bracket.
+				</ocx:Description>
+				<ocx:Reference element="Bracket" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+				<ocx:Description>
+				Bug in ApplicationRef, wrong implementation of mandatory attribute externalRef.
+				</ocx:Description>
+				<ocx:Reference element="ApplicationRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+				<ocx:Description>
+				Deleted EndCutCatalogue.
+				</ocx:Description>
+				<ocx:Reference element="ClassCatalogue" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
-				ComposedOf is made optional on Panel. A Panel with no ComposedOf element is treted as a "virtual" Panel and is only used to limit other objects. It wil not be in scope for verification.
+				ComposedOf is made optional on Panel. A Panel with no ComposedOf element is treated as a "virtual" Panel and is only used to limit other objects. It will not be in scope for verification.
 				</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
-				Revised EntityRefBase_T so that the OCX export is valid using either a localRef or a GUIDRef, or both. But at least one must be present. This requirees validation by XSD Version 1.1
+				Revised EntityRefBase_T so that the OCX export is valid using either a localRef or a GUIDRef, or both. But at least one must be present. This requires validation by XSD Version 1.1
 				</ocx:Description>
 				<ocx:Reference element="EntityRefBase_T" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -51,7 +153,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
-				Extended the functionType with BRACKET types. This makes it more consistent as we will only have one source for function tyes in the schema.
+				Extended the functionType with BRACKET types. This makes it more consistent as we will only have one source for function types in the schema.
 				</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -129,7 +231,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
-				Added an explicit TraceLine element under Stiffener representing the landing curve (Curve3D) of the stiffener on the parent surfce. This improves the readability of the schema
+				Added an explicit TraceLine element under Stiffener representing the landing curve (Curve3D) of the stiffener on the parent surface. This improves the readability of the schema
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1866,7 +1968,7 @@
 		<xs:sequence>
 			<xs:element ref="ocx:Header"/>
 		</xs:sequence>
-		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.2">
+		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.4">
 			<xs:annotation>
 				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc..] z : Minor backward compatible changes (Ex - adding an optional attribute, etc)</xs:documentation>
 			</xs:annotation>
@@ -1892,11 +1994,7 @@
 					<xs:documentation>A description of the change. Each SchemaChange should contain exactly one Description sub-element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Reference" type="ocx:Reference_T">
-				<xs:annotation>
-					<xs:documentation>A reference to the schema type which is affected by this change to the schema.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:Reference"/>
 		</xs:sequence>
 		<xs:attribute name="author" type="xs:string" use="required">
 			<xs:annotation>
@@ -1970,9 +2068,7 @@
 		</xs:annotation>
 		<xs:attribute name="id" type="xs:ID" use="required">
 			<xs:annotation>
-				<xs:documentation>An identifier for an element unique within the scope of the XML file. Each id must be unique within a
-document. The attribute uses the standard XML 1.0 ID type as defined in the XML Schema specification.
-This attribute is required in many OCX XML elements and an application should generate them automatically.
+				<xs:documentation>An identifier for an element unique within the scope of the XML file. Each id must be unique within a document. The attribute uses the standard XML 1.0 ID type as defined in the XML Schema specification. This attribute is required in many OCX XML elements and an application should generate them automatically.
 </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -2001,7 +2097,7 @@ This attribute is required in many OCX XML elements and an application should ge
 	</xs:complexType>
 	<xs:element name="Description" type="xs:string">
 		<xs:annotation>
-			<xs:documentation>Contains a description of the component its parent represents. The description is stored as a string. You can use this element for whatever purposes you require. This element can be used inside many OCX XML elements, but is optional.</xs:documentation>
+			<xs:documentation>Contains a description of the component its parent represents. The description is stored as a string. You can use this element for whatever purposes you require. This element can be used inside many OCX XML elements but is optional.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="EntityBase" type="ocx:EntityBase_T" abstract="true" substitutionGroup="ocx:DescriptionBase">
@@ -2025,10 +2121,13 @@ information are derived.</xs:documentation>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- Attributes -->
-	<xs:attribute name="GUIDRef" type="ocx:guid">
+	<xs:attribute name="GUIDRef">
 		<xs:annotation>
 			<xs:documentation>A globally unique ID referring to an entity in the sending application. The sending application creates and holds the GUID</xs:documentation>
 		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="ocx:guid"/>
+		</xs:simpleType>
 	</xs:attribute>
 	<xs:simpleType name="guid">
 		<xs:annotation>
@@ -2066,7 +2165,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="OcxItemPtr" type="ocx:OcxItemPtr_T">
 		<xs:annotation>
-			<xs:documentation>A generic element used to reference an instantiated OCX object by a GUID (the  pointer)</xs:documentation>
+			<xs:documentation>A generic element used to reference an instantiated OCX object by a GUID (the pointer)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="OcxItemPtr_T">
@@ -2079,17 +2178,10 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ApplicationRef">
+	<xs:element name="ApplicationRef" type="ocx:ApplicationRef_T">
 		<xs:annotation>
 			<xs:documentation>The ApplicationRef element is meant to relate the parent element (Product, Representation, etc) back to the owning entity in the sending  application.</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:ApplicationRef_T">
-					<xs:attribute ref="ocx:externalRef" use="required"/>
-				</xs:extension>
-			</xs:complexContent>
-		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="ApplicationRef_T">
 		<xs:annotation>
@@ -2097,19 +2189,14 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityRefBase_T">
-				<xs:sequence/>
+				<xs:attribute ref="ocx:externalRef" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ExternalGeometryRef">
+	<xs:element name="ExternalGeometryRef" type="ocx:ExternalGeometryRef_T">
 		<xs:annotation>
-			<xs:documentation>The ExternalGeometryRef element is used to point to an external geometry representation  of the parent  entity (e.g. Plate, Stiffener, Bracket, Memeber )</xs:documentation>
+			<xs:documentation>The ExternalGeometryRef element is used to point to an external geometry epresentation of the parent  entity (e.g. Plate, Stiffener, Bracket, Member )</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:ExternalGeometryRef_T"/>
-			</xs:complexContent>
-		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="ExternalGeometryRef_T">
 		<xs:annotation>
@@ -2117,15 +2204,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="ocx:externalRefAttributes"/>
 	</xs:complexType>
-	<xs:element name="ReferenceSurfaces">
+	<xs:element name="ReferenceSurfaces" type="ocx:ReferenceSurfaces_T">
 		<xs:annotation>
 			<xs:documentation>Collection of frequently used surfaces which are referenced by more than one object.</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:ReferenceSurfaces_T"/>
-			</xs:complexContent>
-		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="ReferenceSurfaces_T">
 		<xs:annotation>
@@ -2133,11 +2215,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:Surface"/>
-			<xs:element ref="ocx:SurfaceCollection">
-				<xs:annotation>
-					<xs:documentation>A collection of any number of surfcaes. The surfaces have to be connected (no dis-joint surfaces). Most typically used to contain the out shell geometry definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:SurfaceCollection"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:element name="GridRef">
@@ -2316,7 +2394,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="SurfaceRef">
 		<xs:annotation>
-			<xs:documentation>Reference to a Surfaxe object typically shared between parent opbjects.</xs:documentation>
+			<xs:documentation>Reference to a Surface geometry which is shared between more than one part.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -2466,11 +2544,7 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:RootRef">
-						<xs:annotation>
-							<xs:documentation>The top level instance in a ProductView</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+					<xs:element ref="ocx:RootRef"/>
 					<xs:choice maxOccurs="unbounded">
 						<xs:element ref="ocx:Occurrence"/>
 						<xs:element ref="ocx:OccurrenceGroup"/>
@@ -2496,11 +2570,7 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:OcxItemPtr_T">
 				<xs:sequence>
-					<xs:element name="ChildRef" type="ocx:OcxItemPtr_T" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+					<xs:element ref="ocx:ChildRef" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -2666,7 +2736,7 @@ information are derived.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="Member_T" abstract="true">
 		<xs:annotation>
-			<xs:documentation>Abstract type definition fro the Member element</xs:documentation>
+			<xs:documentation>Abstract type definition for the Member element</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
@@ -2698,16 +2768,12 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:EndCutEnd2" minOccurs="0"/>
-					<xs:element name="WebContour" type="ocx:Contour3D_T" minOccurs="0"/>
-					<xs:element name="FlangeContour" type="ocx:Contour3D_T" minOccurs="0" maxOccurs="2"/>
-					<xs:element name="Offset" type="ocx:Quantity_T" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Offset from the mould plane to the true trace along the normal vector</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+					<xs:element ref="ocx:WebContour" minOccurs="0"/>
+					<xs:element ref="ocx:FlangeContour" minOccurs="0" maxOccurs="2"/>
+					<xs:element ref="ocx:Offset" minOccurs="0"/>
 					<xs:element ref="ocx:ConnectionConfiguration" minOccurs="0" maxOccurs="2">
 						<xs:annotation>
-							<xs:documentation>Stiffener end configuration at end 1 and/or end 2 of the stiffener</xs:documentation>
+							<xs:documentation>Stiffener end configuration at end 1 and/or end 2 of the parent stiffener</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Penetration" minOccurs="0" maxOccurs="unbounded"/>
@@ -2846,7 +2912,7 @@ information are derived.</xs:documentation>
 	</xs:element>
 	<xs:element name="Plate" type="ocx:Plate_T">
 		<xs:annotation>
-			<xs:documentation>Structural concept of  plates used in shipbuilding.</xs:documentation>
+			<xs:documentation>Structural concept of plates used in shipbuilding.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Plate_T">
@@ -2863,7 +2929,7 @@ information are derived.</xs:documentation>
 					</xs:element>
 					<xs:element ref="ocx:Offset" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>The plate material offset is measured  positive along the parent surface normal vector.</xs:documentation>
+							<xs:documentation>The material offset form the parent surface. A material offset is measured positive along the parent surface normal vector.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:OuterContour"/>
@@ -2872,7 +2938,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove materail of the parent plate, no other parts.</xs:documentation>
+							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:choice>
@@ -2892,7 +2958,12 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Plate_T">
 				<xs:sequence>
-					<xs:element ref="ocx:BracketParameters"/>
+					<xs:element ref="ocx:BracketParameters">
+						<xs:annotation>
+							<xs:documentation>Bracket parameters necessary for the verification by the society</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3057,7 +3128,7 @@ information are derived.</xs:documentation>
 				</xs:sequence>
 				<xs:attribute ref="ocx:tightness">
 					<xs:annotation>
-						<xs:documentation>Setting the tighness type of the penetration</xs:documentation>
+						<xs:documentation>The tightness type of the penetration</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -3078,7 +3149,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="BracketParameters" type="ocx:BracketParameters_T">
 		<xs:annotation>
-			<xs:documentation>Bracket parameters necessary for the verification by Class rulrs</xs:documentation>
+			<xs:documentation>Bracket parameters necessary for the verification by the sosciety</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="BracketParameters_T">
@@ -3092,21 +3163,56 @@ information are derived.</xs:documentation>
 			<xs:element ref="ocx:Vnose" minOccurs="0"/>
 			<xs:element ref="ocx:FreeEdgeRadius" minOccurs="0"/>
 			<xs:element ref="ocx:FeatureCope" minOccurs="0"/>
+			<xs:element ref="ocx:EdgeReinforcement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Edge reinforecement parameters</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute ref="ocx:hasEdgeReinforcement" use="required"/>
+		<xs:attribute name="numberOfSupports" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Number of supported (welded) bracket edges.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="ocx:edgeReinforcement"/>
 	</xs:complexType>
-	<xs:attribute name="bracketType" default="Conventional">
+	<xs:attribute name="edgeReinforcement">
 		<xs:annotation>
-			<xs:documentation>Bracket type enumerator</xs:documentation>
+			<xs:documentation>Enumerator of bracket edge reinforcement types</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="Conventional"/>
-				<xs:enumeration value="Tripping"/>
-				<xs:enumeration value="End bracket"/>
+				<xs:enumeration value="Flanged"/>
+				<xs:enumeration value="FacePlate"/>
+				<xs:enumeration value="BucklingStiffener"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
+	<xs:attribute name="hasEdgeReinforcement" type="xs:boolean" default="false">
+		<xs:annotation>
+			<xs:documentation>Boolean. False if bracket has no reinforcement (Default)</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
+		<xs:annotation>
+			<xs:documentation>Bracket edge reinforcement  parameters</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="EdgeReinforcement_T">
+		<xs:sequence>
+			<xs:element ref="ocx:FlangeWidth" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Width of edge flange reinforcement</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:Radius">
+				<xs:annotation>
+					<xs:documentation>Radius of transition zone between bracket web and bracket flange</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="FeatureCope" type="ocx:FeatureCope_T">
 		<xs:annotation>
 			<xs:documentation>Parameters of cope features defining additional bracket or stiffener end cut details.</xs:documentation>
@@ -3142,11 +3248,6 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EndCut" type="ocx:EndCut_T">
-		<xs:annotation>
-			<xs:documentation>Stiffener end cut detailing at end1</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="EndCutEnd1" type="ocx:EndCut_T">
 		<xs:annotation>
 			<xs:documentation>Stiffener end cut detailing at end 2</xs:documentation>
@@ -3444,22 +3545,20 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:choice maxOccurs="unbounded">
-						<xs:element ref="ocx:Compartment">
-							<xs:annotation>
-								<xs:documentation>The  concept of a compartment part of the vessel arrangement  representing a CLOSED volume (space) defined by  enclosing surface geometry</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element ref="ocx:PhysicalSpace"/>
-					</xs:choice>
-				</xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="ocx:Compartment">
+						<xs:annotation>
+							<xs:documentation>The  concept of a compartment part of the vessel arrangement  representing a CLOSED volume (space) defined by  enclosing surface geometry</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:PhysicalSpace"/>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Compartment" type="ocx:Compartment_T">
 		<xs:annotation>
-			<xs:documentation>The  concept of a compartment part of the vessel capacity plan representing a closed volume (space) defined by  enclosing surface geometry</xs:documentation>
+			<xs:documentation>The concept of a compartment part of the vessel capacity plan representing a closed volume (space) defined by  enclosing surface geometry</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Compartment_T">
@@ -3584,7 +3683,7 @@ information are derived.</xs:documentation>
 	<xs:element name="BulkCargo" type="ocx:BulkCargo_T">
 		<xs:annotation>
 			<xs:documentation>A bulk cargo is a type of dry cargo that is solid cargo that is not packed, but is carried
-loose.Reference is made to ISO 10303-215:2004</xs:documentation>
+loose. Reference is made to ISO 10303-215:2004</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="BulkCargo_T">
@@ -3611,8 +3710,7 @@ loose.Reference is made to ISO 10303-215:2004</xs:documentation>
 	</xs:complexType>
 	<xs:element name="LiquidCargo" type="ocx:LiquidCargo_T">
 		<xs:annotation>
-			<xs:documentation>Liquid cargo properties, reference is made to ISO 10303-215:2004. A liquid cargo is a type of Cargo whose natural condition is a non-solid, non-gaseous
-liquid state.</xs:documentation>
+			<xs:documentation>Liquid cargo properties, reference is made to ISO 10303-215:2004. A liquid cargo is a type of Cargo whose natural condition is a non-solid, non-gaseous liquid state.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="LiquidCargo_T">
@@ -3669,8 +3767,7 @@ gaseous state.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="CarriagePressure" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The CarriagePressure specifies the required pressure of the compartment in which the
-cargo is to be carried.</xs:documentation>
+			<xs:documentation>The CarriagePressure specifies the required pressure of the compartment in which the cargo is to be carried.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Volume" type="ocx:Quantity_T">
@@ -3683,7 +3780,11 @@ cargo is to be carried.</xs:documentation>
 			<xs:documentation>The AirpipeHeight specifies height from the base line to the top of the air pipe, if any.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="CenterOfGravity" type="ocx:Point3D_T"/>
+	<xs:element name="CenterOfGravity" type="ocx:Point3D_T">
+		<xs:annotation>
+			<xs:documentation>The CenterOfGravity of the parent object. The receiving application can use the value received from the authoring application to check that the object has been transferred correctly.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="StowageHeight" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>Z coordinate of dry bulk stowage height. If not specified, top of cargo room will be used</xs:documentation>
@@ -3711,9 +3812,7 @@ cargo is to be carried.</xs:documentation>
 	</xs:element>
 	<xs:element name="AngleOfRepose" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The natural angle of repose specifies the angle naturally subtended with the horizontal by the upper
-surface of the conic pile, made by the bulk cargo when loaded into a hold by a chute using gravity
-alone.</xs:documentation>
+			<xs:documentation>The natural angle of repose specifies the angle naturally subtended with the horizontal by the upper surface of the conic pile, made by the bulk cargo when loaded into a hold by a chute using gravity alone.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:attribute name="compartmentPurpose">
@@ -4049,7 +4148,7 @@ alone.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="SurfaceCollection" type="ocx:SurfaceCollection_T">
 		<xs:annotation>
-			<xs:documentation>A collection of any number of surfcaes. The surfaces have to be connected (no dis-joint surfaces)</xs:documentation>
+			<xs:documentation>A collection of any number of surfces. The surfaces have to be connected (no dis-joint surfaces). Most typically the SurfaceCollection will include the outer shell geometry definition of the vessel </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="SurfaceCollection_T">
@@ -4242,11 +4341,7 @@ alone.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:NURBSproperties"/>
 					<xs:element ref="ocx:KnotVector"/>
-					<xs:element ref="ocx:ControlPtList">
-						<xs:annotation>
-							<xs:documentation>List of control points (X,Y,Z) and their optional weights.  The array length N=degree+1. A minimum of 2 control points are necessary to define a curve.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+					<xs:element ref="ocx:ControlPtList"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -4363,8 +4458,8 @@ alone.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="KnotVector">
 		<xs:annotation>
-			<xs:documentation>The knot-vector is a list of  size 
-m=+n-1 knots where p is the polynomial basis degree and n is the number of control points. The knot vector consist of a non-decreasing sequence of values. Knot multiplicities can be included. A knot multiplicity means that a  knot value can be repeated up to p+1 times.</xs:documentation>
+			<xs:documentation>The knot-vector is a list of  size
+m=+n-1 knots where p is the polynomial basis degree and n is the number of control points. The knot vector consists of a non-decreasing sequence of values. Knot multiplicities can be included. A knot multiplicity means that a knot value can be repeated up to p+1 times.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -4396,15 +4491,15 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:sequence>
 			<xs:element ref="ocx:Point3D"/>
 		</xs:sequence>
-		<xs:attribute name="weight" type="xs:double">
+		<xs:attribute name="weight" type="xs:double" default="1.0">
 			<xs:annotation>
-				<xs:documentation>The weight associated with the control point. The  weight is 1.0 if not given (default)</xs:documentation>
+				<xs:documentation>The weight associated with the control point. The weight is 1.0 if not given (default)</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
 	<xs:element name="ControlPtList" type="ocx:ControlPtList_T">
 		<xs:annotation>
-			<xs:documentation>List of control points (X,Y,Z) and their optional weights. </xs:documentation>
+			<xs:documentation>List of control points (X,Y,Z) and their optional weights.  The array length N=degree+1. A minimum of 2 control points is necessary to define a curve.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ControlPtList_T">
@@ -4593,8 +4688,8 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>Frame table definition</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Start" type="ocx:Quantity_T" minOccurs="0"/>
-			<xs:element name="Spacing" type="ocx:Quantity_T" minOccurs="0"/>
+			<xs:element ref="ocx:Start" minOccurs="0"/>
+			<xs:element ref="ocx:Spacing" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute ref="ocx:Count" use="required"/>
 		<xs:attribute ref="ocx:SPlaneID" use="optional"/>
@@ -4638,7 +4733,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>Cylindrical reference system</xs:documentation>
 		</xs:annotation>
 		<xs:sequence maxOccurs="unbounded">
-			<xs:element name="Cyl_Group" type="ocx:RefPlaneGroup_T" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:Cyl_Group" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:RadialCylinder" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -4702,7 +4797,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ===================================================  -->
-	<!-- GeoBasic types -->
+	<!-- Basic types -->
 	<!-- ===================================================  -->
 	<xs:element name="MajorAxis" type="ocx:Vector3D_T">
 		<xs:annotation>
@@ -4751,12 +4846,12 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:element>
 	<xs:element name="Origin" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The origin of an local or global coordinate system.</xs:documentation>
+			<xs:documentation>The origin of a local or global coordinate system.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Center" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The center of a geometric shape.</xs:documentation>
+			<xs:documentation>The center position of a shape.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Normal" type="ocx:Vector3D_T">
@@ -4831,11 +4926,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				<xs:enumeration value="Undefined"/>
 			</xs:restriction>
 		</xs:simpleType>
-	</xs:attribute>
-	<xs:attribute name="hasEdgeReinforcement" type="xs:boolean">
-		<xs:annotation>
-			<xs:documentation>Enumerator of bracket edge reinforcement types</xs:documentation>
-		</xs:annotation>
 	</xs:attribute>
 	<!-- ========================================================================================  -->
 	<!-- Structure Function Types -->
@@ -5324,11 +5414,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 							<xs:documentation>Catalogue of section types and their properties</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:EndCutCatalogue">
-						<xs:annotation>
-							<xs:documentation>Catalogue of section types and their properties</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element ref="ocx:HoleShapeCatalogue">
 						<xs:annotation>
 							<xs:documentation>Catalogue of 2D hole shapes </xs:documentation>
@@ -5372,23 +5457,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EndCutCatalogue" type="ocx:EndCutCatalogue_T">
-		<xs:annotation>
-			<xs:documentation>The cross section types for stiffeners and their properties recognised by the Society</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="EndCutCatalogue_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of the cross section types for stiffeners and their properties recognised by the Society</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:EndCut" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 	<xs:element name="PrincipalParticulars" type="ocx:PrincipalParticulars_T">
 		<xs:annotation>
 			<xs:documentation>Main vessel particulars required by the Society</xs:documentation>
@@ -5423,7 +5491,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:ZPosDeckline" minOccurs="0"/>
 			<xs:element ref="ocx:SpeedFactor" minOccurs="0"/>
 		</xs:choice>
-		<xs:attribute name="hasDeadweightLessThan">
+		<xs:attribute name="hasDeadweightLessThan" type="xs:boolean">
 			<xs:annotation>
 				<xs:documentation>The ship has dead-weight less than 50000 tonnes (boolean)</xs:documentation>
 			</xs:annotation>
@@ -5439,9 +5507,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 Type 'A' ship is one which:
 — is designed to carry only liquid cargoes in bulk
 — has a high integrity of the exposed deck with only small access openings to cargo compartments, closed by watertight gasket covers of steel or equivalent material
-— has low permeability of loaded cargo compartments.
-All ships which are not Type 'A' ships shall be considered as Type 'B' ships.
-						</xs:documentation>
+— has low permeability of loaded cargo compartments. All ships which are not Type 'A' ships shall be considered as Type 'B' ships.						</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -5462,10 +5528,7 @@ All ships which are not Type 'A' ships shall be considered as Type 'B' ships.
 		</xs:attribute>
 		<xs:attribute name="numberIMO" type="xs:string" use="optional">
 			<xs:annotation>
-				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see:
-
-IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996
-			href="http://www.imo.org/Facilitation/mainframe.asp?topic_id=388">Information on IMO ship identification number scheme on the web site of the IMO (last visited: 2005-09-05)</xs:documentation>
+				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996 href="http://www.imo.org/Facilitation/mainframe.asp?topic_id=388">Information on IMO ship identification number scheme on the web site of the IMO (last visited: 2005-09-05)</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="shipType" type="xs:string" use="optional">
@@ -5627,7 +5690,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 					</xs:element>
 					<xs:element ref="ocx:FilletRadius" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Corner fillet radius. If not given, the fillet radius is taken as 0.5*Min(Heght,Width), i.e. half of the smallest of the Height or the Width  </xs:documentation>
+							<xs:documentation>Corner fillet radius. If not given, the fillet radius is taken as 0.5*Min of (Height,Width), i.e. half of the smallest of the Height or the Width  </xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -6095,16 +6158,8 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 						<xs:documentation>Any number of additional user-defined parameters. The intended use and how the parameter shall be interpreted shall be included in the description.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="SectionOuterShape" type="ocx:Contour3D_T" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>An optional arbitrary contour  representing the outer section shape. Used to display the section by extrusion of the section shape along the trace line.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="SectionInnerShape" type="ocx:Contour3D_T" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>Optional arbitrary inner section shape for hollow sections.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+				<xs:element ref="ocx:SectionOuterShape" minOccurs="0"/>
+				<xs:element ref="ocx:SectionInnerShape" minOccurs="0"/>
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attribute name="numberOfParameters" type="xs:int" use="optional">
@@ -6135,7 +6190,11 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 			<xs:element ref="ocx:TorsionConstant" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="UserDefinedParameter" type="ocx:UserDefinedParameter_T"/>
+	<xs:element name="UserDefinedParameter" type="ocx:UserDefinedParameter_T">
+		<xs:annotation>
+			<xs:documentation>A user-defined parameter which can be provided to define a user-defined BarSection</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="UserDefinedParameter_T">
 		<xs:complexContent>
 			<xs:extension base="ocx:Quantity_T">
@@ -6195,7 +6254,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 		</xs:attribute>
 		<xs:attribute name="newbuildingSocietyName" type="xs:string">
 			<xs:annotation>
-				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when newbuildingSociety = 'OTHER'
+				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @newbuildingSociety = 'OTHER'
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
@@ -6206,8 +6265,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 		</xs:attribute>
 		<xs:attribute name="societyName" type="xs:string">
 			<xs:annotation>
-				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @society = 'OTHER'
-				</xs:documentation>
+				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @society = 'OTHER'				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -6550,9 +6608,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 		</xs:attribute>
 		<xs:attribute name="serviceArea" type="xs:string">
 			<xs:annotation>
-				<xs:documentation>
-								The area or route in which the ship operates. NOTE:This may include information about waterway, wave, weather and wind conditions.
-							</xs:documentation>
+				<xs:documentation>The area or route in which the ship operates. NOTE: This may include information about waterway, wave, weather and wind conditions.				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="serviceFactor" type="xs:double">
@@ -6776,7 +6832,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="DeadWeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The weight of the passengers, crew, cargo, stores, ballast, fresh water, fuel oil, and other consumables being	carried by a ship (see ISO 10303-215, section 4.2.74).</xs:documentation>
+			<xs:documentation>The weight of the passengers, crew, cargo, stores, ballast, fresh water, fuel oil, and other consumables being carried by a ship (see ISO 10303-215, section 4.2.74).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="WebThickness" type="ocx:Quantity_T">
@@ -6786,7 +6842,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="FlangeWidth" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Profile width and web thickness.</xs:documentation>
+			<xs:documentation>Section profile flange width</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbAngle" type="ocx:Quantity_T">
@@ -6826,7 +6882,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="Contour" type="ocx:Contour3D_T">
 		<xs:annotation>
-			<xs:documentation>The contour of a sorface or structure part</xs:documentation>
+			<xs:documentation>The contour of a surface or structure part</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Lpp" type="ocx:Quantity_T">
@@ -6939,7 +6995,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 			<xs:documentation>Vertical distance from baseline to deck-line at FE</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="SpeedFactor" type="xs:double">
+	<xs:element name="SpeedFactor" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>Speed factor Cav</xs:documentation>
 		</xs:annotation>
@@ -6985,7 +7041,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="Offset" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The offset is measured  along the grid reference normal vector.</xs:documentation>
+			<xs:documentation>An offset from a reference plane or surface. A possitive offset value is in the direction of the surface normal vector.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FlangeThickness" type="ocx:Quantity_T">
@@ -7035,7 +7091,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="YoungsModulus" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material elasiticity modulus</xs:documentation>
+			<xs:documentation>Material elasticity modulus</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="PoissonRatio" type="ocx:Quantity_T">
@@ -7045,7 +7101,7 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	</xs:element>
 	<xs:element name="YieldStress" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material yield strss</xs:documentation>
+			<xs:documentation>Material yield stress</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="UltimateStress" type="ocx:Quantity_T">
@@ -7106,6 +7162,51 @@ IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
 	<xs:element name="UDirection" type="ocx:Vector3D_T">
 		<xs:annotation>
 			<xs:documentation>Local U in a local coordinate system</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Cyl_Group" type="ocx:RefPlaneGroup_T">
+		<xs:annotation>
+			<xs:documentation>The Cyl_Group is used to define a refernce grid in a cylindrical coordinate system.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Start" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The location of Fram#0 in the frame table</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Spacing" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>Frame table spacing</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ChildRef" type="ocx:OcxItemPtr_T">
+		<xs:annotation>
+			<xs:documentation>Reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Reference" type="ocx:Reference_T">
+		<xs:annotation>
+			<xs:documentation>A reference to the schema type which is affected by this change to the schema.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FlangeContour" type="ocx:Contour3D_T">
+		<xs:annotation>
+			<xs:documentation>The outer contour of a stiffener flange. The FlangeContour can be used to render the shape of a BarSection</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="WebContour" type="ocx:Contour3D_T">
+		<xs:annotation>
+			<xs:documentation>The outer contour of a stiffener web. The WebContour can be used to render the shape of a BarSection</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SectionOuterShape" type="ocx:Contour3D_T">
+		<xs:annotation>
+			<xs:documentation>An optional arbitrary contour  representing the outer section shape. Used to display the section by extrusion of the section shape along the trace line.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SectionInnerShape" type="ocx:Contour3D_T">
+		<xs:annotation>
+			<xs:documentation>Optional arbitrary inner section shape for hollow sections.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 </xs:schema>

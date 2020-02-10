@@ -7,6 +7,108 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
+				<ocx:Description>
+				Added the possibility to define an extruded surface by a base curve and a sweep direction and extent.
+			</ocx:Description>
+				<ocx:Reference element="ExtrudedSurface" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
+				<ocx:Description>
+				Introduced a LimedBySequence on Panel containing the logical sequence of the referenced objects defined by LimitedBy.
+			</ocx:Description>
+				<ocx:Reference element="Panel" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
+				<ocx:Description>
+				Changed NumberOfDecksAbove from a global element to an attribute on PrincipalParticulars.
+			</ocx:Description>
+				<ocx:Reference element="PrincipalParticulars" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
+				<ocx:Description>
+				Removed unused property type "scope" on NURBSProperties.
+			</ocx:Description>
+				<ocx:Reference element="NURBSProperties" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-05" version="2.8.5">
+				<ocx:Description>
+				Added the possibility to assign a main frame attribute isMainSystem=true when multiple systems are defined. If only one system is defined, it is assumed that the exported system is the main system.
+			</ocx:Description>
+				<ocx:Reference element="RefPlanes_T " locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-05" version="2.8.5">
+				<ocx:Description>
+				Added the possibility to specify an offset of FR0 from AP for the X frame positions. If not given, it is assumed that Fr0 is positioned at AP.
+			</ocx:Description>
+				<ocx:Reference element="XRefPlanes " locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for compartmentPurpose 
+			</ocx:Description>
+				<ocx:Reference element="compartmentPurpose " locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for bulkCargoType
+			</ocx:Description>
+				<ocx:Reference element="bulkCargoType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for gaseousCargoType
+			</ocx:Description>
+				<ocx:Reference element="gaseousCargoType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for liquidCargoType
+			</ocx:Description>
+				<ocx:Reference element="liquidCargoType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for unitCargoType.
+			</ocx:Description>
+				<ocx:Reference element="unitCargoType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for bracket position.
+			</ocx:Description>
+				<ocx:Reference element="position" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Annotedet enumeration values for freeboardType according to SOLAS LL 66.
+			</ocx:Description>
+				<ocx:Reference element="freeboardType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+				<ocx:Description>
+				Redifeined material grade for normal and high strength steel in accoradance with IACS UR W11.
+			</ocx:Description>
+				<ocx:Reference element="grade" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
+				<ocx:Description>
+				Deleted RefPlaneGroup from RefPlanes definition as we require the exporting application to export every frame instance with a unique GUID
+			</ocx:Description>
+				<ocx:Reference element="FrameTables" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
+				<ocx:Description>
+				Deleted Cyl_Group from the CylindricalAxes definition as we require the exporting application to export every frame instance with a unique GUID
+			</ocx:Description>
+				<ocx:Reference element="CylindricalAxes" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
+				<ocx:Description>
+				Changed the externalRefAttributes enumeration of ExternalGeometryRef to refer to the specific geometry file type (.stp, .igs and .jt)
+			</ocx:Description>
+				<ocx:Reference element="externalRefAttributes" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Introduced a new attribute edgeReinforcmentType on BracketParameters describing the different bracket reinforcement types.
@@ -1907,7 +2009,7 @@
 	</xs:annotation>
 	<xs:element name="Header" type="ocx:Header_T">
 		<xs:annotation>
-			<xs:documentation>Header information of an XML export</xs:documentation>
+			<xs:documentation>The header information of an XML export</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Header_T">
@@ -1968,7 +2070,7 @@
 		<xs:sequence>
 			<xs:element ref="ocx:Header"/>
 		</xs:sequence>
-		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.4">
+		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.5">
 			<xs:annotation>
 				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc..] z : Minor backward compatible changes (Ex - adding an optional attribute, etc)</xs:documentation>
 			</xs:annotation>
@@ -2123,7 +2225,7 @@ information are derived.</xs:documentation>
 	<!-- Attributes -->
 	<xs:attribute name="GUIDRef">
 		<xs:annotation>
-			<xs:documentation>A globally unique ID referring to an entity in the sending application. The sending application creates and holds the GUID</xs:documentation>
+			<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="ocx:guid"/>
@@ -2153,20 +2255,27 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="localRef" type="xs:IDREF">
 			<xs:annotation>
-				<xs:documentation>Reference to a unique ID within the scope of this XML file</xs:documentation>
+				<xs:documentation>A rference to a unique ID within the scope of this XML file. Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: <xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
+				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute ref="ocx:GUIDRef">
 			<xs:annotation>
-				<xs:documentation>Reference to a GUID provided by the authoring application. Used to establish a unique reference to a part between applications</xs:documentation>
+				<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.  Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: <xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
+				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
 	</xs:complexType>
-	<xs:element name="OcxItemPtr" type="ocx:OcxItemPtr_T">
+	<xs:element name="OcxItemPtr">
 		<xs:annotation>
-			<xs:documentation>A generic element used to reference an instantiated OCX object by a GUID (the pointer)</xs:documentation>
+			<xs:documentation>A generic element used to reference an instantiated OCX object by a GUID (the pointer).</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:OcxItemPtr_T"/>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="OcxItemPtr_T">
 		<xs:annotation>
@@ -2174,13 +2283,20 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityRefBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:BoundingBox" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The definition of a bounding box in space using two positions.The bounding box defines the extent of the referenced geometry.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
 				<xs:attribute ref="ocx:refType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="ApplicationRef" type="ocx:ApplicationRef_T">
 		<xs:annotation>
-			<xs:documentation>The ApplicationRef element is meant to relate the parent element (Product, Representation, etc) back to the owning entity in the sending  application.</xs:documentation>
+			<xs:documentation>The ApplicationRef element is meant to relate the parent element (Product, Representation, etc) back to the owning entity in the sending application.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ApplicationRef_T">
@@ -2242,6 +2358,9 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:restriction base="ocx:OcxItemPtr_T">
+				<xs:sequence>
+					<xs:element ref="ocx:BoundingBox" minOccurs="0"/>
+				</xs:sequence>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:GridRef"/>
 			</xs:restriction>
 		</xs:complexContent>
@@ -2304,6 +2423,13 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:restriction base="ocx:OcxItemPtr_T">
+				<xs:sequence>
+					<xs:element ref="ocx:BoundingBox" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The definition of a bounding box in space using two positions.The bounding box defines the extent of the referenced geometry.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Cell"/>
 			</xs:restriction>
 		</xs:complexContent>
@@ -2372,11 +2498,18 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="PlateRef">
 		<xs:annotation>
-			<xs:documentation>Reference to a connected Plate</xs:documentation>
+			<xs:documentation>The reference to a connected Plate</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
 				<xs:restriction base="ocx:OcxItemPtr_T">
+					<xs:sequence>
+						<xs:element ref="ocx:BoundingBox" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The definition of a bounding box in space using two positions.The bounding box defines the extent of the referenced geometry.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
 					<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Plate"/>
 				</xs:restriction>
 			</xs:complexContent>
@@ -2394,7 +2527,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="SurfaceRef">
 		<xs:annotation>
-			<xs:documentation>Reference to a Surface geometry which is shared between more than one part.</xs:documentation>
+			<xs:documentation>The reference to a Surface geometry which is shared between more than one part.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -2416,7 +2549,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="PillarRef" type="ocx:PillarRef_T">
 		<xs:annotation>
-			<xs:documentation>Reference to a connected Member (Pillar)</xs:documentation>
+			<xs:documentation>The reference to a connected Member (Pillar)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="PillarRef_T">
@@ -2431,7 +2564,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="LugPlateRef">
 		<xs:annotation>
-			<xs:documentation>Reference to plate lugs with additional lug parameters</xs:documentation>
+			<xs:documentation>The reference to plate lugs with additional lug parameters</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -2483,26 +2616,94 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:annotation>
-				<xs:documentation>Allowable OCX types which can be referenced</xs:documentation>
+				<xs:documentation>Allowable OCX types which can be referenced using the ocxItemPtr</xs:documentation>
 			</xs:annotation>
 			<xs:restriction base="xs:QName">
-				<xs:enumeration value="ocx:Panel"/>
-				<xs:enumeration value="ocx:Plate"/>
-				<xs:enumeration value="ocx:Seam"/>
-				<xs:enumeration value="ocx:Bracket"/>
-				<xs:enumeration value="ocx:Stiffener"/>
-				<xs:enumeration value="ocx:Pillar"/>
-				<xs:enumeration value="ocx:ConnectionConfiguration"/>
-				<xs:enumeration value="ocx:Hole2D"/>
-				<xs:enumeration value="ocx:GridRef"/>
-				<xs:enumeration value="ocx:Material"/>
-				<xs:enumeration value="ocx:BarSection"/>
-				<xs:enumeration value="ocx:Cell"/>
-				<xs:enumeration value="ocx:Vessel"/>
-				<xs:enumeration value="ocx:FreeEdgeCurve3D"/>
-				<xs:enumeration value="ocx:Surface"/>
-				<xs:enumeration value="ocx:EndCut"/>
-				<xs:enumeration value="ocx:OccurenceGroup"/>
+				<xs:enumeration value="ocx:Panel">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated  structure composision of type Panel</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Plate">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated structure part of type Plate</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Seam">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated structurecomposision of type Seam</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Bracket">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated structure part of type Bracket</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Stiffener">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated structure part of type Stiffener</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Pillar">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated structure part of type Pillar</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:ConnectionConfiguration">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated stiffener configuration</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Hole2D">
+					<xs:annotation>
+						<xs:documentation>A reference to a catalogue 2D hole shape</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:GridRef">
+					<xs:annotation>
+						<xs:documentation>A reference to a frame table grid position</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Material">
+					<xs:annotation>
+						<xs:documentation>A reference to a catalogue material</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:BarSection">
+					<xs:annotation>
+						<xs:documentation>A reference to a catalogue bar section</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Cell">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated compartment cell</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Vessel">
+					<xs:annotation>
+						<xs:documentation>A reference to the vessel instance</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:FreeEdgeCurve3D">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated free edge geometry</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:Surface">
+					<xs:annotation>
+						<xs:documentation>A reference to an instantiated surface</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:EndCut">
+					<xs:annotation>
+						<xs:documentation>A reference to a stiffener end cut</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ocx:OccurenceGroup">
+					<xs:annotation>
+						<xs:documentation>A reference to an occurrence group in a design view</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -2522,9 +2723,9 @@ information are derived.</xs:documentation>
 			</xs:annotation>
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<xs:enumeration value="IGES"/>
-					<xs:enumeration value="JT"/>
-					<xs:enumeration value="STEP"/>
+					<xs:enumeration value=".igs"/>
+					<xs:enumeration value=".jt"/>
+					<xs:enumeration value=".stp"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -2555,7 +2756,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="RootRef" type="ocx:OcxItemPtr_T">
 		<xs:annotation>
-			<xs:documentation>RootRef is an OcXItemPointer pointing to the top-level instance in a ProductView.</xs:documentation>
+			<xs:documentation>RootRef is an OcXItemPtr pointing to the top-level instance in a ProductView.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Occurrence" type="ocx:Occurrence_T">
@@ -2764,21 +2965,33 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:Inclination" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:EndCutEnd1" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Stiffener end cut detailing at end 1</xs:documentation>
+							<xs:documentation>The stiffener end cut detailing at end 1</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:EndCutEnd2" minOccurs="0"/>
+					<xs:element ref="ocx:EndCutEnd2" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The stiffener end cut detailing at end 2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="ocx:WebContour" minOccurs="0"/>
 					<xs:element ref="ocx:FlangeContour" minOccurs="0" maxOccurs="2"/>
 					<xs:element ref="ocx:Offset" minOccurs="0"/>
 					<xs:element ref="ocx:ConnectionConfiguration" minOccurs="0" maxOccurs="2">
 						<xs:annotation>
-							<xs:documentation>Stiffener end configuration at end 1 and/or end 2 of the parent stiffener</xs:documentation>
+							<xs:documentation>The stiffener end configuration at end 1 and/or end 2 of the parent stiffener</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:Penetration" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:Penetration" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A structural concept of stiffener penetration configurations typically used in shipbuilding</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="ocx:CutBy" minOccurs="0"/>
-					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
+					<xs:element ref="ocx:LimitedBy" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The references to limiting objects forming a closed contour of the parent element</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
@@ -2786,7 +2999,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Inclination" type="ocx:Inclination_T">
 		<xs:annotation>
-			<xs:documentation>Inclination of stiffener or pillar cross section along its trace line. A vector pair giving the local orientation of the web and flange directions at the point given by the Position element. The FlangeDirection is optional and not necessary for a symmetrical cross section. Only one inclination is necessary for a non-twisted (straight) stiffener or pillar.</xs:documentation>
+			<xs:documentation>The inclination of the cross section of a stiffener or a pillar along its trace line. A vector pair giving the local orientation of the web and flange directions at the point given by the Position element. The FlangeDirection is optional and not necessary for a symmetrical cross section. Only one inclination is necessary for a non-twisted (straight) stiffener or pillar.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Inclination_T">
@@ -2868,9 +3081,13 @@ information are derived.</xs:documentation>
 							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
+					<xs:element ref="ocx:LimitedBy"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
-					<xs:element ref="ocx:ComposedOf" minOccurs="0"/>
+					<xs:element ref="ocx:ComposedOf" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The element representing the structural concepts which composes the structural Panel. If no ComposedOf definition is given, the Panel is treated as a virtual panel. A virtual panel is used to limit other objects defining the model topology.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
@@ -2881,27 +3098,6 @@ information are derived.</xs:documentation>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType" use="required"/>
 				<xs:attribute ref="ocx:tightness" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:element name="VirtualPanel" type="ocx:VirtualPanel_T">
-		<xs:annotation>
-			<xs:documentation>A VirtualPanel can limit other structure parts but is not exported as a xomplete structure Panel composition because it is only needed for the topology information</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="VirtualPanel_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of a VirtualPanel</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:EntityBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:UnboundedGeometry">
-						<xs:annotation>
-							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2922,11 +3118,7 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
 				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:PlateMaterial">
-						<xs:annotation>
-							<xs:documentation>Material of parent element</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The material offset form the parent surface. A material offset is measured positive along the parent surface normal vector.</xs:documentation>
@@ -2981,24 +3173,33 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="LimitedBy" type="ocx:LimitedBy_T">
+	<xs:element name="LimitedBy">
 		<xs:annotation>
-			<xs:documentation>Reference to limiting objects forming a closed contour of the parent element</xs:documentation>
+			<xs:documentation>The references to limiting objects forming a closed contour of the parent element. It is not requiredthat the set of objects is ordered in the correct sequence.</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:LimitedBy_T"/>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="LimitedBy_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the LimitedBy (reference to limiting objects forming a closed contour of the parent element)</xs:documentation>
+			<xs:documentation>Type definition of the LimitedBy (reference to limiting objects forming a closed contour of the parent element).</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="ocx:OcxItemPtr" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:GridRef" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:FreeEdgeCurve3D" minOccurs="0" maxOccurs="unbounded">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="ocx:FreeEdgeCurve3D">
 				<xs:annotation>
 					<xs:documentation>Collection of non-closed Curve3D types. Used to represent a free edge to form a closed contour together with the limiting objects.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-		</xs:sequence>
+			<xs:element ref="ocx:OcxItemPtr">
+				<xs:annotation>
+					<xs:documentation>A generic element used to reference an instantiated OCX object by a GUID (the pointer).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:GridRef"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:element name="ReferencePlane" type="ocx:ReferencePlane_T" abstract="true">
 		<xs:annotation>
@@ -3050,7 +3251,7 @@ information are derived.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:Point3D">
 						<xs:annotation>
-							<xs:documentation>Position of the end configuration at the stiffener end</xs:documentation>
+							<xs:documentation>The logical geometric position of the end configuration at the stiffener's end</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:choice minOccurs="0">
@@ -3089,17 +3290,17 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 						<xs:element ref="ocx:PlateRef">
 							<xs:annotation>
-								<xs:documentation>Reference to a connected Plate at the position of the end configuration</xs:documentation>
+								<xs:documentation>The reference to a connected Plate at this end configuration</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element ref="ocx:PillarRef">
 							<xs:annotation>
-								<xs:documentation>Reference to a connected Pillar at the position of the end configuration</xs:documentation>
+								<xs:documentation>The reference to a connected Member (Pillar) at this end configuration</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element ref="ocx:StiffenerRef">
 							<xs:annotation>
-								<xs:documentation>Reference to the connected Stiffener at the position of the end configuration</xs:documentation>
+								<xs:documentation>The rference to the connected Stiffener at this end configuration</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:choice>
@@ -3183,9 +3384,21 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="Flanged"/>
-				<xs:enumeration value="FacePlate"/>
-				<xs:enumeration value="BucklingStiffener"/>
+				<xs:enumeration value="Flanged">
+					<xs:annotation>
+						<xs:documentation>The bracket edge has a flanged stiffening with a bend radius.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="FacePlate">
+					<xs:annotation>
+						<xs:documentation>The bracket edge has a face plate</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="BucklingStiffener">
+					<xs:annotation>
+						<xs:documentation>The bracket edge has a buckling stiffener</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -3196,19 +3409,19 @@ information are derived.</xs:documentation>
 	</xs:attribute>
 	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
 		<xs:annotation>
-			<xs:documentation>Bracket edge reinforcement  parameters</xs:documentation>
+			<xs:documentation>Bracket edge reinforcement parameters</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="EdgeReinforcement_T">
 		<xs:sequence>
-			<xs:element ref="ocx:FlangeWidth" minOccurs="0">
+			<xs:element ref="ocx:FlangeWidth">
 				<xs:annotation>
-					<xs:documentation>Width of edge flange reinforcement</xs:documentation>
+					<xs:documentation>The width of the edge flange reinforcement</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:Radius">
 				<xs:annotation>
-					<xs:documentation>Radius of transition zone between bracket web and bracket flange</xs:documentation>
+					<xs:documentation>The bend radius of the transition zone between bracket web and bracket flange</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3250,7 +3463,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="EndCutEnd1" type="ocx:EndCut_T">
 		<xs:annotation>
-			<xs:documentation>Stiffener end cut detailing at end 2</xs:documentation>
+			<xs:documentation>The siffener end cut detailing</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="EndCutEnd2" type="ocx:EndCut_T">
@@ -3260,12 +3473,12 @@ information are derived.</xs:documentation>
 	</xs:element>
 	<xs:element name="ConnectedBracketRef" type="ocx:ConnectedBracketRef_T">
 		<xs:annotation>
-			<xs:documentation>Reference to a connected bracket part of a ConectionConfiguration</xs:documentation>
+			<xs:documentation>The reference to a connected bracket part of a ConnectionConfiguration</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ConnectedBracketRef_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of a connected bracket part of a ConectionConfiguration</xs:documentation>
+			<xs:documentation>Type definition of a connected bracket part of a ConnectionConfiguration</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:BracketRef_T">
@@ -3367,7 +3580,7 @@ information are derived.</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:ConnectedBracketRef" maxOccurs="2">
 				<xs:annotation>
-					<xs:documentation>Reference to the two connected brackets which are part of a ConectionConfiguration</xs:documentation>
+					<xs:documentation>Reference to the two connected brackets which are part of a ConnectionConfiguration</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:WebStiffenerRef"/>
@@ -3385,12 +3598,12 @@ information are derived.</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:Height">
 				<xs:annotation>
-					<xs:documentation>Height of slot</xs:documentation>
+					<xs:documentation>The height of the slot</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:Width">
 				<xs:annotation>
-					<xs:documentation>Width of slot</xs:documentation>
+					<xs:documentation>The width of the slot</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:UpperRadius">
@@ -3422,7 +3635,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="ConnectionLength" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Length of direct connection between stiffener and primary supporting memeber for a slot connection</xs:documentation>
+			<xs:documentation>The connection length of the direct connection between a stiffener and a primary supporting memeber.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="SlotContour" type="ocx:Hole2DContour_T">
@@ -3441,11 +3654,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="ocx:DryWeight"/>
-			<xs:element ref="ocx:CenterOfGravity">
-				<xs:annotation>
-					<xs:documentation>Center of gravity</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:CenterOfGravity"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="CutBy" type="ocx:CutBy_T">
@@ -3506,7 +3715,7 @@ information are derived.</xs:documentation>
 	<!-- ========================================================================================  -->
 	<xs:element name="PhysicalSpace" type="ocx:PhysicalSpace_T">
 		<xs:annotation>
-			<xs:documentation>The  concept of a physical compartment representing a closed volume (space) defined by  enclosing  structure panels</xs:documentation>
+			<xs:documentation>The concept of a physical compartment representing a closed volume (space) defined by  enclosing  structure panels</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="PhysicalSpace_T">
@@ -3558,7 +3767,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Compartment" type="ocx:Compartment_T">
 		<xs:annotation>
-			<xs:documentation>The concept of a compartment part of the vessel capacity plan representing a closed volume (space) defined by  enclosing surface geometry</xs:documentation>
+			<xs:documentation>The concept of a compartment part of the vessel capacity plan representing a closed volume (space) defined by enclosing surface geometry</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Compartment_T">
@@ -3635,12 +3844,12 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="CellBoundary" type="ocx:CellBoundary_T">
 		<xs:annotation>
-			<xs:documentation>Reference to a Panel surface making up one Cell boundary.</xs:documentation>
+			<xs:documentation>The reference to a Panel surface making up one Cell boundary.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CrossFlow" type="ocx:CrossFlow_T">
 		<xs:annotation>
-			<xs:documentation>Concept to specify cross flow between Cells making up an Compartment. This enables the modelling of cells that are not adjacent, but are connected by a piping system and part of the same Compartment.</xs:documentation>
+			<xs:documentation>Concept to specify cross flow between Cells making up a Compartment. This enables the modelling of cells that are not adjacent but are connected by a piping system and part of the same Compartment.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="CrossFlow_T">
@@ -3683,7 +3892,7 @@ information are derived.</xs:documentation>
 	<xs:element name="BulkCargo" type="ocx:BulkCargo_T">
 		<xs:annotation>
 			<xs:documentation>A bulk cargo is a type of dry cargo that is solid cargo that is not packed, but is carried
-loose. Reference is made to ISO 10303-215:2004</xs:documentation>
+loose. Ref. is made to ISO 10303-215:2004</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="BulkCargo_T">
@@ -3699,7 +3908,7 @@ loose. Reference is made to ISO 10303-215:2004</xs:documentation>
 	</xs:complexType>
 	<xs:element name="UnitCargo" type="ocx:UnitCargo_T">
 		<xs:annotation>
-			<xs:documentation>The UnitCargo type is intended for spaces carrying a type of dry cargo that that is packed or comprises discrete units that can be loaded and stored individually on the ship. Reference is made to ISO 10303-215:2004</xs:documentation>
+			<xs:documentation>The UnitCargo type is intended for spaces carrying a type of dry cargo that that is packed or comprises discrete units that can be loaded and stored individually on the ship. Ref. is made to ISO 10303-215:2004</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="UnitCargo_T">
@@ -3720,7 +3929,7 @@ loose. Reference is made to ISO 10303-215:2004</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:Density">
 				<xs:annotation>
-					<xs:documentation>Density of  ballast, bunker or liquid cargo content</xs:documentation>
+					<xs:documentation>The density of  ballast, bunker or liquid cargo content</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:CarriagePressure" minOccurs="0"/>
@@ -3740,13 +3949,21 @@ gaseous state.</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:Density">
 				<xs:annotation>
-					<xs:documentation>The density specifies the density of the cargo</xs:documentation>
+					<xs:documentation>The density specifies the  of  cargo density</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:CarriagePressure" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="liquidState" type="xs:boolean" default="false"/>
-		<xs:attribute ref="ocx:liquidCargoType"/>
+		<xs:attribute name="liquidState" type="xs:boolean" default="false">
+			<xs:annotation>
+				<xs:documentation>Set to True if the gaseous cargo is carried in a liquid state</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="ocx:liquidCargoType">
+			<xs:annotation>
+				<xs:documentation>The liquid cargo types after ISO 10303-215:2004</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:element name="CellConnection" type="ocx:CellConnection_T">
 		<xs:annotation>
@@ -3772,7 +3989,7 @@ gaseous state.</xs:documentation>
 	</xs:element>
 	<xs:element name="Volume" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Volume of a compartment</xs:documentation>
+			<xs:documentation>The volume of a compartment or space</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="AirPipeHeight" type="ocx:Quantity_T">
@@ -3782,7 +3999,7 @@ gaseous state.</xs:documentation>
 	</xs:element>
 	<xs:element name="CenterOfGravity" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The CenterOfGravity of the parent object. The receiving application can use the value received from the authoring application to check that the object has been transferred correctly.</xs:documentation>
+			<xs:documentation>The center of gravity (COG) of the parent object. The receiving application can use the value received from the authoring application to check that the object has been transferred correctly.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="StowageHeight" type="ocx:Quantity_T">
@@ -3817,25 +4034,60 @@ gaseous state.</xs:documentation>
 	</xs:element>
 	<xs:attribute name="compartmentPurpose">
 		<xs:annotation>
-			<xs:documentation>Compartment function</xs:documentation>
+			<xs:documentation>The compartment functions or purpose after ISO 10303-215:2004</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="Cargo"/>
-				<xs:enumeration value="Ballast"/>
-				<xs:enumeration value="Freshwater"/>
-				<xs:enumeration value="Fuel"/>
-				<xs:enumeration value="Machinery"/>
-				<xs:enumeration value="Void"/>
+				<xs:enumeration value="Cargo">
+					<xs:annotation>
+						<xs:documentation>A compartment is designed to carry liquid, bulk, or containerized goods.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Ballast">
+					<xs:annotation>
+						<xs:documentation>The compartment is a watertight compartment to hold water ballast.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Freshwater">
+					<xs:annotation>
+						<xs:documentation>The compartment is a watertight compartment to hold fresh water</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Fuel">
+					<xs:annotation>
+						<xs:documentation>The compartment is a watertight compartment to hold fuel</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Machinery">
+					<xs:annotation>
+						<xs:documentation>The compartment is designed to contain machinery for the operation of the ship or in support of its mission.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Void">
+					<xs:annotation>
+						<xs:documentation>The compartment is designed as an inaccessible, closed space that is never used to carry cargo or to be regularly occupied by humans.  The main uses of a void compartment are segregating the cargo and fluids that are necessary to operate the ship, or to provide emergency access to other spaces</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 				<xs:enumeration value="Other">
 					<xs:annotation>
 						<xs:documentation>Storage of equipment, e.g. ropes</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="Lube"/>
-				<xs:enumeration value="Passageway"/>
-				<xs:enumeration value="Access"/>
-				<xs:enumeration value="Hatchcover"/>
+				<xs:enumeration value="Lube">
+					<xs:annotation>
+						<xs:documentation>The compartment is a watertight compartment to hold fresh lube oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Passageway">
+					<xs:annotation>
+						<xs:documentation>The compartment is designe for use as passageway</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Access">
+					<xs:annotation>
+						<xs:documentation>The compartment is designed to be used for access</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 				<xs:enumeration value="Miscellaneous">
 					<xs:annotation>
 						<xs:documentation>Storage of miscellaneous fluids, e.g.sewage</xs:documentation>
@@ -3850,16 +4102,56 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="cement"/>
-				<xs:enumeration value="coal"/>
-				<xs:enumeration value="fish"/>
-				<xs:enumeration value="general"/>
-				<xs:enumeration value="grain"/>
-				<xs:enumeration value="mud"/>
-				<xs:enumeration value="ore"/>
-				<xs:enumeration value="sugar"/>
-				<xs:enumeration value="timber"/>
-				<xs:enumeration value="unspecified"/>
+				<xs:enumeration value="cement">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is cement</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="coal">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is coal</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="fish">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is fish</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="general">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is of ageneral,non-specific type</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="grain">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is grain</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="mud">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is mud</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ore">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is ore</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="sugar">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is sugar</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="timber">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is timber</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="unspecified">
+					<xs:annotation>
+						<xs:documentation>The bulk cargo is of an unspecified type</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -3869,16 +4161,56 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="aircraft"/>
-				<xs:enumeration value="boat"/>
-				<xs:enumeration value="cable"/>
-				<xs:enumeration value="container"/>
-				<xs:enumeration value="drums"/>
-				<xs:enumeration value="livestock"/>
-				<xs:enumeration value="pallet"/>
-				<xs:enumeration value="trailer"/>
-				<xs:enumeration value="vehicle"/>
-				<xs:enumeration value="unspecified"/>
+				<xs:enumeration value="aircraft">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is aircraft</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="boat">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is boat</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="cable">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is cable</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="container">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is container</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="drums">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is drums</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="livestock">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is livestock</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="pallet">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is pallet</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="trailer">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is tariler</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="vehicle">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is vehicle</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="unspecified">
+					<xs:annotation>
+						<xs:documentation>The unit cargo is of unspecified type</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -3888,30 +4220,126 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="alcohol"/>
-				<xs:enumeration value="ammonia"/>
-				<xs:enumeration value="asphalt"/>
-				<xs:enumeration value="aviation oil"/>
-				<xs:enumeration value="caustic soda"/>
-				<xs:enumeration value="cement"/>
-				<xs:enumeration value="chemichal"/>
-				<xs:enumeration value="crude oil"/>
-				<xs:enumeration value="edible oil"/>
-				<xs:enumeration value="fuel oil"/>
-				<xs:enumeration value="fresh water"/>
-				<xs:enumeration value="hydroclorid acid"/>
-				<xs:enumeration value="lubricationg oil"/>
-				<xs:enumeration value="methanol"/>
-				<xs:enumeration value="molasses"/>
-				<xs:enumeration value="product oil"/>
-				<xs:enumeration value="salt water"/>
-				<xs:enumeration value="sullage"/>
-				<xs:enumeration value="sludge"/>
-				<xs:enumeration value="sulphur"/>
-				<xs:enumeration value="vegetable oil"/>
-				<xs:enumeration value="water ballast"/>
-				<xs:enumeration value="wine"/>
-				<xs:enumeration value="unspecified"/>
+				<xs:enumeration value="alcohol">
+					<xs:annotation>
+						<xs:documentation>The cargo is alcohol</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ammonia">
+					<xs:annotation>
+						<xs:documentation>The cargo is ammonia</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="asphalt">
+					<xs:annotation>
+						<xs:documentation>The cargo is asphalt</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="aviation oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is aviation oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="caustic soda">
+					<xs:annotation>
+						<xs:documentation>The cargo is caustic soda</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="cement">
+					<xs:annotation>
+						<xs:documentation>The cargo is liquid cement</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="chemichal">
+					<xs:annotation>
+						<xs:documentation>The cargo is a liquid chemical</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="crude oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is crude oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="edible oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is deible oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="fuel oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is fuel oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="fresh water">
+					<xs:annotation>
+						<xs:documentation>The cargo is fresh water</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="hydroclorid acid">
+					<xs:annotation>
+						<xs:documentation>The cargo is hydroclorid acid</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="lubricationg oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is lubrication oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="methanol">
+					<xs:annotation>
+						<xs:documentation>The cargo is methanol</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="molasses">
+					<xs:annotation>
+						<xs:documentation>The cargo is molasses</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="product oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is product oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="salt water">
+					<xs:annotation>
+						<xs:documentation>The cargo is salt water</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="sullage">
+					<xs:annotation>
+						<xs:documentation>The cargo is sullage</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="sludge">
+					<xs:annotation>
+						<xs:documentation>The cargo is sludge</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="sulphur">
+					<xs:annotation>
+						<xs:documentation>The cargo is sulphur</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="vegetable oil">
+					<xs:annotation>
+						<xs:documentation>The cargo is vegetable oil</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="water ballast">
+					<xs:annotation>
+						<xs:documentation>The cargo is water ballast</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="wine">
+					<xs:annotation>
+						<xs:documentation>The cargo is wine</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="unspecified">
+					<xs:annotation>
+						<xs:documentation>The cargo is of an unspecified type</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -3921,34 +4349,146 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="acetaldehyde"/>
-				<xs:enumeration value="anhydrous ammonia"/>
-				<xs:enumeration value="avcat"/>
-				<xs:enumeration value="butane"/>
-				<xs:enumeration value="butadiene"/>
-				<xs:enumeration value="butylene"/>
-				<xs:enumeration value="chlorine"/>
-				<xs:enumeration value="diethyl ether"/>
-				<xs:enumeration value="dimethylamine"/>
-				<xs:enumeration value="ethylene"/>
-				<xs:enumeration value="ethyl chlorine"/>
-				<xs:enumeration value="ethylene oxide"/>
-				<xs:enumeration value="inert gas"/>
-				<xs:enumeration value="isoprene"/>
-				<xs:enumeration value="isopropylamine"/>
-				<xs:enumeration value="liquified natural gas"/>
-				<xs:enumeration value="liquified petroleum gas"/>
-				<xs:enumeration value="methane"/>
-				<xs:enumeration value="methyl chloride"/>
-				<xs:enumeration value="monoethylamine"/>
-				<xs:enumeration value="naptha"/>
-				<xs:enumeration value="propane"/>
-				<xs:enumeration value="propane butane mix"/>
-				<xs:enumeration value="propylene oxide"/>
-				<xs:enumeration value="propylene"/>
-				<xs:enumeration value="vinyl ethyl ether"/>
-				<xs:enumeration value="vinyl chloride monomer"/>
-				<xs:enumeration value="unspecified"/>
+				<xs:enumeration value="acetaldehyde">
+					<xs:annotation>
+						<xs:documentation>The cargo is acetaldehyde</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="anhydrous ammonia">
+					<xs:annotation>
+						<xs:documentation>The cargo is anhydrous ammonia</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="avcat">
+					<xs:annotation>
+						<xs:documentation>The cargo is avcat</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="butane">
+					<xs:annotation>
+						<xs:documentation>The cargo is butane</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="butadiene">
+					<xs:annotation>
+						<xs:documentation>The cargo is butadiene</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="butylene">
+					<xs:annotation>
+						<xs:documentation>The cargo is butylene</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="chlorine">
+					<xs:annotation>
+						<xs:documentation>The cargo is chlorine</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="diethyl ether">
+					<xs:annotation>
+						<xs:documentation>The cargo is diethyl ether</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="dimethylamine">
+					<xs:annotation>
+						<xs:documentation>The cargo is dimethylamine</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ethylene">
+					<xs:annotation>
+						<xs:documentation>The cargo is ethylene</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ethyl chlorine">
+					<xs:annotation>
+						<xs:documentation>The cargo is ethyl chlorine</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="ethylene oxide">
+					<xs:annotation>
+						<xs:documentation>The cargo is ethylene oxide</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="inert gas">
+					<xs:annotation>
+						<xs:documentation>The cargo is inert gas</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="isoprene">
+					<xs:annotation>
+						<xs:documentation>The cargo is isoprene</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="isopropylamine">
+					<xs:annotation>
+						<xs:documentation>The cargo is isopropylamine</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="liquified natural gas">
+					<xs:annotation>
+						<xs:documentation>The cargo is liquified natural gas</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="liquified petroleum gas">
+					<xs:annotation>
+						<xs:documentation>The cargo is liquified petroleum gas</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="methane">
+					<xs:annotation>
+						<xs:documentation>The cargo is methane</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="methyl chloride">
+					<xs:annotation>
+						<xs:documentation>The cargo is methyl chloride</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="monoethylamine">
+					<xs:annotation>
+						<xs:documentation>The cargo is monoethylamine</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="naptha">
+					<xs:annotation>
+						<xs:documentation>The cargo is naptha</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="propane">
+					<xs:annotation>
+						<xs:documentation>The cargo is propane</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="propane butane mix">
+					<xs:annotation>
+						<xs:documentation>The cargo is propane butane mix</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="propylene oxide">
+					<xs:annotation>
+						<xs:documentation>The cargo is propylene oxide</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="propylene">
+					<xs:annotation>
+						<xs:documentation>The cargo is propylene</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="vinyl ethyl ether">
+					<xs:annotation>
+						<xs:documentation>The cargo is vinyl ethyl ether</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="vinyl chloride monomer">
+					<xs:annotation>
+						<xs:documentation>The cargo is vinyl chloride monomer</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="unspecified">
+					<xs:annotation>
+						<xs:documentation>The cargo is of an unspecified type</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -4029,7 +4569,7 @@ gaseous state.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Cone3D" type="ocx:Cone3D_T" substitutionGroup="ocx:Surface">
 		<xs:annotation>
-			<xs:documentation>Cone surface defined by origin,  radius and position of cone tip</xs:documentation>
+			<xs:documentation>Cone surface defined by origin, radius and position of cone tip</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Cone3D_T">
@@ -4068,11 +4608,63 @@ gaseous state.</xs:documentation>
 			<xs:extension base="ocx:Surface_T">
 				<xs:sequence>
 					<xs:element ref="ocx:Origin"/>
-					<xs:element ref="ocx:Radius" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ocx:Radius"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ExtrudedSurface" type="ocx:ExtrudedSurface_T" substitutionGroup="ocx:Surface">
+		<xs:annotation>
+			<xs:documentation>An extruded surface defined by a base curve and a sweep path with extent.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ExtrudedSurface_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of an extruded surface defined by a base curve and a sweep path with extent.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:Surface_T">
+				<xs:sequence>
+					<xs:element name="BaseCurve" type="ocx:CompositeCurve3D_T">
+						<xs:annotation>
+							<xs:documentation>The base curve defining the extruded surface when it is swept</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:choice>
+						<xs:element ref="ocx:Sweep"/>
+						<xs:element ref="ocx:SweepCurve">
+							<xs:annotation>
+								<xs:documentation>The sweep direction and extent is defined by a general sweep curve</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Sweep" type="ocx:Sweep_T">
+		<xs:annotation>
+			<xs:documentation>Defeintion of the sweep extent  by a direction and sweep  length.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Sweep_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of a sweep extent defined by a direction and length</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="ocx:Vector3D">
+				<xs:annotation>
+					<xs:documentation>The sweep direction given by a Unit vector of length 1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:Length">
+				<xs:annotation>
+					<xs:documentation>The extent of the sweep</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SweepCurve" type="ocx:CompositeCurve3D_T"/>
 	<xs:element name="NURBSSurface" type="ocx:NURBSSurface_T" substitutionGroup="ocx:Surface">
 		<xs:annotation>
 			<xs:documentation>Non-uniform rational basis surface definition defined by a net (grid) of polynomial basis functions  in U and V direction.</xs:documentation>
@@ -4193,13 +4785,17 @@ gaseous state.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:Length" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="is2D" type="xs:boolean" default="false"/>
+				<xs:attribute name="is2D" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Set to True if the Curve3D is given in 2D space</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="PolyLine3D" type="ocx:PolyLine3D_T" substitutionGroup="ocx:Curve3D">
 		<xs:annotation>
-			<xs:documentation>A list of 3D points defining a list of linear segments. Repeat the first position at the end to form a closed contour.</xs:documentation>
+			<xs:documentation>A list of 3D points defining a sequence of linear segments. Repeat the first position at the end of the last line segment to form a closed contour.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="PolyLine3D_T">
@@ -4213,7 +4809,7 @@ gaseous state.</xs:documentation>
 				</xs:sequence>
 				<xs:attribute name="isClosed" type="xs:boolean">
 					<xs:annotation>
-						<xs:documentation>If set to true, the LinString3D forms a closed contour</xs:documentation>
+						<xs:documentation>If set to true, the PolyLine3D forms a closed contour. The default is false</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -4273,11 +4869,19 @@ gaseous state.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Curve3D_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Diameter"/>
-					<xs:element ref="ocx:Center"/>
+					<xs:element ref="ocx:Diameter">
+						<xs:annotation>
+							<xs:documentation>The circle diameter</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:Center">
+						<xs:annotation>
+							<xs:documentation>The center of the circle</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="ocx:Normal">
 						<xs:annotation>
-							<xs:documentation>Normal vector of the plane defined by the circle</xs:documentation>
+							<xs:documentation>The normal vector of the    the circle plane</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -4315,7 +4919,7 @@ gaseous state.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:Center">
 						<xs:annotation>
-							<xs:documentation>Origin of the ellipse</xs:documentation>
+							<xs:documentation>The center of the ellipse</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:MajorDiameter"/>
@@ -4402,7 +5006,7 @@ gaseous state.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="FreeEdgeCurve3D" type="ocx:FreeEdgeCurve3D_T">
 		<xs:annotation>
-			<xs:documentation>Collection of non-closed Curve3D types which are used to represent a free edge of a panel or plate in shipbuilding</xs:documentation>
+			<xs:documentation>A single Curve3D or a collection of continuous non-closed Curve3D types which are used to represent a free edge of a panel or plate in shipbuilding.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="FreeEdgeCurve3D_T">
@@ -4434,6 +5038,12 @@ gaseous state.</xs:documentation>
 			<xs:documentation>Properties of the basis functions in surface V direction</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:complexType name="NURBSProperties_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of a class defining the properties of the NURBS curve</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="ocx:nurbsAttributes"/>
+	</xs:complexType>
 	<xs:element name="V_NURBSproperties" type="ocx:NURBSProperties_T">
 		<xs:annotation>
 			<xs:documentation>Properties of the basis functions in surface V direction</xs:documentation>
@@ -4444,22 +5054,9 @@ gaseous state.</xs:documentation>
 			<xs:documentation>Properties of the basis functions in surface U direction</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:complexType name="NURBSProperties_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of a class defining the properties of the NURBS curve</xs:documentation>
-		</xs:annotation>
-		<xs:attributeGroup ref="ocx:nurbsAttributes"/>
-	</xs:complexType>
-	<xs:complexType name="KnotVector_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of the NURBS knot vector</xs:documentation>
-		</xs:annotation>
-		<xs:attribute name="value" type="ocx:doubleListType" use="required"/>
-	</xs:complexType>
 	<xs:element name="KnotVector">
 		<xs:annotation>
-			<xs:documentation>The knot-vector is a list of  size
-m=+n-1 knots where p is the polynomial basis degree and n is the number of control points. The knot vector consists of a non-decreasing sequence of values. Knot multiplicities can be included. A knot multiplicity means that a knot value can be repeated up to p+1 times.</xs:documentation>
+			<xs:documentation>The knot-vector is a list of  size m=+n-1 knots where p is the polynomial basis degree and n is the number of control points. The knot vector consists of a non-decreasing sequence of values. Knot multiplicities can be included. A knot multiplicity means that a knot value can be repeated up to p+1 times.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -4467,6 +5064,16 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="KnotVector_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of the NURBS knot vector</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" type="ocx:doubleListType" use="required">
+			<xs:annotation>
+				<xs:documentation>The list of knots separated by  white space. Knots must pe provided in increasing order.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
 	<xs:element name="UknotVector" type="ocx:KnotVector_T">
 		<xs:annotation>
 			<xs:documentation>The knot-vector in U direction is a list of  size 
@@ -4534,52 +5141,20 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				<xs:documentation>numKnots: m=(p+n-1) numbers, where p is the polynomial basis degree and n is the number of control points</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="form" type="ocx:curveForm_enum" use="optional" default="Open"/>
-		<xs:attribute name="scope" type="ocx:curveScope_enum" use="optional">
+		<xs:attribute name="form" type="ocx:curveForm_enum" use="optional" default="Open">
 			<xs:annotation>
-				<xs:documentation>The default is polynomial basis functions.</xs:documentation>
+				<xs:documentation>The NURBS curve form (Open, Closed, or Periodic)</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="isRational" type="xs:boolean" use="optional" default="false">
 			<xs:annotation>
-				<xs:documentation>The default is non-rational basis functions. To define conical curves (circle, ellipse ..) set rational=true</xs:documentation>
+				<xs:documentation>The default is non-rational basis functions (isRational=false). Rational refers to the underlying mathematical representation. This property allows NURBS to represent exact conics (such as parabolic curves, circles, and ellipses) in addition to free-form curves. To define conical curve types set isRational=true</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:attributeGroup>
-	<xs:simpleType name="BSplineCurveForm">
-		<xs:annotation>
-			<xs:documentation>The most common B-spline curves</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="polyline_form"/>
-			<xs:enumeration value="circular_arc"/>
-			<xs:enumeration value="elliptic_arc"/>
-			<xs:enumeration value="parabolic_arc"/>
-			<xs:enumeration value="hyperbolic_arc"/>
-			<xs:enumeration value="unspecified"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="BSplineSurfaceForm">
-		<xs:annotation>
-			<xs:documentation>The most common B-spline surface types</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="plane_surf"/>
-			<xs:enumeration value="cylindrical_surf"/>
-			<xs:enumeration value="conical_surf"/>
-			<xs:enumeration value="spherical_surf"/>
-			<xs:enumeration value="toroidal_surf"/>
-			<xs:enumeration value="surf_of_revolution"/>
-			<xs:enumeration value="ruled_surf"/>
-			<xs:enumeration value="generalised_cone"/>
-			<xs:enumeration value="quadric_surf"/>
-			<xs:enumeration value="surf_of_linear_extrusion"/>
-			<xs:enumeration value="unspecified"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:attribute name="numCtrlPts" type="xs:long">
 		<xs:annotation>
-			<xs:documentation>Number of control points on the NURBS curve  U or V direction</xs:documentation>
+			<xs:documentation>Number of control points on the NURBS curve in U or V direction</xs:documentation>
 		</xs:annotation>
 	</xs:attribute>
 	<xs:attribute name="numKnots" type="xs:long">
@@ -4592,41 +5167,26 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>Enumerator of NURBS curve forms</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Unknown"/>
-			<xs:enumeration value="Open"/>
-			<xs:enumeration value="Closed"/>
-			<xs:enumeration value="Closed_with_Tangent"/>
-			<xs:enumeration value="Closed_with_Curvature"/>
-			<xs:enumeration value="Closed_with_Torsion"/>
-			<xs:enumeration value="Closed_Periodic"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="curveType_enum">
-		<xs:annotation>
-			<xs:documentation>Enumerator of NURBS curve types</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Point"/>
-			<xs:enumeration value="Line"/>
-			<xs:enumeration value="Arc"/>
-			<xs:enumeration value="Ellipse"/>
-			<xs:enumeration value="LineString"/>
-			<xs:enumeration value="ComplexString"/>
-			<xs:enumeration value="BspCurve"/>
-			<xs:enumeration value="Curve"/>
-			<xs:enumeration value="TypedCurve"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="curveScope_enum">
-		<xs:annotation>
-			<xs:documentation>Enumerator of NURBS curve scopes</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Unknown"/>
-			<xs:enumeration value="Planar"/>
-			<xs:enumeration value="Colinear"/>
-			<xs:enumeration value="Degenerate"/>
-			<xs:enumeration value="NonPlanar"/>
+			<xs:enumeration value="Unknown">
+				<xs:annotation>
+					<xs:documentation>An unknown curve form</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Open">
+				<xs:annotation>
+					<xs:documentation>An open curve form</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Closed">
+				<xs:annotation>
+					<xs:documentation>A closed curve form with C0 continuity</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Periodic">
+				<xs:annotation>
+					<xs:documentation>A closed curve form wit C1 continuity</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="Line3DList" type="ocx:Point3DList_T">
@@ -4662,8 +5222,8 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:FrameTables"/>
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
+					<xs:element ref="ocx:FrameTables"/>
 				</xs:sequence>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
@@ -4678,49 +5238,55 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>To specify a Local (Orthogonal) Axis System Origin and two of the local X,Y,Z axis need to be specified. When used to specify a Plane the XY (UV) plane is considered. Optional if the coordinate system is referring to the global coordinate frame.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="RefPlaneGroup" type="ocx:RefPlaneGroup_T">
-		<xs:annotation>
-			<xs:documentation>Multiple groups are allowed to define Frames of unequal spacing.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="RefPlaneGroup_T">
-		<xs:annotation>
-			<xs:documentation>Frame table definition</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="ocx:Start" minOccurs="0"/>
-			<xs:element ref="ocx:Spacing" minOccurs="0"/>
-		</xs:sequence>
-		<xs:attribute ref="ocx:Count" use="required"/>
-		<xs:attribute ref="ocx:SPlaneID" use="optional"/>
-		<xs:attribute ref="ocx:EPlaneID" use="optional"/>
-	</xs:complexType>
 	<xs:complexType name="RefPlanes_T">
 		<xs:annotation>
-			<xs:documentation>Frame table definition</xs:documentation>
+			<xs:documentation>Frame table position definition</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:ReferencePlane_T">
 				<xs:sequence>
 					<xs:element ref="ocx:RefPlane" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:RefPlaneGroup" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:Origin" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The origin of a local or global coordinate system. If not given, it is assumed thet the origin of the reference system at the global origin (0,0,0)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
+				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
+					<xs:annotation>
+						<xs:documentation>True if this is the main reference system definition</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="XRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
+	<xs:element name="XRefPlanes" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>Frame table definition</xs:documentation>
+			<xs:documentation>The definition of the frame table positions in the Vessel X-direction. The authoring application must export ALL the RefPlane positions.  If more than one XRefPlanes definition is exported, the authoring application shall identify the main reference system by setting the isMainSytem=true. It is also possible to give a reversed frame system (positions are given Fore to Aft). This is specified by setting isReversed=true.</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:RefPlanes_T">
+					<xs:sequence>
+						<xs:element ref="ocx:DistanceToAP" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="isReveresed">
+						<xs:annotation>
+							<xs:documentation>For most vessels the X reference prositions are given aft to forward which is the default. Set isReversed=true if  the frame positions are given from fore to aft  (noramally this is the case for naval vessels).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<xs:element name="YRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>Frame table definition</xs:documentation>
+			<xs:documentation>The definition of a reference grid in the Vessel Y-direction. The authoring application must export ALL the RefPlane positions.  If more than one YRefPlanes definition is exported, the authoring application shall identify the main reference system by setting the isMainSytem=true.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ZRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>Frame table definition</xs:documentation>
+			<xs:documentation>The definition of a reference grid in the Vessel Z-direction. The authoring application must export ALL the RefPlane positions.  If more than one ZRefPlanes definition is exported, the authoring application shall identify the main reference system by setting the sMainSytem=true.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CylindricalAxes" type="ocx:CylindricalAxes_T">
@@ -4733,7 +5299,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>Cylindrical reference system</xs:documentation>
 		</xs:annotation>
 		<xs:sequence maxOccurs="unbounded">
-			<xs:element ref="ocx:Cyl_Group" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:RadialCylinder" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -4749,7 +5314,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
-					<xs:element name="Radius" type="ocx:Quantity_T"/>
+					<xs:element ref="ocx:Radius"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -4761,7 +5326,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:element>
 	<xs:element name="Transformation" type="ocx:Transformation_T">
 		<xs:annotation>
-			<xs:documentation>A concept specifying a local (orthogonal) axis system. Origin and two of the local X,Y,Z axis need to be specified. When used to specify a Plane the XY (UV) plane is considered. The third axis is found by cross product of the primary and secondary axis</xs:documentation>
+			<xs:documentation>A concept specifying a local (orthogonal) axis system. The Origin and two of the local X,Y,Z axis have to be specified. When used to specify a Plane the XY (UV) plane is considered. The third axis is found by the cross product of the primary and secondary axis.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Transformation_T">
@@ -4920,10 +5485,26 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="NonTight"/>
-				<xs:enumeration value="WaterTight"/>
-				<xs:enumeration value="GasTight"/>
-				<xs:enumeration value="Undefined"/>
+				<xs:enumeration value="NonTight">
+					<xs:annotation>
+						<xs:documentation>The panel or plate in not water tight</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="WaterTight">
+					<xs:annotation>
+						<xs:documentation>The panel or plate in water tight</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="GasTight">
+					<xs:annotation>
+						<xs:documentation>The panel or plate in gas tight, but not water tight</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Undefined">
+					<xs:annotation>
+						<xs:documentation>The panel or plate has no tightness defined</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -5480,7 +6061,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:HeavyBallastDraught" minOccurs="0"/>
 			<xs:element ref="ocx:SlammingDraughtEmptyFP" minOccurs="0"/>
 			<xs:element ref="ocx:SlammingDraughtFullFP" minOccurs="0"/>
-			<xs:element ref="ocx:NumberDecksAbove" minOccurs="0"/>
 			<xs:element ref="ocx:LengthOfWaterline" minOccurs="0"/>
 			<xs:element ref="ocx:FreeboardDeckHeight" minOccurs="0"/>
 			<xs:element ref="ocx:AP_Pos" minOccurs="0"/>
@@ -5508,6 +6088,11 @@ Type 'A' ship is one which:
 — is designed to carry only liquid cargoes in bulk
 — has a high integrity of the exposed deck with only small access openings to cargo compartments, closed by watertight gasket covers of steel or equivalent material
 — has low permeability of loaded cargo compartments. All ships which are not Type 'A' ships shall be considered as Type 'B' ships.						</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="numberOfDecksAbove" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Number of decks above 0.7 D from baseline</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -5631,12 +6216,12 @@ Type 'A' ship is one which:
 				<xs:sequence>
 					<xs:element ref="ocx:Height">
 						<xs:annotation>
-							<xs:documentation>Height of hole</xs:documentation>
+							<xs:documentation>The height of the hole</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Width">
 						<xs:annotation>
-							<xs:documentation>Width of hole</xs:documentation>
+							<xs:documentation>The width of the hole</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -5680,12 +6265,12 @@ Type 'A' ship is one which:
 				<xs:sequence>
 					<xs:element ref="ocx:Height">
 						<xs:annotation>
-							<xs:documentation>Height of hole</xs:documentation>
+							<xs:documentation>The height of the hole</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Width">
 						<xs:annotation>
-							<xs:documentation>Width of hole</xs:documentation>
+							<xs:documentation>The width of the hole</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:FilletRadius" minOccurs="0">
@@ -5711,17 +6296,17 @@ Type 'A' ship is one which:
 				<xs:sequence>
 					<xs:element ref="ocx:Height">
 						<xs:annotation>
-							<xs:documentation>Height of hole</xs:documentation>
+							<xs:documentation>The height of the hole</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Width">
 						<xs:annotation>
-							<xs:documentation>Width of hole</xs:documentation>
+							<xs:documentation>The width of the hole</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Radius">
 						<xs:annotation>
-							<xs:documentation>Radius of Mickey Mouse ear</xs:documentation>
+							<xs:documentation>The radius of the Mickey Mouse ear</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:Displacement" minOccurs="0"/>
@@ -5732,33 +6317,112 @@ Type 'A' ship is one which:
 	<!--********** ELEMENTS ***************-->
 	<xs:attribute name="freeboardType" default="A">
 		<xs:annotation>
-			<xs:documentation>Enumerated free-board types according to the Rules</xs:documentation>
+			<xs:documentation>For the purposes of freeboard computation ships shall be divided into Type "A" and Type "B"ships according to the SOLAS Load Line Convention of 1966</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="A"/>
-				<xs:enumeration value="B"/>
-				<xs:enumeration value="B60"/>
-				<xs:enumeration value="B100"/>
+				<xs:enumeration value="A">
+					<xs:annotation>
+						<xs:documentation>A type "A" ship is one which is designed to carry only liquid cargoes in bulk, and in which cargo tanks have only small access openings closed by watertight gasketed covers of steel or equivalent material.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="B">
+					<xs:annotation>
+						<xs:documentation>All ships which do not come within the provisions regarding Type "A" ships shall be considered as Type "B" ships.
+				</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	<xs:attribute name="grade" type="xs:string" default="VL32">
+	<xs:attribute name="grade">
 		<xs:annotation>
-			<xs:documentation>Material grade attribute</xs:documentation>
-			<xs:documentation>Typical grades for rolled steel used in ship construction</xs:documentation>
+			<xs:documentation> Weldable normal and higher strength hull structural steels - Ref. IACS UR W11</xs:documentation>
 		</xs:annotation>
-		<!--		<xs:simpleType>
+		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="VLNS"/>
-				<xs:enumeration value="VL32"/>
-				<xs:enumeration value="VL36"/>
-				<xs:enumeration value="VL40"/>
-				<xs:enumeration value="VL47"/>
-				<xs:pattern value="([a-zA-Z0-9])*"/>
+				<xs:enumeration value="A">
+					<xs:annotation>
+						<xs:documentation>Normal strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="B">
+					<xs:annotation>
+						<xs:documentation>Normal strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="C">
+					<xs:annotation>
+						<xs:documentation>Normal strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="D">
+					<xs:annotation>
+						<xs:documentation>Normal strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="A32">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="D32">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="E32">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="F32">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="A36">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="D36">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="E36">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="F36">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="A40">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="D40">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="E40">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="F40">
+					<xs:annotation>
+						<xs:documentation>High strength steel. Ref. IACS UR W11</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
--->
 	</xs:attribute>
 	<xs:element name="Material" type="ocx:Material_T">
 		<xs:annotation>
@@ -5871,7 +6535,7 @@ Type 'A' ship is one which:
 	</xs:complexType>
 	<xs:element name="LBar" type="ocx:LBar_T">
 		<xs:annotation>
-			<xs:documentation>Angle bar, rolled or welded.</xs:documentation>
+			<xs:documentation>An angle bar, rolled or welded.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="LBar_T">
@@ -5911,7 +6575,7 @@ Type 'A' ship is one which:
 			<xs:element ref="ocx:FlangeThickness"/>
 			<xs:element ref="ocx:Overshoot">
 				<xs:annotation>
-					<xs:documentation>Overshoot of the web above the flange. Should be added to Height to get the total height. Type 36 in VIS74.</xs:documentation>
+					<xs:documentation>Overshoot of the web above the flange. Should be added to the Height to get the total height.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -6079,21 +6743,21 @@ Type 'A' ship is one which:
 	</xs:complexType>
 	<xs:element name="HexagonBar" type="ocx:HexagonBar_T">
 		<xs:annotation>
-			<xs:documentation>Hexagon bar</xs:documentation>
+			<xs:documentation>A symmetrical hexagon shaped bar</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="HexagonBar_T">
 		<xs:sequence>
 			<xs:element ref="ocx:Height">
 				<xs:annotation>
-					<xs:documentation>Profile height, measured along the web.</xs:documentation>
+					<xs:documentation>The profile height </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="OctagonBar" type="ocx:OctagonBar_T">
 		<xs:annotation>
-			<xs:documentation>Hexagon bar</xs:documentation>
+			<xs:documentation>An octagon shaped bar</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="OctagonBar_T">
@@ -6114,7 +6778,7 @@ Type 'A' ship is one which:
 		<xs:sequence>
 			<xs:element ref="ocx:Diameter">
 				<xs:annotation>
-					<xs:documentation>Tube diameter</xs:documentation>
+					<xs:documentation>The tube diameter</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:Thickness"/>
@@ -6242,11 +6906,7 @@ Type 'A' ship is one which:
 			</xs:element>
 			<xs:element ref="ocx:ClassNotation" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="newbuildingSociety" type="ocx:classificationSociety" use="required">
-			<xs:annotation>
-				<xs:documentation>The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during construction.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
+		<xs:attribute ref="ocx:newbuildingSociety" use="required"/>
 		<xs:attribute name="identification" type="xs:string" use="required">
 			<xs:annotation>
 				<xs:documentation>The classification society specific identifier to a ship, typically the design ID.</xs:documentation>
@@ -6258,11 +6918,7 @@ Type 'A' ship is one which:
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="society" type="ocx:classificationSociety">
-			<xs:annotation>
-				<xs:documentation>The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during current operation.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
+		<xs:attribute ref="ocx:society"/>
 		<xs:attribute name="societyName" type="xs:string">
 			<xs:annotation>
 				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @society = 'OTHER'				</xs:documentation>
@@ -6347,7 +7003,7 @@ Type 'A' ship is one which:
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="ABS">
 				<xs:annotation>
-					<xs:documentation>Bureau of Shipping</xs:documentation>
+					<xs:documentation>American Bureau of Shipping</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="BK">
@@ -6502,21 +7158,6 @@ Type 'A' ship is one which:
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:attribute name="SPlaneID" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>To be removed?</xs:documentation>
-		</xs:annotation>
-	</xs:attribute>
-	<xs:attribute name="EPlaneID" type="xs:string">
-		<xs:annotation>
-			<xs:documentation>To be removed?</xs:documentation>
-		</xs:annotation>
-	</xs:attribute>
-	<xs:attribute name="Count" type="xs:long">
-		<xs:annotation>
-			<xs:documentation>To be removed?</xs:documentation>
-		</xs:annotation>
-	</xs:attribute>
 	<!-- ========================================================================================  -->
 	<!-- unitsML  use  by OCX-->
 	<!-- ========================================================================================  -->
@@ -6537,12 +7178,12 @@ Type 'A' ship is one which:
 		</xs:annotation>
 		<xs:attribute name="numericvalue" type="xs:double" use="required">
 			<xs:annotation>
-				<xs:documentation>Numerical value of the quantity</xs:documentation>
+				<xs:documentation>The numerical value of the quantity</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="unit" type="xs:IDREF" use="required">
 			<xs:annotation>
-				<xs:documentation>Reference to the unitsML reference unit</xs:documentation>
+				<xs:documentation>The reference to the unitsML reference unit</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -6558,12 +7199,12 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="TonnageData" type="ocx:TonnageData_T">
 		<xs:annotation>
-			<xs:documentation>Vessel tonnage information</xs:documentation>
+			<xs:documentation>The Vessel tonnage information</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="StatutoryData" type="ocx:StatutoryData_T">
 		<xs:annotation>
-			<xs:documentation>Vessel statutory information</xs:documentation>
+			<xs:documentation>The vessel statutory information</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ClassificationData" type="ocx:ClassData_T">
@@ -6577,8 +7218,16 @@ Type 'A' ship is one which:
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="Near side"/>
-				<xs:enumeration value="Far side"/>
+				<xs:enumeration value="Near side">
+					<xs:annotation>
+						<xs:documentation>The bracket is at the near side of a penetration</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Far side">
+					<xs:annotation>
+						<xs:documentation>The bracket is at the far side of a penetration</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -6656,26 +7305,18 @@ Type 'A' ship is one which:
 			<xs:documentation>Type definition of FrameTables definition</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element ref="ocx:XRefPlanes" minOccurs="0">
+			<xs:element ref="ocx:XRefPlanes" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Frame table positions along X axis. Used to limit geometry and define topology</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element ref="ocx:YRefPlanes" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Frame table positions along Y axis. Used to limit geometry and define topology</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element ref="ocx:ZRefPlanes" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Frame table positions along Z axis. Used to limit geometry and define topology</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="FrameTables" type="ocx:FrameTables_T">
 		<xs:annotation>
-			<xs:documentation>Reference Frame table system</xs:documentation>
+			<xs:documentation>The Vessel reference coordinate system organised as a frame table system. The authoring system must export the complete frame table definition for ALL X, Y and Z positions. The FrameTable may define several X, Y, or Z systems. As a minimum, each main system must be exported. If more than one system is exported, the authoring system must set the isMainSystem=true for the main reference system in each direction. </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ComposedOf_T">
@@ -6722,7 +7363,7 @@ Type 'A' ship is one which:
 	<!-- ========================================================================================  -->
 	<xs:element name="Radius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius of parent element</xs:documentation>
+			<xs:documentation>The radius of the parent element</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Area" type="ocx:Quantity_T">
@@ -6732,37 +7373,37 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="ArmLengthU" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Bracket length</xs:documentation>
+			<xs:documentation>The length of the bracket in local U-direction</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ArmLengthV" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Bracket height</xs:documentation>
+			<xs:documentation>The length of the bracket in local V-direction</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Unose" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Bracket nose depth at U end</xs:documentation>
+			<xs:documentation>The bracket nose depth at U end</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Vnose" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Bracket nose depth at V end</xs:documentation>
+			<xs:documentation>The bracket nose depth at V end</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FreeEdgeRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius of bracket free edge. Assumed to be straight if radius is not provided.</xs:documentation>
+			<xs:documentation>The edge radius at the bracket free edge. Assumed to be straight if no radius value is provided.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CopeHeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Height of cope</xs:documentation>
+			<xs:documentation>The height of the cope</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CopeRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Cope radius</xs:documentation>
+			<xs:documentation>The cope or heel radius</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FlangeCutBackAngle" type="ocx:Quantity_T">
@@ -6792,7 +7433,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="CopeLength" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Lenght of cope</xs:documentation>
+			<xs:documentation>The length of the cope</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="DryWeight" type="ocx:Quantity_T">
@@ -6817,17 +7458,17 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="Width" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Width of parent element</xs:documentation>
+			<xs:documentation>The width of the parent element</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Height" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Height of parent element</xs:documentation>
+			<xs:documentation>The height of the parent element</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Thickness" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Thickness of parent element</xs:documentation>
+			<xs:documentation>The thickness of the parent element.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="DeadWeight" type="ocx:Quantity_T">
@@ -6837,7 +7478,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="WebThickness" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Thickness of the web</xs:documentation>
+			<xs:documentation>The thickness of the web</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FlangeWidth" type="ocx:Quantity_T">
@@ -6852,22 +7493,22 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="BulbOuterRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius of the bulb.</xs:documentation>
+			<xs:documentation>The outer radius of the bulb.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbInnerRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius of the bulb at web.</xs:documentation>
+			<xs:documentation>The inner radius of the bulb.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbTopRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius of the top of the bulb.</xs:documentation>
+			<xs:documentation>The radius at the top of the bulb.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbBottomRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius of the bottom of the web</xs:documentation>
+			<xs:documentation>The radius at the bottom of the web</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FilletRadius" type="ocx:Quantity_T">
@@ -6887,7 +7528,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="Lpp" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Length of vessel between Perpendiculars, Lpp</xs:documentation>
+			<xs:documentation>The length of the Vessel between perpendiculars, Lpp</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="RuleLength" type="ocx:Quantity_T">
@@ -6907,12 +7548,12 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="MouldedBreadth" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Moulded Breadth, B</xs:documentation>
+			<xs:documentation>The moulded breadth of the Vessel, B</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="MouldedDepth" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Moulded Depth, D</xs:documentation>
+			<xs:documentation>The moulded depth of the Vessel, D</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ScantlingDraught" type="ocx:Quantity_T">
@@ -6927,42 +7568,37 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="FreeboardLength" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Free-board length Lll</xs:documentation>
+			<xs:documentation>The free-board length of the Vessel, Lll</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="NormalBallastDraught" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Draught at normal ballast, Tnb.</xs:documentation>
+			<xs:documentation>The Vessel draught at normal ballast, Tnb.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="HeavyBallastDraught" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Draught at heavy ballast, Thb.</xs:documentation>
+			<xs:documentation>The Vessel draught at heavy ballast, Thb.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="SlammingDraughtEmptyFP" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Design slamming draught at FP (all ballast tanks empty), Tf-e</xs:documentation>
+			<xs:documentation>The design slamming draught at FP (all ballast tanks empty), Tf-e</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="SlammingDraughtFullFP" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Design slamming draught at FP (all ballast tanks full), Tf-f</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="NumberDecksAbove" type="xs:positiveInteger" default="1">
-		<xs:annotation>
-			<xs:documentation>Number of decks above 0.7 D from baseline</xs:documentation>
+			<xs:documentation>The Vessel draught at FP used when calcualtion design slamming loads (all ballast tanks full), Tf-f</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="LengthOfWaterline" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Length of waterline at T, Lwl</xs:documentation>
+			<xs:documentation>The length of the waterline at T, Lwl</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FreeboardDeckHeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Height of free-board deck, D1</xs:documentation>
+			<xs:documentation>The height of free-board deck, D1</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="AP_Pos" type="ocx:Quantity_T">
@@ -6987,7 +7623,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="WaterPlaneArea" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Area of water-plane forward 0.2 L at scantling draught Td</xs:documentation>
+			<xs:documentation>The area of water-plane forward 0.2 L at scantling draught Td</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ZPosDeckline" type="ocx:Quantity_T">
@@ -7002,12 +7638,12 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="MajorDiameter" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Ellipse major diameter</xs:documentation>
+			<xs:documentation>The ellipse major diameter</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="MinorDiameter" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Ellipse minor diameter</xs:documentation>
+			<xs:documentation>The ellipse minor diameter</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Positions">
@@ -7026,7 +7662,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="StartPoint" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>Start position of the segment</xs:documentation>
+			<xs:documentation>The start position of the segment</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="IntermediatePoint" type="ocx:Point3D_T">
@@ -7036,7 +7672,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="EndPoint" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>End position of the segment</xs:documentation>
+			<xs:documentation>The end position of the segment</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Offset" type="ocx:Quantity_T">
@@ -7046,7 +7682,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="FlangeThickness" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Thickness of the flange</xs:documentation>
+			<xs:documentation>The thickness of the flange</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="NeutralAxisU" type="ocx:Vector3D_T">
@@ -7081,37 +7717,37 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="Displacement" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Radius displacement outside the original corner of the rectangle. If left out (or set to zero), the radius passes through the original corner of the rectangle.</xs:documentation>
+			<xs:documentation>The Radius displacement outside the original corner of the rectangle. If left out (or set to zero), the radius passes through the original corner of the rectangle.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Density" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material density</xs:documentation>
+			<xs:documentation>The material density</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="YoungsModulus" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material elasticity modulus</xs:documentation>
+			<xs:documentation>The material elasticity modulus</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="PoissonRatio" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material Poisson ration</xs:documentation>
+			<xs:documentation>The material Poisson ration</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="YieldStress" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material yield stress</xs:documentation>
+			<xs:documentation>The material yield stress</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="UltimateStress" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material ultimate strsss</xs:documentation>
+			<xs:documentation>The material ultimate strsss</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ThermalExpansionCoefficient" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Material thermal expansion coefficient</xs:documentation>
+			<xs:documentation>The material thermal expansion coefficient</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="OffsetU" type="ocx:Quantity_T">
@@ -7136,7 +7772,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="Position" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>Position of the inclination of the cross section</xs:documentation>
+			<xs:documentation>The position of the inclination of the cross section</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="DistanceAbove" type="ocx:Quantity_T">
@@ -7156,17 +7792,12 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="Overshoot" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Overshoot of the flange beyond the web. Included in Width. </xs:documentation>
+			<xs:documentation>The overshoot of the flange beyond the web. Shall be included in the Width. </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="UDirection" type="ocx:Vector3D_T">
 		<xs:annotation>
 			<xs:documentation>Local U in a local coordinate system</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="Cyl_Group" type="ocx:RefPlaneGroup_T">
-		<xs:annotation>
-			<xs:documentation>The Cyl_Group is used to define a refernce grid in a cylindrical coordinate system.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Start" type="ocx:Quantity_T">
@@ -7181,7 +7812,7 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="ChildRef" type="ocx:OcxItemPtr_T">
 		<xs:annotation>
-			<xs:documentation>Reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
+			<xs:documentation>The reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Reference" type="ocx:Reference_T">
@@ -7208,5 +7839,39 @@ Type 'A' ship is one which:
 		<xs:annotation>
 			<xs:documentation>Optional arbitrary inner section shape for hollow sections.</xs:documentation>
 		</xs:annotation>
+	</xs:element>
+	<xs:attribute name="newbuildingSociety" type="ocx:classificationSociety">
+		<xs:annotation>
+			<xs:documentation>The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during construction.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="society" type="ocx:classificationSociety">
+		<xs:annotation>
+			<xs:documentation>The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during current operation.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:element name="DistanceToAP" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>If #0/FR0 (FR0 has  per definition ReferenceLocation=0) is not located at AP, give the offset here (positive or negative distance)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BoundingBox">
+		<xs:annotation>
+			<xs:documentation>The definition of a bounding box in space using two positions.The bounding box defines the parent extent.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Min" type="ocx:Point3D_T">
+					<xs:annotation>
+						<xs:documentation>The min position of the bounding box diagonal.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Max" type="ocx:Point3D_T">
+					<xs:annotation>
+						<xs:documentation>The max position of the bounding box diagonal</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 </xs:schema>

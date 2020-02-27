@@ -2954,9 +2954,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:sequence>
+				<xs:choice>
+					<xs:element ref="ocx:TraceLine"/>
 					<xs:element ref="ocx:Curve3D"/>
-				</xs:sequence>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2991,7 +2992,10 @@ information are derived.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
-					<xs:element ref="ocx:TraceLine"/>
+					<xs:choice>
+						<xs:element ref="ocx:TraceLine"/>
+						<xs:element ref="ocx:Curve3D"/>
+					</xs:choice>
 					<xs:element ref="ocx:Inclination" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:EndCutEnd1" minOccurs="0">
 						<xs:annotation>

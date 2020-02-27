@@ -2717,18 +2717,18 @@ information are derived.</xs:documentation>
 	</xs:attributeGroup>
 	<xs:attribute name="geometryFormat">
 		<xs:annotation>
-			<xs:documentation>Supported  external geometry files. (As per now, only .stp files are supported)</xs:documentation>
+			<xs:documentation>Supported  external geometry files. (As per now, only .stp files are supported).</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
 				<xs:enumeration value=".igs">
 					<xs:annotation>
-						<xs:documentation>IGES file representing one the detailed geometry of a structural part (Bracket, Stiffener, Pillar, Plate)</xs:documentation>
+						<xs:documentation>IGES file representing one the detailed geometry of a structural part (Bracket, Stiffener, Pillar, Plate).</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value=".jt">
 					<xs:annotation>
-						<xs:documentation>OpenJT file representing one the detailed geometry of a structural part (Bracket, Stiffener, Pillar, Plate)</xs:documentation>
+						<xs:documentation>OpenJT file representing one the detailed geometry of a structural part (Bracket, Stiffener, Pillar, Plate).</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value=".stp">
@@ -2955,7 +2955,7 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:TraceLine"/>
+					<xs:element ref="ocx:Curve3D"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -5606,7 +5606,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:enumeration>
 				<xs:enumeration value="DECK">
 					<xs:annotation>
-						<xs:documentation> "Deck Structure is the deck plating with stiffeners, girders and supporting pillars".</xs:documentation>
+						<xs:documentation>Deck Structure is the deck plating with stiffeners, girders and supporting pillars.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="DECK: Accommodation deck">

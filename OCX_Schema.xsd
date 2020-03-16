@@ -7,6 +7,30 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
+				<ocx:Description>
+				Added a root point Origin and two direction vectors (UDirection, VDirection) to the BracketParameters to remove abiguities in the mapping of penetration and end configuration types.
+			</ocx:Description>
+				<ocx:Reference element="BracketParameters" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
+				<ocx:Description>
+				Made LimitedBy on Plate a mandatory item as we need this information to correctly map plate limits.
+			</ocx:Description>
+				<ocx:Reference element="Plate" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-27" version="2.8.5">
+				<ocx:Description>
+				Introduced a ChoiceOf either TraceLine or Curve3D type for Stiffener due to backward compability with old model unit test for Nauticus import. This will not impact existing exports for vendors.
+			</ocx:Description>
+				<ocx:Reference element="Stiffener" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-02-27" version="2.8.5">
+				<ocx:Description>
+				Introduced a ChoiceOf either TraceLine or Curve3D type for Seam due to backward compability with old model unit test for Nauticus import. This will not impact existing exports for vendors.
+			</ocx:Description>
+				<ocx:Reference element="Seam" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
 				<ocx:Description>
 				Cleaned up the types inheriting from EntityRefBase and BoundedRef. Reference types referring an object without geometry shall inherit from EntityRefBase while reference types referring to objects with geometry shall inherit from BoundedRef.
@@ -3166,7 +3190,7 @@ information are derived.</xs:documentation>
 					</xs:element>
 					<xs:element ref="ocx:OuterContour"/>
 					<xs:element ref="ocx:UnboundedGeometry" minOccurs="0"/>
-					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
+					<xs:element ref="ocx:LimitedBy"/>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
@@ -3400,6 +3424,21 @@ information are derived.</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:ArmLengthU"/>
 			<xs:element ref="ocx:ArmLengthV"/>
+			<xs:element ref="ocx:UDirection">
+				<xs:annotation>
+					<xs:documentation>Local U deirection of the Bracket</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:VDirection">
+				<xs:annotation>
+					<xs:documentation>Local V direction of the Bracket.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:Origin">
+				<xs:annotation>
+					<xs:documentation>The origin or root point of the Bracket</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="ocx:Unose" minOccurs="0"/>
 			<xs:element ref="ocx:Vnose" minOccurs="0"/>
 			<xs:element ref="ocx:FreeEdgeRadius" minOccurs="0"/>
@@ -5344,7 +5383,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 					<xs:sequence>
 						<xs:element ref="ocx:DistanceToAP" minOccurs="0"/>
 					</xs:sequence>
-					<xs:attribute name="isReveresed">
+					<xs:attribute name="isReveresed" type="xs:boolean" default="false">
 						<xs:annotation>
 							<xs:documentation>For most vessels the X reference prositions are given aft to forward which is the default. Set isReversed=true if  the frame positions are given from fore to aft  (noramally this is the case for naval vessels).</xs:documentation>
 						</xs:annotation>
@@ -7883,7 +7922,12 @@ Type 'A' ship is one which:
 	</xs:element>
 	<xs:element name="UDirection" type="ocx:Vector3D_T">
 		<xs:annotation>
-			<xs:documentation>Local U in a local coordinate system.</xs:documentation>
+			<xs:documentation>Local U deirection in a local coordinate system.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VDirection" type="ocx:Vector3D_T">
+		<xs:annotation>
+			<xs:documentation>Local V direction in a local coordinate system.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Start" type="ocx:Quantity_T">

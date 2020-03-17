@@ -9,6 +9,12 @@
 		Copyright 2016 to current year.  All rights reserved.
 			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
 				<ocx:Description>
+				Changed the isReversed xs:type from string to boolean on XRefPlanes.
+			</ocx:Description>
+				<ocx:Reference element="XRefPlanes" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
+				<ocx:Description>
 				Added a root point Origin and two direction vectors (UDirection, VDirection) to the BracketParameters to remove abiguities in the mapping of penetration and end configuration types.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>

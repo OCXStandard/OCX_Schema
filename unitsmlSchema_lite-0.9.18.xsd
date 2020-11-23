@@ -5,7 +5,7 @@
     Version History: http://unitsml.nist.gov/Schema/schema_changes.txt
 -->
 <xsd:schema xmlns="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.9.18">
-	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation=UnitsMLSchema_lite-0.9.18.xsd"/>
 	<!--=== Root-Node of an UnitsML document ===-->
 	<xsd:element name="UnitsML" type="UnitsMLType">
 		<xsd:annotation>

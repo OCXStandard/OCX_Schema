@@ -7,6 +7,24 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
+				<ocx:Description>
+				Changed supertype of Cell from EntityBase to GeometryRepresentation
+			</ocx:Description>
+				<ocx:Reference element="Cell" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
+				<ocx:Description>
+				Removed assertion on EntityBase as this is not necessary when IdBase has a mandatory attribute "id.
+			</ocx:Description>
+				<ocx:Reference element="EntityBase" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
+				<ocx:Description>
+				Made attribute "id" mandatory on all elements inheriting form IdBase.
+			</ocx:Description>
+				<ocx:Reference element="IdBase" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
 				<ocx:Description>
 				Changed the isReversed xs:type from string to boolean on XRefPlanes.
@@ -2204,7 +2222,7 @@
 		<xs:annotation>
 			<xs:documentation>Abstract base type for all types which need to carry an ID.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="id" type="xs:ID">
+		<xs:attribute name="id" type="xs:ID" use="required">
 			<xs:annotation>
 				<xs:documentation>An identifier for an element unique within the scope of the XML file. Each id must be unique within a document. The attribute uses the standard XML 1.0 ID type as defined in the XML Schema specification. This attribute is required in many OCX XML elements and an application should generate them automatically.</xs:documentation>
 			</xs:annotation>
@@ -2237,6 +2255,7 @@
 			<xs:documentation>Contains a description of the component its parent represents. The description is stored as a string. You can use this element for whatever purposes you require. This element can be used inside many OCX XML elements but is optional.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:complexType name="Description_T"/>
 	<xs:element name="EntityBase" type="ocx:EntityBase_T" abstract="true" substitutionGroup="ocx:DescriptionBase">
 		<xs:annotation>
 			<xs:documentation>Abstract base element for all structural parts (Panel, Plate, Seam ...).</xs:documentation>
@@ -2254,7 +2273,6 @@ information are derived.</xs:documentation>
 						<xs:documentation>A globally Unique ID referring an entity in the sending application.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:assert test="(@id and not(@ocx:GUIDRef)) or (not(@lid) and @ocx:GUIDRef) or (@lid and @ocx:GUIDRef)"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2967,7 +2985,7 @@ information are derived.</xs:documentation>
 						<xs:element ref="ocx:Plate"/>
 						<xs:element ref="ocx:Stiffener"/>
 						<xs:element ref="ocx:Bracket"/>
-						<xs:element ref="ocx:Member"/>
+						<xs:element ref="ocx:Member" minOccurs="0"/>
 					</xs:choice>
 				</xs:sequence>
 			</xs:extension>
@@ -2985,8 +3003,8 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:choice>
-					<xs:element ref="ocx:TraceLine"/>
-					<xs:element ref="ocx:Curve3D"/>
+					<xs:element ref="ocx:TraceLine" minOccurs="0"/>
+					<xs:element ref="ocx:Curve3D" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
@@ -3024,7 +3042,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:SectionRef"/>
 					<xs:choice>
 						<xs:element ref="ocx:TraceLine"/>
-						<xs:element ref="ocx:Curve3D"/>
+						<xs:element ref="ocx:Curve3D" maxOccurs="unbounded"/>
 					</xs:choice>
 					<xs:element ref="ocx:Inclination" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:EndCutEnd1" minOccurs="0">
@@ -3090,9 +3108,9 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>The type definition of the stiffener TraceLine.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="ocx:Curve3D"/>
-		</xs:sequence>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="ocx:Curve3D" minOccurs="0"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:element name="Pillar" type="ocx:Pillar_T" substitutionGroup="ocx:Member">
 		<xs:annotation>
@@ -3932,7 +3950,7 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of the structural concept of a cell defining a part of a compartment (physical space).</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:EntityBase_T">
+			<xs:extension base="ocx:GeometryRepresentation_T">
 				<xs:sequence>
 					<xs:element ref="ocx:CellBoundary" maxOccurs="unbounded"/>
 				</xs:sequence>
@@ -4627,7 +4645,7 @@ gaseous state.</xs:documentation>
 			<xs:documentation>Type definition of a collection of surfaces.</xs:documentation>
 		</xs:annotation>
 		<xs:choice maxOccurs="unbounded">
-			<xs:element ref="ocx:Surface"/>
+			<xs:element ref="ocx:Surface" minOccurs="0"/>
 			<xs:element ref="ocx:SurfaceCollection"/>
 		</xs:choice>
 	</xs:complexType>
@@ -4866,7 +4884,7 @@ gaseous state.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:Surface"/>
+					<xs:element ref="ocx:Surface" minOccurs="0"/>
 				</xs:choice>
 				<xs:attribute ref="ocx:GUIDRef"/>
 			</xs:extension>
@@ -5598,17 +5616,17 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>The Z component of a vector or a position. The value is a Quantity carrying a unit definition.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="BoundingBox">
+	<xs:element name="BoundingBox" type="ocx:BoundingBox_T">
 		<xs:annotation>
 			<xs:documentation>The definition of a bounding box in space using two positions.The bounding box defines the parent extent.</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="ocx:Min"/>
-				<xs:element ref="ocx:Max"/>
-			</xs:sequence>
-		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="BoundingBox_T">
+		<xs:sequence>
+			<xs:element ref="ocx:Max"/>
+			<xs:element ref="ocx:Min"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="Min" type="ocx:Point3D_T">
 		<xs:annotation>
 			<xs:documentation>The min position of the bounding box diagonal.</xs:documentation>

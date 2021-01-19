@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Ole Christian Astrup (DNV GL) -->
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Ole Christian Astrup (DNV GL) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="http://data.dnvgl.com/Schemas/ocxXMLSchema" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="http://data.dnvgl.com/Schemas/ocxXMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="unitsmlSchema_lite-0.9.18.xsd"/>
@@ -7,21 +7,71 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+				<ocx:Description>
+				Bugfix: Added missing mandatory attribute refType to RootRef.
+			</ocx:Description>
+				<ocx:Reference element="RootRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+				<ocx:Description>
+				Introduced a new ZGrid concept which defines the grid positions of the vessel along the Z axis.
+			</ocx:Description>
+				<ocx:Reference element="ZGrid" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+				<ocx:Description>
+				Introduced a new YGrid concept which defines the grid positions of the vessel along the Y axis.
+			</ocx:Description>
+				<ocx:Reference element="YGrid" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+				<ocx:Description>
+				Introduced a new FrameTable concept which is not to be confused with the existing FramTables (in plural) entity. 
+				The FramTable is a concept which defines the frame positions of the vessel along the X axis by giving frame number, spacing and count.
+				The purpose of the FrameTable concept is to give a compct definition of the vessel grid system for navigating the 3D model. This concept shall not be used for crating bounds to other objects in LimitedBy.
+			</ocx:Description>
+				<ocx:Reference element="FrameTable" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
+				<ocx:Description>
+				Introduced a new VesselGrid entity which defines a collection of X, Y and Z grid definitions.
+			</ocx:Description>
+				<ocx:Reference element="VesselGrid" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
+				<ocx:Description>
+				The FrameTables entity is kept for backward compatibility. It might change in a future schema version..
+			</ocx:Description>
+				<ocx:Reference element="CoordinateSystem" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
+				<ocx:Description>
+				Introduced a new FacePlate entity typically used for reinforcing Panel and Plate edges.
+			</ocx:Description>
+				<ocx:Reference element="FacePlate" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
+				<ocx:Description>
+				Added a FacePlate entity to the StiffenedBy definition
+			</ocx:Description>
+				<ocx:Reference element="StiffenedBy" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
-				Changed supertype of Cell from EntityBase to GeometryRepresentation
+				Bugfix: Changed supertype of Cell from EntityBase to GeometryRepresentation
 			</ocx:Description>
 				<ocx:Reference element="Cell" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
-				Removed assertion on EntityBase as this is not necessary when IdBase has a mandatory attribute "id.
+				Bugfix: Removed assertion on EntityBase as this is not necessary when IdBase has a mandatory attribute "id.
 			</ocx:Description>
 				<ocx:Reference element="EntityBase" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
-				Made attribute "id" mandatory on all elements inheriting form IdBase.
+				Bugfix: Made attribute "id" mandatory on all elements inheriting from IdBase.
 			</ocx:Description>
 				<ocx:Reference element="IdBase" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -2124,7 +2174,7 @@
 		<xs:sequence>
 			<xs:element ref="ocx:Header"/>
 		</xs:sequence>
-		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.5">
+		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.6">
 			<xs:annotation>
 				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc..] z : Minor backward compatible changes (Ex - adding an optional attribute, etc).</xs:documentation>
 			</xs:annotation>
@@ -2654,6 +2704,19 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="EdgeCurveRef" type="ocx:EdgeCurveRef_T" substitutionGroup="ocx:BoundedRef">
+		<xs:annotation>
+			<xs:documentation>A reference to a Panel, Plate or bracket boundary curve. Used as landing curve for a face plate or edge reinforcement stiffener.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="EdgeCurveRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of the EdgeCurveRef</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:OcxItemPtr_T"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:attribute name="refType">
 		<xs:annotation>
 			<xs:documentation>The OCX entity type which is referenced. Must be a qulaified OCX name.</xs:documentation>
@@ -2806,10 +2869,17 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="RootRef" type="ocx:EntityRefBase_T">
+	<xs:element name="RootRef">
 		<xs:annotation>
 			<xs:documentation>RootRef is an OcXItemPtr pointing to the top-level instance in a ProductView.</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:EntityRefBase_T">
+					<xs:attribute ref="ocx:refType" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="RootRef_T">
 		<xs:annotation>
@@ -3111,6 +3181,24 @@ information are derived.</xs:documentation>
 		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:Curve3D" minOccurs="0"/>
 		</xs:choice>
+	</xs:complexType>
+	<xs:element name="FacePlate" type="ocx:FacePlate_T">
+		<xs:annotation>
+			<xs:documentation>A FacePlate is used as an edge reinforcement for a Panel or Plate. The FacePlate is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="FacePlate_T">
+		<xs:complexContent>
+			<xs:extension base="ocx:StructurePart_T">
+				<xs:sequence>
+					<xs:element ref="ocx:SectionRef"/>
+					<xs:element ref="ocx:Material"/>
+					<xs:element ref="ocx:Inclination"/>
+					<xs:element ref="ocx:EdgeCurveRef"/>
+				</xs:sequence>
+				<xs:attribute ref="ocx:functionType"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Pillar" type="ocx:Pillar_T" substitutionGroup="ocx:Member">
 		<xs:annotation>
@@ -3798,9 +3886,10 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Type definition of the structural concept defining the stiffeners which is belonging to a panel.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:choice>
 			<xs:element ref="ocx:Stiffener" maxOccurs="unbounded"/>
-		</xs:sequence>
+			<xs:element ref="ocx:FacePlate" maxOccurs="unbounded"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:element name="SplitBy" type="ocx:SplitBy_T">
 		<xs:annotation>
@@ -5358,10 +5447,15 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:sequence>
+				<xs:choice>
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
-					<xs:element ref="ocx:FrameTables"/>
-				</xs:sequence>
+					<xs:element ref="ocx:FrameTables">
+						<xs:annotation>
+							<xs:documentation>The Vessel reference coordinate system organised as a frame table system. The authoring system must export the complete frame table definition for ALL X, Y and Z positions. The FrameTables may define several X, Y, or Z systems. As a minimum, each main system must be exported. If more than one system is exported, the authoring system must set the isMainSystem=true for the main reference system in each direction. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:VesselGrid"/>
+				</xs:choice>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
 						<xs:documentation>If set to true, the coordinate system is the global world coordinate frame with right handed convention. This is the default.</xs:documentation>
@@ -5476,6 +5570,25 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:SecondaryAxis"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="FrameTables_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of FrameTables definition.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="ocx:XRefPlanes" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Frame table positions along X axis. Used to limit geometry and define topology.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="FrameTables" type="ocx:FrameTables_T">
+		<xs:annotation>
+			<xs:documentation>The Vessel reference coordinate system organised as a frame table system. The authoring system must export the complete frame table definition for ALL X, Y and Z positions. The FrameTables may define several X, Y, or Z systems. As a minimum, each main system must be exported. If more than one system is exported, the authoring system must set the isMainSystem=true for the main reference system in each direction. This definition is kept for backward compatibility from schema version 2.8.6. It might change in a future schema version.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="RefPlane">
 		<xs:annotation>
 			<xs:documentation>A reference plane used to define unbounded planar geometry.</xs:documentation>
@@ -5498,6 +5611,188 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:extension base="ocx:EntityBase_T"/>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ReferencePlanes">
+		<xs:annotation>
+			<xs:documentation>The collection of refrence planes used to limit geometries</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:ReferencePlanes_T"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReferencePlanes_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of the ReferencePlanes element</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="ocx:XRefPlanes" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Frame table positions along X axis. Used to limit geometry and define topology.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="VesselGrid">
+		<xs:annotation>
+			<xs:documentation>The defintion of the vessel grid system including the vessel frame table.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:VesselGrid_T"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="VesselGrid_T">
+		<xs:annotation>
+			<xs:documentation>The type definition of the VesselGrid</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="ocx:FrameTable"/>
+			<xs:element ref="ocx:YGrid" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:ZGrid" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="FrameTable" type="ocx:FrameTable_T">
+		<xs:annotation>
+			<xs:documentation>The Vessel X coordinate system organised as a frame table.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="FrameTable_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of FrameTable definition.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:DescriptionBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:DistanceToAP"/>
+					<xs:element ref="ocx:FrameSpacingGroup" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="isReversed" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>true if the frame table is reversed with the origin at the fore of the vessel. The defaullt is false.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
+					<xs:annotation>
+						<xs:documentation>True if the FrameTable defines the main vessel grid. The default is true.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="DistanceToAP" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>If #0/FR0 (FR0 has  per definition ReferenceLocation=0) is not located at AP, give the offset here (positive or negative distance).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FrameSpacingGroup" type="ocx:GridSpacingSystem_T">
+		<xs:annotation>
+			<xs:documentation>The definition of a frame spacing group for a sequence of frame positions with equal spacing</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="YGrid">
+		<xs:annotation>
+			<xs:documentation>The definition of the vessel Y grid system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:YGrid_T"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="YGrid_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of YGrid</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:DescriptionBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:YSpacingGroup" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ZGrid">
+		<xs:annotation>
+			<xs:documentation>The definition of the vessel Z grid system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:ZGrid_T"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ZGrid_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of ZGrid</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:DescriptionBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:ZSpacingGroup" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="YSpacingGroup" type="ocx:GridSpacingSystem_T">
+		<xs:annotation>
+			<xs:documentation>The definition of a grid spacing group for a sequence of grid positions with equal spacing</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ZSpacingGroup" type="ocx:GridSpacingSystem_T">
+		<xs:annotation>
+			<xs:documentation>The definition of a grid spacing group for a sequence of grid positions with equal spacing</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="GridSpacingSystem_T">
+		<xs:annotation>
+			<xs:documentation>The type definition of the grid system</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:DescriptionBase_T">
+				<xs:choice>
+					<xs:element ref="ocx:GridPosition">
+						<xs:annotation>
+							<xs:documentation>The location of the first grid position in the spacing group.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:Spacing">
+						<xs:annotation>
+							<xs:documentation>The grid spacing of the  group</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+				<xs:attribute name="firsGridNumber" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>The first grid number in this group</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="lastGridNumber" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>The last grid number in this group</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="count" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>Number of repeated grid spacings</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GridPosition" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The position of the first grid in the spacing group along the grid axis.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Spacing" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The grid spacing of the spacing group</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<!-- ===================================================  -->
 	<!-- Basic types -->
 	<!-- ===================================================  -->
@@ -7451,30 +7746,6 @@ Type 'A' ship is one which:
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:complexType name="FrameTables_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of FrameTables definition.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="ocx:XRefPlanes" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Frame table positions along X axis. Used to limit geometry and define topology.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:element name="FrameTables" type="ocx:FrameTables_T">
-		<xs:annotation>
-			<xs:documentation>The Vessel reference coordinate system organised as a frame table system. The authoring system must export the complete frame table definition for ALL X, Y and Z positions. The FrameTables may define several X, Y, or Z systems. As a minimum, each main system must be exported. If more than one system is exported, the authoring system must set the isMainSystem=true for the main reference system in each direction.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="DistanceToAP" type="ocx:Quantity_T">
-		<xs:annotation>
-			<xs:documentation>If #0/FR0 (FR0 has  per definition ReferenceLocation=0) is not located at AP, give the offset here (positive or negative distance).</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<!-- ========================================================================================  -->
 	<!-- simpleType extensions-->
 	<!-- ========================================================================================  -->
@@ -7957,11 +8228,6 @@ Type 'A' ship is one which:
 	<xs:element name="Start" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>The location of Fram#0 in the frame table.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="Spacing" type="ocx:Quantity_T">
-		<xs:annotation>
-			<xs:documentation>Frame table spacing.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Reference" type="ocx:Reference_T">

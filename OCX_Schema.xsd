@@ -7,6 +7,36 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
+				<ocx:Description>
+				Added TraceLine to EdgeReinforcement.
+			</ocx:Description>
+				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
+				<ocx:Description>
+				Removed BoundingBox from EdgeCurveRef and made EdgeCurveRef unbounded to reference more than one curve.
+			</ocx:Description>
+				<ocx:Reference element="EdgeCurveRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
+				<ocx:Description>
+				Changed RootRef type from EntityRefBase_T to RootRef_T.
+			</ocx:Description>
+				<ocx:Reference element="RootRef" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
+				<ocx:Description>
+				Added ChildRef to the EntityRefBase occurrence group.
+			</ocx:Description>
+				<ocx:Reference element="EntityRefBase" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
+				<ocx:Description>
+				Made LimitedBy optional on Memeber concepts (Pillar).
+			</ocx:Description>
+				<ocx:Reference element="Pillar" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-02-01" version="2.8.6">
 				<ocx:Description>
 				Introduced a new EdgeReinforcement entity used for describing edge reinforcments of Panel,Plate or Bracket free edges.
@@ -2710,7 +2740,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EdgeCurveRef" type="ocx:EdgeCurveRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="EdgeCurveRef" type="ocx:EdgeCurveRef_T" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
 			<xs:documentation>A reference to a Panel, Plate or bracket boundary curve. Used as landing curve for a face plate or edge reinforcement stiffener.</xs:documentation>
 		</xs:annotation>
@@ -2720,7 +2750,9 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of the EdgeCurveRef</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:OcxItemPtr_T"/>
+			<xs:extension base="ocx:EntityRefBase_T">
+				<xs:attribute ref="ocx:refType" use="required"/>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:attribute name="refType">
@@ -2875,15 +2907,13 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="RootRef">
+	<xs:element name="RootRef" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
 			<xs:documentation>RootRef is an OcXItemPtr pointing to the top-level instance in a ProductView.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="ocx:EntityRefBase_T">
-					<xs:attribute ref="ocx:refType" use="required"/>
-				</xs:extension>
+				<xs:extension base="ocx:RootRef_T"/>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
@@ -2946,7 +2976,7 @@ information are derived.</xs:documentation>
 			<xs:extension base="ocx:ProductView_T"/>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ChildRef" type="ocx:ChildRef_T">
+	<xs:element name="ChildRef" type="ocx:ChildRef_T" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
 			<xs:documentation>The reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
 		</xs:annotation>
@@ -3097,7 +3127,7 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
 				<xs:sequence>
-					<xs:element ref="ocx:LimitedBy"/>
+					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3198,9 +3228,10 @@ information are derived.</xs:documentation>
 			<xs:extension base="ocx:StructurePart_T">
 				<xs:sequence>
 					<xs:element ref="ocx:SectionRef"/>
-					<xs:element ref="ocx:Material"/>
+					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:Inclination"/>
-					<xs:element ref="ocx:EdgeCurveRef"/>
+					<xs:element ref="ocx:EdgeCurveRef" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:TraceLine"/>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>

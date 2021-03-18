@@ -7,6 +7,30 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+				<ocx:Description>
+				Bugfix: Made LimitedBy optional on Bracket.
+			</ocx:Description>
+				<ocx:Reference element="Bracket" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+				<ocx:Description>
+				Bugfix: Changed Material to Material to MaterialRef for the EdgeReinforcement
+			</ocx:Description>
+				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+				<ocx:Description>
+				Fixed a typo in the attribute name firstGridNumber in the FrameSpacingGroup.
+			</ocx:Description>
+				<ocx:Reference element="FrameSpacingGroup" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+				<ocx:Description>
+				Renamed the VesselGrid FrameTable to XGrid for a concistent semantic.
+			</ocx:Description>
+				<ocx:Reference element="VesselGrid" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
 				<ocx:Description>
 				Added TraceLine to EdgeReinforcement.
@@ -75,11 +99,11 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
 				<ocx:Description>
-				Introduced a new FrameTable concept which is not to be confused with the existing FramTables (in plural) entity. 
-				The FramTable is a concept which defines the frame positions of the vessel along the X axis by giving frame number, spacing and count.
-				The purpose of the FrameTable concept is to give a compct definition of the vessel grid system for navigating the 3D model. This concept shall not be used for crating bounds to other objects in LimitedBy.
+				Introduced a new XGrid frepresenting a frame table concept which is not to be confused with the existing FramTables (in plural) entity. 
+				The XGrid is a concept which defines the frame positions of the vessel along the X axis by giving frame number, spacing and count.
+				The purpose of the XGrid concept is to give a compact definition of the vessel grid system for navigating the 3D model. This concept shall not be used for crating bounds to other objects in LimitedBy.
 			</ocx:Description>
-				<ocx:Reference element="FrameTable" locationRef="Link"/>
+				<ocx:Reference element="XGrid" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
 				<ocx:Description>
@@ -3220,7 +3244,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
 		<xs:annotation>
-			<xs:documentation>An edgereinforecment/facePlate is used as an edge reinforcement for a Panel, Plate or Bracket. The EfgeReinforcement is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy.</xs:documentation>
+			<xs:documentation>An EdgeReinforement is used as a face-plate or edge reinforcement for a Panel, Plate or Bracket. The EfgeReinforcement is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy. The EdgeReinforcement can reference one or more limits for the Panel/Plate/Bracket. At the same time the EdgeReinforcement provides it's own TraceLine to determine the actual exctent of the reinforcement.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="EdgeReinforcement_T">
@@ -3330,7 +3354,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice maxOccurs="unbounded">
+				<xs:choice>
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0">
 						<xs:annotation>
@@ -3361,15 +3385,19 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition  of Structural concept of brackets used in shipbuilding.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:Plate_T">
-				<xs:sequence>
-					<xs:element ref="ocx:BracketParameters">
-						<xs:annotation>
-							<xs:documentation>Bracket parameters necessary for the verification by the society.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
+			<xs:extension base="ocx:StructurePart_T">
+				<xs:choice>
+					<xs:element ref="ocx:BracketParameters"/>
+					<xs:element ref="ocx:PlateMaterial"/>
+					<xs:element ref="ocx:Offset" minOccurs="0"/>
+					<xs:element ref="ocx:OuterContour"/>
+					<xs:element ref="ocx:UnboundedGeometry" minOccurs="0"/>
+					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
+					<xs:element ref="ocx:CutBy" minOccurs="0"/>
+					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
-				</xs:sequence>
+				</xs:choice>
+				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -5683,19 +5711,19 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>The type definition of the VesselGrid</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element ref="ocx:FrameTable"/>
+			<xs:element ref="ocx:XGrid" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:YGrid" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:ZGrid" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
 	</xs:complexType>
-	<xs:element name="FrameTable" type="ocx:FrameTable_T">
+	<xs:element name="XGrid" type="ocx:XGrid_T">
 		<xs:annotation>
-			<xs:documentation>The Vessel X coordinate system organised as a frame table.</xs:documentation>
+			<xs:documentation>The Vessel X coordinate system organised as a frame table or X-grid</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:complexType name="FrameTable_T">
+	<xs:complexType name="XGrid_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of FrameTable definition.</xs:documentation>
+			<xs:documentation>Type definition of XGrid definition.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
@@ -5794,7 +5822,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 					</xs:element>
 					<xs:element ref="ocx:Spacing"/>
 				</xs:choice>
-				<xs:attribute name="firsGridNumber" type="xs:integer" use="required">
+				<xs:attribute name="firstGridNumber" type="xs:integer" use="required">
 					<xs:annotation>
 						<xs:documentation>The first grid number in this group</xs:documentation>
 					</xs:annotation>

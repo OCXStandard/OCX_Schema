@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Ole Christian Astrup (DNV GL) -->
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 rel. 2 (x64) (http://www.altova.com) by Ole Christian  Astrup (DNV AS) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="http://data.dnvgl.com/Schemas/ocxXMLSchema" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="http://data.dnvgl.com/Schemas/ocxXMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="unitsmlSchema_lite-0.9.18.xsd"/>
@@ -7,6 +7,55 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2021-06-10" version="2.8.6">
+				<ocx:Description>
+				Added the attribute isUVspace to the FreeEdgeCurve definition. The default is false and the FreeEdgeCurve is given in the 3D space as a normal. 
+				The exporting apllication may set this attribute to true and provide the FreeEdgeCoordinates UV coordinates. This will only be relevant for NURBS3D cureves.
+			</ocx:Description>
+				<ocx:Reference element="FreeEdgeCurve" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
+				<ocx:Description>
+				Changed model for BoundigBox to Choice[2,2] meaning both Max and Min shall be provided, but sequence is not important. For testing the 3DOCXValidator
+			</ocx:Description>
+				<ocx:Reference element="BoundigBox" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
+				<ocx:Description>
+				Changed model for BarSection to Choice[1,1] meaning one and only one bar type shall be provided. For testing the 3DOCXValidator
+			</ocx:Description>
+				<ocx:Reference element="BarSection" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
+				<ocx:Description>
+				Added ocx:EdgeReinforement to enumerator in ocx:refType attribute.
+			</ocx:Description>
+				<ocx:Reference element="refType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+				<ocx:Description>
+				Changed the type &quot;LONGITUDINAL: Hopper side top tank&quot; to &quot;LONGITUDINAL: Hopper side upper&quot; in functionType.
+			</ocx:Description>
+				<ocx:Reference element="functionType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+				<ocx:Description>
+				Changed the type &quot;LONGITUDINAL: Hopper side bilge&quot; to &quot;LONGITUDINAL: Hopper side bottom&quot; in functionType.
+			</ocx:Description>
+				<ocx:Reference element="functionType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+				<ocx:Description>
+				Introduced a new type &quot;LONGITUDINAL: Top tank&quot; in functionType.
+			</ocx:Description>
+				<ocx:Reference element="functionType" locationRef="Link"/>
+			</ocx:SchemaChange>
+			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+				<ocx:Description>
+				Renamed FrameSpacingGroup to XSpacingGroup.
+			</ocx:Description>
+				<ocx:Reference element="XSpacingGroup" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Made LimitedBy optional on Bracket.
@@ -21,9 +70,9 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
-				Fixed a typo in the attribute name firstGridNumber in the FrameSpacingGroup.
+				Fixed a typo in the attribute name firstGridNumber.
 			</ocx:Description>
-				<ocx:Reference element="FrameSpacingGroup" locationRef="Link"/>
+				<ocx:Reference element="XSpacingGroup" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
@@ -75,7 +124,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-02-01" version="2.8.6">
 				<ocx:Description>
-				Renamed the BracketParameters concept EdgeReinforcement -> FlangeEdgeReinforcment as we now introduced a new EdgeReinforcement concept which is part of StiffenedBy.
+				Renamed the BracketParameters concept EdgeReinforcement -&gt; FlangeEdgeReinforcment as we now introduced a new EdgeReinforcement concept which is part of StiffenedBy.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -125,13 +174,13 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
-				Bugfix: Removed assertion on EntityBase as this is not necessary when IdBase has a mandatory attribute "id.
+				Bugfix: Removed assertion on EntityBase as this is not necessary when IdBase has a mandatory attribute &quot;id.
 			</ocx:Description>
 				<ocx:Reference element="EntityBase" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
-				Bugfix: Made attribute "id" mandatory on all elements inheriting from IdBase.
+				Bugfix: Made attribute &quot;id&quot; mandatory on all elements inheriting from IdBase.
 			</ocx:Description>
 				<ocx:Reference element="IdBase" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -191,7 +240,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
 				<ocx:Description>
-				Removed unused property type "scope" on NURBSproperties.
+				Removed unused property type &quot;scope&quot; on NURBSproperties.
 			</ocx:Description>
 				<ocx:Reference element="NURBSproperties" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -377,7 +426,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
-				ComposedOf is made optional on Panel. A Panel with no ComposedOf element is treated as a "virtual" Panel and is only used to limit other objects. It will not be in scope for verification.
+				ComposedOf is made optional on Panel. A Panel with no ComposedOf element is treated as a &quot;virtual&quot; Panel and is only used to limit other objects. It will not be in scope for verification.
 				</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -629,7 +678,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
 				<ocx:Description>
-				Redesigned the ConnectionConfiguration to include only references to the it's connected parts (Bracket, Stiffener).
+				Redesigned the ConnectionConfiguration to include only references to the it&apos;s connected parts (Bracket, Stiffener).
 				</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -725,7 +774,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-03-21" version="2.7.6">
 				<ocx:Description>
-				Made BracketParameters attribute "position" optional with default value position=NearSide
+				Made BracketParameters attribute &quot;position&quot; optional with default value position=NearSide
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -2046,128 +2095,128 @@
 				<ocx:Description>
 				Made the GUIDRef optional for all elements derived from GeometryRepresentation.
 			</ocx:Description>
-				<ocx:Reference element="GeometryRepresentation" locationRef="..//schema/complextype[@name='GeometryRepresentation']"/>
+				<ocx:Reference element="GeometryRepresentation" locationRef="..//schema/complextype[@name=&apos;GeometryRepresentation&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-14" version="2.0.0">
 				<ocx:Description>
 				Added a specialized SectionRef pointer
 			</ocx:Description>
-				<ocx:Reference element="SectionRef" locationRef="..//schema/complextype[@name='SectionRef_T']"/>
+				<ocx:Reference element="SectionRef" locationRef="..//schema/complextype[@name=&apos;SectionRef_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-13" version="2.0.0">
 				<ocx:Description>
 				Added parametric hole shape definitions to catalogue Hole2D 
 			</ocx:Description>
-				<ocx:Reference element="Hole2D" locationRef="..//schema/complextype[@name='Hole2D_T']"/>
+				<ocx:Reference element="Hole2D" locationRef="..//schema/complextype[@name=&apos;Hole2D_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added EntityRefBase item as a base class to all references. 
 			</ocx:Description>
-				<ocx:Reference element="EntityRefBase" locationRef="..//schema/complextype[@name='EntityRefBase_T']"/>
+				<ocx:Reference element="EntityRefBase" locationRef="..//schema/complextype[@name=&apos;EntityRefBase_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Introduced DEXItemPtr as a general DEX pointer to any item derived from EntityBase. 
 			</ocx:Description>
-				<ocx:Reference element="DEXItemPtr" locationRef="..//schema/complextype[@name='DEXItemPtr_T']"/>
+				<ocx:Reference element="DEXItemPtr" locationRef="..//schema/complextype[@name=&apos;DEXItemPtr_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Renamed GridReference to GridRef which inherit from EntityRefBase. 
 			</ocx:Description>
-				<ocx:Reference element="GridRef" locationRef="..//schema/complextype[@name='GridRef_T']"/>
+				<ocx:Reference element="GridRef" locationRef="..//schema/complextype[@name=&apos;GridRef_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Included a unique ID on the Material_T type. 
 			</ocx:Description>
-				<ocx:Reference element="Material" locationRef="..//schema/complextype[@name='Material_T']"/>
+				<ocx:Reference element="Material" locationRef="..//schema/complextype[@name=&apos;Material_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				PlateMaterial now inherit from EntityRefBase supporting the general reference mechanism in the schema. 
 			</ocx:Description>
-				<ocx:Reference element="PlateMaterial" locationRef="..//schema/element[@name='PlateMaterial']"/>
+				<ocx:Reference element="PlateMaterial" locationRef="..//schema/element[@name=&apos;PlateMaterial&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Stiffener type uses new reference mechanism EntityRefBase to associate material and cross section. 
 			</ocx:Description>
-				<ocx:Reference element="Stiffener" locationRef="..//schema/complextype[@name='Stiffener_T']"/>
+				<ocx:Reference element="Stiffener" locationRef="..//schema/complextype[@name=&apos;Stiffener_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added a Tolerance measure to all GeometryRepresentations. 
 			</ocx:Description>
-				<ocx:Reference element="GeometryRepresentation" locationRef="..//schema/complextype[@name='GeometryRepresentation_T']"/>
+				<ocx:Reference element="GeometryRepresentation" locationRef="..//schema/complextype[@name=&apos;GeometryRepresentation_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added Centroid and Area attributes to all surfaces. 
 			</ocx:Description>
-				<ocx:Reference element="Surface" locationRef="..//schema/complextype[@name='Surface_T']"/>
+				<ocx:Reference element="Surface" locationRef="..//schema/complextype[@name=&apos;Surface_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added Centroid and Length attributes to all curves 
 			</ocx:Description>
-				<ocx:Reference element="Curve3D" locationRef="..//schema/complextype[@name='Curve3D_T']"/>
+				<ocx:Reference element="Curve3D" locationRef="..//schema/complextype[@name=&apos;Curve3D_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
 				<ocx:Description>
-				Changed to English writing style Catalog->Catalogue 
+				Changed to English writing style Catalog-&gt;Catalogue 
 			</ocx:Description>
-				<ocx:Reference element="ClassCatalogue" locationRef="..//schema/complextype[@name='ClassCatalogue_T']"/>
+				<ocx:Reference element="ClassCatalogue" locationRef="..//schema/complextype[@name=&apos;ClassCatalogue_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
 				<ocx:Description>
 				Either Structure or StructurGrouping can be sub-nodes to the Vessel type.
 				The schema no longer require an instance of a StructureGrouping if this level is not necessary. 
 			</ocx:Description>
-				<ocx:Reference element="Vessel" locationRef="..//schema/complextype[@name='Vessel_T']"/>
+				<ocx:Reference element="Vessel" locationRef="..//schema/complextype[@name=&apos;Vessel_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
 				<ocx:Description>
 				Added TrimCurves to the Plate. 
 			</ocx:Description>
-				<ocx:Reference element="Plate" locationRef="..//schema/complextype[@name='Plate_T']"/>
+				<ocx:Reference element="Plate" locationRef="..//schema/complextype[@name=&apos;Plate_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added ClassificationData to the Vessel. ClassificationData now contains PrincipalParticulars and other class related data
 			</ocx:Description>
-				<ocx:Reference element="Vessel" locationRef="..//schema/complextype[@name='Vessel_T']"/>
+				<ocx:Reference element="Vessel" locationRef="..//schema/complextype[@name=&apos;Vessel_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Renamed Entity_T with IdBase_T
 			</ocx:Description>
-				<ocx:Reference element="IdBase" locationRef="..//schema/complextype[@name='IdBase_T']"/>
+				<ocx:Reference element="IdBase" locationRef="..//schema/complextype[@name=&apos;IdBase_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added optional TonnageData to the Vessel definition 
 			</ocx:Description>
-				<ocx:Reference element="ocx:TonnageData_T" locationRef="..//schema/complextype[@name='TonnageData_T']"/>
+				<ocx:Reference element="ocx:TonnageData_T" locationRef="..//schema/complextype[@name=&apos;TonnageData_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added optional StatutoryData to the Vessel definition 
 			</ocx:Description>
-				<ocx:Reference element="ocx:StatutoryData_T" locationRef="..//schema/complextype[@name='StatutoryData_T']"/>
+				<ocx:Reference element="ocx:StatutoryData_T" locationRef="..//schema/complextype[@name=&apos;StatutoryData_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added optional language attribute xs:language 
 			</ocx:Description>
-				<ocx:Reference element="dexXML" locationRef="..//schema/complextype[@name='dexXML_T']"/>
+				<ocx:Reference element="dexXML" locationRef="..//schema/complextype[@name=&apos;dexXML_T&apos;]"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-01" version="2.0.0">
 				<ocx:Description>
 				Replaced uos with DocumentBase and introduced a schemaVersion attribute
 			</ocx:Description>
-				<ocx:Reference element="DocumentBase" locationRef="..//schema/complextype[@name='DocumentBase_T']"/>
+				<ocx:Reference element="DocumentBase" locationRef="..//schema/complextype[@name=&apos;DocumentBase_T&apos;]"/>
 			</ocx:SchemaChange>
 		.</xs:documentation>
 	</xs:annotation>
@@ -2306,7 +2355,7 @@
 					<xs:element ref="ocx:Form"/>
 					<xs:element ref="ocx:ClassCatalogue">
 						<xs:annotation>
-							<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society's definitions of cross sections, materials, hole shapes etc.</xs:documentation>
+							<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society&apos;s definitions of cross sections, materials, hole shapes etc.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:ProcessLayer" minOccurs="0">
@@ -2316,6 +2365,7 @@
 					</xs:element>
 					<xs:element ref="unitsml:UnitsML"/>
 				</xs:choice>
+				<xs:attribute ref="ocx:license" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2419,12 +2469,12 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="localRef" type="xs:IDREF">
 			<xs:annotation>
-				<xs:documentation>A rference to a unique ID within the scope of this XML file. Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)".</xs:documentation>
+				<xs:documentation>A rference to a unique ID within the scope of this XML file. Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute ref="ocx:GUIDRef">
 			<xs:annotation>
-				<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.  Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)".</xs:documentation>
+				<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.  Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
@@ -2517,7 +2567,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="MaterialRef" type="ocx:MaterialRef_T" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
-			<xs:documentation>A reference to the parent's material.</xs:documentation>
+			<xs:documentation>A reference to the parent&apos;s material.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="MaterialRef_T">
@@ -2532,7 +2582,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="SectionRef" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
-			<xs:documentation>A reference to the parent's cross section.</xs:documentation>
+			<xs:documentation>A reference to the parent&apos;s cross section.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -2764,10 +2814,15 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EdgeCurveRef" type="ocx:EdgeCurveRef_T" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="EdgeCurveRef" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
 			<xs:documentation>A reference to a Panel, Plate or bracket boundary curve. Used as landing curve for a face plate or edge reinforcement stiffener.</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:EdgeCurveRef_T"/>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="EdgeCurveRef_T">
 		<xs:annotation>
@@ -2873,6 +2928,7 @@ information are derived.</xs:documentation>
 						<xs:documentation>A reference to an occurrence group in a design view.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
+				<xs:enumeration value="ocx:EdgeReinforcement"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -2953,7 +3009,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Occurrence" type="ocx:Occurrence_T">
 		<xs:annotation>
-			<xs:documentation>The refence to the part's occurrence in a defined view or configuration.</xs:documentation>
+			<xs:documentation>The refence to the part&apos;s occurrence in a defined view or configuration.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Occurrence_T">
@@ -3244,7 +3300,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
 		<xs:annotation>
-			<xs:documentation>An EdgeReinforement is used as a face-plate or edge reinforcement for a Panel, Plate or Bracket. The EfgeReinforcement is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy. The EdgeReinforcement can reference one or more limits for the Panel/Plate/Bracket. At the same time the EdgeReinforcement provides it's own TraceLine to determine the actual exctent of the reinforcement.</xs:documentation>
+			<xs:documentation>An EdgeReinforement is used as a face-plate or edge reinforcement for a Panel, Plate or Bracket. The EfgeReinforcement is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy. The EdgeReinforcement can reference one or more limits for the Panel/Plate/Bracket. At the same time the EdgeReinforcement provides it&apos;s own TraceLine to determine the actual exctent of the reinforcement.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="EdgeReinforcement_T">
@@ -3386,7 +3442,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice>
+				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:BracketParameters"/>
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0"/>
@@ -3492,7 +3548,7 @@ information are derived.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:Point3D">
 						<xs:annotation>
-							<xs:documentation>The logical geometric position of the end configuration at the stiffener's end.</xs:documentation>
+							<xs:documentation>The logical geometric position of the end configuration at the stiffener&apos;s end.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:choice minOccurs="0">
@@ -5132,10 +5188,10 @@ gaseous state.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Curve3D_T">
 				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:Line3D"/>
-					<xs:element ref="ocx:CircumArc3D"/>
-					<xs:element ref="ocx:NURBS3D" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:PolyLine3D">
+					<xs:element ref="ocx:Line3D" minOccurs="0"/>
+					<xs:element ref="ocx:CircumArc3D" minOccurs="0"/>
+					<xs:element ref="ocx:NURBS3D" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:PolyLine3D" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>A list of 3D points defining a list of linear segments. Repeat the first position at the end to form a closed contour.</xs:documentation>
 						</xs:annotation>
@@ -5155,7 +5211,7 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Curve3D_T">
-				<xs:sequence>
+				<xs:choice maxOccurs="3">
 					<xs:element ref="ocx:Diameter">
 						<xs:annotation>
 							<xs:documentation>The circle diameter.</xs:documentation>
@@ -5171,7 +5227,7 @@ gaseous state.</xs:documentation>
 							<xs:documentation>The normal vector of the    the circle plane.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -5309,13 +5365,29 @@ gaseous state.</xs:documentation>
 					<xs:element ref="ocx:PolyLine3D"/>
 					<xs:element ref="ocx:NURBS3D"/>
 				</xs:choice>
+				<xs:attribute name="isUVSpace" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Default is flase. Set this attribute to to true if the FreeEdgeCurve is represnted by coordinates in the UV space. This should only be used when a FreeEdgeCurve is used to trim NURBS surface patches where the trim curve is only used to trim the underlying surface. When the curve is given in UV space, the X,Y point coordinates are replazed with the U,V coordinates. In this case the Z coordinate should be set to zero. The Z coordinate will not be used by the importing application.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="FaceBoundaryCurve" type="ocx:Contour3D_T">
+	<xs:element name="FaceBoundaryCurve">
 		<xs:annotation>
 			<xs:documentation> A collection of 3D curves making up a closed boundary.</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:Contour3D_T">
+					<xs:attribute name="isUVspace" default="False">
+						<xs:annotation>
+							<xs:documentation>If set to True, the FacBoundaryCurve is defined in the parametric UV space. The Pont3D X and Y correspnds to U and V while the Z coordinate is disregarded. The default is False, i.e. the FaceBoundaryCurve is defined in the 3D space.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
 	</xs:element>
 	<!-- ===================================================  -->
 	<!-- Geometry property types -->
@@ -5729,7 +5801,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:sequence>
 					<xs:element ref="ocx:DistanceToAP"/>
-					<xs:element ref="ocx:FrameSpacingGroup" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:XSpacingGroup" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="isReversed" type="xs:boolean" default="false">
 					<xs:annotation>
@@ -5749,7 +5821,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>If #0/FR0 (FR0 has  per definition ReferenceLocation=0) is not located at AP, give the offset here (positive or negative distance).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="FrameSpacingGroup" type="ocx:GridSpacingSystem_T">
+	<xs:element name="XSpacingGroup" type="ocx:GridSpacingSystem_T">
 		<xs:annotation>
 			<xs:documentation>The definition of a frame spacing group for a sequence of frame positions with equal spacing</xs:documentation>
 		</xs:annotation>
@@ -5969,10 +6041,10 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="BoundingBox_T">
-		<xs:sequence>
+		<xs:choice maxOccurs="2">
 			<xs:element ref="ocx:Max"/>
 			<xs:element ref="ocx:Min"/>
-		</xs:sequence>
+		</xs:choice>
 	</xs:complexType>
 	<xs:element name="Min" type="ocx:Point3D_T">
 		<xs:annotation>
@@ -6178,14 +6250,19 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 						<xs:documentation>Double Bottom Structure is the shell plating with stiffeners below the top of the inner bottom and other elements below and including the inner bottom plating.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="LONGITUDINAL: Hopper side bilge">
+				<xs:enumeration value="LONGITUDINAL: Top tank">
 					<xs:annotation>
-						<xs:documentation>Hopper Side Tanks are tanks used for ballast or for stability when carrying certain cargoes in bulk carriers. Also referred to as topside wing ballast tanks and bottom hopper tanks.</xs:documentation>
+						<xs:documentation>A top tank used for ballast or for stability typically used in container vessels.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="LONGITUDINAL: Hopper side tank top">
+				<xs:enumeration value="LONGITUDINAL: Hopper side lower">
 					<xs:annotation>
-						<xs:documentation>Hopper Side Tanks are tanks used for ballast or for stability when carrying certain cargoes in bulk carriers. Also referred to as topside wing ballast tanks and bottom hopper tanks.	.</xs:documentation>
+						<xs:documentation>Hopper Side Tanks are tanks used for ballast or for stability when carrying certain cargoes in bulk carriers. Also referred to as upper wing ballast tanks.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="LONGITUDINAL: Hopper side upper">
+					<xs:annotation>
+						<xs:documentation>Hopper Side Tanks are tanks used for ballast or for stability when carrying certain cargoes in bulk carriers. Also referred to as lower wing ballast tanks.	.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="LONGITUDINAL: Inner bottom">
@@ -6250,12 +6327,12 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:enumeration>
 				<xs:enumeration value="PLATING: Shedder">
 					<xs:annotation>
-						<xs:documentation>Shedder Plates are slanted plates fitted in dry cargo holds to prevent undesired pockets of cargo. The term is also commonly applied to slanted plates that are fitted to improve the structural stability of corrugated bulkheads and framing members.>.</xs:documentation>
+						<xs:documentation>Shedder Plates are slanted plates fitted in dry cargo holds to prevent undesired pockets of cargo. The term is also commonly applied to slanted plates that are fitted to improve the structural stability of corrugated bulkheads and framing members.&gt;.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="SHEER_STRAKE">
 					<xs:annotation>
-						<xs:documentation>Sheer Strake is the top strake of a ship's side shell plating>.</xs:documentation>
+						<xs:documentation>Sheer Strake is the top strake of a ship&apos;s side shell plating&gt;.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="SHELL">
@@ -6265,7 +6342,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:enumeration>
 				<xs:enumeration value="SHELL: Bilge keel">
 					<xs:annotation>
-						<xs:documentation>Bilge Keel is a piece of plate set perpendicular to a ship’s shell along her bilges for about one third her length to reduce rolling.>.</xs:documentation>
+						<xs:documentation>Bilge Keel is a piece of plate set perpendicular to a ship’s shell along her bilges for about one third her length to reduce rolling.&gt;.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="SHELL: Bilge strake">
@@ -6480,7 +6557,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	<!-- ========================================================================================  -->
 	<xs:element name="ClassCatalogue" type="ocx:ClassCatalogue_T">
 		<xs:annotation>
-			<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society's definitions of cross sections, materials, hole shapes etc.</xs:documentation>
+			<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society&apos;s definitions of cross sections, materials, hole shapes etc.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ClassCatalogue_T">
@@ -6589,10 +6666,10 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:attribute ref="ocx:freeboardType">
 			<xs:annotation>
 				<xs:documentation>Enumerated free-board types according to the Rules. 
-Type 'A' ship is one which:
+Type &apos;A&apos; ship is one which:
 — is designed to carry only liquid cargoes in bulk
 — has a high integrity of the exposed deck with only small access openings to cargo compartments, closed by watertight gasket covers of steel or equivalent material
-— has low permeability of loaded cargo compartments. All ships which are not Type 'A' ships shall be considered as Type 'B' ships.						.</xs:documentation>
+— has low permeability of loaded cargo compartments. All ships which are not Type &apos;A&apos; ships shall be considered as Type &apos;B&apos; ships.						.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="numberOfDecksAbove" type="xs:int">
@@ -6618,7 +6695,7 @@ Type 'A' ship is one which:
 		</xs:attribute>
 		<xs:attribute name="numberIMO" type="xs:string" use="optional">
 			<xs:annotation>
-				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996 href="http://www.imo.org/Facilitation/mainframe.asp?topic_id=388">Information on IMO ship identification number scheme on the web site of the IMO (last visited: 2005-09-05).</xs:documentation>
+				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996 href=&quot;http://www.imo.org/Facilitation/mainframe.asp?topic_id=388&quot;&gt;Information on IMO ship identification number scheme on the web site of the IMO (last visited: 2005-09-05).</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="shipType" type="xs:string" use="optional">
@@ -6750,7 +6827,7 @@ Type 'A' ship is one which:
 				</xs:sequence>
 				<xs:attribute name="exponent" type="xs:double" use="required">
 					<xs:annotation>
-						<xs:documentation>The exponent of the "super ellipse" equation (x/Height)**e + (y/Width)**e = 1. If e=2.5 the result is a super ellipse while e=2.0 results in a normal ellipse.</xs:documentation>
+						<xs:documentation>The exponent of the &quot;super ellipse&quot; equation (x/Height)**e + (y/Width)**e = 1. If e=2.5 the result is a super ellipse while e=2.0 results in a normal ellipse.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -6822,18 +6899,18 @@ Type 'A' ship is one which:
 	<!--********** ELEMENTS ***************-->
 	<xs:attribute name="freeboardType" default="A">
 		<xs:annotation>
-			<xs:documentation>For the purposes of freeboard computation ships shall be divided into Type "A" and Type "B" ships according to the SOLAS Load Line Convention of 1966.</xs:documentation>
+			<xs:documentation>For the purposes of freeboard computation ships shall be divided into Type &quot;A&quot; and Type &quot;B&quot; ships according to the SOLAS Load Line Convention of 1966.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="A">
 					<xs:annotation>
-						<xs:documentation>A type "A" ship is one which is designed to carry only liquid cargoes in bulk, and in which cargo tanks have only small access openings closed by watertight gasketed covers of steel or equivalent material.</xs:documentation>
+						<xs:documentation>A type &quot;A&quot; ship is one which is designed to carry only liquid cargoes in bulk, and in which cargo tanks have only small access openings closed by watertight gasketed covers of steel or equivalent material.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="B">
 					<xs:annotation>
-						<xs:documentation>All ships which do not come within the provisions regarding Type "A" ships shall be considered as Type "B" ships.
+						<xs:documentation>All ships which do not come within the provisions regarding Type &quot;A&quot; ships shall be considered as Type &quot;B&quot; ships.
 				.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
@@ -6969,27 +7046,25 @@ Type 'A' ship is one which:
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:choice>
-						<xs:element ref="ocx:RectangularTube"/>
-						<xs:element ref="ocx:OctagonBar"/>
-						<xs:element ref="ocx:SquareBar"/>
-						<xs:element ref="ocx:BulbFlat"/>
-						<xs:element ref="ocx:FlatBar"/>
-						<xs:element ref="ocx:UBar"/>
-						<xs:element ref="ocx:IBar"/>
-						<xs:element ref="ocx:ZBar"/>
-						<xs:element ref="ocx:RoundBar"/>
-						<xs:element ref="ocx:LBarOF"/>
-						<xs:element ref="ocx:LBar"/>
-						<xs:element ref="ocx:TBar"/>
-						<xs:element ref="ocx:LBarOW"/>
-						<xs:element ref="ocx:HalfRoundBar"/>
-						<xs:element ref="ocx:HexagonBar"/>
-						<xs:element ref="ocx:Tube"/>
-						<xs:element ref="ocx:UserDefinedBarSection"/>
-					</xs:choice>
-				</xs:sequence>
+				<xs:choice>
+					<xs:element ref="ocx:RectangularTube"/>
+					<xs:element ref="ocx:OctagonBar"/>
+					<xs:element ref="ocx:SquareBar"/>
+					<xs:element ref="ocx:BulbFlat"/>
+					<xs:element ref="ocx:FlatBar"/>
+					<xs:element ref="ocx:UBar"/>
+					<xs:element ref="ocx:IBar"/>
+					<xs:element ref="ocx:LBarOF"/>
+					<xs:element ref="ocx:ZBar"/>
+					<xs:element ref="ocx:RoundBar"/>
+					<xs:element ref="ocx:LBar"/>
+					<xs:element ref="ocx:TBar"/>
+					<xs:element ref="ocx:LBarOW"/>
+					<xs:element ref="ocx:HalfRoundBar"/>
+					<xs:element ref="ocx:HexagonBar"/>
+					<xs:element ref="ocx:Tube"/>
+					<xs:element ref="ocx:UserDefinedBarSection"/>
+				</xs:choice>
 				<xs:attributeGroup ref="ocx:barSectionAttributes"/>
 				<xs:attribute ref="ocx:GUIDRef"/>
 			</xs:extension>
@@ -7419,14 +7494,14 @@ Type 'A' ship is one which:
 		</xs:attribute>
 		<xs:attribute name="newbuildingSocietyName" type="xs:string">
 			<xs:annotation>
-				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @newbuildingSociety = 'OTHER'
+				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @newbuildingSociety = &apos;OTHER&apos;
 				.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute ref="ocx:society"/>
 		<xs:attribute name="societyName" type="xs:string">
 			<xs:annotation>
-				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @society = 'OTHER'				.</xs:documentation>
+				<xs:documentation>The common name of the class society relevant for operating the ship. Needs only to be specified when @society = &apos;OTHER&apos;				.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -7588,7 +7663,7 @@ Type 'A' ship is one which:
 			</xs:enumeration>
 			<xs:enumeration value="LR">
 				<xs:annotation>
-					<xs:documentation>Lloyd's Register.</xs:documentation>
+					<xs:documentation>Lloyd&apos;s Register.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="NK">
@@ -8315,6 +8390,18 @@ Type 'A' ship is one which:
 	<xs:attribute name="society" type="ocx:classificationSociety">
 		<xs:annotation>
 			<xs:documentation>The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during current operation.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="license" type="xs:string" default="Copyright 2021 Open Class 3D Exchange (OCX) Consortium Licensed under the Apache License, Version 2.0 (the &apos;License&apos;);
+   you may not use this file except in compliance with the License.  You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  
+   Unless required by applicable law or agreed to in writing, the 3Docx standard and software
+   distributed under the License is distributed on an &apos;AS IS&apos; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
+   See the License for the specific language governing permissions and
+   limitations under the License.">
+		<xs:annotation>
+			<xs:documentation>The reference to the license agreement</xs:documentation>
 		</xs:annotation>
 	</xs:attribute>
 </xs:schema>

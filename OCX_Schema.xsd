@@ -6,9 +6,15 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema/OCX_Schema_V286.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema/OCX_Schema_V286.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink"
+		   xmlns:ocx="https://3docx.org/fileadmin//ocx_schema/OCX_Schema_V287.xsd"
+		   xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+		   targetNamespace="https://3docx.org/fileadmin//ocx_schema/OCX_Schema_V287.xsd"
+		   elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
 	<!-- Import the NIST unitsML lite schema -->
-	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
+	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+			   schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
 		<xs:documentation>
 			Copyright 2021 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
@@ -18,20 +24,20 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 	either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.
-			<ocx:SchemaChange author="oca" date="2022-02-010" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-010" version="2.8.7">
 				<ocx:Description>
 					Changed the ocx namespace uri to xmlns:ocx="https://3docx.org/fileadmin//ocx_schema/OCX_Schema_V286.xsd"
 					The url points to the published version of the schema (this version).
 				</ocx:Description>
 				<ocx:Reference element="ocxXML" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-010" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-010" version="2.8.7">
 				<ocx:Description>
 					Fixed numerous typos in the schema annotation strings.
 				</ocx:Description>
 				<ocx:Reference element="ocxXML" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-010" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-010" version="2.8.7">
 				<ocx:Description>
 					Fixed typo in the functionType enumerator:
 					DECK: Weateher deck->DECK: Weather deck
@@ -40,26 +46,26 @@
 				</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					Fixed a typo in the the attribute lengthClass
 					lenghtClass->lengthClass
 				</ocx:Description>
 				<ocx:Reference element="lengthClass" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					Fixed a typo in the the attribute of element XRefPlanes isReveresed -> isReversed
 				</ocx:Description>
 				<ocx:Reference element="XRefPlanes" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					Fixed a typo in the the abstract type  PentetratingObject_T -> PenetratingObject_T.
 				</ocx:Description>
 				<ocx:Reference element="PenetratingObject_T" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					Fixed a typo in the liquidCargoType enumerator:
 					chemichal -> chemical
@@ -68,7 +74,7 @@
 				</ocx:Description>
 				<ocx:Reference element="liquidCargoType" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					Fixed a typo in the gaseousCargoType enumerator:
 					liquified natural gas->liquefied natural gas
@@ -76,14 +82,14 @@
 				</ocx:Description>
 				<ocx:Reference element="gaseousCargoType" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					Fixed a typo in the itemRef enumerator: OccurrenceGroup:
 					OccurenceGroup -> OccurrenceGroup
 				</ocx:Description>
 				<ocx:Reference element="itemRef" locationRef="Link"/>
 			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.6">
+			<ocx:SchemaChange author="oca" date="2022-02-02" version="2.8.7">
 				<ocx:Description>
 					The OCX schema is licensed under an the Apache 2.0 license. Added boiler plate license information to the Header attribute.
 				</ocx:Description>
@@ -2376,7 +2382,7 @@
 		<xs:sequence>
 			<xs:element ref="ocx:Header"/>
 		</xs:sequence>
-		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.6">
+		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.7">
 			<xs:annotation>
 				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc..] z : Minor backward compatible changes (Ex - adding an optional attribute, etc).</xs:documentation>
 			</xs:annotation>

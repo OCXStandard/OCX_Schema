@@ -2365,7 +2365,6 @@
 					</xs:element>
 					<xs:element ref="unitsml:UnitsML"/>
 				</xs:choice>
-				<xs:attribute ref="ocx:license" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

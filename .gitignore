@@ -11,3 +11,5 @@ Archive/
 *.zip
 *.html
 *.nb
+# Ignore IDE files
+.idea

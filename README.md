@@ -2,8 +2,8 @@
 # The Open Class 3D Exchange (OCX) Schema
 
 ## Introduction 
-This is the official GitHub repository for the Open Class 3D Exchange (OCX) schema owned and managed by the [OCX Consortium](https://3Docx.org).  
-The latest official version of the OCX schema is available form the consortium's website.
+This is the official GitHub repository for the Open Class 3D Exchange (OCX) schema (working draft version) owned and managed by the [OCX Consortium](https://3Docx.org).  
+The latest published version of the OCX schema is available from the consortium's website.
 ## How to contribute
 The schema file is maintained using an xml editor like Altova XMLSpy.
 1. Installation: Simply download the schema files from the repository or clone it using git.

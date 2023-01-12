@@ -12,6 +12,8 @@ The schema file is maintained using an xml editor like Altova XMLSpy.
 [Pull](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) request for proposed schema changes.
 4. Schema versioning: The schema published version is controlled by the OCX Consortium (https://3docx.org).
 
+Follow [the recepie on the Wiki](https://github.com/OCXStandard/OCX_Schema/wiki) on how to register an issue in the current working draft of the schema
+
 ## OCX Public License
 The OCX standard is governed by the 3Docx.org (https://3Docx.org) Consortium Members and published under the
 Apache 2.0 Public License conditions (the License).

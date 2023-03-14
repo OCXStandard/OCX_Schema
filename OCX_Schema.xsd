@@ -23,9 +23,9 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 	either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.
-			<ocx:SchemaChange author="oca" date="2022-10-06" version="workin_draft">
+			<ocx:SchemaChange author="oca" date="2022-10-06" version="working_draft">
 				<ocx:Description>
-					Corrected a bug in the definition of the ocx:CompartmentFace. The unbounded geometry defnition was not specified using the ocx:UnboundedGeometry tag.
+					Corrected a bug in the definition of the ocx:CompartmentFace. The unbounded geometry definition was not specified using the ocx:UnboundedGeometry tag.
 				</ocx:Description>
 				<ocx:Reference element="UnboundedGeometry" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -53,7 +53,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2022-02-02" version="working_draft">
 				<ocx:Description>
-					Fixed a typo in the the attribute lengthClass
+					Fixed a typo in the attribute lengthClass
 					lenghtClass->lengthClass
 				</ocx:Description>
 				<ocx:Reference element="lengthClass" locationRef="Link"/>
@@ -66,7 +66,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2022-02-02" version="working_draft">
 				<ocx:Description>
-					Fixed a typo in the the abstract type  PentetratingObject_T -> PenetratingObject_T.
+					Fixed a typo in the abstract type  PentetratingObject_T -> PenetratingObject_T.
 				</ocx:Description>
 				<ocx:Reference element="PenetratingObject_T" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -157,7 +157,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
-				Bugfix: Changed Material to Material to MaterialRef for the EdgeReinforcement
+				Bugfix: Changed Material to MaterialRef for the EdgeReinforcement
 			</ocx:Description>
 				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -567,7 +567,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
-				Made Bracket a sub-type of Plate. The Bracket elements inherit all Plate elements and extends the Plate with one additional element BracketParameters
+				Made Bracket a subtype of Plate. The Bracket elements inherit all Plate elements and extends the Plate with one additional element BracketParameters
 				</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -849,7 +849,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2019-04-05" version="2.7.7">
 				<ocx:Description>
-				Fixed bug in the inheritance of FarBracket (corrected to to BracketParameters_T)
+				Fixed bug in the inheritance of FarBracket (corrected to BracketParameters_T)
 			</ocx:Description>
 				<ocx:Reference element="FarBracket" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1084,7 +1084,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
-				Changed the definition of the KnotVector to be an list of knot values and removed the multiplicity sub element.
+				Changed the definition of the KnotVector to be a list of knot values and removed the multiplicity sub element.
 			</ocx:Description>
 				<ocx:Reference element="KnotVector" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1192,7 +1192,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
 				<ocx:Description>
-				Made BarSection sub elements (the different bar section sub-types) global and referenced from the BarSection.
+				Made BarSection sub elements (the different bar section subtypes) global and referenced from the BarSection.
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1660,7 +1660,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
-			Revised StructureFunction as agreed in distributed spread sheet. Structure Functions are only one level, and the type is enumerated.
+			Revised StructureFunction as agreed in distributed spreadsheet. Structure Functions are only one level, and the type is enumerated.
 			</ocx:Description>
 				<ocx:Reference element="StructureFunction" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1697,7 +1697,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
-				Deleted TertiaryAxis from the the definition of the Transformation
+				Deleted TertiaryAxis from the definition of the Transformation
 			</ocx:Description>
 				<ocx:Reference element="Transformation" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1883,13 +1883,13 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
 				<ocx:Description>
-				Added a direction vector for the stiffener flange to define the local orientation of the Stiffener cross section.
+				Added a direction vector for the stiffener flange to define the local orientation of the Stiffener cross-section.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
 				<ocx:Description>
-				Added additional meta data to BarSection.
+				Added additional metadata to BarSection.
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -1901,7 +1901,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-05-11" version="2.3.1">
 				<ocx:Description>
-				Changed Segment definition of CompositeCurve3D to to be the same definition as for CompositeCurve2D.
+				Changed Segment definition of CompositeCurve3D to be the same definition as for CompositeCurve2D.
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve3D" locationRef="Link"/>
 			</ocx:SchemaChange>
@@ -2234,7 +2234,7 @@
 			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
-				Stiffener type uses new reference mechanism EntityRefBase to associate material and cross section. 
+				Stiffener type uses new reference mechanism EntityRefBase to associate material and cross-section.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="..//schema/complextype[@name=&apos;Stiffener_T&apos;]"/>
 			</ocx:SchemaChange>
@@ -2459,7 +2459,7 @@
 					<xs:element ref="ocx:Form"/>
 					<xs:element ref="ocx:ClassCatalogue">
 						<xs:annotation>
-							<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society&apos;s definitions of cross sections, materials, hole shapes etc.</xs:documentation>
+							<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society&apos;s definitions of cross-sections, materials, hole shapes etc.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:ProcessLayer" minOccurs="0">
@@ -2572,12 +2572,12 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="localRef" type="xs:IDREF">
 			<xs:annotation>
-				<xs:documentation>A reference to a unique ID within the scope of this XML file. Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
+				<xs:documentation>A reference to a unique ID within the scope of this XML file. Either a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute ref="ocx:GUIDRef">
 			<xs:annotation>
-				<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.  Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
+				<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.  Either a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
@@ -2621,7 +2621,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="ApplicationRef" type="ocx:ApplicationRef_T">
 		<xs:annotation>
-			<xs:documentation>The ApplicationRef element is meant to relate the parent element (Product, Representation, etc) back to the owning entity in the sending application.</xs:documentation>
+			<xs:documentation>The ApplicationRef element is meant to relate the parent element (Product, Representation, etc.) back to the owning entity in the sending application.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ApplicationRef_T">
@@ -2685,7 +2685,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="SectionRef" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
-			<xs:documentation>A reference to the parent&apos;s cross section.</xs:documentation>
+			<xs:documentation>A reference to the parent&apos;s cross-section.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -2919,7 +2919,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="EdgeCurveRef" substitutionGroup="ocx:EntityRefBase">
 		<xs:annotation>
-			<xs:documentation>A reference to a Panel, Plate or bracket boundary curve. Used as landing curve for a face plate or edge reinforcement stiffener.</xs:documentation>
+			<xs:documentation>A reference to a Panel, Plate or bracket boundary curve. Used as landing curve for a faceplate or edge reinforcement stiffener.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -3370,7 +3370,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Inclination" type="ocx:Inclination_T">
 		<xs:annotation>
-			<xs:documentation>The inclination of the cross section of a stiffener or a pillar along its trace line. A vector pair giving the local orientation of the web and flange directions at the point given by the Position element. The FlangeDirection is optional and not necessary for a symmetrical cross section. Only one inclination is necessary for a non-twisted (straight) stiffener or pillar.</xs:documentation>
+			<xs:documentation>The inclination of the cross-section of a stiffener or a pillar along its trace line. A vector pair giving the local orientation of the web and flange directions at the point given by the Position element. The FlangeDirection is optional and not necessary for a symmetrical cross-section. Only one inclination is necessary for a non-twisted (straight) stiffener or pillar.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Inclination_T">
@@ -3403,7 +3403,7 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
 		<xs:annotation>
-			<xs:documentation>An EdgeReinforcement is used as a face-plate or edge reinforcement for a Panel, Plate or Bracket. The EdgeReinforcement is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy. The EdgeReinforcement can reference one or more limits for the Panel/Plate/Bracket. At the same time the EdgeReinforcement provides it&apos;s own TraceLine to determine the actual extent of the reinforcement.</xs:documentation>
+			<xs:documentation>An EdgeReinforcement is used as a faceplate or edge reinforcement for a Panel, Plate or Bracket. The EdgeReinforcement is composed of a BarSection (usually a flat bar profile) and is attached to a FreeEdgeCurve which is part of the Panel or Plate LimitedBy. The EdgeReinforcement can reference one or more limits for the Panel/Plate/Bracket. At the same time the EdgeReinforcement provides it&apos;s own TraceLine to determine the actual extent of the reinforcement.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="EdgeReinforcement_T">
@@ -3742,7 +3742,7 @@ information are derived.</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:PlateRef">
 				<xs:annotation>
-					<xs:documentation>Reference to a a penetrated Plate.</xs:documentation>
+					<xs:documentation>Reference to a penetrated Plate.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:SlotParameters"/>
@@ -3802,7 +3802,7 @@ information are derived.</xs:documentation>
 				</xs:enumeration>
 				<xs:enumeration value="FacePlate">
 					<xs:annotation>
-						<xs:documentation>The bracket edge has a face plate.</xs:documentation>
+						<xs:documentation>The bracket edge has a faceplate.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="BucklingStiffener">
@@ -4099,12 +4099,12 @@ information are derived.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="StiffenedBy" type="ocx:StiffenedBy_T">
 		<xs:annotation>
-			<xs:documentation>Structural concept defining the stiffeners which is belonging to a panel.</xs:documentation>
+			<xs:documentation>Structural concept defining the stiffeners which belongs to a panel.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="StiffenedBy_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the structural concept defining the stiffeners which is belonging to a panel.</xs:documentation>
+			<xs:documentation>Type definition of the structural concept defining the stiffeners which belongs to a panel.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:element ref="ocx:Stiffener" maxOccurs="unbounded"/>
@@ -4153,7 +4153,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:Cell" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CrossFlow" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Specify cross flow between Cells making up an Compartment. This enables the modelling of cells that are not adjacent, but are connected by a piping system and part of the same Compartment.</xs:documentation>
+							<xs:documentation>Specify cross flow between Cells making up a Compartment. This enables the modelling of cells that are not adjacent, but are connected by a piping system and part of the same Compartment.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
@@ -4204,7 +4204,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:CompartmentProperties"/>
 					<xs:element ref="ocx:CompartmentFace" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>The face of a compartment defined by a surface boundary. All faces must make up a a CLOSED volume defining the compartment.</xs:documentation>
+							<xs:documentation>The face of a compartment defined by a surface boundary. All faces must make up a CLOSED volume defining the compartment.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
@@ -4286,7 +4286,7 @@ information are derived.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="CrossFlow_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the concept specifying cross flow between Cells making up an Compartment.</xs:documentation>
+			<xs:documentation>Type definition of the concept specifying cross flow between Cells making up a Compartment.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:IdBase_T">
@@ -4426,7 +4426,7 @@ gaseous state.</xs:documentation>
 	</xs:element>
 	<xs:element name="AirPipeHeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The AirpipeHeight specifies height from the base line to the top of the air pipe, if any.</xs:documentation>
+			<xs:documentation>The AirpipeHeight specifies height from the baseline to the top of the air pipe, if any.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CenterOfGravity" type="ocx:Point3D_T">
@@ -4694,7 +4694,7 @@ gaseous state.</xs:documentation>
 				</xs:enumeration>
 				<xs:enumeration value="edible oil">
 					<xs:annotation>
-						<xs:documentation>The cargo is deible oil.</xs:documentation>
+						<xs:documentation>The cargo is edible oil.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="fuel oil">
@@ -4858,12 +4858,12 @@ gaseous state.</xs:documentation>
 				</xs:enumeration>
 				<xs:enumeration value="liquefied natural gas">
 					<xs:annotation>
-						<xs:documentation>The cargo is liquified natural gas.</xs:documentation>
+						<xs:documentation>The cargo is liquefied natural gas.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="liquefied petroleum gas">
 					<xs:annotation>
-						<xs:documentation>The cargo is liquified petroleum gas.</xs:documentation>
+						<xs:documentation>The cargo is liquefied petroleum gas.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="methane">
@@ -5020,7 +5020,7 @@ gaseous state.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="Cone3D_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the a Cone surface defined by origin,  radius and position of cone tip.</xs:documentation>
+			<xs:documentation>Type definition of the Cone surface defined by origin, radius and position of the cone tip.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Surface_T">
@@ -5328,7 +5328,7 @@ gaseous state.</xs:documentation>
 					</xs:element>
 					<xs:element ref="ocx:Normal">
 						<xs:annotation>
-							<xs:documentation>The normal vector of the    the circle plane.</xs:documentation>
+							<xs:documentation>The normal vector of the circle plane.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:choice>
@@ -5342,7 +5342,7 @@ gaseous state.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="CircumCircle3D_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of a circle in 3D space defined by by a circumscribe of 3 points.</xs:documentation>
+			<xs:documentation>Type definition of a circle in 3D space defined by a circumscribed position of 3 points.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Curve3D_T">
@@ -5399,12 +5399,12 @@ gaseous state.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="CircumArc3D" type="ocx:CircumArc3D_T" substitutionGroup="ocx:Curve3D">
 		<xs:annotation>
-			<xs:documentation>3D Line/Arc representation. Represents a semi-circle uniquely defined by three points in 3D space given by the start position, intermediate position and the end position..</xs:documentation>
+			<xs:documentation>3D Line/Arc representation. Represents a semicircle uniquely defined by three points in 3D space given by the start position, intermediate position and the end position..</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="CircumArc3D_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of a 3D Line/Arc representation defined by thee points in 3D space.</xs:documentation>
+			<xs:documentation>Type definition of a 3D Line/Arc representation defined by three points in 3D space.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Curve3D_T">
@@ -5471,7 +5471,7 @@ gaseous state.</xs:documentation>
 				</xs:choice>
 				<xs:attribute name="isUVSpace" type="xs:boolean" default="false">
 					<xs:annotation>
-						<xs:documentation>Default is "false". Set this attribute to to true if the FreeEdgeCurve is represented by coordinates in the UV space. This should only be used when a FreeEdgeCurve is used to trim NURBS surface patches where the trim curve is only used to trim the underlying surface. When the curve is given in UV space, the X,Y point coordinates are replazed with the U,V coordinates. In this case the Z coordinate should be set to zero. The Z coordinate will not be used by the importing application.</xs:documentation>
+						<xs:documentation>Default is "false". Set this attribute to true if the FreeEdgeCurve is represented by coordinates in the UV space. This should only be used when a FreeEdgeCurve is used to trim NURBS surface patches where the trim curve is only used to trim the underlying surface. When the curve is given in UV space, the X,Y point coordinates are replaced with the U,V coordinates. In this case the Z coordinate should be set to zero. The Z coordinate will not be used by the importing application.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -5533,7 +5533,7 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="value" type="ocx:doubleListType" use="required">
 			<xs:annotation>
-				<xs:documentation>The list of knots separated by  white space. Knots must pe provided in increasing order.</xs:documentation>
+				<xs:documentation>The list of knots separated by  white space. Knots must be provided in increasing order.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -5675,12 +5675,12 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	<!-- ========================================================================================  -->
 	<xs:element name="CoordinateSystem" type="ocx:CoordinateSystem_T">
 		<xs:annotation>
-			<xs:documentation>A right-handed orthogonal Cartesian co-ordinate system. Used to define the vessel coordinate system definition..</xs:documentation>
+			<xs:documentation>A right-handed orthogonal Cartesian coordinate system. Used to define the vessel coordinate system definition..</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="CoordinateSystem_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the vessel coordinate system A right-handed orthogonal Cartesian co-ordinate system.</xs:documentation>
+			<xs:documentation>Type definition of the vessel coordinate system A right-handed orthogonal Cartesian coordinate system.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
@@ -5695,7 +5695,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:choice>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
-						<xs:documentation>If set to true, the coordinate system is the global world coordinate frame with right handed convention. This is the default.</xs:documentation>
+						<xs:documentation>If set to true, the coordinate system is the global world coordinate frame with right-handed convention. This is the default.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -5914,7 +5914,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:sequence>
 				<xs:attribute name="isReversed" type="xs:boolean" default="false">
 					<xs:annotation>
-						<xs:documentation>true if the frame table is reversed with the origin at the fore of the vessel. The defaullt is false.</xs:documentation>
+						<xs:documentation>true if the frame table is reversed with the origin at the fore of the vessel. The default is false.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
@@ -6236,7 +6236,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:enumeration>
 				<xs:enumeration value="DECK: Forecastle deck">
 					<xs:annotation>
-						<xs:documentation>Forecastle deck is a the deck attached to the short superstructure situated at the bow.</xs:documentation>
+						<xs:documentation>Forecastle deck is a deck attached to the short superstructure situated at the bow.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="DECK: Freeboard deck">
@@ -6286,7 +6286,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 				</xs:enumeration>
 				<xs:enumeration value="DECK: Wheelhouse deck">
 					<xs:annotation>
-						<xs:documentation>Deck House is a structure on the freeboard or superstructure deck not extending from side to side of the ship.</xs:documentation>
+						<xs:documentation>Deck House is a structure on the free-board or superstructure deck not extending from side to side of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="FOUNDATION">
@@ -6594,7 +6594,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 						<xs:documentation>A transverse stiffening system of a floor.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="WEB_FRAME: General webframe">
+				<xs:enumeration value="WEB_FRAME: General web-frame">
 					<xs:annotation>
 						<xs:documentation>A transverse stiffening system.</xs:documentation>
 					</xs:annotation>
@@ -6666,7 +6666,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	<!-- ========================================================================================  -->
 	<xs:element name="ClassCatalogue" type="ocx:ClassCatalogue_T">
 		<xs:annotation>
-			<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society&apos;s definitions of cross sections, materials, hole shapes etc.</xs:documentation>
+			<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society&apos;s definitions of cross-sections, materials, hole shapes etc.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ClassCatalogue_T">
@@ -6714,12 +6714,12 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:complexType>
 	<xs:element name="XSectionCatalogue" type="ocx:XSectionCatalogue_T">
 		<xs:annotation>
-			<xs:documentation>The cross section types for stiffeners and their properties recognised by the Society.</xs:documentation>
+			<xs:documentation>The cross-section types for stiffeners and their properties recognised by the Society.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="XSectionCatalogue_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the cross section types for stiffeners and their properties recognised by the Society.</xs:documentation>
+			<xs:documentation>Type definition of the cross-section types for stiffeners and their properties recognised by the Society.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
@@ -6804,7 +6804,7 @@ Type &apos;A&apos; ship is one which:
 		</xs:attribute>
 		<xs:attribute name="numberIMO" type="xs:string" use="optional">
 			<xs:annotation>
-				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996 href=&quot;http://www.imo.org/Facilitation/mainframe.asp?topic_id=388&quot;&gt;Information on IMO ship identification number scheme on the web site of the IMO (last visited: 2005-09-05).</xs:documentation>
+				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven-digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996 href=&quot;http://www.imo.org/Facilitation/mainframe.asp?topic_id=388&quot;&gt;Information on IMO ship identification number scheme on the website of the IMO (last visited: 2005-09-05).</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="shipType" type="xs:string" use="optional">
@@ -6895,12 +6895,12 @@ Type &apos;A&apos; ship is one which:
 	</xs:complexType>
 	<xs:element name="SymmetricalHole" type="ocx:SymmetricalHole_T" substitutionGroup="ocx:ParametricHole2D">
 		<xs:annotation>
-			<xs:documentation>A hole made of two semi-circles connected by two straight lines.</xs:documentation>
+			<xs:documentation>A hole made of two semicircles connected by two straight lines.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="SymmetricalHole_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of a hole made of two semi-circles connected by two straight lines.</xs:documentation>
+			<xs:documentation>Type definition of a hole made of two semicircles connected by two straight lines.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:ParametricHole2D_T">
@@ -7141,7 +7141,7 @@ Type &apos;A&apos; ship is one which:
 	</xs:complexType>
 	<xs:element name="BarSection">
 		<xs:annotation>
-			<xs:documentation>A catalogue of rolled and welded cross sections recognised by the Society.</xs:documentation>
+			<xs:documentation>A catalogue of rolled and welded cross-sections recognised by the Society.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -7151,7 +7151,7 @@ Type &apos;A&apos; ship is one which:
 	</xs:element>
 	<xs:complexType name="BarSection_T" abstract="true">
 		<xs:annotation>
-			<xs:documentation>Type definition of the  catalogue of rolled and welded cross sections recognised by the Society.</xs:documentation>
+			<xs:documentation>Type definition of the  catalogue of rolled and welded cross-sections recognised by the Society.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
@@ -8244,7 +8244,7 @@ Type &apos;A&apos; ship is one which:
 	</xs:element>
 	<xs:element name="SlammingDraughtFullFP" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The Vessel draught at FP used when calcualtion design slamming loads (all ballast tanks full), Tf-f.</xs:documentation>
+			<xs:documentation>The Vessel draught at FP used when calculation design slamming loads (all ballast tanks full), Tf-f.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="LengthOfWaterline" type="ocx:Quantity_T">
@@ -8408,12 +8408,12 @@ Type &apos;A&apos; ship is one which:
 	</xs:element>
 	<xs:element name="OffsetU" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The offset from stiffener trace line of cross section in local U direction.</xs:documentation>
+			<xs:documentation>The offset from stiffener trace line of cross-section in local U direction.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="OffsetV" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The offset from stiffener trace-line of cross section in local V direction.</xs:documentation>
+			<xs:documentation>The offset from stiffener trace-line of cross-section in local V direction.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="WebDirection" type="ocx:Vector3D_T">
@@ -8428,7 +8428,7 @@ Type &apos;A&apos; ship is one which:
 	</xs:element>
 	<xs:element name="Position" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The position of the inclination of the cross section.</xs:documentation>
+			<xs:documentation>The position of the inclination of the cross-section.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="DistanceAbove" type="ocx:Quantity_T">

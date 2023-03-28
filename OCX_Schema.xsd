@@ -7,6 +7,12 @@
 		<xs:documentation>
 		The Open Class Exchange specification (OCX) for 3D model exchange between Classification Societies and early design systems.
 		Copyright 2016 to current year.  All rights reserved.
+			<ocx:SchemaChange author="oca" date="2023-03-13" version="2.8.6_fix">
+				<ocx:Description>
+				Fixed the bug in CompartmentFace by adding a missing UnboundedGeometry entity.
+			</ocx:Description>
+				<ocx:Reference element="CompartmentFace" locationRef="Link"/>
+			</ocx:SchemaChange>
 			<ocx:SchemaChange author="oca" date="2021-06-10" version="2.8.6">
 				<ocx:Description>
 				Added the attribute isUVspace to the FreeEdgeCurve definition. The default is false and the FreeEdgeCurve is given in the 3D space as a normal. 
@@ -2283,7 +2289,7 @@
 		<xs:sequence>
 			<xs:element ref="ocx:Header"/>
 		</xs:sequence>
-		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.6">
+		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.6_fix">
 			<xs:annotation>
 				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc..] z : Minor backward compatible changes (Ex - adding an optional attribute, etc).</xs:documentation>
 			</xs:annotation>
@@ -4129,8 +4135,9 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of the face of a compartment defined by a surface boundary.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:UnboundedGeometry_T">
+			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
+					<xs:element ref="ocx:UnboundedGeometry"/>
 					<xs:element ref="ocx:FaceBoundaryCurve">
 						<xs:annotation>
 							<xs:documentation> A collection of 3D curves making up the closed boundary of the compartment face.</xs:documentation>

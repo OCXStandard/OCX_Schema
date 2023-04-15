@@ -3487,7 +3487,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape.</xs:documentation>
+							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -3532,7 +3532,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts.</xs:documentation>
+							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:choice>

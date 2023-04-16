@@ -2625,15 +2625,43 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>A view point defines, where the camera is located ant in which direction one looks.
 				By default the UpVector is assumed to be 0,0,1.
-				This is an implementation neutral form to describe the Viewpoint. No implict camera position (OpenGL ...) is implied here.</xs:documentation>
+				This is an implementation neutral form to describe the Viewpoint. No implict camera position (OpenGL ...) is implied here.
+				The external file allows to associated addition file like drawings, screenshots, photos ... to a comment.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Position" type="ocx:Point3D_T" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="LookAt" type="ocx:Point3D_T" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="UpVector" type="ocx:Vector3D_T" minOccurs="0" maxOccurs="1"/>
-			<!-- add field off view (focal length of lense) as found in X3D and Collada ??? -->
+			<!-- add field off view (equivalent to focal length of lense) as found in X3D and Collada ??? -->
+			<xs:element ref="ocs:ExternalFiles" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="ExternalFiles">
+		<xs:sequence>
+			<xs:element ref="ocx:ExternalFileRef" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalFileRef" type="ocx:ExternalFileRef_T">
+		<xs:annotation>
+			<xs:documentation>The ExternalFileRef element is used to point to an external file, e.g. a PDF containing a drawing, a picture shot on the vessel ...
+			Unlike the ExternalGeometryRef ist could be used to flexible associated any kind of external file.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ExternalFileRef_T">
+		<xs:annotation>
+			<xs:documentation>The ExternalFileRef element is used to point to an external file, e.g. a PDF containing a drawing, a picture shot on the vessel ...
+				Unlike the ExternalGeometryRef ist could be used to flexible associated any kind of external file.
+				The type of external file is given as a MIME type as defined by RFC 6839 (https://datatracker.ietf.org/doc/html/rfc6838)
+				see at the IANA (https://www.iana.org/assignments/media-types/media-types.xhtml#application) for a list of well known MIME types
+			</xs:documentation>
+		</xs:annotation>
+		<xs:extension base="ocx:DescriptionBase_T">
+		</xs:extension>
+		<xs:attribute ref="ocx:externalRef" use="required"/>
+		<xs:attribute name="mime" type="xs:string" use="required" fixed=".stp"/>
+	</xs:complexType>
+
 	<!-- ========================================================================================  -->
 	<!--OCX References-->
 	<!-- ========================================================================================  -->

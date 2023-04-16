@@ -2537,6 +2537,9 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
+				<xs:sequence>
+					<xs:element ref="ocx:GenericDataContainer" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
 				<xs:attribute ref="ocx:GUIDRef" use="required">
 					<xs:annotation>
 						<xs:documentation>A globally Unique ID referring an entity in the sending application.</xs:documentation>
@@ -2563,6 +2566,82 @@ information are derived.</xs:documentation>
 			<xs:maxLength value="40"/>
 		</xs:restriction>
 	</xs:simpleType>
+
+	<!-- ========================================================================================  -->
+	<!-- Generic Key Value Concept to add additional data e.g. to cover unforeseen use case        -->
+	<!-- ========================================================================================  -->
+	<xs:element name="GenericDataContainer"  >
+		<xs:annotation>
+			<xs:documentation>The container for GenericData elements. To be used in case, that the information to be transferred is not covered by a specific attribute ( e.g. Panel/@tightness).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence >
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="ocx:StringData" />
+					<xs:element ref="ocx:NumericData" />
+					<xs:element ref="ocx:BooleanData" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="StringData" type="ocx:StringData_T">
+	</xs:element>
+
+	<xs:complexType name="StringData_T">
+		<xs:complexContent>
+			<xs:extension base="ocx:GenericData_T">
+				<xs:simpleContent>
+					<xs:extension base="xs:string">
+						<xs:attribute name="value" type="xs:string" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="NumericData" >
+		<!-- we can not inherit without to much hassel from both GenericData_T data and Quantity_T, that's why we need to duplicate the definition of the later -->
+		<xs:complexContent>
+			<xs:extension base="ocx:GenericData_T">
+				<xs:attribute name="numericvalue" type="xs:double" use="required">
+					<xs:annotation>
+						<xs:documentation>The numerical value of the quantity.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="unit" type="xs:IDREF" use="required">
+					<xs:annotation>
+						<xs:documentation>The reference to the unitsML reference unit.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:element>
+
+	<xs:element name="BooleanData" type="ocx:BooleanData_T">
+	</xs:element>
+
+	<xs:complexType name="BooleanData_T">
+		<xs:complexContent>
+			<xs:extension base="ocx:GenericData_T">
+				<xs:attribute name="value" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>The boolean data to transfer.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GenericData_T" abstract="true">
+		<xs:annotation>
+			<xs:documentation>The abstract base class for generic data containing the name (key).</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+
 	<!-- ========================================================================================  -->
 	<!--OCX References-->
 	<!-- ========================================================================================  -->

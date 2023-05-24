@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2021 rel. 2 (x64) (http://www.altova.com) by Ole Christian  Astrup (DNV AS) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="http://data.dnvgl.com/Schemas/ocxXMLSchema" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="http://data.dnvgl.com/Schemas/ocxXMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+<!-- edited with XMLSpy v2023 rel. 2 (x64) (http://www.altova.com) by Astrup, Ole Christian (DNV AS) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocx="http://data.dnvgl.com/Schemas/ocxXMLSchema" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="http://data.dnvgl.com/Schemas/ocxXMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
@@ -13,2206 +13,1840 @@
 				The exporting apllication may set this attribute to true and provide the FreeEdgeCoordinates UV coordinates. This will only be relevant for NURBS3D cureves.
 			</ocx:Description>
 				<ocx:Reference element="FreeEdgeCurve" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
 				<ocx:Description>
 				Changed model for BoundigBox to Choice[2,2] meaning both Max and Min shall be provided, but sequence is not important. For testing the 3DOCXValidator
 			</ocx:Description>
 				<ocx:Reference element="BoundigBox" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
 				<ocx:Description>
 				Changed model for BarSection to Choice[1,1] meaning one and only one bar type shall be provided. For testing the 3DOCXValidator
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-05-10" version="2.8.6">
 				<ocx:Description>
 				Added ocx:EdgeReinforement to enumerator in ocx:refType attribute.
 			</ocx:Description>
 				<ocx:Reference element="refType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
 				<ocx:Description>
 				Changed the type &quot;LONGITUDINAL: Hopper side top tank&quot; to &quot;LONGITUDINAL: Hopper side upper&quot; in functionType.
 			</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
 				<ocx:Description>
 				Changed the type &quot;LONGITUDINAL: Hopper side bilge&quot; to &quot;LONGITUDINAL: Hopper side bottom&quot; in functionType.
 			</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
 				<ocx:Description>
 				Introduced a new type &quot;LONGITUDINAL: Top tank&quot; in functionType.
 			</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-26" version="2.8.6">
 				<ocx:Description>
 				Renamed FrameSpacingGroup to XSpacingGroup.
 			</ocx:Description>
 				<ocx:Reference element="XSpacingGroup" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Made LimitedBy optional on Bracket.
 			</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Changed Material to Material to MaterialRef for the EdgeReinforcement
 			</ocx:Description>
 				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
 				Fixed a typo in the attribute name firstGridNumber.
 			</ocx:Description>
 				<ocx:Reference element="XSpacingGroup" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-18" version="2.8.6">
 				<ocx:Description>
 				Renamed the VesselGrid FrameTable to XGrid for a concistent semantic.
 			</ocx:Description>
 				<ocx:Reference element="VesselGrid" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
 				<ocx:Description>
 				Added TraceLine to EdgeReinforcement.
 			</ocx:Description>
 				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-12" version="2.8.6">
 				<ocx:Description>
 				Removed BoundingBox from EdgeCurveRef and made EdgeCurveRef unbounded to reference more than one curve.
 			</ocx:Description>
 				<ocx:Reference element="EdgeCurveRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
 				<ocx:Description>
 				Changed RootRef type from EntityRefBase_T to RootRef_T.
 			</ocx:Description>
 				<ocx:Reference element="RootRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
 				<ocx:Description>
 				Added ChildRef to the EntityRefBase occurrence group.
 			</ocx:Description>
 				<ocx:Reference element="EntityRefBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-03-08" version="2.8.6">
 				<ocx:Description>
 				Made LimitedBy optional on Memeber concepts (Pillar).
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-02-01" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-02-01" version="2.8.6">
 				<ocx:Description>
 				Introduced a new EdgeReinforcement entity used for describing edge reinforcments of Panel,Plate or Bracket free edges.
 			</ocx:Description>
 				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-01" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-01" version="2.8.6">
 				<ocx:Description>
 				Added the EdgeReinforcement entity to the StiffenedBy definition
 			</ocx:Description>
 				<ocx:Reference element="StiffenedBy" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-02-01" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-02-01" version="2.8.6">
 				<ocx:Description>
 				Renamed the BracketParameters concept EdgeReinforcement -&gt; FlangeEdgeReinforcment as we now introduced a new EdgeReinforcement concept which is part of StiffenedBy.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Added missing mandatory attribute refType to RootRef.
 			</ocx:Description>
 				<ocx:Reference element="RootRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
 				<ocx:Description>
 				Introduced a new ZGrid concept which defines the grid positions of the vessel along the Z axis.
 			</ocx:Description>
 				<ocx:Reference element="ZGrid" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
 				<ocx:Description>
 				Introduced a new YGrid concept which defines the grid positions of the vessel along the Y axis.
 			</ocx:Description>
 				<ocx:Reference element="YGrid" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-11" version="2.8.6">
 				<ocx:Description>
 				Introduced a new XGrid frepresenting a frame table concept which is not to be confused with the existing FramTables (in plural) entity. 
 				The XGrid is a concept which defines the frame positions of the vessel along the X axis by giving frame number, spacing and count.
 				The purpose of the XGrid concept is to give a compact definition of the vessel grid system for navigating the 3D model. This concept shall not be used for crating bounds to other objects in LimitedBy.
 			</ocx:Description>
 				<ocx:Reference element="XGrid" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
 				<ocx:Description>
 				Introduced a new VesselGrid entity which defines a collection of X, Y and Z grid definitions.
 			</ocx:Description>
 				<ocx:Reference element="VesselGrid" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2021-01-10" version="2.8.6">
 				<ocx:Description>
 				The FrameTables entity is kept for backward compatibility. It might change in a future schema version..
 			</ocx:Description>
 				<ocx:Reference element="CoordinateSystem" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Changed supertype of Cell from EntityBase to GeometryRepresentation
 			</ocx:Description>
 				<ocx:Reference element="Cell" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Removed assertion on EntityBase as this is not necessary when IdBase has a mandatory attribute &quot;id.
 			</ocx:Description>
 				<ocx:Reference element="EntityBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-11-04" version="2.8.6">
 				<ocx:Description>
 				Bugfix: Made attribute &quot;id&quot; mandatory on all elements inheriting from IdBase.
 			</ocx:Description>
 				<ocx:Reference element="IdBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
 				<ocx:Description>
 				Changed the isReversed xs:type from string to boolean on XRefPlanes.
 			</ocx:Description>
 				<ocx:Reference element="XRefPlanes" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
 				<ocx:Description>
 				Added a root point Origin and two direction vectors (UDirection, VDirection) to the BracketParameters to remove ambiguities in the mapping of penetration and end configuration types.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-03-16" version="2.8.5">
 				<ocx:Description>
 				Made LimitedBy on Plate a mandatory item as we need this information to correctly map plate limits.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-27" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-27" version="2.8.5">
 				<ocx:Description>
 				Introduced a ChoiceOf either TraceLine or Curve3D type for Stiffener due to backward compability with old model unit test for Nauticus import. This will not impact existing exports for vendors.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-27" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-27" version="2.8.5">
 				<ocx:Description>
 				Introduced a ChoiceOf either TraceLine or Curve3D type for Seam due to backward compability with old model unit test for Nauticus import. This will not impact existing exports for vendors.
 			</ocx:Description>
 				<ocx:Reference element="Seam" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
 				<ocx:Description>
 				Cleaned up the types inheriting from EntityRefBase and BoundedRef. Reference types referring an object without geometry shall inherit from EntityRefBase while reference types referring to objects with geometry shall inherit from BoundedRef.
 			</ocx:Description>
 				<ocx:Reference element="EntityRefBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
 				<ocx:Description>
 				Introduced a new abstract reference type BoundedRef where an optional BoundingBox element has been introduced. The BoundingBox will limit the extent of the referenced object geometry. This can help to resolve ambiguous LimitedBy definitions.
 			</ocx:Description>
 				<ocx:Reference element="BoundedRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-10" version="2.8.5">
 				<ocx:Description>
 				Added the possibility to define an extruded surface by a base curve and a sweep direction and extent.
 			</ocx:Description>
 				<ocx:Reference element="ExtrudedSurface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
 				<ocx:Description>
 				Changed NumberOfDecksAbove from a global element to an attribute on PrincipalParticulars.
 			</ocx:Description>
 				<ocx:Reference element="PrincipalParticulars" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-06" version="2.8.5">
 				<ocx:Description>
 				Removed unused property type &quot;scope&quot; on NURBSproperties.
 			</ocx:Description>
 				<ocx:Reference element="NURBSproperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-05" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-05" version="2.8.5">
 				<ocx:Description>
 				Added the possibility to assign a main frame attribute isMainSystem=true when multiple systems are defined. If only one system is defined, it is assumed that the exported system is the main system.
 			</ocx:Description>
 				<ocx:Reference element="FrameTables" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-05" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-05" version="2.8.5">
 				<ocx:Description>
 				Added the possibility to specify an offset of FR0 from AP for the X frame positions. If not given, it is assumed that Fr0 is positioned at AP.
 			</ocx:Description>
 				<ocx:Reference element="XRefPlanes" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for compartmentPurpose 
 			</ocx:Description>
 				<ocx:Reference element="compartmentPurpose" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for bulkCargoType
 			</ocx:Description>
 				<ocx:Reference element="bulkCargoType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for gaseousCargoType
 			</ocx:Description>
 				<ocx:Reference element="gaseousCargoType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for liquidCargoType
 			</ocx:Description>
 				<ocx:Reference element="liquidCargoType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for unitCargoType.
 			</ocx:Description>
 				<ocx:Reference element="unitCargoType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for bracket position.
 			</ocx:Description>
 				<ocx:Reference element="position" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Annotated enumeration values for freeboardType according to SOLAS LL 66.
 			</ocx:Description>
 				<ocx:Reference element="freeboardType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-02-04" version="2.8.5">
 				<ocx:Description>
 				Redefined material grade for normal and high strength steel in accordance with IACS UR W11.
 			</ocx:Description>
 				<ocx:Reference element="grade" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
 				<ocx:Description>
 				Deleted RefPlaneGroup from RefPlanes definition as we require the exporting application to export every frame instance with a unique GUID
 			</ocx:Description>
 				<ocx:Reference element="FrameTables" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
 				<ocx:Description>
 				Deleted Cyl_Group from the CylindricalAxes definition as we require the exporting application to export every frame instance with a unique GUID
 			</ocx:Description>
 				<ocx:Reference element="CylindricalAxes" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-28" version="2.8.5">
 				<ocx:Description>
 				Changed the externalRefAttributes enumeration of ExternalGeometryRef to refer to the specific geometry file type (.stp, .igs and .jt)
 			</ocx:Description>
 				<ocx:Reference element="externalRefAttributes" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Introduced a new attribute edgeReinforcmentType on BracketParameters describing the different bracket reinforcement types.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Added a new sub-element EdgeReinforcement to BracketParameters.
 				</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Introduced a new sub-element EdgeReinforcement containing additional parameters for reinforced brackets.
 				</ocx:Description>
 				<ocx:Reference element="EdgeReinforcement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made SpeedFactor a Quantity_T type (carries a unit).
 			</ocx:Description>
 				<ocx:Reference element="SpeedFactor" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made Cyl_Group a global element.
 				</ocx:Description>
 				<ocx:Reference element="Cyl_Group" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made SectionOuterShape a global element.
 				</ocx:Description>
 				<ocx:Reference element="SectionOuterShape" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made SectionInnerShape a global element.
 				</ocx:Description>
 				<ocx:Reference element="SectionInnerShape" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made FlangeContour a global element.
 				</ocx:Description>
 				<ocx:Reference element="FlangeContour" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made WebContour a global element.
 				</ocx:Description>
 				<ocx:Reference element="WebContour" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made ChildRef a global element.
 				</ocx:Description>
 				<ocx:Reference element="ChildRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made ExternalGeometryRef a global element.
 				</ocx:Description>
 				<ocx:Reference element="ExternalGeometryRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made ApplicationRef a global element.
 				</ocx:Description>
 				<ocx:Reference element="ApplicationRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-13" version="2.8.4">
 				<ocx:Description>
 				Made Reference a global element.
 				</ocx:Description>
 				<ocx:Reference element="Reference" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
 				<ocx:Description>
 				Corrected bug in ExternalGeometryRef (wrong implementation of super-type).
 				</ocx:Description>
 				<ocx:Reference element="ExternalGeometryRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
 				<ocx:Description>
 				Added missing StiffenedBy to Bracket.
 				</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
 				<ocx:Description>
 				Bug in ApplicationRef, wrong implementation of mandatory attribute externalRef.
 				</ocx:Description>
 				<ocx:Reference element="ApplicationRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2020-01-05" version="2.8.4">
 				<ocx:Description>
 				Deleted EndCutCatalogue.
 				</ocx:Description>
 				<ocx:Reference element="ClassCatalogue" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				ComposedOf is made optional on Panel. A Panel with no ComposedOf element is treated as a &quot;virtual&quot; Panel and is only used to limit other objects. It will not be in scope for verification.
 				</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				Revised EntityRefBase_T so that the OCX export is valid using either a localRef or a GUIDRef, or both. But at least one must be present. This requires validation by XSD Version 1.1
 				</ocx:Description>
 				<ocx:Reference element="EntityRefBase_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				Added OccorrenceGroup to the itemRef enumerator. RootRef can now also reference an OccurrenceGroup which means that the root node can be a folder.
 				</ocx:Description>
 				<ocx:Reference element="RootRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				The Occurrence is now defined as an OcxItemPtr and is a direct reference to a part in the DesignView.
 				</ocx:Description>
 				<ocx:Reference element="DesignView" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				Deleted ProductView from ocxXML to reside directly under the Vessel item.
 				</ocx:Description>
 				<ocx:Reference element="ocxXML" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-11" version="2.8.3">
 				<ocx:Description>
 				Moved ProductView from ocxXML to reside directly under the Vessel item.
 				</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Removed enum bracketType from BracketParameters. The Bracket has its own values in the functionType enumerator which shall be used to set the type. This is now the same pattern for Panel, Stiffener, Plate and Bracket.
 				</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Extended the functionType with BRACKET types. This makes it more consistent as we will only have one source for function types in the schema.
 				</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Made Bracket a sub-type of Plate. The Bracket elements inherit all Plate elements and extends the Plate with one additional element BracketParameters
 				</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Added GasTight value to tightness enumerator. WaterTight will always be GasTight, but GasTight does not mean WaterTight.
 				</ocx:Description>
 				<ocx:Reference element="tightness" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Renamed enum value RefPlane to GridRef in the enumerator refType.
 				</ocx:Description>
 				<ocx:Reference element="refType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Added the WebNoseHeight to the EndCut_T type.
 				</ocx:Description>
 				<ocx:Reference element="EndCut_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-06" version="2.8.3">
 				<ocx:Description>
 				Added the FlangeNoseHeight to the EndCut_T type. 
 				</ocx:Description>
 				<ocx:Reference element="EndCut_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Added an explicit TraceLine element under Pillar representing the Pillar trace curve in space as a Curve3D type. This improves the readability of the schema
 				</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Added an explicit TraceLine element under Seam representing the landing curve (Curve3D) of the Seam on the parent surface. This improves the readability of the schema
 				</ocx:Description>
 				<ocx:Reference element="Seam" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Made PhysicalProperty mandatory for all elements inheriting from StructurePart.
 				</ocx:Description>
 				<ocx:Reference element="StructurePart_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Renamed TopologyItem_T to StrucurePart_T as this is a more meaningful description of the element.
 				</ocx:Description>
 				<ocx:Reference element="StructurePart_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Renamed TopologyItem_T to StrucurePart_T as this is a more meaningful description of the element.
 				</ocx:Description>
 				<ocx:Reference element="StructurePart_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Deleted the DetailedFlangeContour under Stiffener as it is duplicated by the FlangeContour element.
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Deleted the DetailedWebContour under Stiffener as it is duplicated by the WebContour element.
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-11-05" version="2.8.3">
 				<ocx:Description>
 				Added an explicit TraceLine element under Stiffener representing the landing curve (Curve3D) of the stiffener on the parent surface. This improves the readability of the schema
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-10-10" version="2.8.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-10-10" version="2.8.2">
 				<ocx:Description>
 				Changed name Origin to Center on the parametric Circle3D definition for clarity.
 				</ocx:Description>
 				<ocx:Reference element="Circle3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-10-01" version="2.8.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-10-01" version="2.8.2">
 				<ocx:Description>
 				Moved WebContour and FlangeContour from EndCut to Stiffener as the contour returns the full stiffener contour with end-cuts at both ends.
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-10-01" version="2.8.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-10-01" version="2.8.2">
 				<ocx:Description>
 				Expanded the structure functionType with more types.
 				</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-08-08" version="2.8.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-08-08" version="2.8.2">
 				<ocx:Description>
 				The reference to the connected/penetrated Plate/Pillar/Stiffener is made mandatory.
 				</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-08-08" version="2.8.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-08-08" version="2.8.2">
 				<ocx:Description>
 				The configuration type is made optional on the ConnectionConfiguration_T. If the configuration type is not specified, the stiffener either penetrates/connects a single Plate/Pillar/Stiffener object with no additional parameters given. The connected Plate/Pillar/Stiffener must be referenced.
 				</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-08-01" version="2.8.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-08-01" version="2.8.2">
 				<ocx:Description>
 				Defined KnotVector_T base type for KnotVector, UknotVector and VknotVector.
 				</ocx:Description>
 				<ocx:Reference element="KnotVector_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
 				<ocx:Description>
 				Changed NeutralAxisU and NeutralAxisV from Quantity_T to Vector3D_T type.
 				</ocx:Description>
 				<ocx:Reference element="UserDefinedBarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
 				<ocx:Description>
 				Added GaseousCargo according to ISO 10303-215:2004
 				</ocx:Description>
 				<ocx:Reference element="GaseousCargo" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
 				<ocx:Description>
 				Added UnitCargo according to ISO 10303-215:2004
 				</ocx:Description>
 				<ocx:Reference element="UnitCargo" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
 				<ocx:Description>
 				Added LiquidCargo according to ISO 10303-215:2004
 				</ocx:Description>
 				<ocx:Reference element="LiquidCargo" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
 				<ocx:Description>
 				Added BulkCargo according to ISO 10303-215:2004
 				</ocx:Description>
 				<ocx:Reference element="BulkCargo" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-0703" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-0703" version="2.8.1">
 				<ocx:Description>
 				Made it voluntary to export either Compartment and PhysicalSpace or both on the Arrangement
 				</ocx:Description>
 				<ocx:Reference element="Arrangement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-07-03" version="2.8.1">
 				<ocx:Description>
 				Deleted ApplicationRef from Arrangement as this is duplication for information
 				</ocx:Description>
 				<ocx:Reference element="Arrangement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-06-27" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-06-27" version="2.8.1">
 				<ocx:Description>
 				Changed base to for Cell from EntityRefBase_T to EntityBase_T.
 				</ocx:Description>
 				<ocx:Reference element="Cell" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-06-13" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-06-13" version="2.8.1">
 				<ocx:Description>
 				Added EndCut as a Catalogue item to describe the stiffener end features.
 				</ocx:Description>
 				<ocx:Reference element="EndCut" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-06-13" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-06-13" version="2.8.1">
 				<ocx:Description>
 				Added EndCutEnd1 and EndCutEnd2 to Stiffener  representing stiffener features.
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-20" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-20" version="2.8.1">
 				<ocx:Description>
 				Reintroduced GUIDRef on BarSection as this broke the export when removed.
 				</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-20" version="2.8.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-20" version="2.8.1">
 				<ocx:Description>
 				Reintroduced GUIDRef on Material as this broke the export when removed.
 				</ocx:Description>
 				<ocx:Reference element="Material" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-13" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-13" version="2.8.0">
 				<ocx:Description>
 				Renamed Slot to SlotParameters
 				</ocx:Description>
 				<ocx:Reference element="SlotParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-12" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-12" version="2.8.0">
 				<ocx:Description>
 				The end cut parameters are made optional but must carry the mandatory sniped attribute
 				</ocx:Description>
 				<ocx:Reference element="EndCut_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-12" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-12" version="2.8.0">
 				<ocx:Description>
 				Moved the EndCut parameters to the Stiffener physical object. A stiffener can now have end cut parameters at each end: EndCutAtEnd1 and EndCutAtEnd2
 				</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
 				<ocx:Description>
 				Redesigned the ConnectionConfiguration to include only references to the it&apos;s connected parts (Bracket, Stiffener).
 				</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
 				<ocx:Description>
 				Moved BracketParameters from ConnectionConfiguration to the physical type Bracket.
 				</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-10" version="2.8.0">
 				<ocx:Description>
 				Removed BracketRef from BracketParameters .
 				</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-06" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-06" version="2.8.0">
 				<ocx:Description>
 				Removed mandatory GUID from Material catalogue item.
 				</ocx:Description>
 				<ocx:Reference element="Material" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-06" version="2.8.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-06" version="2.8.0">
 				<ocx:Description>
 				Removed mandatory GUID from BarSection catalogue item.
 				</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
 				<ocx:Description>
 				Added new reference ExternalGeometryRef as optional element for all structure parts inheriting from StructureItem.
 				</ocx:Description>
 				<ocx:Reference element="StructurePart" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
 				<ocx:Description>
 				Added new reference ExternalGeometryRef for external geometry representations.
 				</ocx:Description>
 				<ocx:Reference element="ExternalGeometryRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-05-06" version="2.7.8">
 				<ocx:Description>
 				Corrected: Arrangement now inherits from DescriptionBase_T instead of ExternalBase_T (which is deleted as superfluous).
 				</ocx:Description>
 				<ocx:Reference element="Arrangement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-04-30" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-04-30" version="2.7.8">
 				<ocx:Description>
 				Reordered the Surface and SurfaceCollection on the ReferenceSurfaces definition. ReferenceSurfaces may contain any number of Surface and SurfaceCollection objects in an arbitrary order
 			</ocx:Description>
 				<ocx:Reference element="ReferenceSurfaces" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-04-24" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-04-24" version="2.7.8">
 				<ocx:Description>
 				Added slotType attribute to the Slot object to distinguish between Slit and Open slots.
 			</ocx:Description>
 				<ocx:Reference element="SlotParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-04-23" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-04-23" version="2.7.8">
 				<ocx:Description>
 				Renamed WeldLegLength to ConnectionLength on the Slot entity. This is in alignment with the definition in the DNV GL Rules and avoids any confusion with welding requirements.
 			</ocx:Description>
 				<ocx:Reference element="SlotParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-04-23" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-04-23" version="2.7.8">
 				<ocx:Description>
 				Renamed HoleShapes to HoleShapeCatalogue
 			</ocx:Description>
 				<ocx:Reference element="HoleShapeCatalogue" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-04-15" version="2.7.8">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-04-15" version="2.7.8">
 				<ocx:Description>
 				Fixed typo on Slot parameter asymmetric
 			</ocx:Description>
 				<ocx:Reference element="SlotParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-04-05" version="2.7.7">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-04-05" version="2.7.7">
 				<ocx:Description>
 				Fixed bug in the inheritance of FarBracket (corrected to to BracketParameters_T)
 			</ocx:Description>
 				<ocx:Reference element="FarBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-03-25" version="2.7.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-03-25" version="2.7.6">
 				<ocx:Description>
 				Added DistanceAbove and WeldLegLength to LugPlateRef.
 			</ocx:Description>
 				<ocx:Reference element="LugPlateRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-03-21" version="2.7.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-03-21" version="2.7.6">
 				<ocx:Description>
 				Made GUIDRef attribute  optional on Hole2D catalogue items
 			</ocx:Description>
 				<ocx:Reference element="Hole2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-03-21" version="2.7.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-03-21" version="2.7.6">
 				<ocx:Description>
 				Made BracketParameters attribute &quot;position&quot; optional with default value position=NearSide
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-03-19" version="2.7.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-03-19" version="2.7.6">
 				<ocx:Description>
 				Moved the BracketRef pointer to be part of the FarBracket type to uniquely identify the FarBracket material and thickness.
 			</ocx:Description>
 				<ocx:Reference element="FarBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-03-19" version="2.7.6">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-03-19" version="2.7.6">
 				<ocx:Description>
 				Moved the BracketRef pointer to be part of the NearBracket type to uniquely identify the NearBracket material and thickness.
 			</ocx:Description>
 				<ocx:Reference element="NearBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
 				<ocx:Description>
 				Added type SurfaceCollection to ReferenceSurfaces.
 			</ocx:Description>
 				<ocx:Reference element="ReferenceSurfaces" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
 				<ocx:Description>
 				Created a new type SurfaceCollection which can contain any number of surfaces and be referenced by GUID or localRef.
 			</ocx:Description>
 				<ocx:Reference element="SurfaceCollection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
 				<ocx:Description>
 				Moved BracketRef from DoubleBracket type to BracketParameters_T type definition.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
 				<ocx:Description>
 				Moved DistanceAbove and DistanceBelow to LugPlateRef_T type definition.
 			</ocx:Description>
 				<ocx:Reference element="LugPlateRef_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
 				<ocx:Description>
 				Moved reference elements (BracketRef, PlateRef, PillarRef) to the ConnectionConfiguration_T type definition.
 			</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-22" version="2.7.5">
 				<ocx:Description>
 				Moved reference elements (BracketRef, PlateRef, PillarRef) to the Penetration_T type definition.
 			</ocx:Description>
 				<ocx:Reference element="Penetration_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
 				<ocx:Description>
 				Changed DryCargoDensity to global type Density on DryCargoProperties .
 			</ocx:Description>
 				<ocx:Reference element="DryCargoProperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
 				<ocx:Description>
 				Changed LiquidCargoDensity to global type Density on LiquidCargoProperties .
 			</ocx:Description>
 				<ocx:Reference element="LiquidCargoProperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
 				<ocx:Description>
 				Changed PillarMaterial to generic type MaterialRef for pillar type .
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-20" version="2.7.5">
 				<ocx:Description>
 				Changed element name from Height to Diameter .
 			</ocx:Description>
 				<ocx:Reference element="Tube" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-04" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-04" version="2.7.4">
 				<ocx:Description>
 				Added an optional CopeLength to the FeatureCope.
 			</ocx:Description>
 				<ocx:Reference element="FeatureCope" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="bb" date="2019-02-13" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="bb" date="2019-02-13" version="2.7.4">
 				<ocx:Description>
 				Added ReferenceSurfaces to Vessel to collect frequently used surfaces.
 			</ocx:Description>
 				<ocx:Reference element="ReferenceSurfaces" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-02-04" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-02-04" version="2.7.4">
 				<ocx:Description>
 				Added a bracketType enumerator to BracketParameters.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-31" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-31" version="2.7.4">
 				<ocx:Description>
 				Removed Clearance from WebStiffenerWithDoubleBracket.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithDoubleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-31" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-31" version="2.7.4">
 				<ocx:Description>
 				Removed Clearance from WebStiffenerWithSingleBracket.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithSingleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-28" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-28" version="2.7.4">
 				<ocx:Description>
 				Added SoftToe details to BracketParameters.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-25" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-25" version="2.7.4">
 				<ocx:Description>
 				Deleted Clearance from the BracketParameters.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-24" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-24" version="2.7.4">
 				<ocx:Description>
 				Added structureFunction as optional attribute to Stiffener.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-24" version="2.7.4">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-24" version="2.7.4">
 				<ocx:Description>
 				Added structureFunction as optional attribute to Plate.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-04" version="2.7.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-04" version="2.7.3">
 				<ocx:Description>
 				Moved the FaceBoundaryCurve definition from UnboundedGeometry back to Surface as agreed in the progress meeting.
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-03" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-03" version="2.7.2">
 				<ocx:Description>
 						Introduced a CompartmentFace entity as a specialisation of UnboundedGeometry where the FaceBoundaryCurve is made mandatory. 
 		Introduced a CompartmentFace entity as a specialisation of UnboundedGeometry where the FaceBoundaryCurve is made mandatory. 
 			</ocx:Description>
 				<ocx:Reference element="CompartmentFace" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-03" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-03" version="2.7.2">
 				<ocx:Description>
 				Moved the FaceBoundaryCurve definition from Surface to UnboundedGeometry (optional). This gives a clearer schema interpretation.
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2019-01-03" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2019-01-03" version="2.7.2">
 				<ocx:Description>
 				Moved the FaceBoundaryCurve definition from Surface back to UnboundedGeometry (optional). This gives a clearer schema interpretation.
 			</ocx:Description>
 				<ocx:Reference element="UnboundedGeometry" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-12-19" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-12-19" version="2.7.2">
 				<ocx:Description>
 				Added Header element to Arrangement so that the original source can be traced with time stamp, author, system etc.
 			</ocx:Description>
 				<ocx:Reference element="Arrangement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-12-18" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-12-18" version="2.7.2">
 				<ocx:Description>
 				Added Compartment as sub-element to Arrangement. The compartment defines a closed volume consisting of FaceBoundary objects and do not depend on the presence of any structure Panels. This allows for the definition of compartments independent of any structure.
 			</ocx:Description>
 				<ocx:Reference element="Compartment" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-12-18" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-12-18" version="2.7.2">
 				<ocx:Description>
 				Added Arrangement as a sub-element to Vessel. The Arrangement defines the vessel capacity plan composed of compartments
 			</ocx:Description>
 				<ocx:Reference element="Arrangement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-12-18" version="2.7.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-12-18" version="2.7.2">
 				<ocx:Description>
 				Renamed Compartment to PhysicalSpace to distinguish this definition of spaces which is defined by limits of physical structure Panel objects.
 			</ocx:Description>
 				<ocx:Reference element="PhysicalSpace" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-23" version="2.7.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-23" version="2.7.1">
 				<ocx:Description>
 				Made material Offset optional on the Plate
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-22" version="2.7.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-22" version="2.7.1">
 				<ocx:Description>
 				Modified the functionType enumerator to be aligned with AP218 coding and IACS Rec 82 glossary.
 			</ocx:Description>
 				<ocx:Reference element="functionType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-22" version="2.7.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-22" version="2.7.1">
 				<ocx:Description>
 				Added lug parameters to the LugPlateRef reference.
 			</ocx:Description>
 				<ocx:Reference element="LugPlateRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-22" version="2.7.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-22" version="2.7.1">
 				<ocx:Description>
 				Added an optional SlotContour as part of the CutBy to give the full detail of the slot contour.
 			</ocx:Description>
 				<ocx:Reference element="CutBy" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the definition of the NURBSSurface to use the same nurbsAttributes as NURBS3D.
 			</ocx:Description>
 				<ocx:Reference element="NURBSSurface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the definition of the NURBS3D to reflect the NURBSSurface implementation (same structure).
 			</ocx:Description>
 				<ocx:Reference element="NURBS3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the definition of the KnotVector to be an list of knot values and removed the multiplicity sub element.
 			</ocx:Description>
 				<ocx:Reference element="KnotVector" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Renamed bracketReinforcement to hasBracketReinforcement and changed type to boolean.
 			</ocx:Description>
 				<ocx:Reference element="hasBracketReinforcement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Renamed Rectangular to RectangularHole for clarity.
 			</ocx:Description>
 				<ocx:Reference element="RectangularHole" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the implementation of the nurbsAttributes on the NURBSSurface.
 			</ocx:Description>
 				<ocx:Reference element="NURBSSurface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the implementation of the NURBSParameters on NURBS3D curve to be aligned with the NURBS surface implementation.
 			</ocx:Description>
 				<ocx:Reference element="NURBS3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the implementation of V_NURBSproperties to use the attribute group nurbsAttributes.
 			</ocx:Description>
 				<ocx:Reference element="V_NURBSproperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the implementation of U_NURBSproperties to use the attribute group nurbsAttributes.
 			</ocx:Description>
 				<ocx:Reference element="U_NURBSproperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Changed the name of the attributeGroup nurbs3DAttributes  to nurbsAttributes
 			</ocx:Description>
 				<ocx:Reference element="nurbsAttributes" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Added Unose and Vnose to BracketParameters and removed Clearance.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Added optional arbitrary Contour3D to a UserDefinedBarSection. Used for display purposes.
 			</ocx:Description>
 				<ocx:Reference element="UserDefinedBarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Renamed UserDefined to UserDefinedBarSection which is a more self explained name.
 			</ocx:Description>
 				<ocx:Reference element="UserDefinedBarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Renamed HoleShape to HoleShapes to reflect that this is a catalogue of many standard hole shapes.
 			</ocx:Description>
 				<ocx:Reference element="HoleShapes" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-12" version="2.7.0">
 				<ocx:Description>
 				Replaced the generic Curve3D type by Contour3D on Hole2D to enforce a closed contour to describe arbitrary hole shapes.
 			</ocx:Description>
 				<ocx:Reference element="Hole2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-07" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-07" version="2.7.0">
 				<ocx:Description>
 				Deleted Knots3D and added one UknotVector and one VknotVector to NURBS3D
 			</ocx:Description>
 				<ocx:Reference element="NURBS3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-02" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-02" version="2.7.0">
 				<ocx:Description>
 				Revised the definition of WebStiffenerWithDoubleBracket to reference the DoubleBracket type
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithDoubleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-02" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-02" version="2.7.0">
 				<ocx:Description>
 				Revised the definition of WebStiffenerWithSingleBracket to reference the SingleBracket type
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithSingleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-11-01" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-11-01" version="2.7.0">
 				<ocx:Description>
 				Deleted the AssymetricalHole type.
 			</ocx:Description>
 				<ocx:Reference element="ParametricHole2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
 				<ocx:Description>
 				Renamed FeatureCope parameters to CopeHeigth and CopeRadius.
 			</ocx:Description>
 				<ocx:Reference element="FeatureCope" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
 				<ocx:Description>
 				Made BarSection sub elements (the different bar section sub-types) global and referenced from the BarSection.
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-30" version="2.7.0">
 				<ocx:Description>
 				Included u and v offsets on SectionRef to allow the correct positioning of a Stiffener. u and v offsets are given relative to the trace line.
 			</ocx:Description>
 				<ocx:Reference element="SectionRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.3">
 				<ocx:Description>
 				Reverted change on XSectionCatalogue made in the previous version of the schema.
 			</ocx:Description>
 				<ocx:Reference element="XSectionCatalogue" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.3">
 				<ocx:Description>
 				Reverted changes on BarSection made in the previous version of the schema.
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.2">
 				<ocx:Description>
 				Made FreeEdgeCurve3D referable by inheriting from EntityBase.
 			</ocx:Description>
 				<ocx:Reference element="FreeEdgeCurve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.2">
 				<ocx:Description>
 				Made LimitedBy optional for Plate.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-17" version="2.6.2">
 				<ocx:Description>
 				Made LimitedBy optional for Panel.
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-15" version="2.6.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-15" version="2.6.2">
 				<ocx:Description>
 				Made the BarSection type abstract. All section types must inherit from the BarSection and are made a global element. This allows to uniformly treat reading and writing of section types.
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Removed the  ConfigurationRef (reference to other stiffener end configuration) from the Pillar to avoid circular dependency.
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Removed the  ConfigurationRef (reference to other stiffener end configuration) from the Stiffener to avoid circular dependency.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Changed CellConnection to reference exactly two cells using the CellRef type.
 			</ocx:Description>
 				<ocx:Reference element="CellConnection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Changed CellRef to OcxItemPtr type.
 			</ocx:Description>
 				<ocx:Reference element="CellRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Changed HoleRef to OcxItemPtr type.
 			</ocx:Description>
 				<ocx:Reference element="HoleRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Changed CrossSection to SectionRef on the Pillar type.
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Changed cardinality of FreeEdgeCurve3D. A FreeEdcgeCurve3D need to contain at least one Curve3D, and can be a combination of different unlimited Curve3D types in any sequence.
 			</ocx:Description>
 				<ocx:Reference element="FreeEdgeCurve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Renamed DEXItemPtr to OcxItemPtr.
 			</ocx:Description>
 				<ocx:Reference element="OcxItemPtr" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-10-08" version="2.6.1">
 				<ocx:Description>
 				Added enumerator for the bracket position.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-30" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-30" version="2.6.0">
 				<ocx:Description>
 				Changed Schema name space from dex to ocx.
 			</ocx:Description>
 				<ocx:Reference element="ocxXML" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
 				<ocx:Description>
 				Made it possible to specify only one Inclination in case of a straight stiffener trace line.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
 				<ocx:Description>
 				Removed NurbsSurfaceCollection as this is an unnecessary layer.
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
 				<ocx:Description>
 				Made FaceBoundaryCurve optional for all surfaces which inherit from Surface .
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-27" version="2.6.0">
 				<ocx:Description>
 				Made CellConnection a global element.
 			</ocx:Description>
 				<ocx:Reference element="CellConnection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-21" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-21" version="2.6.0">
 				<ocx:Description>
 				Added FreeEdgeCurve3D to the enumeration types.
 			</ocx:Description>
 				<ocx:Reference element="refType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-17" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-17" version="2.6.0">
 				<ocx:Description>
 				Changed from Member to Pillar in the enumeration types.
 			</ocx:Description>
 				<ocx:Reference element="refType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-17" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-17" version="2.6.0">
 				<ocx:Description>
 				A Stiffener may be attached to a Plate, a Pillar or another Stiffener at the configuration position.
 			</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-17" version="2.6.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-17" version="2.6.0">
 				<ocx:Description>
 				A Penetration can either penetrate a Plate, a Pillar or a Stiffener.
 			</ocx:Description>
 				<ocx:Reference element="Penetration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				StiffenerRef attribute on the WebStiffenerWithDoubleBracket object is now explicitly made a DexItemPtr_T type.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithDoubleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				StiffenerRef attribute on the WebStiffenerWithSingleBracket object is now explicitly made a DexItemPtr_T type.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithSingleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				StiffenerRef attribute on the WebStiffener object is now explicitly made a DexItemPtr_T type.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				BracketRef attribute on the WebStiffenerWithDoubleBracket object is now explicitly made a DexItemPtr_T type.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithDoubleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				BracketRef attribute on the WebStiffenerWithSingleBracket object is now explicitly made a DexItemPtr_T type.
 			</ocx:Description>
 				<ocx:Reference element="WebStiffenerWithSingleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				BracketRef attribute on the DoubleBracket object is now explicitly made a DexItemPtr_T type.
 			</ocx:Description>
 				<ocx:Reference element="DoubleBracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				CutBy element on the Stiffener object is now explicitly made a CutBy_T type.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-09-05" version="2.5.3">
 				<ocx:Description>
 				Moved FaceBoundaryCurve from UnboundedGeometry to NURBSSurface_T definition
 			</ocx:Description>
 				<ocx:Reference element="NURBSSurface_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-30" version="2.5.3">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-30" version="2.5.3">
 				<ocx:Description>
 				renamed attributes on  NurbsSurfaceProps_T to follow the naming convention.
 			</ocx:Description>
 				<ocx:Reference element="NurbsSurfaceProps_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Made ConnectionConfiguration an element directly under Stiffener with cardinality [0,2] 
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Made ConnectionConfiguration an element directly under Pillar with cardinality [0,2] 
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Replaced PillarCenterline with Curve3D
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Replaced StriffenerTraceLine with Curve3D
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Made CrossSectionRef and MaterialRef  elements directly under Stiffener
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Added an optional FaceBoundaryCurve to the UnboundedGeometry for panels/plates
 			</ocx:Description>
 				<ocx:Reference element="UnboundedGeometry" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Removed ComposedOf from Compartment and moved the Cell reference (one to many) to directly under Compartment.
 			</ocx:Description>
 				<ocx:Reference element="Compartment" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Added Pillar as part of ComposedOf for a Panel
 			</ocx:Description>
 				<ocx:Reference element="ComposedOf" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Added an optional LimitedBy to Plane3D to avoid having to intersect co-planar objects.
 			</ocx:Description>
 				<ocx:Reference element="Plane3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Introduced units for the Start and Spacing elements on RefPlaneGroup
 			</ocx:Description>
 				<ocx:Reference element="RefPlaneGroup" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Introduced units for the Offset on GridRef.
 			</ocx:Description>
 				<ocx:Reference element="GridRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				Made localRef a mandatory attribute on EntityRefBase. All classes derived from EntityRefBase need to provide a localRef.
 			</ocx:Description>
 				<ocx:Reference element="EntityRefBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-28" version="2.5.2">
 				<ocx:Description>
 				EntityRefBase no longer inherit from IdBase and DescriptionBase to compact the information to be outputted for references. All classes derived from EntityRefBase does not need to provide an id or a Description.
 			</ocx:Description>
 				<ocx:Reference element="EntityRefBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Removed BracketShape from the Catalogue as all brackets are defined in place.
 			</ocx:Description>
 				<ocx:Reference element="ClassCatalogue" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Renamed TrimCurves to OuterContour.
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Renamed TrimCurves to OuterContour.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Added a second FeatureCope (FeatureCopeU and FeatureCopeV) to the BracketParameters type to support asymmetric bracket shapes.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Renamed ManHoleSymetrical to SymmetricalHole
 			</ocx:Description>
 				<ocx:Reference element="SymmetricalHole" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Renamed ManHoleAssymetrical to AsymmetricalHole
 			</ocx:Description>
 				<ocx:Reference element="AsymmetricalHole" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Added a new parametric hole definition RectangularMickeyMouseEars.
 			</ocx:Description>
 				<ocx:Reference element="RectangularMickeyMouseEars" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-14" version="2.5.2">
 				<ocx:Description>
 				Renamed simple element Grade to grade in accordance with the naming conventions.
 			</ocx:Description>
 				<ocx:Reference element="grade" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-08-07" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-08-07" version="2.5.2">
 				<ocx:Description>
 				Renamed simple type Description_T to Description_T in accordance with the naming conventions.
 			</ocx:Description>
 				<ocx:Reference element="Description_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-07-31" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-07-31" version="2.5.2">
 				<ocx:Description>
 				BuilderInformation_T element was incorrectly named BuilderInformation_T. Renamed the element to BuilderInformation in accordance with the naming conventions.
 			</ocx:Description>
 				<ocx:Reference element="BuilderInformation" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
 				<ocx:Description>
 				ClassCatalogue derives from DescriptionItem instead of Function (unnecessary layer of abstraction).
 			</ocx:Description>
 				<ocx:Reference element="ClassCatalogue" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
 				<ocx:Description>
 				Added InnerContour to CutBy to allow for any generic opening definition composed of a set of trim curves. 
 			</ocx:Description>
 				<ocx:Reference element="CutBy" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
 				<ocx:Description>
 				Removed item references derived from DEXItemPtr to simplify the schema.
 			</ocx:Description>
 				<ocx:Reference element="DEXItemPtr" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
 				<ocx:Description>
 				Modified DEXItemPtr refType to include a list of allowed reference items.
 			</ocx:Description>
 				<ocx:Reference element="refType" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-07-30" version="2.5.2">
 				<ocx:Description>
 				Fixed typo in naming of IntermediatePoint in CircumArc3D
 			</ocx:Description>
 				<ocx:Reference element="CircumArc3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Deleted the StructureFunction element, and added structureFunction as an optional attribute to Plate
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Deleted the StructureFunction element, and added structureFunction as an optional attribute to Stiffener
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Deleted the StructureFunction element, and added structureFunction as a mandatory attribute to Panel
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Made the tightness attribute mandatory on Panel.
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Removed Instance attribute from Panel (The Instance attribute carried AsDefined, Reflected, Both). The schema will instantiate all parts.
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Removed Knots2D from NURBS3D and replaced with the Knot element
 			</ocx:Description>
 				<ocx:Reference element="NURBS3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-29" version="2.5.1">
 				<ocx:Description>
 				Added Bracket to Vessel at same level as Panel, Plate, Stiffener ....
 			</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-28" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-28" version="2.5.0">
 				<ocx:Description>
 				Added position attribute to BracketParameters to specify Near or Far.
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-28" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-28" version="2.5.0">
 				<ocx:Description>
 				Removed NurbsSurfacePatch from NURBSSurfaceCollection The NURBSSurfaceCollection contains a set of NurbsSurface definitions.
 			</ocx:Description>
 				<ocx:Reference element="NURBSSurfaceCollection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-28" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-28" version="2.5.0">
 				<ocx:Description>
 				Removed RangeBox3D as it is not used.
 			</ocx:Description>
 				<ocx:Reference element="GeometryRepresentation" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
             The panel UnboundedGeometry can consist of multiple surfaces to enable the definition of knuckled panels.
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
 			A plate can have its own UnboundedGeometry.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
 			Added a position (near/far) to the BracketParameters
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
 			Added a cargo type to the Compartment definition to separate compartment and cargo physical properties.
 			</ocx:Description>
 				<ocx:Reference element="Compartment" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
 			Removed PhysicalProperties from Seam.
 			</ocx:Description>
 				<ocx:Reference element="Seam" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
 			Revised StructureFunction as agreed in distributed spread sheet. Structure Functions are only one level, and the type is enumerated.
 			</ocx:Description>
 				<ocx:Reference element="StructureFunction" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-26" version="2.5.0">
 				<ocx:Description>
 			Material side has been removed from the Plate element. The associated PrincipalVesselDirection is discontinued and has been deleted from the schema.
 			The Offset uniquely defines the material offset from the mould line together with the surface normal.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-22" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-22" version="2.5.0">
 				<ocx:Description>
 				Added OccurrenceGroup to the ProductView to support nested levels of grouping of instances.
 			</ocx:Description>
 				<ocx:Reference element="OccurrenceGroup" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-22" version="2.5.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-22" version="2.5.0">
 				<ocx:Description>
 				Renamed AssemblyView to DesignView.
 			</ocx:Description>
 				<ocx:Reference element="DesignView" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Changed Hole2DContour to include a reference to a catalogue Hole2D type.
 			</ocx:Description>
 				<ocx:Reference element="Hole2DContour" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Added HoleRef to reference hole catalogue definitions.
 			</ocx:Description>
 				<ocx:Reference element="HoleRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Deleted TertiaryAxis from the the definition of the Transformation
 			</ocx:Description>
 				<ocx:Reference element="Transformation" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Changed UnboundedPanelGeometry to global element UnboundedGeometry for the Panel.
 			</ocx:Description>
 				<ocx:Reference element="Panel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Added UnboundedGeometry to the Plate and Bracket definitions.
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Added a EdgeRef to LimitedBy enabling to define a closed contour by the limiting objects.
 			</ocx:Description>
 				<ocx:Reference element="LimitedBy" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Added a Cone3D surface type.
 			</ocx:Description>
 				<ocx:Reference element="Cone3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.1">
 				<ocx:Description>
 				Renamed LineString3D to PolyLine3D. Deleted LineString3D as these represent the same line type
 			</ocx:Description>
 				<ocx:Reference element="PolyLine3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-18" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-18" version="2.4.1">
 				<ocx:Description>
 				Deleted all Curve2D objects, and introduced a boolean is2D (default = false) on Curve3D to allow restriction to 2D (Z coordinate can be assumed equal zero).
 			</ocx:Description>
 				<ocx:Reference element="Curve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-18" version="2.4.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-18" version="2.4.1">
 				<ocx:Description>
 				Stiffener/member inclination given by two direction vectors, one at each end.
 			</ocx:Description>
 				<ocx:Reference element="Inclination" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added an AssemblyView as a specialization of a ProductView.
 			</ocx:Description>
 				<ocx:Reference element="AssemblyView" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added a generic ProductView to the schema. ProductView is abstract and is not instantiated.
 			</ocx:Description>
 				<ocx:Reference element="ProductView" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Changed Contour3D_T to explicitly distinguish between closed and open Curve3D types.
 			</ocx:Description>
 				<ocx:Reference element="Contour3D_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added PolyLine3D to the set of Curve3D types definition to Ellipse3D.
 			</ocx:Description>
 				<ocx:Reference element="PolyLine3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added MinorAxis definition to Ellipse3D.
 			</ocx:Description>
 				<ocx:Reference element="Ellipse3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Made LimitedBy to a common global element and included the possibility to reference any structure object as part of the topology.
 			</ocx:Description>
 				<ocx:Reference element="LimitedBy" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added the possibility to reference Members and Plates from a ConnectionConfiguration.
 			</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added new pointer type MemberRef to reference instantiated members (Pillars).
 			</ocx:Description>
 				<ocx:Reference element="MemberRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Added a position (Point3D) to the Inclination definition of the Stiffener. It is required to specify the inclination at both stiffener ends and at intermediate positions if necessary.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Cleaned up the CoordinateSystem definitions and naming of elements and attributes.
 			</ocx:Description>
 				<ocx:Reference element="CoordinateSystem" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Grouped all RefPlanes under a FrameTable element in CoordinateSystem to improve schema readability.
 			</ocx:Description>
 				<ocx:Reference element="CoordinateSystem" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Changed Vector2D to be unit less and of unit length
 			</ocx:Description>
 				<ocx:Reference element="Vector2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-12" version="2.4.0">
 				<ocx:Description>
 				Changed Vector3D to be unit less and of unit length
 			</ocx:Description>
 				<ocx:Reference element="Vector3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-06" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-06" version="2.4.0">
 				<ocx:Description>
 				Added Compartment definition to the schema. A Compartment represents a physical volume.
 			</ocx:Description>
 				<ocx:Reference element="Compartment" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-06-04" version="2.4.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-06-04" version="2.4.0">
 				<ocx:Description>
 				Added Designation information to the Vessel.
 			</ocx:Description>
 				<ocx:Reference element="ShipDesignation_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Allow for instantiation of any structure object directly under the Vessel.
 			</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Added a Penetration object to  pillars.
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Added the possibility for a Stiffener to penetrate another stiffener by modification of the Penetration object.
 			</ocx:Description>
 				<ocx:Reference element="Penetration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Added CutBy element to the Pillar to allow for the definition of arbitrary openings in members
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Added CutBy element to the Stiffener to allow for the definition of arbitrary openings in stiffeners.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Changed Inclination definition of Pillar to be the same as the definition for Stiffener.
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Corrected name of PhysicalProperties_Type to PhysicalPropoerties_T to align with naming convention.
 			</ocx:Description>
 				<ocx:Reference element="PhysicalProperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-28" version="2.3.2">
 				<ocx:Description>
 				Corrected typo of IntermediatePoint in CircumArc2D.
 			</ocx:Description>
 				<ocx:Reference element="CircumArc2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
 				<ocx:Description>
 				Added a direction vector for the stiffener flange to define the local orientation of the Stiffener cross section.
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
 				<ocx:Description>
 				Added additional meta data to BarSection.
 			</ocx:Description>
 				<ocx:Reference element="BarSection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-15" version="2.3.1">
 				<ocx:Description>
 				Changed BulbFlat properties to include bulb width.
 			</ocx:Description>
 				<ocx:Reference element="BulbFlat" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-11" version="2.3.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-11" version="2.3.1">
 				<ocx:Description>
 				Changed Segment definition of CompositeCurve3D to to be the same definition as for CompositCurve2D.
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-05-11" version="2.3.1">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-05-11" version="2.3.1">
 				<ocx:Description>
 				Changed Segment definition of CompositeCurve2D to unbounded. A Segment may either consist of one Line2D, one CircumArc2D or both types in combination.
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Added NURBSSurfaceCollection as a collection of NURBSSurfaces.
 			</ocx:Description>
 				<ocx:Reference element="NURBSSurfaceCollection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Removed LineArc2D which is replaced by CircumArc2D.
 			</ocx:Description>
 				<ocx:Reference element="CircumArc2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Redefined CompositeCurve2D to a collection of Line2D and CircumArc2D types.
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Added a straight line Line2D defined by two positions.
 			</ocx:Description>
 				<ocx:Reference element="Line2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Added PhysicalProperties information to Plate, Bracket, Stiffener and Member types.
 			</ocx:Description>
 				<ocx:Reference element="PhysicalProperties" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Added Pillar as a specialization of the Member type.
 			</ocx:Description>
 				<ocx:Reference element="Pillar" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Redefined CompositeCurve3D to a collection of Line3D and CircumArc3D types.
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Added a straight line Line3D defined by two positions.
 			</ocx:Description>
 				<ocx:Reference element="Line3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Removed LineArc3D which is replaced by CircumArc3D.
 			</ocx:Description>
 				<ocx:Reference element="CircumArc3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Changed attribute naming in accordance with the lCC (lowerCamelCase) naming convention for attributes.
 			</ocx:Description>
 				<ocx:Reference element="bracketReinforecement" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Removed Transformation as part of the Bracket definition as each bracket will be directly instantiated in 3D space.
 			</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Removed Centroid attribute from Surface objects to make the XML more compact.
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Removed Centroid attribute from Curve3D objects to make the XML more compact.
 			</ocx:Description>
 				<ocx:Reference element="Curve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-016" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-016" version="2.3.0">
 				<ocx:Description>
 				Removed Centroid attribute from Curve2D objects to make the XML more compact.
 			</ocx:Description>
 				<ocx:Reference element="Curve2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-16" version="2.3.0">
 				<ocx:Description>
 				Removed StructureGrouping and Structure containers from the schema. Panel or Plate objects are placed directly under the Vessel.
 			</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-016" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-016" version="2.3.0">
 				<ocx:Description>
 				Added two additional enumerations to the PrincipalVesselDirection: WithSurfaceNormal and AgainstSurfaceNormal.
 			</ocx:Description>
 				<ocx:Reference element="PrincipalVesselDirection" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-15" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-15" version="2.3.0">
 				<ocx:Description>
 				Added unbounded geometry definition to Bracket.
 			</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-015" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-015" version="2.3.0">
 				<ocx:Description>
 				Changed trim curves of Bracket from 2DCurve to 3DCurve.
 			</ocx:Description>
 				<ocx:Reference element="Bracket" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-15" version="2.3.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-15" version="2.3.0">
 				<ocx:Description>
 				Added a PlateRef as a specialization of the EntityRefBase.
 			</ocx:Description>
 				<ocx:Reference element="PlateRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
 				<ocx:Description>
 				Added RangeBox3D as new geometry type defining a box shape by min and max extensions.
 			</ocx:Description>
 				<ocx:Reference element="GeometryRepresentation" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
 				<ocx:Description>
 				Added Sphere3D as new Surface type defining a sphere by radius and origin.
 			</ocx:Description>
 				<ocx:Reference element="Sphere3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
 				<ocx:Description>
 				Added CircumCircle3D as new Curve3D type defining a circum circle by 3 points.
 			</ocx:Description>
 				<ocx:Reference element="CircumCircle3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-05" version="2.2.0">
 				<ocx:Description>
 				Added CircumArc3D as new Curve3D type defining a circular arc by 3 points.
 			</ocx:Description>
 				<ocx:Reference element="CircumArc3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
 				<ocx:Description>
 				Added Ellipse3D as new Curve3D type
 			</ocx:Description>
 				<ocx:Reference element="Ellipse3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
 				<ocx:Description>
 				Added Circle3D as new Curve3D type
 			</ocx:Description>
 				<ocx:Reference element="Circle3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
 				<ocx:Description>
 				Changed content in Knot_T from elements to attributes as these are parameters without unit (not of type Quantity). 
 				Makes the XML more compact.
 			</ocx:Description>
 				<ocx:Reference element="Knot_T" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
 				<ocx:Description>
 				Extended the number of characters to 40 for the GUIDRef to match guids in the Aveva export
 			</ocx:Description>
 				<ocx:Reference element="GUIDRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
 				<ocx:Description>
 				Made the ref  attribute optional for all elements inherited from EntityRefBase. This makes the schema more flexible, but it can also be rendered incomplete.
 				To be discussed. Maybe we can have a mandatory choice between one of the two reference types: ref or GUIDRef.
 			</ocx:Description>
 				<ocx:Reference element="EntityRefBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-04" version="2.2.0">
 				<ocx:Description>
 				Made the id  attribute optional for all elements inherited from IdBase. This makes the schema more flexible, but it can also be rendered incomplete.
 				To be discussed.
 			</ocx:Description>
 				<ocx:Reference element="IdBase" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
 				<ocx:Description>
 				Added an AngleTolerance measure. 
 			</ocx:Description>
 				<ocx:Reference element="Form" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
 				<ocx:Description>
 				Renamed the Tolerance measure to DistanceTolerance. 
 			</ocx:Description>
 				<ocx:Reference element="Form" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
 				<ocx:Description>
 				Made the Tolerance measure provided by the exporting application global for all geometries by moving it to the Form type. 
 			</ocx:Description>
 				<ocx:Reference element="Form" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
 				<ocx:Description>
 				Changed type of Centroid definition to Point3D on surfaces
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
 				<ocx:Description>
 				Changed type of Centroid definition to Point3D on 3D curves
 			</ocx:Description>
 				<ocx:Reference element="Curve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-04-03" version="2.2.0">
 				<ocx:Description>
 				Changed type of Centroid definition to Point2D on 2D curves
 			</ocx:Description>
 				<ocx:Reference element="Curve2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Added a complex curve CompositeCurve2D
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve2D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Added a complex curve CompositeCurve3D
 			</ocx:Description>
 				<ocx:Reference element="CompositeCurve3D" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Made it possible for a stiffener to reference an ConnectionConfiguration where an existing ConnectionConfiguration points to me
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Added bracket parameters BracketParameters
 			</ocx:Description>
 				<ocx:Reference element="BracketParameters" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Specialized a reference type ConfigurationRef
 			</ocx:Description>
 				<ocx:Reference element="ConfigurationRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Specialized a reference type BracketRef.
 			</ocx:Description>
 				<ocx:Reference element="BracketRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Specialized a reference type StiffenerRef.
 			</ocx:Description>
 				<ocx:Reference element="StiffenerRef" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Added a 3D position to an ConnectionConfiguration
 			</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Added parameters for possible types of ConnectionConfiguration
 			</ocx:Description>
 				<ocx:Reference element="ConnectionConfiguration" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-22" version="2.1.0">
 				<ocx:Description>
 				Added bracket and stiffener detailing FeatureCope.
 			</ocx:Description>
 				<ocx:Reference element="FeatureCope" locationRef="Link"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-20" version="2.1.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-20" version="2.1.0">
 				<ocx:Description>
 				Made the GUIDRef optional for all elements derived from GeometryRepresentation.
 			</ocx:Description>
 				<ocx:Reference element="GeometryRepresentation" locationRef="..//schema/complextype[@name=&apos;GeometryRepresentation&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-14" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-14" version="2.0.0">
 				<ocx:Description>
 				Added a specialized SectionRef pointer
 			</ocx:Description>
 				<ocx:Reference element="SectionRef" locationRef="..//schema/complextype[@name=&apos;SectionRef_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-13" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-13" version="2.0.0">
 				<ocx:Description>
 				Added parametric hole shape definitions to catalogue Hole2D 
 			</ocx:Description>
 				<ocx:Reference element="Hole2D" locationRef="..//schema/complextype[@name=&apos;Hole2D_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added EntityRefBase item as a base class to all references. 
 			</ocx:Description>
 				<ocx:Reference element="EntityRefBase" locationRef="..//schema/complextype[@name=&apos;EntityRefBase_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Introduced DEXItemPtr as a general DEX pointer to any item derived from EntityBase. 
 			</ocx:Description>
 				<ocx:Reference element="DEXItemPtr" locationRef="..//schema/complextype[@name=&apos;DEXItemPtr_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Renamed GridReference to GridRef which inherit from EntityRefBase. 
 			</ocx:Description>
 				<ocx:Reference element="GridRef" locationRef="..//schema/complextype[@name=&apos;GridRef_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Included a unique ID on the Material_T type. 
 			</ocx:Description>
 				<ocx:Reference element="Material" locationRef="..//schema/complextype[@name=&apos;Material_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				PlateMaterial now inherit from EntityRefBase supporting the general reference mechanism in the schema. 
 			</ocx:Description>
 				<ocx:Reference element="PlateMaterial" locationRef="..//schema/element[@name=&apos;PlateMaterial&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Stiffener type uses new reference mechanism EntityRefBase to associate material and cross section. 
 			</ocx:Description>
 				<ocx:Reference element="Stiffener" locationRef="..//schema/complextype[@name=&apos;Stiffener_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added a Tolerance measure to all GeometryRepresentations. 
 			</ocx:Description>
 				<ocx:Reference element="GeometryRepresentation" locationRef="..//schema/complextype[@name=&apos;GeometryRepresentation_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added Centroid and Area attributes to all surfaces. 
 			</ocx:Description>
 				<ocx:Reference element="Surface" locationRef="..//schema/complextype[@name=&apos;Surface_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-12" version="2.0.0">
 				<ocx:Description>
 				Added Centroid and Length attributes to all curves 
 			</ocx:Description>
 				<ocx:Reference element="Curve3D" locationRef="..//schema/complextype[@name=&apos;Curve3D_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
 				<ocx:Description>
 				Changed to English writing style Catalog-&gt;Catalogue 
 			</ocx:Description>
 				<ocx:Reference element="ClassCatalogue" locationRef="..//schema/complextype[@name=&apos;ClassCatalogue_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
 				<ocx:Description>
 				Either Structure or StructurGrouping can be sub-nodes to the Vessel type.
 				The schema no longer require an instance of a StructureGrouping if this level is not necessary. 
 			</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="..//schema/complextype[@name=&apos;Vessel_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-09" version="2.0.0">
 				<ocx:Description>
 				Added TrimCurves to the Plate. 
 			</ocx:Description>
 				<ocx:Reference element="Plate" locationRef="..//schema/complextype[@name=&apos;Plate_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added ClassificationData to the Vessel. ClassificationData now contains PrincipalParticulars and other class related data
 			</ocx:Description>
 				<ocx:Reference element="Vessel" locationRef="..//schema/complextype[@name=&apos;Vessel_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Renamed Entity_T with IdBase_T
 			</ocx:Description>
 				<ocx:Reference element="IdBase" locationRef="..//schema/complextype[@name=&apos;IdBase_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added optional TonnageData to the Vessel definition 
 			</ocx:Description>
 				<ocx:Reference element="ocx:TonnageData_T" locationRef="..//schema/complextype[@name=&apos;TonnageData_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added optional StatutoryData to the Vessel definition 
 			</ocx:Description>
 				<ocx:Reference element="ocx:StatutoryData_T" locationRef="..//schema/complextype[@name=&apos;StatutoryData_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-08" version="2.0.0">
 				<ocx:Description>
 				Added optional language attribute xs:language 
 			</ocx:Description>
 				<ocx:Reference element="dexXML" locationRef="..//schema/complextype[@name=&apos;dexXML_T&apos;]"/>
-			</ocx:SchemaChange>
-			<ocx:SchemaChange author="oca" date="2018-03-01" version="2.0.0">
+			</ocx:SchemaChange><ocx:SchemaChange author="oca" date="2018-03-01" version="2.0.0">
 				<ocx:Description>
 				Replaced uos with DocumentBase and introduced a schemaVersion attribute
 			</ocx:Description>
@@ -2476,9 +2110,8 @@ information are derived.</xs:documentation>
 				<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.  Ether a localRef or a GUIDRef shall be provided, or both. The schema will check this by the assertion: test=&quot;(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)&quot;.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:assert test="(@localRef and not(@ocx:GUIDRef)) or (not(@localRef) and @ocx:GUIDRef) or (@localRef and @ocx:GUIDRef)"/>
 	</xs:complexType>
-	<xs:element name="BoundedRef" type="ocx:BoundedRef_T" abstract="true" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="BoundedRef" type="ocx:BoundedRef_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract class: A reference to a bounded object with limted extent.</xs:documentation>
 		</xs:annotation>
@@ -2495,7 +2128,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="OcxItemPtr" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="OcxItemPtr">
 		<xs:annotation>
 			<xs:documentation>A generic element used to reference an instantiated OCX object by a GUID (the pointer).</xs:documentation>
 		</xs:annotation>
@@ -2541,7 +2174,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="ocx:externalRefAttributes"/>
 	</xs:complexType>
-	<xs:element name="GridRef" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="GridRef">
 		<xs:annotation>
 			<xs:documentation>An element that makes a reference to a grid definition. An offset along the grid reference normal vector can be given.</xs:documentation>
 		</xs:annotation>
@@ -2564,7 +2197,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="MaterialRef" type="ocx:MaterialRef_T" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="MaterialRef" type="ocx:MaterialRef_T">
 		<xs:annotation>
 			<xs:documentation>A reference to the parent&apos;s material.</xs:documentation>
 		</xs:annotation>
@@ -2579,7 +2212,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="SectionRef" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="SectionRef">
 		<xs:annotation>
 			<xs:documentation>A reference to the parent&apos;s cross section.</xs:documentation>
 		</xs:annotation>
@@ -2604,7 +2237,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="CellRef" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="CellRef">
 		<xs:annotation>
 			<xs:documentation>A reference to a Compartment cell.</xs:documentation>
 		</xs:annotation>
@@ -2641,7 +2274,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="BracketRef" type="ocx:BracketRef_T" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="BracketRef" type="ocx:BracketRef_T">
 		<xs:annotation>
 			<xs:documentation>A OcxItemPtr reference to a Bracket instance.</xs:documentation>
 		</xs:annotation>
@@ -2656,7 +2289,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="StiffenerRef" type="ocx:StiffenerRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="StiffenerRef" type="ocx:StiffenerRef_T">
 		<xs:annotation>
 			<xs:documentation>A OcxItemPtr reference to a Stiffener.</xs:documentation>
 		</xs:annotation>
@@ -2671,7 +2304,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="HoleRef" type="ocx:HoleRef_T" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="HoleRef" type="ocx:HoleRef_T">
 		<xs:annotation>
 			<xs:documentation>A reference to a catalogue 2D hole.</xs:documentation>
 		</xs:annotation>
@@ -2686,7 +2319,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="PlateRef" type="ocx:PlateRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="PlateRef" type="ocx:PlateRef_T">
 		<xs:annotation>
 			<xs:documentation>The reference to a connected Plate.</xs:documentation>
 		</xs:annotation>
@@ -2701,7 +2334,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="PanelRef" type="ocx:PanelRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="PanelRef" type="ocx:PanelRef_T">
 		<xs:annotation>
 			<xs:documentation>The reference to a connected Plate.</xs:documentation>
 		</xs:annotation>
@@ -2716,7 +2349,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="SeamRef" type="ocx:SeamRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="SeamRef" type="ocx:SeamRef_T">
 		<xs:annotation>
 			<xs:documentation>The reference to a connected Plate.</xs:documentation>
 		</xs:annotation>
@@ -2731,7 +2364,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="SurfaceRef" type="ocx:SurfaceRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="SurfaceRef" type="ocx:SurfaceRef_T">
 		<xs:annotation>
 			<xs:documentation>The reference to a Surface geometry which is shared between more than one part.</xs:documentation>
 		</xs:annotation>
@@ -2746,7 +2379,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="PillarRef" type="ocx:PillarRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="PillarRef" type="ocx:PillarRef_T">
 		<xs:annotation>
 			<xs:documentation>The reference to a connected Member (Pillar).</xs:documentation>
 		</xs:annotation>
@@ -2761,7 +2394,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="LugPlateRef" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="LugPlateRef">
 		<xs:annotation>
 			<xs:documentation>The reference to plate lugs with additional lug parameters.</xs:documentation>
 		</xs:annotation>
@@ -2789,7 +2422,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EndCutRef" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="EndCutRef">
 		<xs:annotation>
 			<xs:documentation>A reference to the Stiffener end cut detail.</xs:documentation>
 		</xs:annotation>
@@ -2813,7 +2446,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EdgeCurveRef" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="EdgeCurveRef">
 		<xs:annotation>
 			<xs:documentation>A reference to a Panel, Plate or bracket boundary curve. Used as landing curve for a face plate or edge reinforcement stiffener.</xs:documentation>
 		</xs:annotation>
@@ -2928,10 +2561,11 @@ information are derived.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="ocx:EdgeReinforcement"/>
+				<xs:enumeration value="ocx:Hole2DContour"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	<xs:attribute name="externalRef" type="xs:anyURI">
+	<xs:attribute name="externalRef" type="xs:string">
 		<xs:annotation>
 			<xs:documentation>URI specifying the file location of the referenced entity.</xs:documentation>
 		</xs:annotation>
@@ -2986,7 +2620,7 @@ information are derived.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="RootRef" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="RootRef">
 		<xs:annotation>
 			<xs:documentation>RootRef is an OcXItemPtr pointing to the top-level instance in a ProductView.</xs:documentation>
 		</xs:annotation>
@@ -3055,7 +2689,7 @@ information are derived.</xs:documentation>
 			<xs:extension base="ocx:ProductView_T"/>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ChildRef" type="ocx:ChildRef_T" substitutionGroup="ocx:EntityRefBase">
+	<xs:element name="ChildRef" type="ocx:ChildRef_T">
 		<xs:annotation>
 			<xs:documentation>The reference to zero or more child instances. A leaf instance does not have any children.</xs:documentation>
 		</xs:annotation>
@@ -3409,7 +3043,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice>
+				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0">
 						<xs:annotation>
@@ -4002,7 +3636,7 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Type definition of the structural concept defining the stiffeners which is belonging to a panel.</xs:documentation>
 		</xs:annotation>
-		<xs:choice>
+		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:Stiffener" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:EdgeReinforcement" maxOccurs="unbounded"/>
 		</xs:choice>
@@ -5579,7 +5213,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice>
+				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
 					<xs:element ref="ocx:FrameTables">
 						<xs:annotation>
@@ -5781,7 +5415,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>The type definition of the VesselGrid</xs:documentation>
 		</xs:annotation>
-		<xs:choice>
+		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:XGrid" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:YGrid" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:ZGrid" minOccurs="0" maxOccurs="unbounded"/>
@@ -5885,7 +5519,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:choice>
+				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:GridPosition">
 						<xs:annotation>
 							<xs:documentation>The location of the first grid position in the spacing group.</xs:documentation>

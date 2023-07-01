@@ -265,6 +265,105 @@ information are derived.</xs:documentation>
 		</xs:restriction>
 	</xs:simpleType>
 	<!-- ========================================================================================  -->
+	<!--OCX commenting capbilities-->
+	<!-- ========================================================================================  -->
+	<xs:element name="Comments">
+		<xs:annotation>
+			<xs:documentation>Contains one more comments applied on the parent element.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Comment" type="ocx:Comment_T" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Comment_T">
+		<xs:annotation>
+			<xs:documentation>Contains one more comments. To allow referencing multiple elements, the comments are in a separate  hierachy instead of nesting them in the respective items.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:DescriptionBase_T">
+				<xs:sequence>
+					<xs:element name="ViewPort" type="ocx:Viewpoint_T" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="Items" minOccurs="0" maxOccurs="1">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="ocx:OcxItemPtr" minOccurs="1" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="organization" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Name of commenting organization.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="person" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Name of commenting person.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="timestamp" type="xs:dateTime" use="optional">
+					<xs:annotation>
+						<xs:documentation>Timestamp of commenting.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="refersTo" type="xs:IDREF" use="optional">
+					<xs:annotation>
+						<xs:documentation>Referes to previous comment, allows to build up simple commenting histories.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute ref="ocx:GUIDRef" use="required">
+					<xs:annotation>
+						<xs:documentation>A globally Unique ID referring an entity in the sending application.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+			<!-- added here to avoid circulus vitiosus  with EntityBase_T -->
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Viewpoint_T">
+		<xs:annotation>
+			<xs:documentation>A view point defines, where the camera is located ant in which direction one looks.
+				By default the UpVector is assumed to be 0,0,1.
+				This is an implementation neutral form to describe the Viewpoint. No implict camera position (OpenGL ...) is implied here.
+				The external file allows to associated addition file like drawings, screenshots, photos ... to a comment.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Position" type="ocx:Point3D_T" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LookAt" type="ocx:Point3D_T" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="UpVector" type="ocx:Vector3D_T" minOccurs="0" maxOccurs="1"/>
+			<!-- add field off view (equivalent to focal length of lense) as found in X3D and Collada ??? -->
+			<xs:element ref="ocs:ExternalFiles" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExternalFiles">
+		<xs:sequence>
+			<xs:element ref="ocx:ExternalFileRef" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalFileRef" type="ocx:ExternalFileRef_T">
+		<xs:annotation>
+			<xs:documentation>The ExternalFileRef element is used to point to an external file, e.g. a PDF containing a drawing, a picture shot on the vessel ...
+			Unlike the ExternalGeometryRef ist could be used to flexible associated any kind of external file.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ExternalFileRef_T">
+		<xs:annotation>
+			<xs:documentation>The ExternalFileRef element is used to point to an external file, e.g. a PDF containing a drawing, a picture shot on the vessel ...
+				Unlike the ExternalGeometryRef ist could be used to flexible associated any kind of external file.
+				The type of external file is given as a MIME type as defined by RFC 6839 (https://datatracker.ietf.org/doc/html/rfc6838)
+				see at the IANA (https://www.iana.org/assignments/media-types/media-types.xhtml#application) for a list of well known MIME types
+			</xs:documentation>
+		</xs:annotation>
+		<xs:extension base="ocx:DescriptionBase_T">
+		</xs:extension>
+		<xs:attribute ref="ocx:externalRef" use="required"/>
+		<xs:attribute name="mime" type="xs:string" use="required" fixed=".stp"/>
+	</xs:complexType>
+
+	<!-- ========================================================================================  -->
 	<!--OCX References-->
 	<!-- ========================================================================================  -->
 	<!-- Reference base-->
@@ -978,6 +1077,7 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:DesignView" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:Comments" minOccurs="0" maxOccurs="1"/>
 					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:element ref="ocx:Arrangement"/>
 						<xs:element ref="ocx:ReferenceSurfaces">

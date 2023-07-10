@@ -1,10 +1,18 @@
 # OCX_Schema: Changelog
 
-## 3.0.0_alpha 2023.07.10
+## 3.0.0-alpha.1 2023.07.10
 
 release tag: 
 
-### Issues solved
+### Issues fixed
+
+1. [#3 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/issues/3)
+2. [#4 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/pull/4)
+3. [#2 Add public license to schema](https://github.com/OCXStandard/OCX_Schema/pull/2)
+4. [#5 Assign a valid schema URL](https://github.com/OCXStandard/OCX_Schema/issues/5)
+5. [#7 Bulb profile definition](https://github.com/OCXStandard/OCX_Schema/issues/7)
+6. [#16 and #17 Fix schema typos](https://github.com/OCXStandard/OCX_Schema/issues/16)
+7. [#20 Add compact representation of points](https://github.com/OCXStandard/OCX_Schema/issues/20)
 
 ### Changed
   - Delete ``SchemaChange`` documentation as we have converted to this ``CHANGELOG.md``

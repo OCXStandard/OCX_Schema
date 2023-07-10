@@ -1,0 +1,25 @@
+Hole2D
+======
+
+.. currentmodule:: ocx_dataclasses
+
+.. autoclass:: Hole2D
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~Hole2D.contour
+      ~Hole2D.parametric_circle
+      ~Hole2D.rectangular_hole
+      ~Hole2D.super_elliptical
+      ~Hole2D.symmetrical_hole
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: contour
+   .. autoattribute:: parametric_circle
+   .. autoattribute:: rectangular_hole
+   .. autoattribute:: super_elliptical
+   .. autoattribute:: symmetrical_hole

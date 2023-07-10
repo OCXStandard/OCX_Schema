@@ -1,0 +1,12 @@
+include LICENSE README.md CHANGELOG.md tox.ini
+recursive-include docs *
+recursive-include ocx_databinding *
+
+
+prune docs/_build
+prune docs/api/reference
+exclude docs/_static/logo.png
+exclude .readthedocs.yml
+exclude .pre-commit-config.yaml
+
+global-exclude .DS_Store *.pyc

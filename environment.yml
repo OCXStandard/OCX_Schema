@@ -1,0 +1,30 @@
+name: ocx_schema
+channels:
+  - conda-forge
+  - msys2 # for m2-grep
+  # We want to have a reproducible setup, so we don't want default channels,
+  # which may be different for different users. All required channels should
+  # be listed explicitly here.
+  - nodefaults
+dependencies:
+  - python=3.10
+  - pre-commit
+  - tbump
+  - zeep
+  - requests
+  - flit
+  # Doc deps
+  - sphinx
+  - sphinx-autodoc-typehints
+  - sphinx_rtd_theme
+  - sphinx-click
+  - pip
+  - m2w64-make # GNU mMake for windows
+  - m2-grep # Grep for windows. For Makefile sh
+  - m2-gawk # awk for windows. for Makefile sh
+  # Install any PyPi packages
+  - pip:
+      # Packages only on PyPi
+      - sphinx_automodapi
+      - xsdata[cli,lxml,soap]
+

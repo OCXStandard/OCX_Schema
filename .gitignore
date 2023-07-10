@@ -1,15 +1,7 @@
 # ignore all files in named directories
-Documentation/
-Notebooks/
-Models/
-Tables/
-Archive/
-#Ignore the XMLSpy project files
-*.spp
-*.xml
-#And some more files
-*.zip
-*.html
-*.nb
+# XMLSpy temp file
+docs/tmp0000.html
+# Builds
+dist/
 # Ignore IDE files
 .idea

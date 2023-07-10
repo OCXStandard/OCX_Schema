@@ -1,7 +1,10 @@
 # OCX_Schema: Changelog
 
-## Working draft 
+## 3.0.0_alpha 2023.07.10
 
+release tag: 
+
+### Issues solved
 
 ### Changed
   - Delete ``SchemaChange`` documentation as we have converted to this ``CHANGELOG.md``

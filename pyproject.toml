@@ -82,10 +82,13 @@ search = 'ocx_schema//V{current_version}'
 name = "Insert new xsdata package name"
 cmd = "python xsdata_package.py {new_version}"
 
-
 [[tool.tbump.before_commit]]
 name = "Generate data-bindings."
 cmd = "xsdata generate OCX_Schema.xsd"
+
+[[tool.tbump.before_commit]]
+name = "Add generated files to commit."
+cmd = "gid add ./ocx_*"
 
 [[tool.tbump.before_commit]]
 name = "Insert version string in databinding."

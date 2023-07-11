@@ -71,16 +71,17 @@ search = 'fixed="{current_version}"'
 
 [[tool.tbump.file]]
 src = "OCX_Schema.xsd"
-search = 'ocx_schema//{current_version}'
-
-[[tool.tbump.file]]
-src = ".xsdata.xml"
-search = '<Package>ocx_v{current_version}'
-
+version_template = "{major}{minor}{patch}{extra}"
+search = 'ocx_schema//V{current_version}'
 
 # You can specify a list of commands to
 # run after the files have been patched
 # and before the git commit is made
+
+[[tool.tbump.before_commit]]
+name = "Insert new xsdata package name"
+cmd = "python xsdata_package.py {new_version}"
+
 
 [[tool.tbump.before_commit]]
 name = "Generate data-bindings."
@@ -88,7 +89,7 @@ cmd = "xsdata generate OCX_Schema.xsd"
 
 [[tool.tbump.before_commit]]
 name = "Insert version string in databinding."
-cmd = "python main.py {new_version}"
+cmd = "python insert_version.py {new_version}"
 
 # Or run some commands after the git tag and the branch
 # have been pushed:

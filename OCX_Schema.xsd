@@ -9,9 +9,9 @@
 <xs:schema
 		xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//2.8.6//OCX_Schema.xsd"
+		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V286//OCX_Schema.xsd"
 		xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
-		targetNamespace="https://3docx.org/fileadmin//ocx_schema//2.8.6//OCX_Schema.xsd"
+		targetNamespace="https://3docx.org/fileadmin//ocx_schema//V286//OCX_Schema.xsd"
 		elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>

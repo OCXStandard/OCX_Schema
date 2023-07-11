@@ -4,15 +4,25 @@
 from pathlib import Path
 import sys
 
-PACKAGE = './ocx/'
+PACKAGE = './ocx_/'
 
-new_version = sys.argv[1]
+major = sys.argv[1]
+minor = sys.argv[2]
+patch = sys.argv[3]
+extra = sys.argv[4]
 
 
 def insert_version():
     """Insert the version string in __init__.py."""
 
-    file = Path(PACKAGE + '__init__.py')
+    if extra == "":
+        package_dir = f'{PACKAGE}_{major}_{minor}_{patch}'
+        new_version = f'{major}.{minor}.{patch}'
+    else:
+        package_dir = f'{PACKAGE}_{major}_{minor}_{patch}_{extra}'
+        new_version = f'{major}.{minor}.{patch}-{extra}'
+
+    file = Path(package_dir) / '__init__.py'
     if file.exists():
         with open(file, 'r') as f:
             init_py = f.readlines()

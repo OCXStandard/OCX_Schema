@@ -27,18 +27,41 @@ We are using [semantic versioning (semver)](https://semver.org/) to version the 
 X is the major version, Y is the minor version, and Z is the patch version. Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0. 
 A pre-release version is denoted by appending a hyphen and a series of dot separated identifiers immediately following the patch version, for example: 3.0.0-alpha.1.
 
-## tbump versioning tool
+## ``tbump`` versioning tool
 
-The [tbump](https://pypi.org/project/tbump/) tool is used to automate and bump schema versions. tbump also provides the possibility for pre- and post-commit actions.
-The project config file ```pyproject.toml``` contains the tbump settings.
+The Python [``tbump``](https://pypi.org/project/tbump/) tool is used to automate and bump schema versions. tbump also provides the possibility for pre- and post-commit actions.
+The project config file ``pyproject.toml`` contains the tbump settings.
 
 ### Usage
 
-Assume that the current schema version is ```2.8.6``` to bump the schema version to the next version, the following command can be issued:
+Assume that the current schema version is ``2.8.6``. To bump the schema version to the pre-release ``alpha`` version, the following command can be issued:
 
-<code python>
-tbump 2.8.6 3.0.0.-alpha.1
-</code>
+<pre><code>
+    tbump 3.0.0-alpha
+    :: Bumping from 2.8.6 to 3.0.0-alpha
+    => Would update current version in pyproject.toml
+    => Would patch these files
+    - pyproject.toml:3 version = "2.8.6"
+    + pyproject.toml:3 version = "3.0.0-alpha"
+    - pyproject.toml:34 current = "2.8.6"
+    + pyproject.toml:34 current = "3.0.0-alpha"
+    - OCX_Schema.xsd:103 <xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="2.8.6">
+    + OCX_Schema.xsd:103 <xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="3.0.0-alpha">
+    - OCX_Schema.xsd:12 xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V286//OCX_Schema.xsd"
+    + OCX_Schema.xsd:12 xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd"
+    - OCX_Schema.xsd:14 targetNamespace="https://3docx.org/fileadmin//ocx_schema//V286//OCX_Schema.xsd"
+    + OCX_Schema.xsd:14 targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd"
+    => Would run these hooks before commit
+    * (1/4) $ python xsdata_package.py 3.0.0-alpha
+    * (2/4) $ xsdata generate OCX_Schema.xsd
+    * (3/4) $ gid add ./ocx_*
+    * (4/4) $ python insert_version.py 3.0.0-alpha
+    => Would run these git commands
+    $ git add --update
+    $ git commit --message Bump to 3.0.0-alpha
+    $ git tag --annotate --message v3.0.0-alpha v3.0.0-alpha
+    $ git push --atomic origin working_draft v3.0.0-alpha
+</code></pre>
 
 
 

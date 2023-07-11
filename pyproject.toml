@@ -88,7 +88,7 @@ cmd = "xsdata generate OCX_Schema.xsd"
 
 [[tool.tbump.before_commit]]
 name = "Add generated files to commit."
-cmd = "gid add ./ocx_*"
+cmd = "git add ./ocx_*"
 
 [[tool.tbump.before_commit]]
 name = "Insert version string in databinding."

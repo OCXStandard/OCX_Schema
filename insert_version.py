@@ -4,16 +4,18 @@
 from pathlib import Path
 import sys
 
-PACKAGE = './ocx_/'
-
-major = sys.argv[1]
-minor = sys.argv[2]
-patch = sys.argv[3]
-extra = sys.argv[4]
-
+PACKAGE = './ocx'
 
 def insert_version():
     """Insert the version string in __init__.py."""
+
+    new_version = sys.argv[1]
+    # parse new_version
+    major, minor, patch = new_version.split('.')
+    if '-' in patch:
+        patch, extra = patch.split('-')
+    else:
+        extra = ""
 
     if extra == "":
         package_dir = f'{PACKAGE}_{major}_{minor}_{patch}'

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Config xmlns="http://pypi.org/project/xsdata" version="23.6">
   <Output maxLineLength="79" subscriptableTypes="false" unionType="false">
-    <Package>ocx_3_0_0_alpha1</Package>
+    <Package>ocx_3_0_0_alpha</Package>
     <Format repr="true" eq="true" order="false" unsafeHash="false" frozen="false" slots="false" kwOnly="false">dataclasses</Format>
     <Structure>filenames</Structure>
     <DocstringStyle>Google</DocstringStyle>

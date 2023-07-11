@@ -1,6 +1,6 @@
 [project]
 name = "ocx"
-version = "2.8.6"
+version = "3.0.0-alpha"
 description = "An extension to the Open Class 3D Exchange (OCX) standard for 3D rudder models subject to approval by the classification society."
 authors = [
   { name = "Ole Christian Astrup", email = "ole.christian.astrup@dnv.com" },
@@ -31,7 +31,7 @@ build-backend = "flit_core.buildapi"
 github_url = "https://github.com/OCXStandard/OCX_Schema"
 
 [tool.tbump.version]
-current = "2.8.6"
+current = "3.0.0-alpha"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before

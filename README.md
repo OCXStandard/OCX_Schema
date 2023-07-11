@@ -25,7 +25,10 @@ Follow [the recipe on the Wiki](https://github.com/OCXStandard/OCX_Schema/wiki) 
 ## Schema versioning
 We are using [semantic versioning (semver)](https://semver.org/) to version the OCX schema. A published schema verison follows the semver pattern on the form X.Y.Z where X, Y, and Z are non-negative integers, and MUST NOT contain leading zeroes. 
 X is the major version, Y is the minor version, and Z is the patch version. Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0. 
-A pre-release version is denoted by appending a hyphen and a series of dot separated identifiers immediately following the patch version, for example: 3.0.0-alpha.1.
+
+A pre-release version is denoted by appending a hyphen and a pre-release identifier (alpha, beta ...) immediately following the patch version, for example: 3.0.0-alpha
+
+If a pre-release tag needs to be patched, append a letter to the tag separated with an underscore, eg. 3.0.0-alpha_b.  Do not use ``.`` (dot) as separator.
 
 ## ``tbump`` versioning tool
 

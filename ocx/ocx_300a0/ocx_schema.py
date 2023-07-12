@@ -3,7 +3,7 @@ from enum import Enum
 from typing import List, Optional
 from xml.etree.ElementTree import QName
 from xsdata.models.datatype import XmlDateTime, XmlPeriod
-from ocx_3_0_0_alpha.unitsml_schema_lite_0_9_18 import UnitsMl
+from ocx.ocx_300a0 import UnitsMl
 
 __NAMESPACE__ = "https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd"
 

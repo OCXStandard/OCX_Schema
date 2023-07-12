@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import List, Optional, Union
-from ocx_286.xml import LangValue
+from ocx.ocx_286.xml import LangValue
 
 __NAMESPACE__ = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
 

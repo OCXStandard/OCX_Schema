@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import List, Optional, Union
-from ocx_3_0_0_alpha.xml import LangValue
+from ocx.ocx_300a0 import LangValue
 
 __NAMESPACE__ = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
 

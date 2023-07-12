@@ -1,6 +1,6 @@
-# The data-bindings are generated from the schema version=3.0.0-alpha.
-__version__ = "3.0.0-alpha"
-from ocx_3_0_0_alpha.ocx_schema import (
+# The data-bindings are generated from the schema version 2.8.6
+__version__ = '2.8.6'
+from ocx.ocx_286.ocx_schema import (
     ApPos,
     AirPipeHeight,
     AngleOfRepose,
@@ -269,9 +269,9 @@ from ocx_3_0_0_alpha.ocx_schema import (
     ParametricCircle,
     ParametricCircleT,
     ParametricHole2DT,
-    PenetratingObjectT,
     Penetration,
     PenetrationT,
+    PentetratingObjectT,
     Permeability,
     PhysicalProperties,
     PhysicalPropertiesT,
@@ -487,7 +487,7 @@ from ocx_3_0_0_alpha.ocx_schema import (
     TightnessValue,
     UnitCargoTypeValue,
 )
-from ocx_3_0_0_alpha.unitsml_schema_lite_0_9_18 import (
+from ocx.ocx_286.unitsml_schema_lite_0_9_18 import (
     AmountOfSubstance,
     AmountOfSubstanceType,
     Dimension,
@@ -500,7 +500,7 @@ from ocx_3_0_0_alpha.unitsml_schema_lite_0_9_18 import (
     EnumeratedRootUnitType,
     EnumeratedRootUnitTypePrefix,
     EnumeratedRootUnitTypeUnit,
-    Length as UnitsmlLite918Length,
+    Length as UnitsmlLite0918Length,
     LengthType,
     LuminousIntensity,
     LuminousIntensityType,
@@ -523,7 +523,7 @@ from ocx_3_0_0_alpha.unitsml_schema_lite_0_9_18 import (
     UnitsMl,
     UnitsMltype,
 )
-from ocx_3_0_0_alpha.xml import LangValue
+from ocx.ocx_286.xml import LangValue
 
 __all__ = [
     "ApPos",
@@ -794,9 +794,9 @@ __all__ = [
     "ParametricCircle",
     "ParametricCircleT",
     "ParametricHole2DT",
-    "PenetratingObjectT",
     "Penetration",
     "PenetrationT",
+    "PentetratingObjectT",
     "Permeability",
     "PhysicalProperties",
     "PhysicalPropertiesT",
@@ -1023,7 +1023,7 @@ __all__ = [
     "EnumeratedRootUnitType",
     "EnumeratedRootUnitTypePrefix",
     "EnumeratedRootUnitTypeUnit",
-    "UnitsmlLite918Length",
+    "UnitsmlLite0918Length",
     "LengthType",
     "LuminousIntensity",
     "LuminousIntensityType",

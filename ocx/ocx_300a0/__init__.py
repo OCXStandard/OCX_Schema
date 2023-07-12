@@ -1,6 +1,7 @@
-# The data-bindings are generated from the schema version 2.8.6
-__version__ = '2.8.6'
-from ocx_286.ocx_schema import (
+# The data-bindings are generated from the schema version=3.0.0a0.
+__version__ = "3.0.0a0"
+
+from ocx.ocx_300a0.ocx_schema import (
     ApPos,
     AirPipeHeight,
     AngleOfRepose,
@@ -269,9 +270,9 @@ from ocx_286.ocx_schema import (
     ParametricCircle,
     ParametricCircleT,
     ParametricHole2DT,
+    PenetratingObjectT,
     Penetration,
     PenetrationT,
-    PentetratingObjectT,
     Permeability,
     PhysicalProperties,
     PhysicalPropertiesT,
@@ -487,7 +488,7 @@ from ocx_286.ocx_schema import (
     TightnessValue,
     UnitCargoTypeValue,
 )
-from ocx_286.unitsml_schema_lite_0_9_18 import (
+from ocx.ocx_300a0.unitsml_schema_lite_0_9_18 import (
     AmountOfSubstance,
     AmountOfSubstanceType,
     Dimension,
@@ -500,7 +501,7 @@ from ocx_286.unitsml_schema_lite_0_9_18 import (
     EnumeratedRootUnitType,
     EnumeratedRootUnitTypePrefix,
     EnumeratedRootUnitTypeUnit,
-    Length as UnitsmlLite0918Length,
+    Length as UnitsmlLite918Length,
     LengthType,
     LuminousIntensity,
     LuminousIntensityType,
@@ -523,7 +524,7 @@ from ocx_286.unitsml_schema_lite_0_9_18 import (
     UnitsMl,
     UnitsMltype,
 )
-from ocx_286.xml import LangValue
+from ocx.ocx_300a0.xml import LangValue
 
 __all__ = [
     "ApPos",
@@ -794,9 +795,9 @@ __all__ = [
     "ParametricCircle",
     "ParametricCircleT",
     "ParametricHole2DT",
+    "PenetratingObjectT",
     "Penetration",
     "PenetrationT",
-    "PentetratingObjectT",
     "Permeability",
     "PhysicalProperties",
     "PhysicalPropertiesT",
@@ -1023,7 +1024,7 @@ __all__ = [
     "EnumeratedRootUnitType",
     "EnumeratedRootUnitTypePrefix",
     "EnumeratedRootUnitTypeUnit",
-    "UnitsmlLite0918Length",
+    "UnitsmlLite918Length",
     "LengthType",
     "LuminousIntensity",
     "LuminousIntensityType",

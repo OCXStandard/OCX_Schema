@@ -12,7 +12,7 @@ dependencies:
   - tbump
   - zeep
   - requests
-  - flit
+  - poetry
   # Doc deps
   - sphinx
   - sphinx-autodoc-typehints

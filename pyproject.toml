@@ -8,8 +8,8 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "OCX_Schema"
-version = "3.0.0-alpha"
+name = "OCX"
+version = "3.0.0a0"
 description = ""
 authors = ["ocastrup <ole.christain.astrup@dnv.com>"]
 readme = "README.md"

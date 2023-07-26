@@ -6,13 +6,7 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema
-		xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd"
-		xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
-		targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd"
-		elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300alpha//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
@@ -3005,7 +2999,7 @@ gaseous state.</xs:documentation>
 	</xs:complexType>
 	<xs:element name="CompositeCurve3D" type="ocx:CompositeCurve3D_T" substitutionGroup="ocx:Curve3D">
 		<xs:annotation>
-			<xs:documentation>The concept of a composite curve composed of a collection of Line3D, CircumArc3D and/or NURBS segments. Curves are sorted end to end and have C1 continuity across each segment in the CompositeCurve3D definition.</xs:documentation>
+			<xs:documentation>The concept of a composite curve composed of a collection of Line3D, CircumArc3D and/or NURBS segments. Curves are sorted end to end and have C0 continuity across each segment in the CompositeCurve3D definition.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="CompositeCurve3D_T">

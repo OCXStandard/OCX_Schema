@@ -25,7 +25,7 @@ packaging = "^23.1"
 github_url = "https://github.com/OCXStandard/OCX_Schema"
 
 [tool.tbump.version]
-current = "3.0.0-alpha"
+current = "3.0.0a0"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before
@@ -36,7 +36,7 @@ regex = '''
   (?P<minor>\d+)
   \.
   (?P<patch>\d+)
-  (\-
+  (
     (?P<extra>.+)
   )?
   '''
@@ -79,17 +79,17 @@ search = 'ocx_schema//V{current_version}'
 name = "Insert new xsdata package name"
 cmd = "python xsdata_package.py {new_version}"
 
-[[tool.tbump.before_commit]]
-name = "Cd to ./ocx"
-cmd = "cd ./ocx"
-
-[[tool.tbump.before_commit]]
-name = "Generate data-bindings."
-cmd = "xsdata generate OCX_Schema.xsd"
-
-[[tool.tbump.before_commit]]
-name = "Cd to .."
-cmd = "cd .."
+#[[tool.tbump.before_commit]]
+#name = "Cd to ./ocx"
+#cmd = "cd ./ocx"
+#
+#[[tool.tbump.before_commit]]
+#name = "Generate data-bindings."
+#cmd = "xsdata generate OCX_Schema.xsd"
+#
+#[[tool.tbump.before_commit]]
+#name = "Cd to .."
+#cmd = "cd .."
 
 [[tool.tbump.before_commit]]
 name = "Add generated files to commit."

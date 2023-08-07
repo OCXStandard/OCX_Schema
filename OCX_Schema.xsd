@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2023 rel. 2 (x64) (http://www.altova.com) by Astrup, Ole Christian (DNV AS) -->
 <!-- Copyright 2023 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
 			Licensed under the Apache License, Version 2.0 (the "License"); 
 			You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -1770,14 +1771,7 @@ information are derived.</xs:documentation>
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="asymmetric" type="xs:boolean" default="true"/>
-		<xs:attribute name="slotType" default="Open">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:enumeration value="Slit"/>
-					<xs:enumeration value="Open"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
+		<xs:attribute ref="ocx:slotType"/>
 	</xs:complexType>
 	<xs:element name="ConnectionLength" type="ocx:Quantity_T">
 		<xs:annotation>
@@ -3814,32 +3808,15 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:element>
 	<xs:element name="Point3D" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>A point in 3D space composed of X, Y and Z coordinate values.</xs:documentation>
+			<xs:documentation>Compact definition of  a point in 3D space composed of  a lsequence of thre double values representing X, Y and Z coordinate values all of same unit given by the unit ID.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Point3D_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of a point in 3D space composed of X, Y and Z coordinate values.</xs:documentation>
+			<xs:documentation>Type definition of a compact definition of  a point in 3D space composed of  a list of 3 X, Y and Z coordinate values all of same unit given by the unit ID.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence minOccurs="0">
-			<xs:element ref="ocx:X">
-				<xs:annotation>
-					<xs:documentation>The X component of the origin position. The value is a Quantity carrying a unit definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element ref="ocx:Y">
-				<xs:annotation>
-					<xs:documentation>The Y component of the origin position. The value is a Quantity carrying a unit definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element ref="ocx:Z">
-				<xs:annotation>
-					<xs:documentation>The Z component of the origin position. The value is a Quantity carrying a unit definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="cooordinates" type="ocx:doubleListType"/>
-		<xs:attribute name="unit" type="xs:IDREF"/>
+		<xs:attribute name="cooordinates" type="ocx:doubleListType" use="required"/>
+		<xs:attribute name="unit" type="xs:IDREF" use="required"/>
 	</xs:complexType>
 	<xs:element name="Point3DList" type="ocx:Point3DList_T">
 		<xs:annotation>
@@ -5296,17 +5273,7 @@ Type &apos;A&apos; ship is one which:
 				<xs:documentation>Section  short id.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="manufacture" use="optional">
-			<xs:annotation>
-				<xs:documentation>Manufacturing method.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:enumeration value="Rolled"/>
-					<xs:enumeration value="Welded"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
+		<xs:attribute ref="ocx:manufacture" use="optional"/>
 	</xs:attributeGroup>
 	<xs:complexType name="ClassData_T">
 		<xs:annotation>
@@ -6216,6 +6183,9 @@ Type &apos;A&apos; ship is one which:
 			<xs:documentation>Optional arbitrary inner section shape for hollow sections.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<!-- ========================================================================================  -->
+	<!-- Global attributes -->
+	<!-- ========================================================================================  -->
 	<xs:attribute name="newbuildingSociety" type="ocx:classificationSociety">
 		<xs:annotation>
 			<xs:documentation>The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during construction.</xs:documentation>
@@ -6237,5 +6207,27 @@ Type &apos;A&apos; ship is one which:
 		<xs:annotation>
 			<xs:documentation>The reference to the license agreement</xs:documentation>
 		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="slotType" default="Open">
+		<xs:annotation>
+			<xs:documentation>The type of slot for a stiffener penetrating a primary supporting member.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Slit"/>
+				<xs:enumeration value="Open"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="manufacture">
+		<xs:annotation>
+			<xs:documentation>List of bar section manufacturing method.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Rolled"/>
+				<xs:enumeration value="Welded"/>
+			</xs:restriction>
+		</xs:simpleType>
 	</xs:attribute>
 </xs:schema>

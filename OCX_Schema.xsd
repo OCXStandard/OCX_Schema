@@ -3201,7 +3201,7 @@ gaseous state.</xs:documentation>
 		<xs:complexType>
 			<xs:complexContent>
 				<xs:extension base="ocx:Contour3D_T">
-					<xs:attribute name="isUVspace" default="False">
+					<xs:attribute name="isUVspace" type="xs:boolean" default="false">
 						<xs:annotation>
 							<xs:documentation>If set to True, the FacBoundaryCurve is defined in the parametric UV space. The Pont3D X and Y correspnds to U and V while the Z coordinate is disregarded. The default is False, i.e. the FaceBoundaryCurve is defined in the 3D space.</xs:documentation>
 						</xs:annotation>
@@ -4506,7 +4506,7 @@ Type &apos;A&apos; ship is one which:
 		</xs:attribute>
 		<xs:attribute name="numberIMO" type="xs:string" use="optional">
 			<xs:annotation>
-				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven-digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996 href=&quot;http://www.imo.org/Facilitation/mainframe.asp?topic_id=388&quot;&gt;Information on IMO ship identification number scheme on the website of the IMO (last visited: 2005-09-05).</xs:documentation>
+				<xs:documentation>A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven-digit number that is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see: IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996. https://www.imo.org/en/OurWork/IIIS/Pages/IMO-Identification-Number-Schemes.aspx: Information on IMO ship identification number scheme on the website of the IMO.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="shipType" type="xs:string" use="optional">
@@ -5677,28 +5677,6 @@ Type &apos;A&apos; ship is one which:
 	<!-- ========================================================================================  -->
 	<!-- simpleType extensions-->
 	<!-- ========================================================================================  -->
-	<!-- -->
-	<xs:simpleType name="integerListType">
-		<xs:annotation>
-			<xs:documentation>Generic list of integer simple types.</xs:documentation>
-		</xs:annotation>
-		<xs:list itemType="xs:integer"/>
-	</xs:simpleType>
-	<!-- -->
-	<xs:simpleType name="booleanListType">
-		<xs:annotation>
-			<xs:documentation>Generic list of boolean simple types.</xs:documentation>
-		</xs:annotation>
-		<xs:list itemType="xs:boolean"/>
-	</xs:simpleType>
-	<!-- -->
-	<xs:simpleType name="floatListType">
-		<xs:annotation>
-			<xs:documentation>Generic list of float simple types.</xs:documentation>
-		</xs:annotation>
-		<xs:list itemType="xs:float"/>
-	</xs:simpleType>
-	<!-- -->
 	<xs:simpleType name="doubleListType">
 		<xs:annotation>
 			<xs:documentation>Generic list of double simple types separated by  a white space.</xs:documentation>

@@ -1,10 +1,16 @@
 # OCX_Schema: Changelog
 
-## 3.0.0-alpha.1 2023.07.10
+## 3.0.0a0.1 2023.08.28
 
-release tag: 
+### Issues
+1. [#42 Fix bug in ```Hole2D```](https://github.com/OCXStandard/OCX_Schema/issues/42)
+2. [#20 Compact representation of ```Point3D```](https://github.com/OCXStandard/OCX_Schema/issues/20)
+3. [#38 Broken link in ```ShipDesignation```](https://github.com/OCXStandard/OCX_Schema/issues/38)
 
-### Issues fixed
+
+## 3.0.0a0.1 2023.07.10
+
+### Issues
 
 1. [#3 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/issues/3)
 2. [#4 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/pull/4)

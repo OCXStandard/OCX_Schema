@@ -7,7 +7,13 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a0//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a0//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
+<xs:schema
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a0//OCX_Schema.xsd"
+		xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+		targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a0//OCX_Schema.xsd"
+		elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
@@ -986,6 +992,7 @@ information are derived.</xs:documentation>
 								<xs:documentation>Collection of frequently used surfaces which are referenced by more than one object. Will typically contain th outer shell definition.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element ref="ocx:ReferencePlanes"/>
 						<xs:element ref="ocx:Panel"/>
 						<xs:element ref="ocx:Plate"/>
 						<xs:element ref="ocx:Stiffener"/>
@@ -3397,12 +3404,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
-					<xs:element ref="ocx:FrameTables">
-						<xs:annotation>
-							<xs:documentation>The Vessel reference coordinate system organised as a frame table system. The authoring system must export the complete frame table definition for ALL X, Y and Z positions. The FrameTables may define several X, Y, or Z systems. As a minimum, each main system must be exported. If more than one system is exported, the authoring system must set the isMainSystem=true for the main reference system in each direction. </xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:VesselGrid"/>
+					<xs:element ref="ocx:FrameTable"/>
 				</xs:choice>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
@@ -3431,46 +3433,27 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
-					<xs:annotation>
-						<xs:documentation>True if this is the main reference system definition.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="XRefPlanes" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>The definition of the frame table positions in the Vessel X-direction. The authoring application must export ALL the RefPlane positions.
-				If more than one XRefPlanes definition is exported, the authoring application shall identify the main reference system by setting the isMainSystem=true.
-				It is also possible to give a reversed frame system (positions are given Fore to Aft). This is specified by setting isReversed=true.</xs:documentation>
+			<xs:documentation>A collection of Y-Z planes used as object limits.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="ocx:RefPlanes_T">
-					<xs:sequence>
-						<xs:element ref="ocx:DistanceToAP" minOccurs="0"/>
-					</xs:sequence>
-					<xs:attribute name="isReversed" type="xs:boolean" default="false">
-						<xs:annotation>
-							<xs:documentation>For most vessels the X reference positions are given aft to forward which is the default.
-								Set isReversed=true if  the frame positions are given from fore to aft  (normally this is the case for naval vessels).</xs:documentation>
-						</xs:annotation>
-					</xs:attribute>
-				</xs:extension>
+				<xs:extension base="ocx:RefPlanes_T"/>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="YRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>The definition of a reference grid in the Vessel Y-direction. The authoring application must export ALL the RefPlane positions.
-				If more than one YRefPlanes definition is exported, the authoring application shall identify the main reference system by setting the isMainSystem=true.</xs:documentation>
+			<xs:documentation>A collection of X-Z planes used as object limits.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ZRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>The definition of a reference grid in the Vessel Z-direction. The authoring application must export ALL the RefPlane positions.
-				If more than one ZRefPlanes definition is exported, the authoring application shall identify the main reference system by setting the sMainSystem=true.</xs:documentation>
+			<xs:documentation>A collection of X-Y planes used as object limits.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CylindricalAxes" type="ocx:CylindricalAxes_T">
@@ -3523,25 +3506,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:SecondaryAxis"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="FrameTables_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of FrameTables definition.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="ocx:XRefPlanes" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Frame table positions along X axis. Used to limit geometry and define topology.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:element name="FrameTables" type="ocx:FrameTables_T">
-		<xs:annotation>
-			<xs:documentation>The Vessel reference coordinate system organised as a frame table system. The authoring system must export the complete frame table definition for ALL X, Y and Z positions. The FrameTables may define several X, Y, or Z systems. As a minimum, each main system must be exported. If more than one system is exported, the authoring system must set the isMainSystem=true for the main reference system in each direction. This definition is kept for backward compatibility from schema version 2.8.6. It might change in a future schema version.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="RefPlane">
 		<xs:annotation>
 			<xs:documentation>A reference plane used to define unbounded planar geometry.</xs:documentation>
@@ -3566,7 +3530,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:complexType>
 	<xs:element name="ReferencePlanes">
 		<xs:annotation>
-			<xs:documentation>The collection of reference planes used to limit geometries</xs:documentation>
+			<xs:documentation>The collection of reference planes used to limit objects</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -3579,28 +3543,19 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>Type definition of the ReferencePlanes element</xs:documentation>
 		</xs:annotation>
 		<xs:choice maxOccurs="unbounded">
-			<xs:element ref="ocx:XRefPlanes" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Frame table positions along X axis. Used to limit geometry and define topology.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:XRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
 	</xs:complexType>
-	<xs:element name="VesselGrid">
+	<xs:element name="FrameTable" type="ocx:FrameTable_T">
 		<xs:annotation>
-			<xs:documentation>The definition of the vessel grid system including the vessel frame table.</xs:documentation>
+			<xs:documentation>The frame table  constitutes a location concept that specifies the information to locate a ship, or any part of it, in a right-handed 3D Cartesian axis system. Also, it specifies the information required to subdivide any axis into intervals so that they form the reference basis for points in the axis system.</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:VesselGrid_T"/>
-			</xs:complexContent>
-		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="VesselGrid_T">
+	<xs:complexType name="FrameTable_T">
 		<xs:annotation>
-			<xs:documentation>The type definition of the VesselGrid</xs:documentation>
+			<xs:documentation>The type definition of the FrameTable</xs:documentation>
 		</xs:annotation>
 		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:XGrid" maxOccurs="unbounded"/>
@@ -3638,7 +3593,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:complexType>
 	<xs:element name="DistanceToAP" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>If #0/FR0 (FR0 has  per definition ReferenceLocation=0) is not located at AP, give the offset here (positive or negative distance).</xs:documentation>
+			<xs:documentation>The offset  of  frame zero (#0) from the After Perpendicular (AP). The default is zero offset (#0 is located at AP)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="XSpacingGroup" type="ocx:GridSpacingSystem_T">

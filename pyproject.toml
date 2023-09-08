@@ -16,7 +16,7 @@ readme = "README.md"
 packages = [{include = "ocx"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 xsdata = "^23.6"
 packaging = "^23.1"
 
@@ -59,8 +59,8 @@ tag_template = "v{new_version}"
 [[tool.tbump.file]]
 src = "pyproject.toml"
 
-[[tool.tbump.file]]
-src = "./ocx/__init__.py"
+#[[tool.tbump.file]]
+#src = "./ocx/__init__.py"
 
 [[tool.tbump.file]]
 src = "OCX_Schema.xsd"
@@ -75,9 +75,9 @@ search = 'ocx_schema//V{current_version}'
 # run after the files have been patched
 # and before the git commit is made
 
-[[tool.tbump.before_commit]]
-name = "Insert new xsdata package name"
-cmd = "python xsdata_package.py {new_version}"
+#[[tool.tbump.before_commit]]
+#name = "Insert new xsdata package name"
+#cmd = "python xsdata_package.py {new_version}"
 
 #[[tool.tbump.before_commit]]
 #name = "Cd to ./ocx"
@@ -91,13 +91,13 @@ cmd = "python xsdata_package.py {new_version}"
 #name = "Cd to .."
 #cmd = "cd .."
 
-[[tool.tbump.before_commit]]
-name = "Add generated files to commit."
-cmd = "git add ./ocx_*"
+#[[tool.tbump.before_commit]]
+#name = "Add generated files to commit."
+#cmd = "git add ./ocx_*"
 
-[[tool.tbump.before_commit]]
-name = "Insert version string in databinding."
-cmd = "python insert_version.py {new_version}"
+#[[tool.tbump.before_commit]]
+#name = "Insert version string in databinding."
+#cmd = "python insert_version.py {new_version}"
 
 # Or run some commands after the git tag and the branch
 # have been pushed:

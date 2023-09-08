@@ -402,12 +402,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="ocx:SectionRef_T">
-					<xs:sequence>
-						<xs:element ref="ocx:OffsetU" minOccurs="0"/>
-						<xs:element ref="ocx:OffsetV" minOccurs="0"/>
-					</xs:sequence>
-				</xs:extension>
+				<xs:extension base="ocx:SectionRef_T"/>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
@@ -417,6 +412,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityRefBase_T">
+				<xs:choice minOccurs="2" maxOccurs="2">
+					<xs:element ref="ocx:OffsetU"/>
+					<xs:element ref="ocx:OffsetV"/>
+				</xs:choice>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:BarSection"/>
 			</xs:extension>
 		</xs:complexContent>

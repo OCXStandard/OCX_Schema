@@ -1512,9 +1512,9 @@ information are derived.</xs:documentation>
 				<xs:documentation>Number of supported (welded) bracket edges.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute ref="ocx:edgeReinforcement"/>
+		<xs:attribute ref="ocx:reinforcementType"/>
 	</xs:complexType>
-	<xs:attribute name="edgeReinforcement">
+	<xs:attribute name="reinforcementType">
 		<xs:annotation>
 			<xs:documentation>Enumerator of bracket edge reinforcement types.</xs:documentation>
 		</xs:annotation>

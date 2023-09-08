@@ -1049,13 +1049,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:sequence>
+				<xs:choice>
+					<xs:element ref="ocx:TraceLine"/>
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
-					<xs:choice>
-						<xs:element ref="ocx:TraceLine"/>
-						<xs:element ref="ocx:Curve3D" maxOccurs="unbounded"/>
-					</xs:choice>
 					<xs:element ref="ocx:Inclination" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:EndCutEnd1" minOccurs="0">
 						<xs:annotation>
@@ -1086,7 +1083,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>The references to limiting objects forming a closed contour of the parent element.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>

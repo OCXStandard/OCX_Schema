@@ -2689,7 +2689,7 @@ gaseous state.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:GeometryRepresentation_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Area" minOccurs="0"/>
+					<xs:element ref="ocx:Area"/>
 					<xs:element ref="ocx:FaceBoundaryCurve" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation> A collection of 3D curves making up a closed boundary. To be used whenever the surface need to be bounded.</xs:documentation>
@@ -2948,7 +2948,7 @@ gaseous state.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:GeometryRepresentation_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Length" minOccurs="0"/>
+					<xs:element ref="ocx:Length"/>
 				</xs:sequence>
 				<xs:attribute name="is2D" type="xs:boolean" default="false">
 					<xs:annotation>

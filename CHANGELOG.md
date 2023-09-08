@@ -1,6 +1,15 @@
 # OCX_Schema: Changelog
 
-## 3.0.0a0.1 2023.08.28
+
+## 3.0.0a2 2023.09.08
+### Issues
+1. [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
+2. [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
+3. [#36 Resolve naming confusion of FrameTables](https://github.com/OCXStandard/OCX_Schema/issues/36)
+4. [#35 Remove the duplicate trace line definition on the Stiffener](https://github.com/OCXStandard/OCX_Schema/issues/36)
+5. [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/36)
+
+## 3.0.0a1 2023.08.28
 
 ### Issues
 1. [#42 Fix bug in ```Hole2D```](https://github.com/OCXStandard/OCX_Schema/issues/42)

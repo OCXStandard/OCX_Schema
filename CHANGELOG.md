@@ -4,7 +4,8 @@
 ## 3.0.0b0 2023.09.20
 ### Issues
 1. [#49 ReferencePlanes & FrameTable: Revert changes in Issue #36](https://github.com/OCXStandard/OCX_Schema/issues/49)
-2. [#51 LimitedBy BoundingBox: Use the contour start and end points instead](https://github.com/OCXStandard/OCX_Schema/issues/51)
+2. [#50 Remove WebContour and FlangeContour from the schema](https://github.com/OCXStandard/OCX_Schema/issues/50)
+3. [#51 LimitedBy BoundingBox: Use the contour start and end points instead](https://github.com/OCXStandard/OCX_Schema/issues/51)
 
 
 ## 3.0.0a2 2023.09.08

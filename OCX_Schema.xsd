@@ -7,12 +7,13 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-		   xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
-		   xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
-		   targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
-		   elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
+<xs:schema
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
+		xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+		targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
+		elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
@@ -306,7 +307,7 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityRefBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:BoundingBox" minOccurs="0"/>
+					<xs:element ref="ocx:ContourBounds" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3789,25 +3790,28 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:documentation>The Z component of a vector or a position. The value is a Quantity carrying a unit definition.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="BoundingBox" type="ocx:BoundingBox_T">
+	<xs:element name="ContourBounds" type="ocx:ContourBounds_T">
 		<xs:annotation>
-			<xs:documentation>The definition of a bounding box in space using two positions.The bounding box defines the parent extent.</xs:documentation>
+			<xs:documentation>The definition of acontour bounds.The bounding box defines the parent limi start and end points.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:complexType name="BoundingBox_T">
-		<xs:choice maxOccurs="2">
-			<xs:element ref="ocx:Max"/>
-			<xs:element ref="ocx:Min"/>
+	<xs:complexType name="ContourBounds_T">
+		<xs:annotation>
+			<xs:documentation>The type definition of the ContourBounds</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="2" maxOccurs="2">
+			<xs:element ref="ocx:ContourStart"/>
+			<xs:element ref="ocx:ContourEnd"/>
 		</xs:choice>
 	</xs:complexType>
-	<xs:element name="Min" type="ocx:Point3D_T">
+	<xs:element name="ContourStart" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The min position of the bounding box diagonal.</xs:documentation>
+			<xs:documentation>The start point  of the LimitedBy  contour curve.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="Max" type="ocx:Point3D_T">
+	<xs:element name="ContourEnd" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The max position of the bounding box diagonal.</xs:documentation>
+			<xs:documentation>The end point  of the LimitedBy  contour curve.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<!-- ========================================================================================  -->

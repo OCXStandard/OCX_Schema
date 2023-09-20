@@ -7,13 +7,12 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema
-		xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
-		xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
-		targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
-		elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+		   xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
+		   xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+		   targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
+		   elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
@@ -1200,7 +1199,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape.</xs:documentation>
+							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -1245,7 +1244,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts.</xs:documentation>
+							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:choice>
@@ -3398,9 +3397,9 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice maxOccurs="unbounded">
+				<xs:choice maxOccurs="2">
+					<xs:element ref="ocx:ReferencePlanes"/>
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
-					<xs:element ref="ocx:FrameTable"/>
 				</xs:choice>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
@@ -3429,27 +3428,41 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
+				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
+					<xs:annotation>
+						<xs:documentation>True if this is the main reference system definition.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="XRefPlanes" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>A collection of Y-Z planes used as object limits.</xs:documentation>
+			<xs:documentation>A collection of Y-Z planes used as object limits. Can also be used to create a frame table definition for display purposes. The exporting application will then have to provide all grid positions.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="ocx:RefPlanes_T"/>
+				<xs:extension base="ocx:RefPlanes_T">
+					<xs:sequence>
+						<xs:element ref="ocx:DistanceToAP" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="isReveresed" type="xs:boolean" default="false">
+						<xs:annotation>
+							<xs:documentation>For most vessels the X reference prositions are given aft to forward which is the default. Set isReversed=true if  the frame positions are given from fore to aft  (noramally this is the case for naval vessels).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="YRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>A collection of X-Z planes used as object limits.</xs:documentation>
+			<xs:documentation>A collection of X-Z planes used as object limits. Can also be used to create a frame table definition for display purposes. The exporting application will then have to provide all grid positions.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="ZRefPlanes" type="ocx:RefPlanes_T" substitutionGroup="ocx:ReferencePlane">
 		<xs:annotation>
-			<xs:documentation>A collection of X-Y planes used as object limits.</xs:documentation>
+			<xs:documentation>A collection of X-Y planes used as object limits. Can also be used to create a frame table definition for display purposes. The exporting application will then have to provide all grid positions.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="CylindricalAxes" type="ocx:CylindricalAxes_T">
@@ -3538,25 +3551,10 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>Type definition of the ReferencePlanes element</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="unbounded">
-			<xs:element ref="ocx:XRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:choice maxOccurs="3">
+			<xs:element ref="ocx:XRefPlanes"/>
 			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:choice>
-	</xs:complexType>
-	<xs:element name="FrameTable" type="ocx:FrameTable_T">
-		<xs:annotation>
-			<xs:documentation>The frame table  constitutes a location concept that specifies the information to locate a ship, or any part of it, in a right-handed 3D Cartesian axis system. Also, it specifies the information required to subdivide any axis into intervals so that they form the reference basis for points in the axis system.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="FrameTable_T">
-		<xs:annotation>
-			<xs:documentation>The type definition of the FrameTable</xs:documentation>
-		</xs:annotation>
-		<xs:choice maxOccurs="unbounded">
-			<xs:element ref="ocx:XGrid" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:YGrid" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:ZGrid" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:element name="XGrid" type="ocx:XGrid_T">

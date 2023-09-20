@@ -1,6 +1,11 @@
 # OCX_Schema: Changelog
 
 
+## 3.0.0b0 2023.09.20
+### Issues
+1. [#49 ReferencePlanes & FrameTable: Revert changes in Issue #36](https://github.com/OCXStandard/OCX_Schema/issues/49)
+
+
 ## 3.0.0a2 2023.09.08
 ### Issues
 1. [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)

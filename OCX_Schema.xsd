@@ -1013,10 +1013,9 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice>
+				<xs:sequence>
 					<xs:element ref="ocx:TraceLine" minOccurs="0"/>
-					<xs:element ref="ocx:Curve3D" minOccurs="0" maxOccurs="unbounded"/>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

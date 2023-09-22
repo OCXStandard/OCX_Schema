@@ -11,6 +11,7 @@
 2. [#50 Remove WebContour and FlangeContour from the schema](https://github.com/OCXStandard/OCX_Schema/issues/50)
 3. [#51 LimitedBy BoundingBox: Use the contour start and end points instead](https://github.com/OCXStandard/OCX_Schema/issues/51)
 4. [#35 Remove the duplicate trace line definition on the Stiffener and Seam](https://github.com/OCXStandard/OCX_Schema/issues/35)
+5. [#56 Remove SectionRef from EndCutEnd](https://github.com/OCXStandard/OCX_Schema/issues/56)
 
 
 

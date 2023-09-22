@@ -2,6 +2,9 @@
 
 
 ## 3.0.0b0 2023.09.22
+### Changes
+Bumped to schema version 3.0.0b0
+
 ### Issues
 1. [#56 Remove SectionRef from EndCutEnd](https://github.com/OCXStandard/OCX_Schema/issues/56)
 2. [#58 Remove unused substitution groups](https://github.com/OCXStandard/OCX_Schema/issues/58)

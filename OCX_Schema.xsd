@@ -1576,15 +1576,14 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:SectionRef"/>
-					<xs:element ref="ocx:CutbackDistance" minOccurs="0"/>
-					<xs:element ref="ocx:WebCutBackAngle" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="6">
+					<xs:element ref="ocx:CutbackDistance"/>
+					<xs:element ref="ocx:WebCutBackAngle"/>
 					<xs:element ref="ocx:WebNoseHeight" minOccurs="0"/>
 					<xs:element ref="ocx:FlangeCutBackAngle" minOccurs="0"/>
 					<xs:element ref="ocx:FlangeNoseHeight" minOccurs="0"/>
 					<xs:element ref="ocx:FeatureCope" minOccurs="0"/>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute name="symmetricFlange" type="xs:boolean" default="false">
 					<xs:annotation>
 						<xs:documentation>The end cut is symmetrical.</xs:documentation>

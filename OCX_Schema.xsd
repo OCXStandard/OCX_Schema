@@ -7,13 +7,7 @@
 			"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
 			The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard.
 			See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema
-		xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-		xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
-		xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
-		targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd"
-		elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V300a2//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
@@ -205,7 +199,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:element name="DescriptionBase" type="ocx:DescriptionBase_T" abstract="true" substitutionGroup="ocx:IdBase">
+	<xs:element name="DescriptionBase" type="ocx:DescriptionBase_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract base element for all elements that need to carry a description.</xs:documentation>
 		</xs:annotation>
@@ -233,7 +227,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Description_T"/>
-	<xs:element name="EntityBase" type="ocx:EntityBase_T" abstract="true" substitutionGroup="ocx:DescriptionBase">
+	<xs:element name="EntityBase" type="ocx:EntityBase_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract base element for all structural parts (Panel, Plate, Seam ...).</xs:documentation>
 		</xs:annotation>
@@ -1327,7 +1321,7 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of the concept of a reference plane which is typically used to define an unbounded geometry.</xs:documentation>
 		</xs:annotation>
 	</xs:complexType>
-	<xs:element name="Hole2DContour" type="ocx:Hole2DContour_T" substitutionGroup="ocx:GeometryRepresentation">
+	<xs:element name="Hole2DContour" type="ocx:Hole2DContour_T">
 		<xs:annotation>
 			<xs:documentation>An instantiated hole defined by a reference to a hole-shape and a transformation..</xs:documentation>
 		</xs:annotation>
@@ -2627,7 +2621,7 @@ gaseous state.</xs:documentation>
 	<!-- ========================================================================================  -->
 	<!-- Geometry representations -->
 	<!-- ========================================================================================  -->
-	<xs:element name="GeometryRepresentation" type="ocx:GeometryRepresentation_T" abstract="true" substitutionGroup="ocx:DescriptionBase">
+	<xs:element name="GeometryRepresentation" type="ocx:GeometryRepresentation_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract base class for all structural geometry definitions.</xs:documentation>
 		</xs:annotation>
@@ -2659,7 +2653,7 @@ gaseous state.</xs:documentation>
 			<xs:element ref="ocx:SurfaceCollection"/>
 		</xs:choice>
 	</xs:complexType>
-	<xs:element name="Surface" type="ocx:Surface_T" abstract="true" substitutionGroup="ocx:GeometryRepresentation">
+	<xs:element name="Surface" type="ocx:Surface_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract base class for surface definitions.</xs:documentation>
 		</xs:annotation>
@@ -2918,7 +2912,7 @@ gaseous state.</xs:documentation>
 	<!-- ===================================================  -->
 	<!-- 3D curves -->
 	<!-- ===================================================  -->
-	<xs:element name="Curve3D" type="ocx:Curve3D_T" abstract="true" substitutionGroup="ocx:GeometryRepresentation">
+	<xs:element name="Curve3D" type="ocx:Curve3D_T" abstract="true">
 		<xs:annotation>
 			<xs:documentation>Abstract base class for any 3D curve.</xs:documentation>
 		</xs:annotation>

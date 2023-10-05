@@ -33,6 +33,11 @@ conda-clean: ## Purge all conda tarballs, log files and caches
 	conda clean -a -y
 .Phony: conda-clean
 
+# Poetry ########################################################################
+poetry-fix:  ## Force pip poetry re-installation
+	@pip install poetry --upgrade
+.PHONY: poetry-fix
+
 
 # PROJECT DEPENDENCIES ########################################################
 

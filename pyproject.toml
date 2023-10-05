@@ -9,23 +9,25 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "OCX"
-version = "3.0.0b0"
+version = "2.8.6"
 description = ""
 authors = ["ocastrup <ole.christain.astrup@dnv.com>"]
-readme = "README.md"
+readme = "DATABINDING.md"
 packages = [{include = "ocx"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 xsdata = "^23.6"
 packaging = "^23.1"
+tbump = "*"
+ocx_generator = "*"
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:
 github_url = "https://github.com/OCXStandard/OCX_Schema"
 
 [tool.tbump.version]
-current = "3.0.0b0"
+current = "2.8.6"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before
@@ -59,15 +61,15 @@ tag_template = "v{new_version}"
 [[tool.tbump.file]]
 src = "pyproject.toml"
 
-#[[tool.tbump.file]]
-#src = "./ocx/__init__.py"
+[[tool.tbump.file]]
+src = "./ocx/__init__.py"
 
 [[tool.tbump.file]]
-src = "OCX_Schema.xsd"
+src = "./ocx/OCX_Schema.xsd"
 search = 'fixed="{current_version}"'
 
 [[tool.tbump.file]]
-src = "OCX_Schema.xsd"
+src = "./ocx/OCX_Schema.xsd"
 version_template = "{major}{minor}{patch}{extra}"
 search = 'ocx_schema//V{current_version}'
 
@@ -75,9 +77,9 @@ search = 'ocx_schema//V{current_version}'
 # run after the files have been patched
 # and before the git commit is made
 
-#[[tool.tbump.before_commit]]
-#name = "Insert new xsdata package name"
-#cmd = "python xsdata_package.py {new_version}"
+[[tool.tbump.before_commit]]
+name = "Generate data-binding package config."
+cmd = "databinding generate ./ocx/OCX_Schema.xsd ocx {new_version}"
 
 #[[tool.tbump.before_commit]]
 #name = "Cd to ./ocx"

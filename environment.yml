@@ -1,4 +1,4 @@
-name: ocx_schema
+name: ocx
 channels:
   - conda-forge
   - msys2 # for m2-grep
@@ -7,24 +7,11 @@ channels:
   # be listed explicitly here.
   - nodefaults
 dependencies:
-  - python=3.10
-  - pre-commit
-  - tbump
-  - zeep
-  - requests
-  - poetry
-  # Doc deps
-  - sphinx
-  - sphinx-autodoc-typehints
-  - sphinx_rtd_theme
-  - sphinx-click
+  - python=3.11
   - pip
+  - poetry
   - m2w64-make # GNU mMake for windows
   - m2-grep # Grep for windows. For Makefile sh
   - m2-gawk # awk for windows. for Makefile sh
-  # Install any PyPi packages
   - pip:
-      # Packages only on PyPi
-      - sphinx_automodapi
-      - xsdata[cli,lxml,soap]
-
+      - xsdata[cli,lxml, soap]  # xsdata with all dependencies

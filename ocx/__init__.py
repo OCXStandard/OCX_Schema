@@ -1,4 +1,4 @@
-__version__ = "2.8.6"
+__version__ = "3.0.0b0"
 import os
 import sys
 # Add current dir to the python search path

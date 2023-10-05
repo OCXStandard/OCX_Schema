@@ -3,7 +3,7 @@
 docs/tmp0000.html
 # Builds
 dist/
-*.xml
+xsdata.xml
 # Jetbrains
 .idea
 # Byte-compiled / optimized / DLL files

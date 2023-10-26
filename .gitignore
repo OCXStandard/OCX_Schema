@@ -1,4 +1,6 @@
 # ignore all files in named directories
+# Project
+./schemas/*
 # XMLSpy temp file
 docs/tmp0000.html
 # Builds

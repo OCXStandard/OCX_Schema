@@ -23,8 +23,8 @@ Bumped to schema version 3.0.0b0
 1. [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
 2. [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
 3. [#36 Resolve naming confusion of FrameTables](https://github.com/OCXStandard/OCX_Schema/issues/36)
-4. [#35 Remove the duplicate trace line definition on the Stiffener](https://github.com/OCXStandard/OCX_Schema/issues/36)
-5. [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/36)
+4. [#35 Remove the duplicate trace line definition on the Stiffener](https://github.com/OCXStandard/OCX_Schema/issues/35)
+5. [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/8)
 
 ## 3.0.0a1 2023.08.28
 

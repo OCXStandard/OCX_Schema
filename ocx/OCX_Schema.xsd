@@ -966,17 +966,17 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Form_T">
-				<xs:sequence>
-					<xs:element ref="ocx:ClassificationData"/>
-					<xs:element ref="ocx:BuilderInformation" minOccurs="0"/>
-					<xs:element ref="ocx:TonnageData" minOccurs="0"/>
-					<xs:element ref="ocx:StatutoryData" minOccurs="0"/>
-					<xs:element ref="ocx:ShipDesignation" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="unbounded">
 					<xs:element ref="ocx:CoordinateSystem" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>The vessel coordinate system definition. If not present, it is assumed that the Vessel is modelled in the global coordinate frame.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element ref="ocx:ClassificationData"/>
+					<xs:element ref="ocx:BuilderInformation" minOccurs="0"/>
+					<xs:element ref="ocx:TonnageData" minOccurs="0"/>
+					<xs:element ref="ocx:StatutoryData" minOccurs="0"/>
+					<xs:element ref="ocx:ShipDesignation" minOccurs="0"/>
 					<xs:element ref="ocx:DesignView" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:element ref="ocx:Arrangement"/>
@@ -985,14 +985,13 @@ information are derived.</xs:documentation>
 								<xs:documentation>Collection of frequently used surfaces which are referenced by more than one object. Will typically contain th outer shell definition.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element ref="ocx:ReferencePlanes"/>
 						<xs:element ref="ocx:Panel"/>
 						<xs:element ref="ocx:Plate"/>
 						<xs:element ref="ocx:Stiffener"/>
 						<xs:element ref="ocx:Bracket"/>
 						<xs:element ref="ocx:Member" minOccurs="0"/>
 					</xs:choice>
-				</xs:sequence>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -1041,7 +1040,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice>
+				<xs:choice minOccurs="4" maxOccurs="unbounded">
 					<xs:element ref="ocx:TraceLine"/>
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
@@ -1141,7 +1140,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Member_T">
-				<xs:sequence>
+				<xs:choice minOccurs="3" maxOccurs="unbounded">
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
 					<xs:element ref="ocx:TraceLine">
@@ -1157,7 +1156,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>The connection configuration at end 1 and/or end 2 of the pillar.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -1173,14 +1172,14 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:sequence minOccurs="1">
-					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="unbounded">
 					<xs:element ref="ocx:UnboundedGeometry">
 						<xs:annotation>
 							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:LimitedBy"/>
+					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
 					<xs:element ref="ocx:ComposedOf" minOccurs="0">
 						<xs:annotation>
@@ -1194,7 +1193,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
+				</xs:choice>
 				<xs:attribute ref="ocx:functionType" use="required"/>
 				<xs:attribute ref="ocx:tightness" use="required"/>
 			</xs:extension>
@@ -1223,16 +1222,16 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice maxOccurs="unbounded">
+				<xs:choice minOccurs="3" maxOccurs="unbounded">
+					<xs:element ref="ocx:LimitedBy"/>
+					<xs:element ref="ocx:OuterContour"/>
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The material offset form the parent surface. A material offset is measured positive along the parent surface normal vector.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:OuterContour"/>
 					<xs:element ref="ocx:UnboundedGeometry" minOccurs="0"/>
-					<xs:element ref="ocx:LimitedBy"/>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
@@ -1255,7 +1254,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice maxOccurs="unbounded">
+				<xs:choice minOccurs="3" maxOccurs="unbounded">
 					<xs:element ref="ocx:BracketParameters"/>
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0"/>
@@ -1276,7 +1275,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice maxOccurs="unbounded">
+				<xs:choice maxOccurs="2">
 					<xs:element ref="ocx:PhysicalProperties"/>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
 				</xs:choice>
@@ -2657,8 +2656,8 @@ gaseous state.</xs:documentation>
 			<xs:documentation>Type definition of a collection of surfaces.</xs:documentation>
 		</xs:annotation>
 		<xs:choice maxOccurs="unbounded">
-			<xs:element ref="ocx:Surface" minOccurs="0"/>
 			<xs:element ref="ocx:SurfaceCollection"/>
+			<xs:element ref="ocx:Surface" minOccurs="0"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:element name="Surface" type="ocx:Surface_T" abstract="true">
@@ -3386,7 +3385,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice maxOccurs="3">
+				<xs:choice maxOccurs="4">
 					<xs:element ref="ocx:XRefPlanes"/>
 					<xs:element ref="ocx:YRefPlanes" minOccurs="0"/>
 					<xs:element ref="ocx:ZRefPlanes" minOccurs="0"/>
@@ -4372,7 +4371,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>Type definition of the  main vessel particulars required by the Society.</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="unbounded">
+		<xs:choice minOccurs="8" maxOccurs="unbounded">
 			<xs:element ref="ocx:Lpp"/>
 			<xs:element ref="ocx:RuleLength"/>
 			<xs:element ref="ocx:BlockCoefficient"/>
@@ -5210,14 +5209,14 @@ Type &apos;A&apos; ship is one which:
 		<xs:annotation>
 			<xs:documentation>Type definition of the main vessel data including Class Notation required by the Classification Society.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence minOccurs="0">
+		<xs:choice maxOccurs="2">
 			<xs:element ref="ocx:PrincipalParticulars">
 				<xs:annotation>
 					<xs:documentation>Information that specifies design and intended performance characteristics of the ship in accordance with classification society rules and statutory regulations (see ISO 10303-218, section 4.2.36).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:ClassNotation" minOccurs="0"/>
-		</xs:sequence>
+		</xs:choice>
 		<xs:attribute ref="ocx:newbuildingSociety" use="required"/>
 		<xs:attribute name="identification" type="xs:string" use="required">
 			<xs:annotation>
@@ -5293,10 +5292,10 @@ Type &apos;A&apos; ship is one which:
 		<xs:annotation>
 			<xs:documentation>The information pertinent to the tonnage of the ship.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:choice>
 			<xs:element ref="ocx:Tonnage"/>
 			<xs:element ref="ocx:DeadWeight"/>
-		</xs:sequence>
+		</xs:choice>
 	</xs:complexType>
 	<xs:element name="BuilderInformation" type="ocx:BuilderInformation_T">
 		<xs:annotation>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2023 rel. 2 (x64) (http://www.altova.com) by Astrup, Ole Christian (DNV AS) -->
 <!-- Copyright 2023 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
 			Licensed under the Apache License, Version 2.0 (the "License"); 
 			You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -972,7 +971,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:TonnageData" minOccurs="0"/>
 					<xs:element ref="ocx:StatutoryData" minOccurs="0"/>
 					<xs:element ref="ocx:ShipDesignation" minOccurs="0"/>
-					<xs:element ref="ocx:CoordinateSystem">
+					<xs:element ref="ocx:CoordinateSystem" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>The vessel coordinate system definition. If not present, it is assumed that the Vessel is modelled in the global coordinate frame.</xs:documentation>
 						</xs:annotation>
@@ -3369,7 +3368,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	<!-- ========================================================================================  -->
 	<xs:element name="CoordinateSystem" type="ocx:CoordinateSystem_T">
 		<xs:annotation>
-			<xs:documentation>A right-handed orthogonal Cartesian coordinate system. Used to define the vessel coordinate system definition..</xs:documentation>
+			<xs:documentation>A right-handed orthogonal Cartesian coordinate system. Used to define the vessel coordinate system definition., either in world coordinates (mandatory) or as additional local systems if necessary.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="CoordinateSystem_T">
@@ -3378,8 +3377,10 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice maxOccurs="2">
-					<xs:element ref="ocx:ReferencePlanes"/>
+				<xs:choice maxOccurs="3">
+					<xs:element ref="ocx:XRefPlanes"/>
+					<xs:element ref="ocx:YRefPlanes" minOccurs="0"/>
+					<xs:element ref="ocx:ZRefPlanes" minOccurs="0"/>
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
 				</xs:choice>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
@@ -3392,7 +3393,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:complexType>
 	<xs:element name="LocalCartesian" type="ocx:Transformation_T">
 		<xs:annotation>
-			<xs:documentation>To specify a Local (Orthogonal) Axis System Origin and two of the local X,Y,Z axis need to be specified. When used to specify a Plane the XY (UV) plane is considered. Optional if the coordinate system is referring to the global coordinate frame.</xs:documentation>
+			<xs:documentation>To specify a Local (Orthogonal) Axis System Origin and two of the local X,Y,Z axis need to be specified. When used to specify a Plane the XY (UV) plane is considered. Optional if the coordinate system is referring to the global coordinate frame (world coordinates)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="RefPlanes_T">
@@ -3403,11 +3404,6 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:extension base="ocx:ReferencePlane_T">
 				<xs:sequence>
 					<xs:element ref="ocx:RefPlane" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:Origin" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>The origin of a local or global coordinate system. If not given, it is assumed that the origin of the reference system at the global origin (0,0,0).</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
 					<xs:annotation>
@@ -3504,7 +3500,11 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:complexContent>
 				<xs:extension base="ocx:RefPlane_T">
 					<xs:sequence>
-						<xs:element ref="ocx:ReferenceLocation"/>
+						<xs:element ref="ocx:ReferenceLocation">
+							<xs:annotation>
+								<xs:documentation>The location of the plane on the reference axis.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 					</xs:sequence>
 				</xs:extension>
 			</xs:complexContent>
@@ -3532,11 +3532,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>Type definition of the ReferencePlanes element</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="3">
-			<xs:element ref="ocx:XRefPlanes"/>
-			<xs:element ref="ocx:YRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:ZRefPlanes" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:choice>
+		<xs:choice maxOccurs="3"/>
 	</xs:complexType>
 	<xs:element name="XGrid" type="ocx:XGrid_T">
 		<xs:annotation>

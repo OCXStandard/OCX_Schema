@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2024 (x64) (http://www.altova.com) by Astrup, Ole Christian (DNV AS) -->
 <!-- Copyright 2023 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
 			Licensed under the Apache License, Version 2.0 (the "License"); 
 			You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -1557,11 +1558,19 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Cope parameters.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="ocx:CopeHeight"/>
+		<xs:choice>
 			<xs:element ref="ocx:CopeRadius"/>
-			<xs:element ref="ocx:CopeLength" minOccurs="0"/>
-		</xs:sequence>
+			<xs:element ref="ocx:CopeLength" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The length of the cope measured along the stiffener traceline (X-axis)  from the end of the stiffener to the center of the cope radius.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:CopeHeight" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The height of the cope measured along the cross section local V-direction from the root point to the center of the cope radius.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="EndCut_T">
 		<xs:annotation>

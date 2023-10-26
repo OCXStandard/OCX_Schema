@@ -1,8 +1,13 @@
 # OCX_Schema: Changelog
 
+## 3.0.0b1 2023.10.26
+
+### Issues
+1. [#63 Cleanup CoordinateSystem](https://github.com/OCXStandard/OCX_Schema/issues/63)
+2. [#64 Cleanup FeatureCope](https://github.com/OCXStandard/OCX_Schema/issues/64)
 
 ## 3.0.0b0 2023.09.22
-### Changes
+### Changed
 Bumped to schema version 3.0.0b0
 
 ### Issues
@@ -10,6 +15,7 @@ Bumped to schema version 3.0.0b0
 2. [#58 Remove unused substitution groups](https://github.com/OCXStandard/OCX_Schema/issues/58)
 
 ## 3.0.0b0 2023.09.20
+
 ### Issues
 1. [#49 ReferencePlanes & FrameTable: Revert changes in Issue #36](https://github.com/OCXStandard/OCX_Schema/issues/49)
 2. [#50 Remove WebContour and FlangeContour from the schema](https://github.com/OCXStandard/OCX_Schema/issues/50)
@@ -19,6 +25,7 @@ Bumped to schema version 3.0.0b0
 
 
 ## 3.0.0a2 2023.09.08
+
 ### Issues
 1. [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
 2. [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
@@ -34,7 +41,7 @@ Bumped to schema version 3.0.0b0
 3. [#38 Broken link in ```ShipDesignation```](https://github.com/OCXStandard/OCX_Schema/issues/38)
 
 
-## 3.0.0a0.1 2023.07.10
+## 3.0.0a0 2023.07.10
 
 ### Issues
 
@@ -70,7 +77,7 @@ Bumped to schema version 3.0.0b0
   - Several typos in the schema annotation strings.  (oca) ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
 
 ## 2.8.6_fix - 2022-10-06 
-Release tag: [v2.8.6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.8.6_fix)
+Release tag: [v2.8.6_fix](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.8.6_fix)
 
 
 ### Changed

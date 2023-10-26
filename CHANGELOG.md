@@ -1,8 +1,8 @@
 # OCX_Schema: Changelog
 
-## 3.0.0b2 2023.10.26
+## 3.0.0b3 2023.10.26
 
-Bump to 3.0.0b2
+Bump to 3.0.0b3
 
 ### Issues
 1. [#60 Minor schema fixes](https://github.com/OCXStandard/OCX_Schema/issues/60)

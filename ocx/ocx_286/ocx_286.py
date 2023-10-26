@@ -1,10 +1,8 @@
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import List, Optional
+from typing import List, Optional, Union
 from xml.etree.ElementTree import QName
 from xsdata.models.datatype import XmlDateTime, XmlPeriod
-
-__NAMESPACE__ = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 class BarSectionTManufacture(Enum):
@@ -23,6 +21,7 @@ class BuilderInformationT:
     """
     class Meta:
         name = "BuilderInformation_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     yard: Optional[str] = field(
         default=None,
@@ -78,6 +77,7 @@ class ClassNotationT:
     """
     class Meta:
         name = "ClassNotation_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     hull: Optional[str] = field(
         default=None,
@@ -151,6 +151,7 @@ class ClassParametersT:
     """
     class Meta:
         name = "ClassParameters_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     block_coefficient_class: Optional[float] = field(
         default=None,
@@ -223,6 +224,7 @@ class Description:
 class DescriptionT:
     class Meta:
         name = "Description_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -248,6 +250,7 @@ class EntityRefBaseT:
     """
     class Meta:
         name = "EntityRefBase_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     local_ref: Optional[str] = field(
         default=None,
@@ -284,6 +287,7 @@ class HeaderT:
     """
     class Meta:
         name = "Header_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     time_stamp: Optional[XmlDateTime] = field(
         default=None,
@@ -349,6 +353,7 @@ class IdBaseT:
     """
     class Meta:
         name = "IdBase_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     id: Optional[str] = field(
         default=None,
@@ -370,6 +375,7 @@ class KnotVectorT:
     """
     class Meta:
         name = "KnotVector_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     value: List[float] = field(
         default_factory=list,
@@ -391,6 +397,7 @@ class QuantityT:
     """
     class Meta:
         name = "Quantity_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     numericvalue: Optional[float] = field(
         default=None,
@@ -416,6 +423,7 @@ class ReferencePlaneT:
     """
     class Meta:
         name = "ReferencePlane_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -427,6 +435,7 @@ class ReferenceT:
     """
     class Meta:
         name = "Reference_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     element: Optional[str] = field(
         default=None,
@@ -470,6 +479,7 @@ class ShipDesignationT:
     """
     class Meta:
         name = "ShipDesignation_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ship_name: Optional[str] = field(
         default=None,
@@ -521,6 +531,7 @@ class StatutoryDataT:
     """
     class Meta:
         name = "StatutoryData_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     port_registration: Optional[str] = field(
         default=None,
@@ -550,6 +561,7 @@ class Vector3DT:
     """
     class Meta:
         name = "Vector3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     x: Optional[float] = field(
         default=None,
@@ -1250,6 +1262,544 @@ class UnitCargoTypeValue(Enum):
     UNSPECIFIED = "unspecified"
 
 
+class LangValue(Enum):
+    VALUE = ""
+
+
+@dataclass
+class AmountOfSubstanceType:
+    """
+    Type of the quantity amount of substance.
+
+    Attributes
+        symbol: Symbol of the quantity amount of substance.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="N",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class ElectricCurrentType:
+    """
+    Type of the quantity electric current.
+
+    Attributes
+        symbol: Symbol of the quantity electric current.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="I",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+class EnumeratedRootUnitTypePrefix(Enum):
+    """
+    Attributes
+        Y: yotta: septillion
+        Z: zetta: sextillion
+        P: exa: quintillion
+        T: peta: quadrillion
+        G: tera: trillion
+        M: giga: billion
+        K: mega: million
+        H: kilo: thousand
+        DA: hecto: hundred
+        D: deca: ten
+        C: deci: tenth
+        M_1: centi: hundredth
+        U: milli: thousandth
+        N: micro: millonth
+        P_1: nano: billonth
+        F: pico: trillionth
+        A: femto: quadrillionth
+        Z_1: atto: quintillionth
+        Y_1: zepto: sextillionth:
+        KI: yocto: septillionth
+        MI: kibi: kilobinary
+        GI: mebi: magabinary
+        TI: gibi: gigabinary
+        PI: tebi: terabinary
+        EI: exbi: exabinary
+        ZI: pebi: petabinary
+        YI: yobi: yottabinary
+    """
+    Y = "Y"
+    Z = "Z"
+    P = "P"
+    T = "T"
+    G = "G"
+    M = "M"
+    K = "k"
+    H = "h"
+    DA = "da"
+    D = "d"
+    C = "c"
+    M_1 = "m"
+    U = "u"
+    N = "n"
+    P_1 = "p"
+    F = "f"
+    A = "a"
+    Z_1 = "z"
+    Y_1 = "y"
+    KI = "Ki"
+    MI = "Mi"
+    GI = "Gi"
+    TI = "Ti"
+    PI = "Pi"
+    EI = "Ei"
+    ZI = "Zi"
+    YI = "Yi"
+
+
+class EnumeratedRootUnitTypeUnit(Enum):
+    METER = "meter"
+    GRAM = "gram"
+    SECOND = "second"
+    AMPERE = "ampere"
+    KELVIN = "kelvin"
+    MOLE = "mole"
+    CANDELA = "candela"
+    RADIAN = "radian"
+    STERADIAN = "steradian"
+    HERTZ = "hertz"
+    NEWTON = "newton"
+    PASCAL = "pascal"
+    JOULE = "joule"
+    WATT = "watt"
+    COULOMB = "coulomb"
+    VOLT = "volt"
+    FARAD = "farad"
+    OHM = "ohm"
+    SIEMENS = "siemens"
+    WEBER = "weber"
+    TESLA = "tesla"
+    HENRY = "henry"
+    DEGREE_CELSIUS = "degree_Celsius"
+    LUMEN = "lumen"
+    LUX = "lux"
+    KATAL = "katal"
+    BECQUEREL = "becquerel"
+    GRAY = "gray"
+    SIEVERT = "sievert"
+    MINUTE = "minute"
+    HOUR = "hour"
+    DAY = "day"
+    ARC_DEGREE = "arc_degree"
+    ARC_MINUTE = "arc_minute"
+    ARC_SECOND = "arc_second"
+    LITER = "liter"
+    METRIC_TON = "metric_ton"
+    ELECTRONVOLT = "electronvolt"
+    UNIFIED_ATOMIC_MASS_UNIT = "unified_atomic_mass_unit"
+    ASTRONOMICAL_UNIT = "astronomical_unit"
+    ATOMIC_UNIT_OF_1ST_HYPERPOLARIZABLITY = "atomic_unit_of_1st_hyperpolarizablity"
+    ATOMIC_UNIT_OF_2ND_HYPERPOLARIZABLITY = "atomic_unit_of_2nd_hyperpolarizablity"
+    ATOMIC_UNIT_OF_ACTION = "atomic_unit_of_action"
+    ATOMIC_UNIT_OF_CHARGE = "atomic_unit_of_charge"
+    ATOMIC_UNIT_OF_CHARGE_DENSITY = "atomic_unit_of_charge_density"
+    ATOMIC_UNIT_OF_CURRENT = "atomic_unit_of_current"
+    ATOMIC_UNIT_OF_ELECTRIC_DIPOLE_MOMENT = "atomic_unit_of_electric_dipole_moment"
+    ATOMIC_UNIT_OF_ELECTRIC_FIELD = "atomic_unit_of_electric_field"
+    ATOMIC_UNIT_OF_ELECTRIC_FIELD_GRADIENT = "atomic_unit_of_electric_field_gradient"
+    ATOMIC_UNIT_OF_ELECTRIC_POLARIZABLITY = "atomic_unit_of_electric_polarizablity"
+    ATOMIC_UNIT_OF_ELECTRIC_POTENTIAL = "atomic_unit_of_electric_potential"
+    ATOMIC_UNIT_OF_ELECTRIC_QUADRUPOLE_MOMENT = "atomic_unit_of_electric_quadrupole_moment"
+    ATOMIC_UNIT_OF_ENERGY = "atomic_unit_of_energy"
+    ATOMIC_UNIT_OF_FORCE = "atomic_unit_of_force"
+    ATOMIC_UNIT_OF_LENGTH = "atomic_unit_of_length"
+    ATOMIC_UNIT_OF_MAGNETIC_DIPOLE_MOMENT = "atomic_unit_of_magnetic_dipole_moment"
+    ATOMIC_UNIT_OF_MAGNETIC_FLUX_DENSITY = "atomic_unit_of_magnetic_flux_density"
+    ATOMIC_UNIT_OF_MAGNETIZABILITY = "atomic_unit_of_magnetizability"
+    ATOMIC_UNIT_OF_MASS = "atomic_unit_of_mass"
+    ATOMIC_UNIT_OF_MOMENTUM = "atomic_unit_of_momentum"
+    ATOMIC_UNIT_OF_PERMITTIVITY = "atomic_unit_of_permittivity"
+    ATOMIC_UNIT_OF_TIME = "atomic_unit_of_time"
+    ATOMIC_UNIT_OF_VELOCITY = "atomic_unit_of_velocity"
+    NATURAL_UNIT_OF_ACTION = "natural_unit_of_action"
+    NATURAL_UNIT_OF_ACTION_IN_E_V_S = "natural_unit_of_action_in_eV_s"
+    NATURAL_UNIT_OF_ENERGY = "natural_unit_of_energy"
+    NATURAL_UNIT_OF_ENERGY_IN_ME_V = "natural_unit_of_energy_in_MeV"
+    NATURAL_UNIT_OF_LENGTH = "natural_unit_of_length"
+    NATURAL_UNIT_OF_MASS = "natural_unit_of_mass"
+    NATURAL_UNIT_OF_MOMENTUM = "natural_unit_of_momentum"
+    NATURAL_UNIT_OF_MOMENTUM_IN_ME_V_PER_C = "natural_unit_of_momentum_in_MeV_per_c"
+    NATURAL_UNIT_OF_TIME = "natural_unit_of_time"
+    NATURAL_UNIT_OF_VELOCITY = "natural_unit_of_velocity"
+    NAUTICAL_MILE = "nautical_mile"
+    KNOT = "knot"
+    ANGSTROM = "angstrom"
+    ARE = "are"
+    HECTARE = "hectare"
+    BARN = "barn"
+    BAR = "bar"
+    GAL = "gal"
+    CURIE = "curie"
+    ROENTGEN = "roentgen"
+    RAD = "rad"
+    REM = "rem"
+    ERG = "erg"
+    DYNE = "dyne"
+    BARYE = "barye"
+    POISE = "poise"
+    RHE = "rhe"
+    STOKES = "stokes"
+    DARCY = "darcy"
+    KAYSER = "kayser"
+    LAMBERT = "lambert"
+    PHOT = "phot"
+    THERMO_CALORIE = "thermo_calorie"
+    TABLE_CALORIE = "table_calorie"
+    DEBYE = "debye"
+    ABAMPERE = "abampere"
+    ABCOULOMB = "abcoulomb"
+    ABFARAD = "abfarad"
+    ABHENRY = "abhenry"
+    ABOHM = "abohm"
+    ABMHO = "abmho"
+    ABVOLT = "abvolt"
+    ABWATT = "abwatt"
+    MAXWELL = "maxwell"
+    GAUSS = "gauss"
+    GILBERT = "gilbert"
+    OERSTED = "oersted"
+    STILB = "stilb"
+    STATAMPERE = "statampere"
+    STATCOULOMB = "statcoulomb"
+    STATFARAD = "statfarad"
+    STATHENRY = "stathenry"
+    STATOHM = "statohm"
+    STATMHO = "statmho"
+    STATVOLT = "statvolt"
+    STATWATT = "statwatt"
+    STATWEBER = "statweber"
+    STATTESLA = "stattesla"
+    LONG_TON = "long_ton"
+    SHORT_TON = "short_ton"
+    GROSS_HUNDREDWEIGHT = "gross_hundredweight"
+    HUNDREDWEIGHT = "hundredweight"
+    POUND = "pound"
+    OUNCE = "ounce"
+    DRAM = "dram"
+    TROY_POUND = "troy_pound"
+    TROY_OUNCE = "troy_ounce"
+    PENNYWEIGHT = "pennyweight"
+    APOTHECARIES_DRAM = "apothecaries_dram"
+    SCRUPLE = "scruple"
+    GRAIN = "grain"
+    SLUG = "slug"
+    POUND_FORCE = "pound_force"
+    POUNDAL = "poundal"
+    KIP = "kip"
+    TON_FORCE = "ton_force"
+    KILOGRAM_FORCE = "kilogram_force"
+    INCH = "inch"
+    FOOT = "foot"
+    YARD = "yard"
+    MILE = "mile"
+    US_SURVEY_INCH = "us_survey_inch"
+    US_SURVEY_FOOT = "us_survey_foot"
+    US_SURVEY_YARD = "us_survey_yard"
+    US_SURVEY_FATHOM = "us_survey_fathom"
+    US_SURVEY_ROD = "us_survey_rod"
+    US_SURVEY_CHAIN = "us_survey_chain"
+    US_SURVEY_LINK = "us_survey_link"
+    US_SURVEY_FURLONG = "us_survey_furlong"
+    US_SURVEY_MILE = "us_survey_mile"
+    US_ACRE = "us_acre"
+    IMPERIAL_GALLON = "imperial_gallon"
+    IMPERIAL_QUART = "imperial_quart"
+    IMPERIAL_PINT = "imperial_pint"
+    IMPERIAL_GILL = "imperial_gill"
+    IMPERIAL_OUNCE = "imperial_ounce"
+    US_GALLON = "us_gallon"
+    US_QUART = "us_quart"
+    US_PINT = "us_pint"
+    US_CUP = "us_cup"
+    US_FILL = "us_fill"
+    US_FLUID_OUNCE = "us_fluid_ounce"
+    US_FLUID_DRAM = "us_fluid_dram"
+    US_MINIM = "us_minim"
+    US_TABLESPOON = "us_tablespoon"
+    US_TEASPOON = "us_teaspoon"
+    US_BUSHEL = "us_bushel"
+    US_PECK = "us_peck"
+    US_DRY_QUART = "us_dry_quart"
+    US_DRY_PINT = "us_dry_pint"
+    THERMO_KG_CALORIE = "thermo_kg_calorie"
+    TABLE_KG_CALORIE = "table_kg_calorie"
+    US_LABEL_TEASPOON = "us_label_teaspoon"
+    US_LABEL_TABLESPOON = "us_label_tablespoon"
+    US_LABEL_CUP = "us_label_cup"
+    US_LABEL_FLUID_OUNCE = "us_label_fluid_ounce"
+    US_LABEL_OUNCE = "us_label_ounce"
+    HORSEPOWER = "horsepower"
+    ELECTRIC_HORSEPOWER = "electric_horsepower"
+    BOILER_HORSEPOWER = "boiler_horsepower"
+    METRIC_HORSEPOWER = "metric_horsepower"
+    WATER_HORSEPOWER = "water_horsepower"
+    UK_HORSEPOWER = "uk_horsepower"
+    DEGREE_FAHRENHEIT = "degree_Fahrenheit"
+    DEGREE_RANKINE = "degree_Rankine"
+    TORR = "torr"
+    STANDARD_ATMOSPHERE = "standard_atmosphere"
+    TECHNICAL_ATMOSPHERE = "technical_atmosphere"
+    MM_HG = "mm_Hg"
+    CM_HG = "cm_Hg"
+    VALUE_0_C_CM_HG = "0C_cm_Hg"
+    IN_HG = "in_Hg"
+    VALUE_32_F_IN_HG = "32F_in_Hg"
+    VALUE_60_F_IN_HG = "60F_in_Hg"
+    FT_HG = "ft_Hg"
+    MM_WATER = "mm_water"
+    CM_WATER = "cm_water"
+    VALUE_4_C_CM_WATER = "4C_cm_water"
+    IN_WATER = "in_water"
+    VALUE_39_F_IN_WATER = "39F_in_water"
+    VALUE_60_F_IN_WATER = "60F_in_water"
+    FT_WATER = "ft_water"
+    VALUE_39_F_FT_WATER = "39F_ft_water"
+    LIGHT_YEAR = "light_year"
+    PARSEC = "parsec"
+    PRINTERS_PICA = "printers_pica"
+    COMPUTER_PICA = "computer_pica"
+    PRINTERS_POINT = "printers_point"
+    COMPUTER_POINT = "computer_point"
+    THERMO_BTU = "thermo_btu"
+    TABLE_BTU = "table_btu"
+    MEAN_BTU = "mean_btu"
+    VALUE_39_F_BTU = "39F_btu"
+    VALUE_59_F_BTU = "59F_btu"
+    VALUE_60_F_BTU = "60F_btu"
+    TONS_OF_TNT = "tons_of_tnt"
+    EC_THERM = "ec_therm"
+    US_THERM = "us_therm"
+    YEAR_365 = "year_365"
+    TROPICAL_YEAR = "tropical_year"
+    SIDEREAL_YEAR = "sidereal_year"
+    SIDEREAL_DAY = "sidereal_day"
+    SIDEREAL_HOUR = "sidereal_hour"
+    SIDEREAL_MINUTE = "sidereal_minute"
+    SIDEREAL_SECOND = "sidereal_second"
+    SHAKE = "shake"
+    DENIER = "denier"
+    TEX = "tex"
+    GON = "gon"
+    NATO_MIL = "nato_mil"
+    POUND_MOLE = "pound_mole"
+    TON_REFRIGERATION = "ton_refrigeration"
+    CIRCULAR_MIL = "circular_mil"
+    BEL = "bel"
+    NEPER = "neper"
+    P_H = "pH"
+    PETRO_BARREL = "petro_barrel"
+    FOOTLAMBERT = "footlambert"
+    FOOTCANDLE = "footcandle"
+    CARAT = "carat"
+
+
+@dataclass
+class LengthType:
+    """
+    Type of the quantity length.
+
+    Attributes
+        symbol: Symbol of the quantity length.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="L",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class LuminousIntensityType:
+    """
+    Type of the quantity luminous intensity.
+
+    Attributes
+        symbol: Symbol of the quantity luminous intensity.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="J",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class MassType:
+    """
+    Type of the quantity mass.
+
+    Attributes
+        symbol: Symbol of the quantity mass.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="M",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class SymbolType:
+    """Type for symbols.
+
+    Used in units, quantities, and prefixes.
+
+    Attributes
+        type_value: Type of symbol representation.  Examples include
+            ASCII, unicode, HTML, and MathML.
+        content:
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    type_value: Optional[str] = field(
+        default=None,
+        metadata={
+            "name": "type",
+            "type": "Attribute",
+            "required": True,
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
+        }
+    )
+
+
+@dataclass
+class ThermodynamicTemperatureType:
+    """
+    Type of the quantity thermodynamic temperature.
+
+    Attributes
+        symbol: Symbol of the quantity thermodynamic temperature.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="Θ",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class TimeType:
+    """
+    Type of the quantity time.
+
+    Attributes
+        symbol: Symbol of the quantity time.
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    symbol: str = field(
+        init=False,
+        default="T",
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
 @dataclass
 class ApPos(QuantityT):
     """
@@ -1299,6 +1849,7 @@ class ApplicationRefT(EntityRefBaseT):
     """
     class Meta:
         name = "ApplicationRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     external_ref: Optional[str] = field(
         default=None,
@@ -1382,6 +1933,7 @@ class BracketRefT(EntityRefBaseT):
     """
     class Meta:
         name = "BracketRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -1472,6 +2024,7 @@ class ChildRefT(EntityRefBaseT):
     """
     class Meta:
         name = "ChildRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
@@ -1583,6 +2136,7 @@ class DescriptionBaseT(IdBaseT):
     """
     class Meta:
         name = "DescriptionBase_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     description: Optional[str] = field(
         default=None,
@@ -1689,6 +2243,7 @@ class EdgeCurveRefT(EntityRefBaseT):
     """
     class Meta:
         name = "EdgeCurveRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
@@ -1712,6 +2267,7 @@ class EndCutRefT(EntityRefBaseT):
     """
     class Meta:
         name = "EndCutRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -1734,6 +2290,7 @@ class ExternalGeometryRefT:
     """
     class Meta:
         name = "ExternalGeometryRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     external_ref: Optional[str] = field(
         default=None,
@@ -1907,6 +2464,7 @@ class HoleRefT(EntityRefBaseT):
     """
     class Meta:
         name = "HoleRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -1952,21 +2510,22 @@ class KnotVector(KnotVectorT):
 
 
 @dataclass
-class Length(QuantityT):
-    """The curve length computed by the sending application.
-
-    Used to verify geometry reconstruction.
+class LengthOfWaterline(QuantityT):
+    """
+    The length of the waterline at T, Lwl.
     """
     class Meta:
         namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
-class LengthOfWaterline(QuantityT):
-    """
-    The length of the waterline at T, Lwl.
+class Length2(QuantityT):
+    """The curve length computed by the sending application.
+
+    Used to verify geometry reconstruction.
     """
     class Meta:
+        name = "Length"
         namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
@@ -2017,6 +2576,7 @@ class MaterialRefT(EntityRefBaseT):
     """
     class Meta:
         name = "MaterialRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -2091,6 +2651,7 @@ class NurbspropertiesT:
     """
     class Meta:
         name = "NURBSProperties_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     degree: Optional[int] = field(
         default=None,
@@ -2255,6 +2816,7 @@ class RectangularTubeT:
     """
     class Meta:
         name = "RectangularTube_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[QuantityT] = field(
         default=None,
@@ -2323,6 +2885,7 @@ class RootRefT(EntityRefBaseT):
     """
     class Meta:
         name = "RootRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
@@ -2378,6 +2941,7 @@ class SectionRefT(EntityRefBaseT):
     """
     class Meta:
         name = "SectionRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -2568,6 +3132,7 @@ class UnitCargoT:
     """
     class Meta:
         name = "UnitCargo_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     unit_cargo_type: Optional[UnitCargoTypeValue] = field(
         default=None,
@@ -2610,6 +3175,7 @@ class UpperRadius(QuantityT):
 class UserDefinedParameterT(QuantityT):
     class Meta:
         name = "UserDefinedParameter_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     description: Optional[str] = field(
         default=None,
@@ -2795,6 +3361,153 @@ class ZposOfDeck(QuantityT):
 
 
 @dataclass
+class AmountOfSubstance(AmountOfSubstanceType):
+    """
+    Element containing the dimension of the quantity amount of substance.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class ElectricCurrent(ElectricCurrentType):
+    """
+    Element containing the dimension of the quantity electric current.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class EnumeratedRootUnitType:
+    """Type for the element for a root unit (from an extensive enumerated list)
+    allowing an optional prefix and power.
+
+    E.g., mm^2
+
+    Attributes
+        unit: Unit identifier; the enumerated list is basically English
+            unit names in lowercase, with a few upper case exceptions,
+            e.g., 32F, mmHg, pH.
+        source_url: Relevant URL for available information.
+        prefix: Prefix identifier; e.g., m, k, M, G.  [Enumeration order
+            is by prefix magnitude (Y to y) followed by binary
+            prefixes.]
+        power_numerator: An integer exponent of the unit.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    unit: Optional[EnumeratedRootUnitTypeUnit] = field(
+        default=None,
+        metadata={
+            "type": "Attribute",
+            "required": True,
+        }
+    )
+    source_url: Optional[str] = field(
+        default=None,
+        metadata={
+            "name": "sourceURL",
+            "type": "Attribute",
+        }
+    )
+    prefix: Optional[EnumeratedRootUnitTypePrefix] = field(
+        default=None,
+        metadata={
+            "type": "Attribute",
+        }
+    )
+    power_numerator: int = field(
+        default=1,
+        metadata={
+            "name": "powerNumerator",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class Length1(LengthType):
+    """
+    Element containing the dimension of the quantity length.
+    """
+    class Meta:
+        name = "Length"
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class LuminousIntensity(LuminousIntensityType):
+    """
+    Element containing the dimension of the quantity luminous intensity.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class Mass(MassType):
+    """
+    Element containing the dimension of the quantity mass.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class NameType:
+    """Type for name.
+
+    Used for names in units, quantities, and prefixes.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    value: str = field(
+        default="",
+        metadata={
+            "required": True,
+        }
+    )
+    lang: Optional[Union[str, LangValue]] = field(
+        default=None,
+        metadata={
+            "type": "Attribute",
+            "namespace": "http://www.w3.org/XML/1998/namespace",
+        }
+    )
+
+
+@dataclass
+class ThermodynamicTemperature(ThermodynamicTemperatureType):
+    """
+    Element containing the dimension of the quantity thermodynamic temerature.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class Time(TimeType):
+    """
+    Element containing the dimension of the quantity time.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class UnitSymbol(SymbolType):
+    """Element containing various unit symbols.
+
+    Examples include Aring (ASCII), Å (HTML).
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
 class ApplicationRef(ApplicationRefT):
     """
     The ApplicationRef element is meant to relate the parent element (Product,
@@ -2830,6 +3543,7 @@ class BulbFlatT:
     """
     class Meta:
         name = "BulbFlat_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -2908,6 +3622,7 @@ class BulkCargoT:
     """
     class Meta:
         name = "BulkCargo_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     stowage_factor: Optional[StowageFactor] = field(
         default=None,
@@ -2960,6 +3675,7 @@ class ConnectedBracketRefT(BracketRefT):
     """
     class Meta:
         name = "ConnectedBracketRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     position: Optional[PositionValue] = field(
         default=None,
@@ -2988,6 +3704,7 @@ class DocumentBaseT:
     """
     class Meta:
         name = "DocumentBase_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     header: Optional[Header] = field(
         default=None,
@@ -3056,6 +3773,7 @@ class EntityBaseT(DescriptionBaseT):
     """
     class Meta:
         name = "EntityBase_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     guidref: Optional[str] = field(
         default=None,
@@ -3087,6 +3805,7 @@ class FeatureCopeT:
     """
     class Meta:
         name = "FeatureCope_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     cope_height: Optional[CopeHeight] = field(
         default=None,
@@ -3127,6 +3846,7 @@ class FlangeEdgeReinforcementT:
     """
     class Meta:
         name = "FlangeEdgeReinforcement_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     flange_width: Optional[FlangeWidth] = field(
         default=None,
@@ -3157,6 +3877,7 @@ class FlatBarT:
     """
     class Meta:
         name = "FlatBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3193,6 +3914,7 @@ class GaseousCargoT:
     """
     class Meta:
         name = "GaseousCargo_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     density: Optional[Density] = field(
         default=None,
@@ -3236,6 +3958,7 @@ class GeometryRepresentationT(DescriptionBaseT):
     """
     class Meta:
         name = "GeometryRepresentation_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     guidref: Optional[str] = field(
         default=None,
@@ -3263,6 +3986,7 @@ class GridSpacingSystemT(DescriptionBaseT):
     """
     class Meta:
         name = "GridSpacingSystem_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     grid_position: List[GridPosition] = field(
         default_factory=list,
@@ -3308,6 +4032,7 @@ class HalfRoundBarT:
     """
     class Meta:
         name = "HalfRoundBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3337,6 +4062,7 @@ class HexagonBarT:
     """
     class Meta:
         name = "HexagonBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3357,6 +4083,7 @@ class Hole2DT(DescriptionBaseT):
     """
     class Meta:
         name = "Hole2D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     guidref: Optional[str] = field(
         default=None,
@@ -3390,6 +4117,7 @@ class IbarT:
     """
     class Meta:
         name = "IBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3441,6 +4169,7 @@ class LbarOfT:
     """
     class Meta:
         name = "LBarOF_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[QuantityT] = field(
         default=None,
@@ -3502,6 +4231,7 @@ class LbarOwT:
     """
     class Meta:
         name = "LBarOW_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3561,6 +4291,7 @@ class LbarT:
     """
     class Meta:
         name = "LBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3613,6 +4344,7 @@ class LiquidCargoT:
     """
     class Meta:
         name = "LiquidCargo_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     density: Optional[Density] = field(
         default=None,
@@ -3655,6 +4387,7 @@ class LugPlateRefT(EntityRefBaseT):
     """
     class Meta:
         name = "LugPlateRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     connection_length: Optional[ConnectionLength] = field(
         default=None,
@@ -3702,6 +4435,7 @@ class MaterialT(DescriptionBaseT):
     """
     class Meta:
         name = "Material_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     density: List[Density] = field(
         default_factory=list,
@@ -3790,6 +4524,7 @@ class OctagonBarT:
     """
     class Meta:
         name = "OctagonBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -3809,6 +4544,7 @@ class ParametricHole2DT(DescriptionBaseT):
     """
     class Meta:
         name = "ParametricHole2D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -3818,6 +4554,7 @@ class PlateMaterialT(MaterialRefT):
     """
     class Meta:
         name = "PlateMaterial_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     thickness: Optional[Thickness] = field(
         default=None,
@@ -3846,6 +4583,7 @@ class Point3DT:
     """
     class Meta:
         name = "Point3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     x: Optional[X] = field(
         default=None,
@@ -3921,6 +4659,7 @@ class PrincipalParticularsT:
     """
     class Meta:
         name = "PrincipalParticulars_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     lpp: List[Lpp] = field(
         default_factory=list,
@@ -4136,6 +4875,7 @@ class ProcessLayerT(DescriptionBaseT):
     """
     class Meta:
         name = "ProcessLayer_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -4164,6 +4904,7 @@ class RoundBarT:
     """
     class Meta:
         name = "RoundBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -4192,6 +4933,7 @@ class SchemaChangeT:
     """
     class Meta:
         name = "SchemaChange_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     description: Optional[str] = field(
         default=None,
@@ -4249,6 +4991,7 @@ class SectionPropertiesT:
     """
     class Meta:
         name = "SectionProperties_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     area: Optional[Area] = field(
         default=None,
@@ -4337,6 +5080,7 @@ class SquareBarT:
     """
     class Meta:
         name = "SquareBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -4361,6 +5105,7 @@ class SweepT:
     """
     class Meta:
         name = "Sweep_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     vector3_d: Optional[Vector3D] = field(
         default=None,
@@ -4371,7 +5116,7 @@ class SweepT:
             "required": True,
         }
     )
-    length: Optional[Length] = field(
+    length: Optional[Length2] = field(
         default=None,
         metadata={
             "name": "Length",
@@ -4393,6 +5138,7 @@ class TbarT:
     """
     class Meta:
         name = "TBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -4439,6 +5185,7 @@ class TonnageDataT:
     """
     class Meta:
         name = "TonnageData_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     tonnage: Optional[Tonnage] = field(
         default=None,
@@ -4469,6 +5216,7 @@ class TubeT:
     """
     class Meta:
         name = "Tube_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     diameter: Optional[Diameter] = field(
         default=None,
@@ -4501,6 +5249,7 @@ class UbarT:
     """
     class Meta:
         name = "UBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -4593,6 +5342,7 @@ class ZbarT:
     """
     class Meta:
         name = "ZBar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -4630,6 +5380,125 @@ class ZbarT:
             "required": True,
         }
     )
+
+
+@dataclass
+class DimensionType:
+    """
+    Type for dimension.
+
+    Attributes
+        length:
+        mass:
+        time:
+        electric_current:
+        thermodynamic_temperature:
+        amount_of_substance:
+        luminous_intensity:
+        id:
+        dimensionless: Boolean to designate that a quantity or unit is
+            dimensionless.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    length: List[Length1] = field(
+        default_factory=list,
+        metadata={
+            "name": "Length",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    mass: List[Mass] = field(
+        default_factory=list,
+        metadata={
+            "name": "Mass",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    time: List[Time] = field(
+        default_factory=list,
+        metadata={
+            "name": "Time",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    electric_current: List[ElectricCurrent] = field(
+        default_factory=list,
+        metadata={
+            "name": "ElectricCurrent",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    thermodynamic_temperature: List[ThermodynamicTemperature] = field(
+        default_factory=list,
+        metadata={
+            "name": "ThermodynamicTemperature",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    amount_of_substance: List[AmountOfSubstance] = field(
+        default_factory=list,
+        metadata={
+            "name": "AmountOfSubstance",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    luminous_intensity: List[LuminousIntensity] = field(
+        default_factory=list,
+        metadata={
+            "name": "LuminousIntensity",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "sequence": 1,
+        }
+    )
+    id: Optional[str] = field(
+        default=None,
+        metadata={
+            "type": "Attribute",
+            "namespace": "http://www.w3.org/XML/1998/namespace",
+            "required": True,
+        }
+    )
+    dimensionless: bool = field(
+        default=False,
+        metadata={
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
+class EnumeratedRootUnit(EnumeratedRootUnitType):
+    """Element for a root unit (from an extensive enumerated list) allowing an
+    optional prefix and power.
+
+    E.g., mm^2
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class UnitName(NameType):
+    """
+    Element containing the unit name.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
 
 
 @dataclass
@@ -4693,8 +5562,9 @@ class Curve3DT(GeometryRepresentationT):
     """
     class Meta:
         name = "Curve3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
-    length: Optional[Length] = field(
+    length: Optional[Length2] = field(
         default=None,
         metadata={
             "name": "Length",
@@ -4755,6 +5625,7 @@ class FormT(EntityBaseT):
     """
     class Meta:
         name = "Form_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     distance_tolerance: Optional[DistanceTolerance] = field(
         default=None,
@@ -4913,6 +5784,7 @@ class OccurrenceT(EntityRefBaseT):
     """
     class Meta:
         name = "Occurrence_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     child_ref: List[ChildRef] = field(
         default_factory=list,
@@ -4958,6 +5830,7 @@ class ParametricCircleT(ParametricHole2DT):
     """
     class Meta:
         name = "ParametricCircle_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     diameter: Optional[Diameter] = field(
         default=None,
@@ -5013,6 +5886,7 @@ class RadialCylinderT(EntityBaseT):
     """
     class Meta:
         name = "RadialCylinder_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     radius: Optional[Radius] = field(
         default=None,
@@ -5039,6 +5913,7 @@ class RectangularHoleT(ParametricHole2DT):
     """
     class Meta:
         name = "RectangularHole_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -5081,6 +5956,7 @@ class RectangularMickeyMouseEarsT(ParametricHole2DT):
     """
     class Meta:
         name = "RectangularMickeyMouseEars_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -5126,6 +6002,7 @@ class RefPlaneT(EntityBaseT):
     """
     class Meta:
         name = "RefPlane_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -5189,6 +6066,7 @@ class SuperEllipticalT(ParametricHole2DT):
     """
     class Meta:
         name = "SuperElliptical_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -5238,6 +6116,7 @@ class SymmetricalHoleT(ParametricHole2DT):
     """
     class Meta:
         name = "SymmetricalHole_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -5350,9 +6229,48 @@ class ZspacingGroup(GridSpacingSystemT):
 
 
 @dataclass
+class Dimension(DimensionType):
+    """
+    Element to express the dimension of a unit or quantity in terms of the SI base
+    quantities length, mass, time, electric current, thermodynamic temperature,
+    amount of substance, and luminous intensity.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class RootUnitsType:
+    """Type for the container for defining derived units in terms of their root
+    units.
+
+    This allows a precise definition of a wide range of units. The goal
+    is to improve interoperability among applications and databases
+    which use derived units based on commonly encountered base units.
+
+    Attributes
+        enumerated_root_unit: Element for a root unit (from an extensive
+            enumerated list) allowing an optional prefix and power.
+            E.g., mm^2
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    enumerated_root_unit: List[EnumeratedRootUnit] = field(
+        default_factory=list,
+        metadata={
+            "name": "EnumeratedRootUnit",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+        }
+    )
+
+
+@dataclass
 class BoundingBoxT:
     class Meta:
         name = "BoundingBox_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     max: List[Max] = field(
         default_factory=list,
@@ -5397,6 +6315,7 @@ class BracketParametersT:
     """
     class Meta:
         name = "BracketParameters_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     arm_length_u: Optional[ArmLengthU] = field(
         default=None,
@@ -5521,6 +6440,7 @@ class Circle3DT(Curve3DT):
     """
     class Meta:
         name = "Circle3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     diameter: List[Diameter] = field(
         default_factory=list,
@@ -5559,6 +6479,7 @@ class CircumArc3DT(Curve3DT):
     """
     class Meta:
         name = "CircumArc3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     start_point: Optional[StartPoint] = field(
         default=None,
@@ -5614,6 +6535,7 @@ class ClassDataT:
     """
     class Meta:
         name = "ClassData_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     principal_particulars: Optional[PrincipalParticulars] = field(
         default=None,
@@ -5686,6 +6608,7 @@ class CompartmentPropertiesT:
     """
     class Meta:
         name = "CompartmentProperties_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     center_of_gravity: Optional[CenterOfGravity] = field(
         default=None,
@@ -5743,6 +6666,7 @@ class ControlPointT:
     """
     class Meta:
         name = "ControlPoint_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     point3_d: Optional[Point3D] = field(
         default=None,
@@ -5773,6 +6697,7 @@ class DoubleBracketT:
     """
     class Meta:
         name = "DoubleBracket_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     connected_bracket_ref: List[ConnectedBracketRef] = field(
         default_factory=list,
@@ -5801,6 +6726,7 @@ class Ellipse3DT(Curve3DT):
     """
     class Meta:
         name = "Ellipse3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     center: Optional[Center] = field(
         default=None,
@@ -5875,6 +6801,7 @@ class EndCutT(DescriptionBaseT):
     """
     class Meta:
         name = "EndCut_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     section_ref: Optional[SectionRef] = field(
         default=None,
@@ -5955,6 +6882,7 @@ class EquipmentT(FormT):
     """
     class Meta:
         name = "Equipment_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -5965,6 +6893,7 @@ class InclinationT:
     """
     class Meta:
         name = "Inclination_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     web_direction: Optional[WebDirection] = field(
         default=None,
@@ -6001,6 +6930,7 @@ class Line3DlistT:
     """
     class Meta:
         name = "Line3DList_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     point3_d: List[Point3D] = field(
         default_factory=list,
@@ -6020,6 +6950,7 @@ class Line3DT(Curve3DT):
     """
     class Meta:
         name = "Line3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     start_point: Optional[StartPoint] = field(
         default=None,
@@ -6049,6 +6980,7 @@ class MaterialCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "MaterialCatalogue_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     material: List[Material] = field(
         default_factory=list,
@@ -6087,6 +7019,7 @@ class PhysicalPropertiesT:
     """
     class Meta:
         name = "PhysicalProperties_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     dry_weight: Optional[DryWeight] = field(
         default=None,
@@ -6115,6 +7048,7 @@ class Point3DlistT:
     """
     class Meta:
         name = "Point3DList_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     point3_d: List[Point3D] = field(
         default_factory=list,
@@ -6179,6 +7113,7 @@ class SingleBracketT:
     """
     class Meta:
         name = "SingleBracket_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     connected_bracket_ref: Optional[ConnectedBracketRef] = field(
         default=None,
@@ -6210,6 +7145,7 @@ class SlotParametersT:
     """
     class Meta:
         name = "SlotParameters_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     height: Optional[Height] = field(
         default=None,
@@ -6304,6 +7240,7 @@ class TransformationT:
     """
     class Meta:
         name = "Transformation_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     origin: Optional[Origin] = field(
         default=None,
@@ -6349,6 +7286,7 @@ class XgridT(DescriptionBaseT):
     """
     class Meta:
         name = "XGrid_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     distance_to_ap: Optional[DistanceToAp] = field(
         default=None,
@@ -6391,6 +7329,7 @@ class YgridT(DescriptionBaseT):
     """
     class Meta:
         name = "YGrid_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     yspacing_group: List[YspacingGroup] = field(
         default_factory=list,
@@ -6410,6 +7349,7 @@ class ZgridT(DescriptionBaseT):
     """
     class Meta:
         name = "ZGrid_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     zspacing_group: List[ZspacingGroup] = field(
         default_factory=list,
@@ -6420,6 +7360,43 @@ class ZgridT(DescriptionBaseT):
             "min_occurs": 1,
         }
     )
+
+
+@dataclass
+class DimensionSetType:
+    """
+    Type for the dimension container.
+
+    Attributes
+        dimension: Element to express a unit or quantity in terms of the
+            SI base quantities length, mass, time, electric current,
+            thermodynamic temperature, amount of substance, and luminous
+            intensity.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    dimension: List[Dimension] = field(
+        default_factory=list,
+        metadata={
+            "name": "Dimension",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "min_occurs": 1,
+        }
+    )
+
+
+@dataclass
+class RootUnits(RootUnitsType):
+    """Container for defining derived units in terms of their root units.
+
+    This allows a precise definition of a wide range of units. The goal
+    is to improve interoperability among applications and databases
+    which use derived units based on commonly encountered root units.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
 
 
 @dataclass
@@ -6498,6 +7475,7 @@ class CylindricalAxesT:
     """
     class Meta:
         name = "CylindricalAxes_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     radial_cylinder: List[RadialCylinder] = field(
         default_factory=list,
@@ -6621,6 +7599,7 @@ class OccurrenceGroupT(DescriptionBaseT):
     """
     class Meta:
         name = "OccurrenceGroup_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     occurrence: List[Occurrence] = field(
         default_factory=list,
@@ -6687,6 +7666,7 @@ class RefPlanesT(ReferencePlaneT):
     """
     class Meta:
         name = "RefPlanes_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_plane: List[RefPlane] = field(
         default_factory=list,
@@ -6776,12 +7756,84 @@ class Zgrid(ZgridT):
 
 
 @dataclass
+class DimensionSet(DimensionSetType):
+    """
+    Container for dimensions.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
+class UnitType:
+    """
+    Type for the unit.
+
+    Attributes
+        unit_name:
+        unit_symbol:
+        root_units: Container for defining derived units in terms of
+            their root units. This allows a precise definition of a wide
+            range of units. The goal is to improve interoperability
+            among applications and databases which use derived units
+            based on commonly encountered root units.
+        id:
+        dimension_url: URL to a representation of the unit or quantity
+            in terms of the 7 SI base dimensions.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    unit_name: List[UnitName] = field(
+        default_factory=list,
+        metadata={
+            "name": "UnitName",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "min_occurs": 1,
+        }
+    )
+    unit_symbol: List[UnitSymbol] = field(
+        default_factory=list,
+        metadata={
+            "name": "UnitSymbol",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+        }
+    )
+    root_units: Optional[RootUnits] = field(
+        default=None,
+        metadata={
+            "name": "RootUnits",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+        }
+    )
+    id: Optional[str] = field(
+        default=None,
+        metadata={
+            "type": "Attribute",
+            "namespace": "http://www.w3.org/XML/1998/namespace",
+            "required": True,
+        }
+    )
+    dimension_url: Optional[str] = field(
+        default=None,
+        metadata={
+            "name": "dimensionURL",
+            "type": "Attribute",
+        }
+    )
+
+
+@dataclass
 class BoundedRefT(EntityRefBaseT):
     """
     A bounded object reference type.
     """
     class Meta:
         name = "BoundedRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     bounding_box: Optional[BoundingBox] = field(
         default=None,
@@ -6801,6 +7853,7 @@ class CircumCircle3DT(Curve3DT):
     """
     class Meta:
         name = "CircumCircle3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     positions: Optional[Positions] = field(
         default=None,
@@ -6825,6 +7878,7 @@ class ControlPtListT:
     """
     class Meta:
         name = "ControlPtList_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     control_point: List[ControlPoint] = field(
         default_factory=list,
@@ -6853,6 +7907,7 @@ class Hole2DcontourT(GeometryRepresentationT):
     """
     class Meta:
         name = "Hole2DContour_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     hole_ref: Optional[HoleRef] = field(
         default=None,
@@ -6898,6 +7953,7 @@ class PolyLine3DT(Curve3DT):
     """
     class Meta:
         name = "PolyLine3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     point3_dlist: Optional[Point3Dlist] = field(
         default=None,
@@ -6934,6 +7990,7 @@ class StructurePartT(EntityBaseT):
     """
     class Meta:
         name = "StructurePart_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     physical_properties: Optional[PhysicalProperties] = field(
         default=None,
@@ -6961,6 +8018,7 @@ class VesselGridT:
     """
     class Meta:
         name = "VesselGrid_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     xgrid: List[Xgrid] = field(
         default_factory=list,
@@ -7055,6 +8113,17 @@ class ZrefPlanes(RefPlanesT):
 
 
 @dataclass
+class Unit(UnitType):
+    """Element for describing units.
+
+    Use in containers UnitSet or directly incorporate into a host
+    schema.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+
+@dataclass
 class CellBoundaryT(BoundedRefT):
     """
     Attributes
@@ -7063,6 +8132,7 @@ class CellBoundaryT(BoundedRefT):
     """
     class Meta:
         name = "CellBoundary_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7087,6 +8157,7 @@ class CellRefT(BoundedRefT):
     """
     class Meta:
         name = "CellRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7133,6 +8204,7 @@ class FrameTablesT:
     """
     class Meta:
         name = "FrameTables_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     xref_planes: List[XrefPlanes] = field(
         default_factory=list,
@@ -7174,6 +8246,7 @@ class GridRefT(BoundedRefT):
     """
     class Meta:
         name = "GridRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     offset: Optional[Offset] = field(
         default=None,
@@ -7218,6 +8291,7 @@ class OcxItemPtrT(BoundedRefT):
     """
     class Meta:
         name = "OcxItemPtr_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
@@ -7241,6 +8315,7 @@ class PanelRefT(BoundedRefT):
     """
     class Meta:
         name = "PanelRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7265,6 +8340,7 @@ class PillarRefT(BoundedRefT):
     """
     class Meta:
         name = "PillarRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7289,6 +8365,7 @@ class PlateRefT(BoundedRefT):
     """
     class Meta:
         name = "PlateRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7320,6 +8397,7 @@ class ProductViewT(DescriptionBaseT):
     """
     class Meta:
         name = "ProductView_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     root_ref: Optional[RootRef] = field(
         default=None,
@@ -7361,6 +8439,7 @@ class ReferencePlanesT:
     """
     class Meta:
         name = "ReferencePlanes_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     xref_planes: List[XrefPlanes] = field(
         default_factory=list,
@@ -7399,6 +8478,7 @@ class SeamRefT(BoundedRefT):
     """
     class Meta:
         name = "SeamRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7433,6 +8513,7 @@ class StiffenerRefT(BoundedRefT):
     """
     class Meta:
         name = "StiffenerRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7457,6 +8538,7 @@ class SurfaceRefT(BoundedRefT):
     """
     class Meta:
         name = "SurfaceRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7477,6 +8559,29 @@ class VesselGrid(VesselGridT):
     """
     class Meta:
         namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
+
+
+@dataclass
+class UnitSetType:
+    """
+    Type for the unit container.
+
+    Attributes
+        unit: Element for describing units. Use in containers UnitSet or
+            directly incorporate into a host schema.
+    """
+    class Meta:
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    unit: List[Unit] = field(
+        default_factory=list,
+        metadata={
+            "name": "Unit",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+            "min_occurs": 1,
+        }
+    )
 
 
 @dataclass
@@ -7504,6 +8609,7 @@ class DesignViewT(ProductViewT):
     """
     class Meta:
         name = "DesignView_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
 
 @dataclass
@@ -7540,6 +8646,7 @@ class Nurbs3DT(Curve3DT):
     """
     class Meta:
         name = "NURBS3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     nurbsproperties: Optional[Nurbsproperties] = field(
         default=None,
@@ -7654,6 +8761,7 @@ class WebStiffenerRefT(StiffenerRefT):
     """
     class Meta:
         name = "WebStiffenerRef_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     position: Optional[PositionValue] = field(
         default=None,
@@ -7662,6 +8770,16 @@ class WebStiffenerRefT(StiffenerRefT):
             "namespace": "http://data.dnvgl.com/Schemas/ocxXMLSchema",
         }
     )
+
+
+@dataclass
+class UnitSet(UnitSetType):
+    """Container for units.
+
+    Use in UnitsML container or directly incorporate into a host schema.
+    """
+    class Meta:
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
 
 
 @dataclass
@@ -7674,6 +8792,7 @@ class CellConnectionT:
     """
     class Meta:
         name = "CellConnection_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     cell_ref: List[CellRef] = field(
         default_factory=list,
@@ -7695,6 +8814,7 @@ class CellT(GeometryRepresentationT):
     """
     class Meta:
         name = "Cell_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     cell_boundary: List[CellBoundary] = field(
         default_factory=list,
@@ -7730,6 +8850,7 @@ class CoordinateSystemT(EntityBaseT):
     """
     class Meta:
         name = "CoordinateSystem_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     local_cartesian: List[LocalCartesian] = field(
         default_factory=list,
@@ -7795,6 +8916,7 @@ class PentetratingObjectT:
     """
     class Meta:
         name = "PentetratingObject_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     plate_ref: Optional[PlateRef] = field(
         default=None,
@@ -7823,6 +8945,33 @@ class WebStiffenerRef(WebStiffenerRefT):
     """
     class Meta:
         namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
+
+
+@dataclass
+class UnitsMltype:
+    """
+    ComplexType for the root element of an UnitsML document.
+    """
+    class Meta:
+        name = "UnitsMLType"
+        target_namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
+
+    unit_set: Optional[UnitSet] = field(
+        default=None,
+        metadata={
+            "name": "UnitSet",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+        }
+    )
+    dimension_set: Optional[DimensionSet] = field(
+        default=None,
+        metadata={
+            "name": "DimensionSet",
+            "type": "Element",
+            "namespace": "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18",
+        }
+    )
 
 
 @dataclass
@@ -7860,6 +9009,7 @@ class CompositeCurve3DT(Curve3DT):
     """
     class Meta:
         name = "CompositeCurve3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     line3_d: List[Line3D] = field(
         default_factory=list,
@@ -7917,6 +9067,7 @@ class WebStiffenerWithDoubleBracketT:
     """
     class Meta:
         name = "WebStiffenerWithDoubleBracket_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     connected_bracket_ref: List[ConnectedBracketRef] = field(
         default_factory=list,
@@ -7946,6 +9097,7 @@ class WebStiffenerWithSingleBracketT:
     """
     class Meta:
         name = "WebStiffenerWithSingleBracket_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     connected_bracket_ref: Optional[ConnectedBracketRef] = field(
         default=None,
@@ -7974,6 +9126,7 @@ class WebStiffenerT:
     """
     class Meta:
         name = "WebStiffener_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     web_stiffener_ref: Optional[WebStiffenerRef] = field(
         default=None,
@@ -7984,6 +9137,16 @@ class WebStiffenerT:
             "required": True,
         }
     )
+
+
+@dataclass
+class UnitsMl(UnitsMltype):
+    """
+    Container for UnitsML units, quantities, and prefixes.
+    """
+    class Meta:
+        name = "UnitsML"
+        namespace = "urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18"
 
 
 @dataclass
@@ -8015,6 +9178,7 @@ class CrossFlowT(IdBaseT):
     """
     class Meta:
         name = "CrossFlow_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     cell_connection: Optional[CellConnection] = field(
         default=None,
@@ -8093,6 +9257,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
     """
     class Meta:
         name = "ConnectionConfiguration_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     point3_d: Optional[Point3D] = field(
         default=None,
@@ -8177,6 +9342,7 @@ class Contour3DT:
     """
     class Meta:
         name = "Contour3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     ellipse3_d: Optional[Ellipse3D] = field(
         default=None,
@@ -8279,6 +9445,7 @@ class FreeEdgeCurve3DT(EntityBaseT):
     """
     class Meta:
         name = "FreeEdgeCurve3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     circum_arc3_d: List[CircumArc3D] = field(
         default_factory=list,
@@ -8336,6 +9503,7 @@ class TraceLineT:
     """
     class Meta:
         name = "TraceLine_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     circum_arc3_d: List[CircumArc3D] = field(
         default_factory=list,
@@ -8517,6 +9685,7 @@ class PenetrationT(ConnectionConfigurationT):
     """
     class Meta:
         name = "Penetration_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     slot_parameters: Optional[SlotParameters] = field(
         default=None,
@@ -8556,6 +9725,7 @@ class PhysicalSpaceT(EntityBaseT):
     """
     class Meta:
         name = "PhysicalSpace_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     compartment_properties: Optional[CompartmentProperties] = field(
         default=None,
@@ -8673,6 +9843,7 @@ class CutByT:
     """
     class Meta:
         name = "CutBy_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     inner_contour: List[InnerContour] = field(
         default_factory=list,
@@ -8704,6 +9875,7 @@ class CutByT:
 class EdgeReinforcementT(StructurePartT):
     class Meta:
         name = "EdgeReinforcement_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     section_ref: Optional[SectionRef] = field(
         default=None,
@@ -8821,6 +9993,7 @@ class LimitedByT:
     """
     class Meta:
         name = "LimitedBy_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     free_edge_curve3_d: List[FreeEdgeCurve3D] = field(
         default_factory=list,
@@ -8875,6 +10048,7 @@ class SeamT(EntityBaseT):
     """
     class Meta:
         name = "Seam_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     trace_line: Optional[TraceLine] = field(
         default=None,
@@ -8963,6 +10137,7 @@ class SurfaceT(GeometryRepresentationT):
     """
     class Meta:
         name = "Surface_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     area: Optional[Area] = field(
         default=None,
@@ -8997,6 +10172,7 @@ class UserDefinedBarSectionT:
     """
     class Meta:
         name = "UserDefinedBarSection_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     section_properties: Optional[SectionProperties] = field(
         default=None,
@@ -9054,6 +10230,7 @@ class Cone3DT(SurfaceT):
     """
     class Meta:
         name = "Cone3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     origin: Optional[Origin] = field(
         default=None,
@@ -9116,6 +10293,7 @@ class Cylinder3DT(SurfaceT):
     """
     class Meta:
         name = "Cylinder3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     origin: Optional[Origin] = field(
         default=None,
@@ -9179,6 +10357,7 @@ class ExtrudedSurfaceT(SurfaceT):
     """
     class Meta:
         name = "ExtrudedSurface_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     base_curve: Optional[BaseCurve] = field(
         default=None,
@@ -9218,6 +10397,7 @@ class HoleShapeCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "HoleShapeCatalogue_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     hole2_d: List[Hole2D] = field(
         default_factory=list,
@@ -9259,6 +10439,7 @@ class NurbssurfaceT(SurfaceT):
     """
     class Meta:
         name = "NURBSSurface_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     u_nurbsproperties: Optional[UNurbsproperties] = field(
         default=None,
@@ -9323,6 +10504,7 @@ class Sphere3DT(SurfaceT):
     """
     class Meta:
         name = "Sphere3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     origin: Optional[Origin] = field(
         default=None,
@@ -9384,6 +10566,7 @@ class BarSectionT(DescriptionBaseT):
     """
     class Meta:
         name = "BarSection_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     rectangular_tube: Optional[RectangularTube] = field(
         default=None,
@@ -9596,6 +10779,7 @@ class MemberT(StructurePartT):
     """
     class Meta:
         name = "Member_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     limited_by: Optional[LimitedBy] = field(
         default=None,
@@ -9631,6 +10815,7 @@ class Plane3DT(SurfaceT):
     """
     class Meta:
         name = "Plane3D_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     origin: Optional[Origin] = field(
         default=None,
@@ -9685,6 +10870,7 @@ class SplitByT:
     """
     class Meta:
         name = "SplitBy_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     seam: List[Seam] = field(
         default_factory=list,
@@ -9731,6 +10917,7 @@ class StiffenerT(StructurePartT):
     """
     class Meta:
         name = "Stiffener_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     material_ref: Optional[MaterialRef] = field(
         default=None,
@@ -9943,6 +11130,7 @@ class PillarT(MemberT):
     """
     class Meta:
         name = "Pillar_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     material_ref: Optional[MaterialRef] = field(
         default=None,
@@ -10060,6 +11248,7 @@ class StiffenedByT:
     """
     class Meta:
         name = "StiffenedBy_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     stiffener: List[Stiffener] = field(
         default_factory=list,
@@ -10083,6 +11272,7 @@ class StiffenedByT:
 class SurfaceCollectionT(DescriptionBaseT):
     class Meta:
         name = "SurfaceCollection_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     plane3_d: List[Plane3D] = field(
         default_factory=list,
@@ -10151,6 +11341,7 @@ class UnboundedGeometryT:
     """
     class Meta:
         name = "UnboundedGeometry_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     plane3_d: List[Plane3D] = field(
         default_factory=list,
@@ -10226,6 +11417,7 @@ class XsectionCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "XSectionCatalogue_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     bar_section: List[BarSection] = field(
         default_factory=list,
@@ -10249,6 +11441,7 @@ class CompartmentFaceT(UnboundedGeometryT):
     """
     class Meta:
         name = "CompartmentFace_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     face_boundary_curve: Optional[FaceBoundaryCurve] = field(
         default=None,
@@ -10309,6 +11502,7 @@ class BracketT(StructurePartT):
     """
     class Meta:
         name = "Bracket_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     bracket_parameters: List[BracketParameters] = field(
         default_factory=list,
@@ -10406,6 +11600,7 @@ class ClassCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "ClassCatalogue_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     material_catalogue: List[MaterialCatalogue] = field(
         default_factory=list,
@@ -10464,6 +11659,7 @@ class PlateT(StructurePartT):
     """
     class Meta:
         name = "Plate_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     plate_material: List[PlateMaterial] = field(
         default_factory=list,
@@ -10538,6 +11734,7 @@ class ReferenceSurfacesT:
     """
     class Meta:
         name = "ReferenceSurfaces_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     plane3_d: List[Plane3D] = field(
         default_factory=list,
@@ -10637,6 +11834,7 @@ class CompartmentT(EntityBaseT):
     """
     class Meta:
         name = "Compartment_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     compartment_properties: Optional[CompartmentProperties] = field(
         default=None,
@@ -10732,6 +11930,7 @@ class Compartment(CompartmentT):
 class ComposedOfT:
     class Meta:
         name = "ComposedOf_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     plate: List[Plate] = field(
         default_factory=list,
@@ -10773,6 +11972,7 @@ class ArrangementT(DescriptionBaseT):
     """
     class Meta:
         name = "Arrangement_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     compartment: List[Compartment] = field(
         default_factory=list,
@@ -10838,6 +12038,7 @@ class PanelT(EntityBaseT):
     """
     class Meta:
         name = "Panel_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     physical_properties: Optional[PhysicalProperties] = field(
         default=None,
@@ -10961,6 +12162,7 @@ class VesselT(FormT):
     """
     class Meta:
         name = "Vessel_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     classification_data: Optional[ClassificationData] = field(
         default=None,
@@ -11102,6 +12304,7 @@ class OcxXmlT(DocumentBaseT):
     """
     class Meta:
         name = "ocxXML_T"
+        target_namespace = "http://data.dnvgl.com/Schemas/ocxXMLSchema"
 
     vessel: List[Vessel] = field(
         default_factory=list,
@@ -11127,7 +12330,7 @@ class OcxXmlT(DocumentBaseT):
             "namespace": "http://data.dnvgl.com/Schemas/ocxXMLSchema",
         }
     )
-    units_ml: List[str] = field(
+    units_ml: List[UnitsMl] = field(
         default_factory=list,
         metadata={
             "name": "UnitsML",

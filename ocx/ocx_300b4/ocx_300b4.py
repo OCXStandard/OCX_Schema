@@ -20,7 +20,7 @@ class BuilderInformationT:
     """
     class Meta:
         name = "BuilderInformation_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     yard: Optional[str] = field(
         default=None,
@@ -76,7 +76,7 @@ class ClassNotationT:
     """
     class Meta:
         name = "ClassNotation_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     hull: Optional[str] = field(
         default=None,
@@ -150,7 +150,7 @@ class ClassParametersT:
     """
     class Meta:
         name = "ClassParameters_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     block_coefficient_class: Optional[float] = field(
         default=None,
@@ -209,7 +209,7 @@ class Description:
     OCX XML elements but is optional.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     value: str = field(
         default="",
@@ -223,7 +223,7 @@ class Description:
 class DescriptionT:
     class Meta:
         name = "Description_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -249,7 +249,7 @@ class EntityRefBaseT:
     """
     class Meta:
         name = "EntityRefBase_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     local_ref: Optional[str] = field(
         default=None,
@@ -263,7 +263,7 @@ class EntityRefBaseT:
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_length": 1,
             "max_length": 40,
         }
@@ -287,7 +287,7 @@ class HeaderT:
     """
     class Meta:
         name = "Header_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     time_stamp: Optional[XmlDateTime] = field(
         default=None,
@@ -362,7 +362,7 @@ class IdBaseT:
     """
     class Meta:
         name = "IdBase_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     id: Optional[str] = field(
         default=None,
@@ -384,7 +384,7 @@ class KnotVectorT:
     """
     class Meta:
         name = "KnotVector_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     value: List[float] = field(
         default_factory=list,
@@ -404,9 +404,9 @@ class Point3DT:
     """
     class Meta:
         name = "Point3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
-    cooordinates: List[float] = field(
+    coordinates: List[float] = field(
         default_factory=list,
         metadata={
             "type": "Attribute",
@@ -433,7 +433,7 @@ class QuantityT:
     """
     class Meta:
         name = "Quantity_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     numericvalue: Optional[float] = field(
         default=None,
@@ -459,7 +459,7 @@ class ReferencePlaneT:
     """
     class Meta:
         name = "ReferencePlane_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -469,7 +469,7 @@ class ReferencePlanesT:
     """
     class Meta:
         name = "ReferencePlanes_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -481,7 +481,7 @@ class ReferenceT:
     """
     class Meta:
         name = "Reference_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     element: Optional[str] = field(
         default=None,
@@ -525,7 +525,7 @@ class ShipDesignationT:
     """
     class Meta:
         name = "ShipDesignation_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ship_name: Optional[str] = field(
         default=None,
@@ -572,7 +572,7 @@ class StatutoryDataT:
     """
     class Meta:
         name = "StatutoryData_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     port_registration: Optional[str] = field(
         default=None,
@@ -602,7 +602,7 @@ class Vector3DT:
     """
     class Meta:
         name = "Vector3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     x: Optional[float] = field(
         default=None,
@@ -1235,25 +1235,25 @@ class RefTypeValue(Enum):
             reinforecement.
         OCX_HOLE2_DCONTOUR: A reference to a hole/cut-out contour.
     """
-    OCX_PANEL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Panel")
-    OCX_PLATE = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Plate")
-    OCX_SEAM = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Seam")
-    OCX_BRACKET = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Bracket")
-    OCX_STIFFENER = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Stiffener")
-    OCX_PILLAR = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Pillar")
-    OCX_CONNECTION_CONFIGURATION = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}ConnectionConfiguration")
-    OCX_HOLE2_D = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Hole2D")
-    OCX_GRID_REF = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}GridRef")
-    OCX_MATERIAL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Material")
-    OCX_BAR_SECTION = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}BarSection")
-    OCX_CELL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Cell")
-    OCX_VESSEL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Vessel")
-    OCX_FREE_EDGE_CURVE3_D = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}FreeEdgeCurve3D")
-    OCX_SURFACE = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Surface")
-    OCX_END_CUT = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}EndCut")
-    OCX_OCCURRENCE_GROUP = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}OccurrenceGroup")
-    OCX_EDGE_REINFORCEMENT = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}EdgeReinforcement")
-    OCX_HOLE2_DCONTOUR = QName("{https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd}Hole2DContour")
+    OCX_PANEL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Panel")
+    OCX_PLATE = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Plate")
+    OCX_SEAM = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Seam")
+    OCX_BRACKET = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Bracket")
+    OCX_STIFFENER = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Stiffener")
+    OCX_PILLAR = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Pillar")
+    OCX_CONNECTION_CONFIGURATION = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}ConnectionConfiguration")
+    OCX_HOLE2_D = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Hole2D")
+    OCX_GRID_REF = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}GridRef")
+    OCX_MATERIAL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Material")
+    OCX_BAR_SECTION = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}BarSection")
+    OCX_CELL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Cell")
+    OCX_VESSEL = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Vessel")
+    OCX_FREE_EDGE_CURVE3_D = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}FreeEdgeCurve3D")
+    OCX_SURFACE = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Surface")
+    OCX_END_CUT = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}EndCut")
+    OCX_OCCURRENCE_GROUP = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}OccurrenceGroup")
+    OCX_EDGE_REINFORCEMENT = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}EdgeReinforcement")
+    OCX_HOLE2_DCONTOUR = QName("{https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd}Hole2DContour")
 
 
 class ReinforcementTypeValue(Enum):
@@ -1855,7 +1855,7 @@ class ApPos(QuantityT):
     """
     class Meta:
         name = "AP_Pos"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1865,7 +1865,7 @@ class AirPipeHeight(QuantityT):
     pipe, if any.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1876,7 +1876,7 @@ class AngleOfRepose(QuantityT):
     loaded into a hold by a chute using gravity alone.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1886,7 +1886,7 @@ class AngleTolerance(QuantityT):
     defining geometry.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1897,14 +1897,14 @@ class ApplicationRefT(EntityRefBaseT):
     """
     class Meta:
         name = "ApplicationRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     external_ref: Optional[str] = field(
         default=None,
         metadata={
             "name": "externalRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -1919,7 +1919,7 @@ class Area(QuantityT):
     value.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1928,7 +1928,7 @@ class ArmLengthU(QuantityT):
     The length of the bracket in local U-direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1937,7 +1937,7 @@ class ArmLengthV(QuantityT):
     The length of the bracket in local V-direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1946,7 +1946,7 @@ class Axis(Vector3DT):
     Cylinder revolution axis direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1955,7 +1955,7 @@ class BaseRadius(QuantityT):
     Cone base radius.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1967,7 +1967,7 @@ class BlockCoefficient(QuantityT):
     4.2.32.1).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -1981,7 +1981,7 @@ class BracketRefT(EntityRefBaseT):
     """
     class Meta:
         name = "BracketRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -1989,7 +1989,7 @@ class BracketRefT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2003,7 +2003,7 @@ class BuilderInformation(BuilderInformationT):
     the context of the shipyard, in which it has been built.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2012,7 +2012,7 @@ class BulbAngle(QuantityT):
     Profile width and web thickness.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2021,7 +2021,7 @@ class BulbBottomRadius(QuantityT):
     The radius at the bottom of the web.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2030,7 +2030,7 @@ class BulbInnerRadius(QuantityT):
     The inner radius of the bulb.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2039,7 +2039,7 @@ class BulbOuterRadius(QuantityT):
     The outer radius of the bulb.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2048,7 +2048,7 @@ class BulbTopRadius(QuantityT):
     The radius at the top of the bulb.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2058,7 +2058,7 @@ class CarriagePressure(QuantityT):
     which the cargo is to be carried.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2067,7 +2067,7 @@ class Center(Point3DT):
     The center position of a shape.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2079,7 +2079,7 @@ class CenterOfGravity(Point3DT):
     correctly.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2093,14 +2093,14 @@ class ChildRefT(EntityRefBaseT):
     """
     class Meta:
         name = "ChildRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2114,7 +2114,7 @@ class ClassNotation(ClassNotationT):
     and in-service maintenance of the ship (see ISO 10303-218, section 4.2.35).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2124,7 +2124,7 @@ class ConnectionLength(QuantityT):
     primary supporting member.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2133,7 +2133,7 @@ class ContourEnd(Point3DT):
     The end point  of the LimitedBy  contour curve.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2142,7 +2142,7 @@ class ContourStart(Point3DT):
     The start point  of the LimitedBy  contour curve.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2151,7 +2151,7 @@ class CopeHeight(QuantityT):
     The height of the cope.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2161,7 +2161,7 @@ class CopeLength(QuantityT):
     (The default is CopeLength=CopeRadius)
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2170,7 +2170,7 @@ class CopeRadius(QuantityT):
     The cope or heel radius.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2179,7 +2179,7 @@ class CutbackDistance(QuantityT):
     Distance from stiffener logical end position to the start of the web cutback.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2190,7 +2190,7 @@ class DeadWeight(QuantityT):
     4.2.74).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2200,7 +2200,7 @@ class DeepestEquilibriumWl(QuantityT):
     """
     class Meta:
         name = "DeepestEquilibriumWL"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2209,7 +2209,7 @@ class Density(QuantityT):
     The material density.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2223,14 +2223,14 @@ class DescriptionBaseT(IdBaseT):
     """
     class Meta:
         name = "DescriptionBase_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     description: Optional[str] = field(
         default=None,
         metadata={
             "name": "Description",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     name: Optional[str] = field(
@@ -2248,7 +2248,7 @@ class DesignSpeed(QuantityT):
     10303-218, section 4.2.32.2).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2257,7 +2257,7 @@ class Diameter(QuantityT):
     Circle diameter.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2268,7 +2268,7 @@ class Displacement(QuantityT):
     corner of the rectangle.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2277,7 +2277,7 @@ class DistanceAbove(QuantityT):
     The distance of the lug above the plate (bottom of the slot opening).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2286,7 +2286,7 @@ class DistanceBelow(QuantityT):
     The distance below the lug plate to bottom of the slot.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2297,7 +2297,7 @@ class DistanceToAp(QuantityT):
     """
     class Meta:
         name = "DistanceToAP"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2307,7 +2307,7 @@ class DistanceTolerance(QuantityT):
     geometry.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2316,7 +2316,7 @@ class DryWeight(QuantityT):
     The total dry weight of the parent member.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2330,14 +2330,14 @@ class EdgeCurveRefT(EntityRefBaseT):
     """
     class Meta:
         name = "EdgeCurveRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2354,7 +2354,7 @@ class EndCutRefT(EntityRefBaseT):
     """
     class Meta:
         name = "EndCutRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -2362,7 +2362,7 @@ class EndCutRefT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2374,7 +2374,7 @@ class EndPoint(Point3DT):
     The end position of the segment.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2382,14 +2382,14 @@ class ExternalGeometryRefT:
     """The ExternalGeometryRef - definition  of an element  used to point to an external geometry representation  of the parent  entity (e.g. Plate, Stiffener, Bracket, Member )."""
     class Meta:
         name = "ExternalGeometryRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     external_ref: Optional[str] = field(
         default=None,
         metadata={
             "name": "externalRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2399,7 +2399,7 @@ class ExternalGeometryRefT:
         metadata={
             "name": "geometryFormat",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2413,7 +2413,7 @@ class FpPos(QuantityT):
     """
     class Meta:
         name = "FP_Pos"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2422,7 +2422,7 @@ class FilletRadius(QuantityT):
     Corner fillet radius.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2432,7 +2432,7 @@ class FillingHeight(QuantityT):
     compartment.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2441,7 +2441,7 @@ class FlangeCutBackAngle(QuantityT):
     Cut angle of stiffener flange.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2451,7 +2451,7 @@ class FlangeDirection(Vector3DT):
     Not required for symmetrical profiles.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2460,7 +2460,7 @@ class FlangeNoseHeight(QuantityT):
     Nose height of sniped stiffener flange.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2469,7 +2469,7 @@ class FlangeThickness(QuantityT):
     The thickness of the flange.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2478,7 +2478,7 @@ class FlangeWidth(QuantityT):
     Section profile flange width.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2488,7 +2488,7 @@ class FreeEdgeRadius(QuantityT):
     Assumed to be straight if no radius value is provided.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2497,7 +2497,7 @@ class FreeboardDeckHeight(QuantityT):
     The height of free-board deck, D1.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2506,7 +2506,7 @@ class FreeboardLength(QuantityT):
     The free-board length of the Vessel, Lll.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2515,7 +2515,7 @@ class GridPosition(QuantityT):
     The position of the first grid in the spacing group along the grid axis.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2524,7 +2524,7 @@ class Header(HeaderT):
     The header information of an XML export.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2533,7 +2533,7 @@ class HeavyBallastDraught(QuantityT):
     The Vessel draught at heavy ballast, Thb.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2542,7 +2542,7 @@ class Height(QuantityT):
     The height of the parent element.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2556,7 +2556,7 @@ class HoleRefT(EntityRefBaseT):
     """
     class Meta:
         name = "HoleRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -2564,7 +2564,7 @@ class HoleRefT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2576,7 +2576,7 @@ class InertiaU(QuantityT):
     Moment of inertia around NeutralAxisU.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2585,7 +2585,7 @@ class InertiaV(QuantityT):
     Moment of inertia around NeutralAxisV.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2594,7 +2594,7 @@ class IntermediatePoint(Point3DT):
     An intermediate point on the circular segment.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2607,7 +2607,7 @@ class KnotVector(KnotVectorT):
     a knot value can be repeated up to p+1 times.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2616,7 +2616,7 @@ class LengthOfWaterline(QuantityT):
     The length of the waterline at T, Lwl.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2627,7 +2627,7 @@ class Length2(QuantityT):
     """
     class Meta:
         name = "Length"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2636,7 +2636,7 @@ class LowerRadius(QuantityT):
     The lower radious of an opening or slot.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2645,7 +2645,7 @@ class Lpp(QuantityT):
     The length of the Vessel between perpendiculars, Lpp.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2654,7 +2654,7 @@ class MajorAxis(Vector3DT):
     Direction of ellipse major axis.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2663,7 +2663,7 @@ class MajorDiameter(QuantityT):
     The ellipse major diameter.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2677,7 +2677,7 @@ class MaterialRefT(EntityRefBaseT):
     """
     class Meta:
         name = "MaterialRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -2685,7 +2685,7 @@ class MaterialRefT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2697,7 +2697,7 @@ class MinorAxis(Vector3DT):
     Definition of the ellipse minor axis direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2706,7 +2706,7 @@ class MinorDiameter(QuantityT):
     The ellipse minor diameter.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2715,7 +2715,7 @@ class MouldedBreadth(QuantityT):
     The moulded breadth of the Vessel, B.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2724,7 +2724,7 @@ class MouldedDepth(QuantityT):
     The moulded depth of the Vessel, D.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2752,7 +2752,7 @@ class NurbspropertiesT:
     """
     class Meta:
         name = "NURBSProperties_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     degree: Optional[int] = field(
         default=None,
@@ -2800,7 +2800,7 @@ class NeutralAxisU(Vector3DT):
     The U axis is along the flange.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2811,7 +2811,7 @@ class NeutralAxisV(Vector3DT):
     The V axis is along the web.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2820,7 +2820,7 @@ class Normal(Vector3DT):
     A unit normal vector to a surface.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2829,7 +2829,7 @@ class NormalBallastDraught(QuantityT):
     The Vessel draught at normal ballast, Tnb.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2840,7 +2840,7 @@ class Offset(QuantityT):
     vector.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2849,7 +2849,7 @@ class OffsetU(QuantityT):
     The offset from stiffener trace line of cross-section in local U direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2858,7 +2858,7 @@ class OffsetV(QuantityT):
     The offset from stiffener trace-line of cross-section in local V direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2867,7 +2867,7 @@ class Origin(Point3DT):
     The origin of a local or global coordinate system.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2877,7 +2877,7 @@ class Overshoot(QuantityT):
     Shall be included in the Width..
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2886,7 +2886,7 @@ class Permeability(QuantityT):
     The permeability specifies the amount by which the Cargo takes up water.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2897,7 +2897,7 @@ class Point3D(Point3DT):
     by the unit ID.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2906,7 +2906,7 @@ class PoissonRatio(QuantityT):
     The material Poisson ration.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2915,7 +2915,7 @@ class Position(Point3DT):
     The position of the inclination of the cross-section.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2924,7 +2924,7 @@ class PrimaryAxis(Vector3DT):
     The unit vector of the local X-axis (U-Axis) given in global Coordinate System.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2933,7 +2933,7 @@ class Radius(QuantityT):
     The radius of the parent element.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2946,14 +2946,14 @@ class RectangularTubeT:
     """
     class Meta:
         name = "RectangularTube_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[QuantityT] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2962,7 +2962,7 @@ class RectangularTubeT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2971,7 +2971,7 @@ class RectangularTubeT:
         metadata={
             "name": "Thickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -2983,7 +2983,7 @@ class Reference(ReferenceT):
     A reference to the schema type which is affected by this change to the schema.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -2992,7 +2992,7 @@ class ReferenceLocation(QuantityT):
     Location on the reference axis.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3001,7 +3001,7 @@ class ReferencePlanes(ReferencePlanesT):
     The collection of reference planes used to limit objects.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3010,7 +3010,7 @@ class ReliefValvePressure(QuantityT):
     Pressure valve opening pressure when exceeding the general value.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3024,14 +3024,14 @@ class RootRefT(EntityRefBaseT):
     """
     class Meta:
         name = "RootRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3045,7 +3045,7 @@ class RuleLength(QuantityT):
     society rules (see ISO 10303-218, section 4.2.32.4).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3057,7 +3057,7 @@ class ScantlingDraught(QuantityT):
     10303-218, section 4.2.32.6).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3066,7 +3066,7 @@ class SecondaryAxis(Vector3DT):
     The unit vector of the local Y-axis (V-Axis) given in global Coordinate System.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3078,7 +3078,7 @@ class ShipDesignation(ShipDesignationT):
     about the ship.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3088,7 +3088,7 @@ class SlammingDraughtEmptyFp(QuantityT):
     """
     class Meta:
         name = "SlammingDraughtEmptyFP"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3099,7 +3099,7 @@ class SlammingDraughtFullFp(QuantityT):
     """
     class Meta:
         name = "SlammingDraughtFullFP"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3108,7 +3108,7 @@ class Spacing(QuantityT):
     The grid spacing of the spacing group.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3117,7 +3117,7 @@ class SpeedFactor(QuantityT):
     Speed factor Cav.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3126,7 +3126,7 @@ class Start(QuantityT):
     The location of Frame 0 in the frame table.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3135,7 +3135,7 @@ class StartPoint(Point3DT):
     The start position of the segment.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3144,7 +3144,7 @@ class StatutoryData(StatutoryDataT):
     The vessel statutory information.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3155,7 +3155,7 @@ class StowageFactor(QuantityT):
     meters that is occupied by one metric ton of the cargo.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3165,7 +3165,7 @@ class StowageHeight(QuantityT):
     If not specified, top of cargo room will be used.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3174,7 +3174,7 @@ class ThermalExpansionCoefficient(QuantityT):
     The material thermal expansion coefficient.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3183,7 +3183,7 @@ class Thickness(QuantityT):
     The thickness of the parent element.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3192,7 +3192,7 @@ class Tip(Point3DT):
     Cone tip position.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3201,7 +3201,7 @@ class TipRadius(QuantityT):
     Cone base radius.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3211,7 +3211,7 @@ class Tonnage(QuantityT):
     section 4.2.165.3).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3221,7 +3221,7 @@ class TorsionConstant(QuantityT):
     torsional rigidity together with the shear modulus.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3231,7 +3231,7 @@ class Udirection(Vector3DT):
     """
     class Meta:
         name = "UDirection"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3244,7 +3244,7 @@ class UknotVector(KnotVectorT):
     knot value can be repeated up to p+1 times.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3253,7 +3253,7 @@ class UltimateStress(QuantityT):
     The material ultimate stress.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3264,14 +3264,14 @@ class UnitCargoT:
     """
     class Meta:
         name = "UnitCargo_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     unit_cargo_type: Optional[UnitCargoTypeValue] = field(
         default=None,
         metadata={
             "name": "unitCargoType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -3282,7 +3282,7 @@ class Unose(QuantityT):
     The bracket nose depth at the local U end of the bracket.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3291,7 +3291,7 @@ class UpperDeckArea(QuantityT):
     Projected area of upper deck forward 0.2 L.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3300,21 +3300,21 @@ class UpperRadius(QuantityT):
     The upper radius of an opening or a slot.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
 class UserDefinedParameterT(QuantityT):
     class Meta:
         name = "UserDefinedParameter_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     description: Optional[str] = field(
         default=None,
         metadata={
             "name": "Description",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3327,7 +3327,7 @@ class Vdirection(Vector3DT):
     """
     class Meta:
         name = "VDirection"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3336,7 +3336,7 @@ class Vector3D(Vector3DT):
     Unit vector of length 1.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3349,7 +3349,7 @@ class VknotVector(KnotVectorT):
     knot value can be repeated up to p+1 times.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3358,7 +3358,7 @@ class Vnose(QuantityT):
     The bracket nose depth at the local V end of the bracket.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3367,7 +3367,7 @@ class Volume(QuantityT):
     The volume of a compartment or space.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3376,7 +3376,7 @@ class WaterPlaneArea(QuantityT):
     The area of water-plane forward 0.2 L at scantling draught Td.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3385,7 +3385,7 @@ class WebCutBackAngle(QuantityT):
     Sniped angle of stiffener web.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3394,7 +3394,7 @@ class WebDirection(Vector3DT):
     Direction of the stiffener web.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3403,7 +3403,7 @@ class WebNoseHeight(QuantityT):
     Nose height of sniped stiffener web.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3412,7 +3412,7 @@ class WebThickness(QuantityT):
     The thickness of the web.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3421,7 +3421,7 @@ class Width(QuantityT):
     The width of the parent element.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3431,7 +3431,7 @@ class X(QuantityT):
     The value is a Quantity carrying a unit definition.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3441,7 +3441,7 @@ class Y(QuantityT):
     The value is a Quantity carrying a unit definition.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3450,7 +3450,7 @@ class YieldStress(QuantityT):
     The material yield stress.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3459,7 +3459,7 @@ class YoungsModulus(QuantityT):
     The material elasticity modulus.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3469,7 +3469,7 @@ class Z(QuantityT):
     The value is a Quantity carrying a unit definition.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3479,7 +3479,7 @@ class ZposDeckline(QuantityT):
     """
     class Meta:
         name = "ZPosDeckline"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3489,7 +3489,7 @@ class ZposOfDeck(QuantityT):
     """
     class Meta:
         name = "ZPosOfDeck"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3646,7 +3646,7 @@ class ApplicationRef(ApplicationRefT):
     Representation, etc.) back to the owning entity in the sending application.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3655,7 +3655,7 @@ class BracketRef(BracketRefT):
     A OcxItemPtr reference to a Bracket instance.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3675,14 +3675,14 @@ class BulbFlatT:
     """
     class Meta:
         name = "BulbFlat_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3691,7 +3691,7 @@ class BulbFlatT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3700,7 +3700,7 @@ class BulbFlatT:
         metadata={
             "name": "FlangeWidth",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulb_angle: Optional[BulbAngle] = field(
@@ -3708,7 +3708,7 @@ class BulbFlatT:
         metadata={
             "name": "BulbAngle",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulb_outer_radius: Optional[BulbOuterRadius] = field(
@@ -3716,7 +3716,7 @@ class BulbFlatT:
         metadata={
             "name": "BulbOuterRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulb_inner_radius: Optional[BulbInnerRadius] = field(
@@ -3724,7 +3724,7 @@ class BulbFlatT:
         metadata={
             "name": "BulbInnerRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulb_top_radius: Optional[BulbTopRadius] = field(
@@ -3732,7 +3732,7 @@ class BulbFlatT:
         metadata={
             "name": "BulbTopRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulb_bottom_radius: Optional[BulbBottomRadius] = field(
@@ -3740,7 +3740,7 @@ class BulbFlatT:
         metadata={
             "name": "BulbBottomRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -3753,14 +3753,14 @@ class BulkCargoT:
     """
     class Meta:
         name = "BulkCargo_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     stowage_factor: Optional[StowageFactor] = field(
         default=None,
         metadata={
             "name": "StowageFactor",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     permeability: Optional[Permeability] = field(
@@ -3768,7 +3768,7 @@ class BulkCargoT:
         metadata={
             "name": "Permeability",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     angle_of_repose: Optional[AngleOfRepose] = field(
@@ -3776,7 +3776,7 @@ class BulkCargoT:
         metadata={
             "name": "AngleOfRepose",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulk_cargo_type: Optional[BulkCargoTypeValue] = field(
@@ -3784,7 +3784,7 @@ class BulkCargoT:
         metadata={
             "name": "bulkCargoType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -3796,7 +3796,7 @@ class ChildRef(ChildRefT):
     A leaf instance does not have any children.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -3815,14 +3815,14 @@ class CompartmentPropertiesT:
     """
     class Meta:
         name = "CompartmentProperties_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     center_of_gravity: Optional[CenterOfGravity] = field(
         default=None,
         metadata={
             "name": "CenterOfGravity",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3831,7 +3831,7 @@ class CompartmentPropertiesT:
         metadata={
             "name": "Volume",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3840,7 +3840,7 @@ class CompartmentPropertiesT:
         metadata={
             "name": "AirPipeHeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     filling_height: Optional[FillingHeight] = field(
@@ -3848,7 +3848,7 @@ class CompartmentPropertiesT:
         metadata={
             "name": "FillingHeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     relief_valve_pressure: Optional[ReliefValvePressure] = field(
@@ -3856,7 +3856,7 @@ class CompartmentPropertiesT:
         metadata={
             "name": "ReliefValvePressure",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -3868,13 +3868,13 @@ class ConnectedBracketRefT(BracketRefT):
     """
     class Meta:
         name = "ConnectedBracketRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     position: Optional[PositionValue] = field(
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -3886,14 +3886,14 @@ class ContourBoundsT:
     """
     class Meta:
         name = "ContourBounds_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     contour_start: List[ContourStart] = field(
         default_factory=list,
         metadata={
             "name": "ContourStart",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 2,
         }
@@ -3903,7 +3903,7 @@ class ContourBoundsT:
         metadata={
             "name": "ContourEnd",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 2,
         }
@@ -3922,14 +3922,14 @@ class ControlPointT:
     """
     class Meta:
         name = "ControlPoint_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     point3_d: Optional[Point3D] = field(
         default=None,
         metadata={
             "name": "Point3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -3959,20 +3959,20 @@ class DocumentBaseT:
     """
     class Meta:
         name = "DocumentBase_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     header: Optional[Header] = field(
         default=None,
         metadata={
             "name": "Header",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
     schema_version: str = field(
         init=False,
-        default="3.0.0b3",
+        default="3.0.0b4",
         metadata={
             "name": "schemaVersion",
             "type": "Attribute",
@@ -3995,7 +3995,7 @@ class EdgeCurveRef(EdgeCurveRefT):
     stiffener.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -4004,7 +4004,7 @@ class EndCutRef(EndCutRefT):
     A reference to the Stiffener end cut detail.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     cutback_distance: Optional[CutbackDistance] = field(
         default=None,
@@ -4028,14 +4028,14 @@ class EntityBaseT(DescriptionBaseT):
     """
     class Meta:
         name = "EntityBase_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     guidref: Optional[str] = field(
         default=None,
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
             "min_length": 1,
             "max_length": 40,
@@ -4050,7 +4050,7 @@ class ExternalGeometryRef(ExternalGeometryRefT):
     representation of the parent entity (e.g. Plate, Stiffener, Bracket, Member).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -4069,14 +4069,14 @@ class FeatureCopeT:
     """
     class Meta:
         name = "FeatureCope_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     cope_radius: Optional[CopeRadius] = field(
         default=None,
         metadata={
             "name": "CopeRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cope_length: Optional[CopeLength] = field(
@@ -4084,7 +4084,7 @@ class FeatureCopeT:
         metadata={
             "name": "CopeLength",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cope_height: Optional[CopeHeight] = field(
@@ -4092,7 +4092,7 @@ class FeatureCopeT:
         metadata={
             "name": "CopeHeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -4108,14 +4108,14 @@ class FlangeEdgeReinforcementT:
     """
     class Meta:
         name = "FlangeEdgeReinforcement_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     flange_width: Optional[FlangeWidth] = field(
         default=None,
         metadata={
             "name": "FlangeWidth",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4124,7 +4124,7 @@ class FlangeEdgeReinforcementT:
         metadata={
             "name": "Radius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4139,14 +4139,14 @@ class FlatBarT:
     """
     class Meta:
         name = "FlatBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4155,7 +4155,7 @@ class FlatBarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4176,14 +4176,14 @@ class GaseousCargoT:
     """
     class Meta:
         name = "GaseousCargo_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     density: Optional[Density] = field(
         default=None,
         metadata={
             "name": "Density",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4192,7 +4192,7 @@ class GaseousCargoT:
         metadata={
             "name": "CarriagePressure",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     liquid_state: bool = field(
@@ -4207,7 +4207,7 @@ class GaseousCargoT:
         metadata={
             "name": "liquidCargoType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -4220,14 +4220,14 @@ class GeometryRepresentationT(DescriptionBaseT):
     """
     class Meta:
         name = "GeometryRepresentation_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     guidref: Optional[str] = field(
         default=None,
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_length": 1,
             "max_length": 40,
         }
@@ -4248,14 +4248,14 @@ class GridSpacingSystemT(DescriptionBaseT):
     """
     class Meta:
         name = "GridSpacingSystem_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     grid_position: List[GridPosition] = field(
         default_factory=list,
         metadata={
             "name": "GridPosition",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     spacing: List[Spacing] = field(
@@ -4263,7 +4263,7 @@ class GridSpacingSystemT(DescriptionBaseT):
         metadata={
             "name": "Spacing",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     first_grid_number: Optional[int] = field(
@@ -4294,14 +4294,14 @@ class HalfRoundBarT:
     """
     class Meta:
         name = "HalfRoundBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4310,7 +4310,7 @@ class HalfRoundBarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4324,14 +4324,14 @@ class HexagonBarT:
     """
     class Meta:
         name = "HexagonBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4343,7 +4343,7 @@ class HoleRef(HoleRefT):
     A reference to a catalogue 2D hole.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -4357,14 +4357,14 @@ class IbarT:
     """
     class Meta:
         name = "IBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4373,7 +4373,7 @@ class IbarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4382,7 +4382,7 @@ class IbarT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4391,7 +4391,7 @@ class IbarT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4405,14 +4405,14 @@ class InclinationT:
     """
     class Meta:
         name = "Inclination_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     web_direction: Optional[WebDirection] = field(
         default=None,
         metadata={
             "name": "WebDirection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4421,7 +4421,7 @@ class InclinationT:
         metadata={
             "name": "FlangeDirection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     position: Optional[Position] = field(
@@ -4429,7 +4429,7 @@ class InclinationT:
         metadata={
             "name": "Position",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4447,14 +4447,14 @@ class LbarOfT:
     """
     class Meta:
         name = "LBarOF_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[QuantityT] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4463,7 +4463,7 @@ class LbarOfT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4472,7 +4472,7 @@ class LbarOfT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4481,7 +4481,7 @@ class LbarOfT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4490,7 +4490,7 @@ class LbarOfT:
         metadata={
             "name": "Overshoot",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4509,14 +4509,14 @@ class LbarOwT:
     """
     class Meta:
         name = "LBarOW_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4525,7 +4525,7 @@ class LbarOwT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4534,7 +4534,7 @@ class LbarOwT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4543,7 +4543,7 @@ class LbarOwT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4552,7 +4552,7 @@ class LbarOwT:
         metadata={
             "name": "Overshoot",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4569,14 +4569,14 @@ class LbarT:
     """
     class Meta:
         name = "LBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4585,7 +4585,7 @@ class LbarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4594,7 +4594,7 @@ class LbarT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4603,7 +4603,7 @@ class LbarT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4616,14 +4616,14 @@ class Line3DlistT:
     """
     class Meta:
         name = "Line3DList_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     point3_d: List[Point3D] = field(
         default_factory=list,
         metadata={
             "name": "Point3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -4642,14 +4642,14 @@ class LiquidCargoT:
     """
     class Meta:
         name = "LiquidCargo_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     density: Optional[Density] = field(
         default=None,
         metadata={
             "name": "Density",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4658,7 +4658,7 @@ class LiquidCargoT:
         metadata={
             "name": "CarriagePressure",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     liquid_cargo_type: Optional[LiquidCargoTypeValue] = field(
@@ -4666,7 +4666,7 @@ class LiquidCargoT:
         metadata={
             "name": "liquidCargoType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -4685,14 +4685,14 @@ class LugPlateRefT(EntityRefBaseT):
     """
     class Meta:
         name = "LugPlateRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     connection_length: Optional[ConnectionLength] = field(
         default=None,
         metadata={
             "name": "ConnectionLength",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4701,7 +4701,7 @@ class LugPlateRefT(EntityRefBaseT):
         metadata={
             "name": "DistanceAbove",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4711,7 +4711,7 @@ class LugPlateRefT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4723,7 +4723,7 @@ class MaterialRef(MaterialRefT):
     A reference to the parent's material.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -4733,14 +4733,14 @@ class MaterialT(DescriptionBaseT):
     """
     class Meta:
         name = "Material_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     density: List[Density] = field(
         default_factory=list,
         metadata={
             "name": "Density",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     youngs_modulus: List[YoungsModulus] = field(
@@ -4748,7 +4748,7 @@ class MaterialT(DescriptionBaseT):
         metadata={
             "name": "YoungsModulus",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     poisson_ratio: List[PoissonRatio] = field(
@@ -4756,7 +4756,7 @@ class MaterialT(DescriptionBaseT):
         metadata={
             "name": "PoissonRatio",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     yield_stress: List[YieldStress] = field(
@@ -4764,7 +4764,7 @@ class MaterialT(DescriptionBaseT):
         metadata={
             "name": "YieldStress",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ultimate_stress: List[UltimateStress] = field(
@@ -4772,7 +4772,7 @@ class MaterialT(DescriptionBaseT):
         metadata={
             "name": "UltimateStress",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     thermal_expansion_coefficient: List[ThermalExpansionCoefficient] = field(
@@ -4780,14 +4780,14 @@ class MaterialT(DescriptionBaseT):
         metadata={
             "name": "ThermalExpansionCoefficient",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     grade: Optional[GradeValue] = field(
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4796,7 +4796,7 @@ class MaterialT(DescriptionBaseT):
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_length": 1,
             "max_length": 40,
         }
@@ -4810,7 +4810,7 @@ class Nurbsproperties(NurbspropertiesT):
     """
     class Meta:
         name = "NURBSproperties"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -4822,14 +4822,14 @@ class OctagonBarT:
     """
     class Meta:
         name = "OctagonBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4842,7 +4842,7 @@ class ParametricHole2DT(DescriptionBaseT):
     """
     class Meta:
         name = "ParametricHole2D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -4853,14 +4853,14 @@ class PhysicalPropertiesT:
     """
     class Meta:
         name = "PhysicalProperties_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     dry_weight: Optional[DryWeight] = field(
         default=None,
         metadata={
             "name": "DryWeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4869,7 +4869,7 @@ class PhysicalPropertiesT:
         metadata={
             "name": "CenterOfGravity",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4882,14 +4882,14 @@ class PlateMaterialT(MaterialRefT):
     """
     class Meta:
         name = "PlateMaterial_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     thickness: Optional[Thickness] = field(
         default=None,
         metadata={
             "name": "Thickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -4902,14 +4902,14 @@ class Point3DlistT:
     """
     class Meta:
         name = "Point3DList_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     point3_d: List[Point3D] = field(
         default_factory=list,
         metadata={
             "name": "Point3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
         }
     )
@@ -4960,14 +4960,14 @@ class PrincipalParticularsT:
     """
     class Meta:
         name = "PrincipalParticulars_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     lpp: List[Lpp] = field(
         default_factory=list,
         metadata={
             "name": "Lpp",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -4976,7 +4976,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "RuleLength",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -4985,7 +4985,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "BlockCoefficient",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -4994,7 +4994,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "FP_Pos",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -5003,7 +5003,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "MouldedBreadth",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -5012,7 +5012,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "MouldedDepth",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -5021,7 +5021,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "ScantlingDraught",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -5030,7 +5030,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "DesignSpeed",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 8,
         }
     )
@@ -5039,7 +5039,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "FreeboardLength",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     normal_ballast_draught: List[NormalBallastDraught] = field(
@@ -5047,7 +5047,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "NormalBallastDraught",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     heavy_ballast_draught: List[HeavyBallastDraught] = field(
@@ -5055,7 +5055,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "HeavyBallastDraught",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     slamming_draught_empty_fp: List[SlammingDraughtEmptyFp] = field(
@@ -5063,7 +5063,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "SlammingDraughtEmptyFP",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     slamming_draught_full_fp: List[SlammingDraughtFullFp] = field(
@@ -5071,7 +5071,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "SlammingDraughtFullFP",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     length_of_waterline: List[LengthOfWaterline] = field(
@@ -5079,7 +5079,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "LengthOfWaterline",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     freeboard_deck_height: List[FreeboardDeckHeight] = field(
@@ -5087,7 +5087,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "FreeboardDeckHeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ap_pos: List[ApPos] = field(
@@ -5095,7 +5095,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "AP_Pos",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     zpos_of_deck: List[ZposOfDeck] = field(
@@ -5103,7 +5103,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "ZPosOfDeck",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     deepest_equilibrium_wl: List[DeepestEquilibriumWl] = field(
@@ -5111,7 +5111,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "DeepestEquilibriumWL",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     upper_deck_area: List[UpperDeckArea] = field(
@@ -5119,7 +5119,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "UpperDeckArea",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     water_plane_area: List[WaterPlaneArea] = field(
@@ -5127,7 +5127,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "WaterPlaneArea",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     zpos_deckline: List[ZposDeckline] = field(
@@ -5135,7 +5135,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "ZPosDeckline",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     speed_factor: List[SpeedFactor] = field(
@@ -5143,7 +5143,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "SpeedFactor",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     has_deadweight_less_than: Optional[bool] = field(
@@ -5165,7 +5165,7 @@ class PrincipalParticularsT:
         metadata={
             "name": "freeboardType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     number_of_decks_above: Optional[int] = field(
@@ -5184,7 +5184,7 @@ class ProcessLayerT(DescriptionBaseT):
     """
     class Meta:
         name = "ProcessLayer_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5193,7 +5193,7 @@ class RectangularTube(RectangularTubeT):
     Rectangular tube.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5202,7 +5202,7 @@ class RootRef(RootRefT):
     RootRef is an OcXItemPtr pointing to the top-level instance in a ProductView.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5213,14 +5213,14 @@ class RoundBarT:
     """
     class Meta:
         name = "RoundBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5242,14 +5242,14 @@ class SchemaChangeT:
     """
     class Meta:
         name = "SchemaChange_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     description: Optional[str] = field(
         default=None,
         metadata={
             "name": "Description",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5258,7 +5258,7 @@ class SchemaChangeT:
         metadata={
             "name": "Reference",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5300,14 +5300,14 @@ class SectionPropertiesT:
     """
     class Meta:
         name = "SectionProperties_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     area: Optional[Area] = field(
         default=None,
         metadata={
             "name": "Area",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5316,7 +5316,7 @@ class SectionPropertiesT:
         metadata={
             "name": "NeutralAxisU",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5325,7 +5325,7 @@ class SectionPropertiesT:
         metadata={
             "name": "NeutralAxisV",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5334,7 +5334,7 @@ class SectionPropertiesT:
         metadata={
             "name": "InertiaU",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5343,7 +5343,7 @@ class SectionPropertiesT:
         metadata={
             "name": "InertiaV",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5352,7 +5352,7 @@ class SectionPropertiesT:
         metadata={
             "name": "TorsionConstant",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -5370,14 +5370,14 @@ class SectionRefT(EntityRefBaseT):
     """
     class Meta:
         name = "SectionRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     offset_u: List[OffsetU] = field(
         default_factory=list,
         metadata={
             "name": "OffsetU",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 2,
         }
@@ -5387,7 +5387,7 @@ class SectionRefT(EntityRefBaseT):
         metadata={
             "name": "OffsetV",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 2,
         }
@@ -5398,7 +5398,7 @@ class SectionRefT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5412,14 +5412,14 @@ class SquareBarT:
     """
     class Meta:
         name = "SquareBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5437,14 +5437,14 @@ class SweepT:
     """
     class Meta:
         name = "Sweep_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     vector3_d: Optional[Vector3D] = field(
         default=None,
         metadata={
             "name": "Vector3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5453,7 +5453,7 @@ class SweepT:
         metadata={
             "name": "Length",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5470,14 +5470,14 @@ class TbarT:
     """
     class Meta:
         name = "TBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5486,7 +5486,7 @@ class TbarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5495,7 +5495,7 @@ class TbarT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5504,7 +5504,7 @@ class TbarT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5517,14 +5517,14 @@ class TonnageDataT:
     """
     class Meta:
         name = "TonnageData_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     tonnage: Optional[Tonnage] = field(
         default=None,
         metadata={
             "name": "Tonnage",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     dead_weight: Optional[DeadWeight] = field(
@@ -5532,7 +5532,7 @@ class TonnageDataT:
         metadata={
             "name": "DeadWeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -5544,14 +5544,14 @@ class TransformationT:
     """
     class Meta:
         name = "Transformation_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     origin: Optional[Origin] = field(
         default=None,
         metadata={
             "name": "Origin",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5560,7 +5560,7 @@ class TransformationT:
         metadata={
             "name": "PrimaryAxis",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5569,7 +5569,7 @@ class TransformationT:
         metadata={
             "name": "SecondaryAxis",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5584,14 +5584,14 @@ class TubeT:
     """
     class Meta:
         name = "Tube_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     diameter: Optional[Diameter] = field(
         default=None,
         metadata={
             "name": "Diameter",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5600,7 +5600,7 @@ class TubeT:
         metadata={
             "name": "Thickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5617,14 +5617,14 @@ class UbarT:
     """
     class Meta:
         name = "UBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5633,7 +5633,7 @@ class UbarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5642,7 +5642,7 @@ class UbarT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5651,7 +5651,7 @@ class UbarT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5664,7 +5664,7 @@ class UNurbsproperties(NurbspropertiesT):
     """
     class Meta:
         name = "U_NURBSproperties"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5676,7 +5676,7 @@ class UnitCargo(UnitCargoT):
     Ref. is made to ISO 10303-215:2004.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5686,7 +5686,7 @@ class UserDefinedParameter(UserDefinedParameterT):
     BarSection.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5696,7 +5696,7 @@ class VNurbsproperties(NurbspropertiesT):
     """
     class Meta:
         name = "V_NURBSproperties"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5710,14 +5710,14 @@ class ZbarT:
     """
     class Meta:
         name = "ZBar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5726,7 +5726,7 @@ class ZbarT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5735,7 +5735,7 @@ class ZbarT:
         metadata={
             "name": "WebThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5744,7 +5744,7 @@ class ZbarT:
         metadata={
             "name": "FlangeThickness",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5875,7 +5875,7 @@ class BulbFlat(BulbFlatT):
     Bulb bar, rolled or welded.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5886,7 +5886,7 @@ class BulkCargo(BulkCargoT):
     Ref. is made to ISO 10303-215:2004.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5895,7 +5895,7 @@ class CompartmentProperties(CompartmentPropertiesT):
     The physical properties of a compartment volume (COG, air pipe top).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5904,7 +5904,7 @@ class ConnectedBracketRef(ConnectedBracketRefT):
     The reference to a connected bracket part of a ConnectionConfiguration.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5914,7 +5914,7 @@ class ContourBounds(ContourBoundsT):
     start and end points.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5923,7 +5923,7 @@ class ControlPoint(ControlPointT):
     A NURBS control point composed of a weight and spatial position.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5937,14 +5937,14 @@ class Curve3DT(GeometryRepresentationT):
     """
     class Meta:
         name = "Curve3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     length: Optional[Length2] = field(
         default=None,
         metadata={
             "name": "Length",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -5964,7 +5964,7 @@ class FeatureCope(FeatureCopeT):
     details.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5973,7 +5973,7 @@ class FlangeEdgeReinforcement(FlangeEdgeReinforcementT):
     Bracket flange edge reinforcement parameters.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5982,7 +5982,7 @@ class FlatBar(FlatBarT):
     Flat bar, rolled or cut from plate.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -5992,14 +5992,14 @@ class FormT(EntityBaseT):
     """
     class Meta:
         name = "Form_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     distance_tolerance: Optional[DistanceTolerance] = field(
         default=None,
         metadata={
             "name": "DistanceTolerance",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6008,7 +6008,7 @@ class FormT(EntityBaseT):
         metadata={
             "name": "AngleTolerance",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6022,7 +6022,7 @@ class GaseousCargo(GaseousCargoT):
     non-solid, non-liquid gaseous state.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6031,7 +6031,7 @@ class HalfRoundBar(HalfRoundBarT):
     Half round bar.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6040,7 +6040,7 @@ class HexagonBar(HexagonBarT):
     A symmetrical hexagon shaped bar.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6050,7 +6050,7 @@ class Ibar(IbarT):
     """
     class Meta:
         name = "IBar"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6065,7 +6065,7 @@ class Inclination(InclinationT):
     (straight) stiffener or pillar.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6075,7 +6075,7 @@ class Lbar(LbarT):
     """
     class Meta:
         name = "LBar"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6085,7 +6085,7 @@ class LbarOf(LbarOfT):
     """
     class Meta:
         name = "LBarOF"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6095,7 +6095,7 @@ class LbarOw(LbarOwT):
     """
     class Meta:
         name = "LBarOW"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6105,7 +6105,7 @@ class Line3Dlist(Point3DlistT):
     """
     class Meta:
         name = "Line3DList"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6116,7 +6116,7 @@ class LiquidCargo(LiquidCargoT):
     solid, non-gaseous liquid state.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6129,7 +6129,7 @@ class LocalCartesian(TransformationT):
     coordinate frame (world coordinates)
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6138,7 +6138,7 @@ class LugPlateRef(LugPlateRefT):
     The reference to plate lugs with additional lug parameters.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6147,7 +6147,7 @@ class Material(MaterialT):
     Physical properties of a material.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6162,14 +6162,14 @@ class OccurrenceT(EntityRefBaseT):
     """
     class Meta:
         name = "Occurrence_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     child_ref: List[ChildRef] = field(
         default_factory=list,
         metadata={
             "name": "ChildRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ref_type: Optional[RefTypeValue] = field(
@@ -6177,7 +6177,7 @@ class OccurrenceT(EntityRefBaseT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6189,7 +6189,7 @@ class OctagonBar(OctagonBarT):
     An octagon shaped bar.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6199,14 +6199,14 @@ class ParametricCircleT(ParametricHole2DT):
     """
     class Meta:
         name = "ParametricCircle_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     diameter: Optional[Diameter] = field(
         default=None,
         metadata={
             "name": "Diameter",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6222,7 +6222,7 @@ class PhysicalProperties(PhysicalPropertiesT):
     correctness of the import.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6231,7 +6231,7 @@ class PlateMaterial(PlateMaterialT):
     Definition of the Plate material and plate thickness.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6241,7 +6241,7 @@ class Point3Dlist(Point3DlistT):
     """
     class Meta:
         name = "Point3DList"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6250,7 +6250,7 @@ class Positions(Point3DlistT):
     3 3D-Points defining the circum circle.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6259,7 +6259,7 @@ class PrincipalParticulars(PrincipalParticularsT):
     Main vessel particulars required by the Society.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6269,14 +6269,14 @@ class RadialCylinderT(EntityBaseT):
     """
     class Meta:
         name = "RadialCylinder_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     radius: Optional[Radius] = field(
         default=None,
         metadata={
             "name": "Radius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6296,14 +6296,14 @@ class RectangularHoleT(ParametricHole2DT):
     """
     class Meta:
         name = "RectangularHole_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6312,7 +6312,7 @@ class RectangularHoleT(ParametricHole2DT):
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6321,7 +6321,7 @@ class RectangularHoleT(ParametricHole2DT):
         metadata={
             "name": "FilletRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -6339,14 +6339,14 @@ class RectangularMickeyMouseEarsT(ParametricHole2DT):
     """
     class Meta:
         name = "RectangularMickeyMouseEars_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6355,7 +6355,7 @@ class RectangularMickeyMouseEarsT(ParametricHole2DT):
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6364,7 +6364,7 @@ class RectangularMickeyMouseEarsT(ParametricHole2DT):
         metadata={
             "name": "Radius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6373,7 +6373,7 @@ class RectangularMickeyMouseEarsT(ParametricHole2DT):
         metadata={
             "name": "Displacement",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -6385,7 +6385,7 @@ class RefPlaneT(EntityBaseT):
     """
     class Meta:
         name = "RefPlane_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6394,7 +6394,7 @@ class RoundBar(RoundBarT):
     Round bar.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6404,7 +6404,7 @@ class SchemaChange(SchemaChangeT):
     versions.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6413,7 +6413,7 @@ class SectionProperties(SectionPropertiesT):
     Generic bar section properties.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6422,7 +6422,7 @@ class SectionRef(SectionRefT):
     A reference to the parent's cross-section.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6431,7 +6431,7 @@ class SquareBar(SquareBarT):
     Square bar.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6449,14 +6449,14 @@ class SuperEllipticalT(ParametricHole2DT):
     """
     class Meta:
         name = "SuperElliptical_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6465,7 +6465,7 @@ class SuperEllipticalT(ParametricHole2DT):
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6484,7 +6484,7 @@ class Sweep(SweepT):
     Defeintion of the sweep extent  by a direction and sweep  length.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6499,14 +6499,14 @@ class SymmetricalHoleT(ParametricHole2DT):
     """
     class Meta:
         name = "SymmetricalHole_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6515,7 +6515,7 @@ class SymmetricalHoleT(ParametricHole2DT):
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6528,7 +6528,7 @@ class Tbar(TbarT):
     """
     class Meta:
         name = "TBar"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6537,7 +6537,7 @@ class TonnageData(TonnageDataT):
     The Vessel tonnage information.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6550,7 +6550,7 @@ class Transformation(TransformationT):
     secondary axis.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6559,7 +6559,7 @@ class Tube(TubeT):
     Circular tube.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6569,7 +6569,7 @@ class Ubar(UbarT):
     """
     class Meta:
         name = "UBar"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6580,7 +6580,7 @@ class XspacingGroup(GridSpacingSystemT):
     """
     class Meta:
         name = "XSpacingGroup"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6591,7 +6591,7 @@ class YspacingGroup(GridSpacingSystemT):
     """
     class Meta:
         name = "YSpacingGroup"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6601,7 +6601,7 @@ class Zbar(ZbarT):
     """
     class Meta:
         name = "ZBar"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6612,7 +6612,7 @@ class ZspacingGroup(GridSpacingSystemT):
     """
     class Meta:
         name = "ZSpacingGroup"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -6660,14 +6660,14 @@ class BoundedRefT(EntityRefBaseT):
     """
     class Meta:
         name = "BoundedRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     contour_bounds: Optional[ContourBounds] = field(
         default=None,
         metadata={
             "name": "ContourBounds",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -6695,14 +6695,14 @@ class BracketParametersT:
     """
     class Meta:
         name = "BracketParameters_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     arm_length_u: Optional[ArmLengthU] = field(
         default=None,
         metadata={
             "name": "ArmLengthU",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6711,7 +6711,7 @@ class BracketParametersT:
         metadata={
             "name": "ArmLengthV",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6720,7 +6720,7 @@ class BracketParametersT:
         metadata={
             "name": "UDirection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6729,7 +6729,7 @@ class BracketParametersT:
         metadata={
             "name": "VDirection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6738,7 +6738,7 @@ class BracketParametersT:
         metadata={
             "name": "Origin",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6747,7 +6747,7 @@ class BracketParametersT:
         metadata={
             "name": "Unose",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     vnose: Optional[Vnose] = field(
@@ -6755,7 +6755,7 @@ class BracketParametersT:
         metadata={
             "name": "Vnose",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     free_edge_radius: Optional[FreeEdgeRadius] = field(
@@ -6763,7 +6763,7 @@ class BracketParametersT:
         metadata={
             "name": "FreeEdgeRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     feature_cope: Optional[FeatureCope] = field(
@@ -6771,7 +6771,7 @@ class BracketParametersT:
         metadata={
             "name": "FeatureCope",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     flange_edge_reinforcement: Optional[FlangeEdgeReinforcement] = field(
@@ -6779,7 +6779,7 @@ class BracketParametersT:
         metadata={
             "name": "FlangeEdgeReinforcement",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     has_edge_reinforcement: bool = field(
@@ -6787,7 +6787,7 @@ class BracketParametersT:
         metadata={
             "name": "hasEdgeReinforcement",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6803,7 +6803,7 @@ class BracketParametersT:
         metadata={
             "name": "reinforcementType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -6820,14 +6820,14 @@ class Circle3DT(Curve3DT):
     """
     class Meta:
         name = "Circle3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     diameter: List[Diameter] = field(
         default_factory=list,
         metadata={
             "name": "Diameter",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 3,
         }
     )
@@ -6836,7 +6836,7 @@ class Circle3DT(Curve3DT):
         metadata={
             "name": "Center",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 3,
         }
     )
@@ -6845,7 +6845,7 @@ class Circle3DT(Curve3DT):
         metadata={
             "name": "Normal",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 3,
         }
     )
@@ -6859,14 +6859,14 @@ class CircumArc3DT(Curve3DT):
     """
     class Meta:
         name = "CircumArc3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     start_point: Optional[StartPoint] = field(
         default=None,
         metadata={
             "name": "StartPoint",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6875,7 +6875,7 @@ class CircumArc3DT(Curve3DT):
         metadata={
             "name": "IntermediatePoint",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6884,7 +6884,7 @@ class CircumArc3DT(Curve3DT):
         metadata={
             "name": "EndPoint",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6898,14 +6898,14 @@ class CircumCircle3DT(Curve3DT):
     """
     class Meta:
         name = "CircumCircle3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     positions: Optional[Positions] = field(
         default=None,
         metadata={
             "name": "Positions",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6936,14 +6936,14 @@ class ClassDataT:
     """
     class Meta:
         name = "ClassData_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     principal_particulars: List[PrincipalParticulars] = field(
         default_factory=list,
         metadata={
             "name": "PrincipalParticulars",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 2,
         }
     )
@@ -6952,7 +6952,7 @@ class ClassDataT:
         metadata={
             "name": "ClassNotation",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 2,
         }
     )
@@ -6961,7 +6961,7 @@ class ClassDataT:
         metadata={
             "name": "newbuildingSociety",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -6983,7 +6983,7 @@ class ClassDataT:
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     society_name: Optional[str] = field(
@@ -7007,14 +7007,14 @@ class ControlPtListT:
     """
     class Meta:
         name = "ControlPtList_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     control_point: List[ControlPoint] = field(
         default_factory=list,
         metadata={
             "name": "ControlPoint",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
         }
     )
@@ -7032,14 +7032,14 @@ class DoubleBracketT:
     """
     class Meta:
         name = "DoubleBracket_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     connected_bracket_ref: List[ConnectedBracketRef] = field(
         default_factory=list,
         metadata={
             "name": "ConnectedBracketRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 2,
         }
@@ -7061,14 +7061,14 @@ class Ellipse3DT(Curve3DT):
     """
     class Meta:
         name = "Ellipse3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     center: Optional[Center] = field(
         default=None,
         metadata={
             "name": "Center",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7077,7 +7077,7 @@ class Ellipse3DT(Curve3DT):
         metadata={
             "name": "MajorDiameter",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7086,7 +7086,7 @@ class Ellipse3DT(Curve3DT):
         metadata={
             "name": "MinorDiameter",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7095,7 +7095,7 @@ class Ellipse3DT(Curve3DT):
         metadata={
             "name": "MajorAxis",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7104,7 +7104,7 @@ class Ellipse3DT(Curve3DT):
         metadata={
             "name": "MinorAxis",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7113,7 +7113,7 @@ class Ellipse3DT(Curve3DT):
         metadata={
             "name": "Normal",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -7135,14 +7135,14 @@ class EndCutT(DescriptionBaseT):
     """
     class Meta:
         name = "EndCut_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     cutback_distance: List[CutbackDistance] = field(
         default_factory=list,
         metadata={
             "name": "CutbackDistance",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 6,
         }
@@ -7152,7 +7152,7 @@ class EndCutT(DescriptionBaseT):
         metadata={
             "name": "WebCutBackAngle",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 6,
         }
@@ -7162,7 +7162,7 @@ class EndCutT(DescriptionBaseT):
         metadata={
             "name": "WebNoseHeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 6,
         }
     )
@@ -7171,7 +7171,7 @@ class EndCutT(DescriptionBaseT):
         metadata={
             "name": "FlangeCutBackAngle",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 6,
         }
     )
@@ -7180,7 +7180,7 @@ class EndCutT(DescriptionBaseT):
         metadata={
             "name": "FlangeNoseHeight",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 6,
         }
     )
@@ -7189,7 +7189,7 @@ class EndCutT(DescriptionBaseT):
         metadata={
             "name": "FeatureCope",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 6,
         }
     )
@@ -7215,7 +7215,7 @@ class EquipmentT(FormT):
     """
     class Meta:
         name = "Equipment_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7225,14 +7225,14 @@ class Hole2DcontourT(GeometryRepresentationT):
     """
     class Meta:
         name = "Hole2DContour_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     hole_ref: Optional[HoleRef] = field(
         default=None,
         metadata={
             "name": "HoleRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7241,7 +7241,7 @@ class Hole2DcontourT(GeometryRepresentationT):
         metadata={
             "name": "Transformation",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7254,14 +7254,14 @@ class Line3DT(Curve3DT):
     """
     class Meta:
         name = "Line3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     start_point: Optional[StartPoint] = field(
         default=None,
         metadata={
             "name": "StartPoint",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7270,7 +7270,7 @@ class Line3DT(Curve3DT):
         metadata={
             "name": "EndPoint",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7284,14 +7284,14 @@ class MaterialCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "MaterialCatalogue_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     material: List[Material] = field(
         default_factory=list,
         metadata={
             "name": "Material",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -7303,7 +7303,7 @@ class Occurrence(OccurrenceT):
     The reference to the part's occurrence in a defined view or configuration.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7312,7 +7312,7 @@ class ParametricCircle(ParametricCircleT):
     A parametric circle in u-v space defined by a diameter.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7328,14 +7328,14 @@ class PolyLine3DT(Curve3DT):
     """
     class Meta:
         name = "PolyLine3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     point3_dlist: Optional[Point3Dlist] = field(
         default=None,
         metadata={
             "name": "Point3DList",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7354,7 +7354,7 @@ class RadialCylinder(RadialCylinderT):
     Cylindrical reference system.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7363,7 +7363,7 @@ class RectangularHole(RectangularHoleT):
     A rectangular hole in u-v space with corner fillets of equal radii.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7372,7 +7372,7 @@ class RectangularMickeyMouseEars(RectangularMickeyMouseEarsT):
     A rectangular hole with corner radii in the form of Mickey Mouse ears.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7385,7 +7385,7 @@ class RefPlane(RefPlaneT):
             axis.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     reference_location: Optional[ReferenceLocation] = field(
         default=None,
@@ -7404,14 +7404,14 @@ class SingleBracketT:
     """
     class Meta:
         name = "SingleBracket_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     connected_bracket_ref: Optional[ConnectedBracketRef] = field(
         default=None,
         metadata={
             "name": "ConnectedBracketRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7436,14 +7436,14 @@ class SlotParametersT:
     """
     class Meta:
         name = "SlotParameters_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     height: Optional[Height] = field(
         default=None,
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7452,7 +7452,7 @@ class SlotParametersT:
         metadata={
             "name": "Width",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7461,7 +7461,7 @@ class SlotParametersT:
         metadata={
             "name": "UpperRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7470,7 +7470,7 @@ class SlotParametersT:
         metadata={
             "name": "ConnectionLength",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     lower_radius: Optional[LowerRadius] = field(
@@ -7478,7 +7478,7 @@ class SlotParametersT:
         metadata={
             "name": "LowerRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     lug_plate_ref: List[LugPlateRef] = field(
@@ -7486,7 +7486,7 @@ class SlotParametersT:
         metadata={
             "name": "LugPlateRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 2,
         }
     )
@@ -7501,7 +7501,7 @@ class SlotParametersT:
         metadata={
             "name": "slotType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -7514,14 +7514,14 @@ class StructurePartT(EntityBaseT):
     """
     class Meta:
         name = "StructurePart_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     physical_properties: List[PhysicalProperties] = field(
         default_factory=list,
         metadata={
             "name": "PhysicalProperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 2,
         }
     )
@@ -7530,7 +7530,7 @@ class StructurePartT(EntityBaseT):
         metadata={
             "name": "ExternalGeometryRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 2,
         }
     )
@@ -7543,7 +7543,7 @@ class SuperElliptical(SuperEllipticalT):
     It can also describe a true ellipse.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7552,7 +7552,7 @@ class SymmetricalHole(SymmetricalHoleT):
     A hole made of two semicircles connected by two straight lines.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7570,14 +7570,14 @@ class XgridT(DescriptionBaseT):
     """
     class Meta:
         name = "XGrid_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     distance_to_ap: Optional[DistanceToAp] = field(
         default=None,
         metadata={
             "name": "DistanceToAP",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7586,7 +7586,7 @@ class XgridT(DescriptionBaseT):
         metadata={
             "name": "XSpacingGroup",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -7613,14 +7613,14 @@ class YgridT(DescriptionBaseT):
     """
     class Meta:
         name = "YGrid_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     yspacing_group: List[YspacingGroup] = field(
         default_factory=list,
         metadata={
             "name": "YSpacingGroup",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -7633,14 +7633,14 @@ class ZgridT(DescriptionBaseT):
     """
     class Meta:
         name = "ZGrid_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     zspacing_group: List[ZspacingGroup] = field(
         default_factory=list,
         metadata={
             "name": "ZSpacingGroup",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -7689,7 +7689,7 @@ class BracketParameters(BracketParametersT):
     Bracket parameters necessary for the verification by the society.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7701,7 +7701,7 @@ class CellBoundaryT(BoundedRefT):
     """
     class Meta:
         name = "CellBoundary_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7709,7 +7709,7 @@ class CellBoundaryT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7726,7 +7726,7 @@ class CellRefT(BoundedRefT):
     """
     class Meta:
         name = "CellRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7734,7 +7734,7 @@ class CellRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7746,7 +7746,7 @@ class Circle3D(Circle3DT):
     A circle in 3D space.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7758,7 +7758,7 @@ class CircumArc3D(CircumArc3DT):
     position..
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7767,7 +7767,7 @@ class CircumCircle3D(CircumCircle3DT):
     Definition of a circle in 3D space by a circumcircle of 3 points.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7778,7 +7778,7 @@ class ClassificationData(ClassDataT):
     regulations (see ISO       10303-218, section 4.2.36).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7789,7 +7789,7 @@ class ControlPtList(ControlPtListT):
     necessary to define a curve.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7799,14 +7799,14 @@ class CylindricalAxesT:
     """
     class Meta:
         name = "CylindricalAxes_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     radial_cylinder: List[RadialCylinder] = field(
         default_factory=list,
         metadata={
             "name": "RadialCylinder",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -7821,7 +7821,7 @@ class DoubleBracket(DoubleBracketT):
     references must be provided.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7830,7 +7830,7 @@ class Ellipse3D(Ellipse3DT):
     An ellipse in 3D space.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7839,7 +7839,7 @@ class EndCutEnd1(EndCutT):
     The stiffener end cut detailing.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7848,7 +7848,7 @@ class EndCutEnd2(EndCutT):
     Stiffener end cut detailing at end 2.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7857,7 +7857,7 @@ class Equipment(EquipmentT):
     Place holder for future equipment support (To be designed).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7873,14 +7873,14 @@ class GridRefT(BoundedRefT):
     """
     class Meta:
         name = "GridRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     offset: Optional[Offset] = field(
         default=None,
         metadata={
             "name": "Offset",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ref_type: RefTypeValue = field(
@@ -7889,7 +7889,7 @@ class GridRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7903,7 +7903,7 @@ class Hole2Dcontour(Hole2DcontourT):
     """
     class Meta:
         name = "Hole2DContour"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7912,7 +7912,7 @@ class Line3D(Line3DT):
     A straight line defined by two points.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7921,7 +7921,7 @@ class MaterialCatalogue(MaterialCatalogueT):
     The material types used and their properties recognised by the Society.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -7931,14 +7931,14 @@ class OccurrenceGroupT(DescriptionBaseT):
     """
     class Meta:
         name = "OccurrenceGroup_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     occurrence: List[Occurrence] = field(
         default_factory=list,
         metadata={
             "name": "Occurrence",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     occurrence_group: List["OccurrenceGroup"] = field(
@@ -7946,7 +7946,7 @@ class OccurrenceGroupT(DescriptionBaseT):
         metadata={
             "name": "OccurrenceGroup",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -7963,14 +7963,14 @@ class OcxItemPtrT(BoundedRefT):
     """
     class Meta:
         name = "OcxItemPtr_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: Optional[RefTypeValue] = field(
         default=None,
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -7987,7 +7987,7 @@ class PanelRefT(BoundedRefT):
     """
     class Meta:
         name = "PanelRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -7995,7 +7995,7 @@ class PanelRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8012,7 +8012,7 @@ class PillarRefT(BoundedRefT):
     """
     class Meta:
         name = "PillarRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -8020,7 +8020,7 @@ class PillarRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8037,7 +8037,7 @@ class PlateRefT(BoundedRefT):
     """
     class Meta:
         name = "PlateRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -8045,7 +8045,7 @@ class PlateRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8059,7 +8059,7 @@ class PolyLine3D(PolyLine3DT):
     form a closed contour.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8074,14 +8074,14 @@ class RefPlanesT(ReferencePlaneT):
     """
     class Meta:
         name = "RefPlanes_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_plane: List[RefPlane] = field(
         default_factory=list,
         metadata={
             "name": "RefPlane",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -8105,7 +8105,7 @@ class SeamRefT(BoundedRefT):
     """
     class Meta:
         name = "SeamRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -8113,7 +8113,7 @@ class SeamRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8125,7 +8125,7 @@ class SingleBracket(SingleBracketT):
     Double bracket connection.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8135,7 +8135,7 @@ class SlotContour(Hole2DcontourT):
     catalogue shape with a transformation.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8144,7 +8144,7 @@ class SlotParameters(SlotParametersT):
     Parameters of a slot (cut-out) typically used in shipbuilding.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8158,7 +8158,7 @@ class StiffenerRefT(BoundedRefT):
     """
     class Meta:
         name = "StiffenerRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -8166,7 +8166,7 @@ class StiffenerRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8183,7 +8183,7 @@ class SurfaceRefT(BoundedRefT):
     """
     class Meta:
         name = "SurfaceRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ref_type: RefTypeValue = field(
         init=False,
@@ -8191,7 +8191,7 @@ class SurfaceRefT(BoundedRefT):
         metadata={
             "name": "refType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8204,7 +8204,7 @@ class Xgrid(XgridT):
     """
     class Meta:
         name = "XGrid"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8214,7 +8214,7 @@ class Ygrid(YgridT):
     """
     class Meta:
         name = "YGrid"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8224,7 +8224,7 @@ class Zgrid(ZgridT):
     """
     class Meta:
         name = "ZGrid"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8304,7 +8304,7 @@ class CellBoundary(CellBoundaryT):
     The reference to a Panel surface making up one Cell boundary.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8313,7 +8313,7 @@ class CellRef(CellRefT):
     A reference to a Compartment cell.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8322,7 +8322,7 @@ class CylindricalAxes(CylindricalAxesT):
     Cylindrical reference system.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8332,7 +8332,7 @@ class GridRef(GridRefT):
     An offset along the grid reference normal vector can be given.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8343,14 +8343,14 @@ class Nurbs3DT(Curve3DT):
     """
     class Meta:
         name = "NURBS3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     nurbsproperties: Optional[Nurbsproperties] = field(
         default=None,
         metadata={
             "name": "NURBSproperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8359,7 +8359,7 @@ class Nurbs3DT(Curve3DT):
         metadata={
             "name": "KnotVector",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8368,7 +8368,7 @@ class Nurbs3DT(Curve3DT):
         metadata={
             "name": "ControlPtList",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8382,7 +8382,7 @@ class OccurrenceGroup(OccurrenceGroupT):
     groups.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8392,7 +8392,7 @@ class OcxItemPtr(OcxItemPtrT):
     pointer).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8401,7 +8401,7 @@ class PanelRef(PanelRefT):
     The reference to a connected Plate.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8410,7 +8410,7 @@ class PillarRef(PillarRefT):
     The reference to a connected Member (Pillar).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8419,7 +8419,7 @@ class PlateRef(PlateRefT):
     The reference to a connected Plate.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8428,7 +8428,7 @@ class RadialPlanes(RefPlanesT):
     Cylindrical reference system.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8437,7 +8437,7 @@ class SeamRef(SeamRefT):
     The reference to a connected Plate.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8446,7 +8446,7 @@ class StiffenerRef(StiffenerRefT):
     A OcxItemPtr reference to a Stiffener.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8455,7 +8455,7 @@ class SurfaceRef(SurfaceRefT):
     The reference to a Surface geometry which is shared between more than one part.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8469,13 +8469,13 @@ class WebStiffenerRefT(StiffenerRefT):
     """
     class Meta:
         name = "WebStiffenerRef_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     position: Optional[PositionValue] = field(
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -8497,7 +8497,7 @@ class XrefPlanes(RefPlanesT):
     """
     class Meta:
         name = "XRefPlanes"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     distance_to_ap: Optional[DistanceToAp] = field(
         default=None,
@@ -8525,7 +8525,7 @@ class YrefPlanes(RefPlanesT):
     """
     class Meta:
         name = "YRefPlanes"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8538,7 +8538,7 @@ class ZrefPlanes(RefPlanesT):
     """
     class Meta:
         name = "ZRefPlanes"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8562,14 +8562,14 @@ class CellConnectionT:
     """
     class Meta:
         name = "CellConnection_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     cell_ref: List[CellRef] = field(
         default_factory=list,
         metadata={
             "name": "CellRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
             "max_occurs": 2,
         }
@@ -8584,14 +8584,14 @@ class CellT(GeometryRepresentationT):
     """
     class Meta:
         name = "Cell_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     cell_boundary: List[CellBoundary] = field(
         default_factory=list,
         metadata={
             "name": "CellBoundary",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -8614,14 +8614,14 @@ class CoordinateSystemT(EntityBaseT):
     """
     class Meta:
         name = "CoordinateSystem_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     xref_planes: List[XrefPlanes] = field(
         default_factory=list,
         metadata={
             "name": "XRefPlanes",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 4,
         }
     )
@@ -8630,7 +8630,7 @@ class CoordinateSystemT(EntityBaseT):
         metadata={
             "name": "YRefPlanes",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 4,
         }
     )
@@ -8639,7 +8639,7 @@ class CoordinateSystemT(EntityBaseT):
         metadata={
             "name": "ZRefPlanes",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 4,
         }
     )
@@ -8648,7 +8648,7 @@ class CoordinateSystemT(EntityBaseT):
         metadata={
             "name": "LocalCartesian",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "max_occurs": 4,
         }
     )
@@ -8668,7 +8668,7 @@ class Nurbs3D(Nurbs3DT):
     """
     class Meta:
         name = "NURBS3D"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8682,14 +8682,14 @@ class PenetratingObjectT:
     """
     class Meta:
         name = "PenetratingObject_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     plate_ref: Optional[PlateRef] = field(
         default=None,
         metadata={
             "name": "PlateRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8698,7 +8698,7 @@ class PenetratingObjectT:
         metadata={
             "name": "SlotParameters",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8711,14 +8711,14 @@ class ProductViewT(DescriptionBaseT):
     """
     class Meta:
         name = "ProductView_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     root_ref: Optional[RootRef] = field(
         default=None,
         metadata={
             "name": "RootRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8727,7 +8727,7 @@ class ProductViewT(DescriptionBaseT):
         metadata={
             "name": "Occurrence",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     occurrence_group: List[OccurrenceGroup] = field(
@@ -8735,7 +8735,7 @@ class ProductViewT(DescriptionBaseT):
         metadata={
             "name": "OccurrenceGroup",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -8746,7 +8746,7 @@ class WebStiffenerRef(WebStiffenerRefT):
     Web stiffener connection.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8779,7 +8779,7 @@ class Cell(CellT):
     compartment (physical space).
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8788,7 +8788,7 @@ class CellConnection(CellConnectionT):
     Cross flow connection between two cells.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8807,14 +8807,14 @@ class CompositeCurve3DT(Curve3DT):
     """
     class Meta:
         name = "CompositeCurve3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     line3_d: List[Line3D] = field(
         default_factory=list,
         metadata={
             "name": "Line3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     circum_arc3_d: List[CircumArc3D] = field(
@@ -8822,7 +8822,7 @@ class CompositeCurve3DT(Curve3DT):
         metadata={
             "name": "CircumArc3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbs3_d: List[Nurbs3D] = field(
@@ -8830,7 +8830,7 @@ class CompositeCurve3DT(Curve3DT):
         metadata={
             "name": "NURBS3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     poly_line3_d: List[PolyLine3D] = field(
@@ -8838,7 +8838,7 @@ class CompositeCurve3DT(Curve3DT):
         metadata={
             "name": "PolyLine3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -8852,7 +8852,7 @@ class CoordinateSystem(CoordinateSystemT):
     necessary.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8862,7 +8862,7 @@ class DesignViewT(ProductViewT):
     """
     class Meta:
         name = "DesignView_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8877,14 +8877,14 @@ class WebStiffenerWithDoubleBracketT:
     """
     class Meta:
         name = "WebStiffenerWithDoubleBracket_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     connected_bracket_ref: List[ConnectedBracketRef] = field(
         default_factory=list,
         metadata={
             "name": "ConnectedBracketRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
             "max_occurs": 2,
         }
@@ -8894,7 +8894,7 @@ class WebStiffenerWithDoubleBracketT:
         metadata={
             "name": "WebStiffenerRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8907,14 +8907,14 @@ class WebStiffenerWithSingleBracketT:
     """
     class Meta:
         name = "WebStiffenerWithSingleBracket_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     connected_bracket_ref: Optional[ConnectedBracketRef] = field(
         default=None,
         metadata={
             "name": "ConnectedBracketRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8923,7 +8923,7 @@ class WebStiffenerWithSingleBracketT:
         metadata={
             "name": "WebStiffenerRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8936,14 +8936,14 @@ class WebStiffenerT:
     """
     class Meta:
         name = "WebStiffener_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     web_stiffener_ref: Optional[WebStiffenerRef] = field(
         default=None,
         metadata={
             "name": "WebStiffenerRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -8965,7 +8965,7 @@ class BaseCurve(CompositeCurve3DT):
     The base curve defining an extruded surface when it is swept.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8977,7 +8977,7 @@ class CompositeCurve3D(CompositeCurve3DT):
     segment in the CompositeCurve3D definition.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -8988,14 +8988,14 @@ class CrossFlowT(IdBaseT):
     """
     class Meta:
         name = "CrossFlow_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     cell_connection: Optional[CellConnection] = field(
         default=None,
         metadata={
             "name": "CellConnection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9008,7 +9008,7 @@ class DesignView(DesignViewT):
     contains configuration information for the parts it includes.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9017,7 +9017,7 @@ class SweepCurve(CompositeCurve3DT):
     The sweep direction and extent is defined by a general 3D sweep curve.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9027,7 +9027,7 @@ class WebStiffener(WebStiffenerT):
     connection.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9036,7 +9036,7 @@ class WebStiffenerWithDoubleBracket(WebStiffenerWithDoubleBracketT):
     Web stiffener with double bracket connection.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9046,7 +9046,7 @@ class WebStiffenerWithSingleBracket(WebStiffenerWithSingleBracketT):
     connection.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9104,14 +9104,14 @@ class ConnectionConfigurationT(DescriptionBaseT):
     """
     class Meta:
         name = "ConnectionConfiguration_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     single_bracket: Optional[SingleBracket] = field(
         default=None,
         metadata={
             "name": "SingleBracket",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     double_bracket: Optional[DoubleBracket] = field(
@@ -9119,7 +9119,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "DoubleBracket",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     web_stiffener: Optional[WebStiffener] = field(
@@ -9127,7 +9127,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "WebStiffener",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     web_stiffener_with_single_bracket: Optional[WebStiffenerWithSingleBracket] = field(
@@ -9135,7 +9135,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "WebStiffenerWithSingleBracket",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     web_stiffener_with_double_bracket: Optional[WebStiffenerWithDoubleBracket] = field(
@@ -9143,7 +9143,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "WebStiffenerWithDoubleBracket",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     plate_ref: Optional[PlateRef] = field(
@@ -9151,7 +9151,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "PlateRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     pillar_ref: Optional[PillarRef] = field(
@@ -9159,7 +9159,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "PillarRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     stiffener_ref: Optional[StiffenerRef] = field(
@@ -9167,7 +9167,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "StiffenerRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     point3_d: Optional[Point3D] = field(
@@ -9175,7 +9175,7 @@ class ConnectionConfigurationT(DescriptionBaseT):
         metadata={
             "name": "Point3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9189,14 +9189,14 @@ class Contour3DT:
     """
     class Meta:
         name = "Contour3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     ellipse3_d: Optional[Ellipse3D] = field(
         default=None,
         metadata={
             "name": "Ellipse3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     circum_circle3_d: Optional[CircumCircle3D] = field(
@@ -9204,7 +9204,7 @@ class Contour3DT:
         metadata={
             "name": "CircumCircle3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     circle3_d: Optional[Circle3D] = field(
@@ -9212,7 +9212,7 @@ class Contour3DT:
         metadata={
             "name": "Circle3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     circum_arc3_d: List[CircumArc3D] = field(
@@ -9220,7 +9220,7 @@ class Contour3DT:
         metadata={
             "name": "CircumArc3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     line3_d: List[Line3D] = field(
@@ -9228,7 +9228,7 @@ class Contour3DT:
         metadata={
             "name": "Line3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     composite_curve3_d: List[CompositeCurve3D] = field(
@@ -9236,7 +9236,7 @@ class Contour3DT:
         metadata={
             "name": "CompositeCurve3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     poly_line3_d: List[PolyLine3D] = field(
@@ -9244,7 +9244,7 @@ class Contour3DT:
         metadata={
             "name": "PolyLine3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbs3_d: List[Nurbs3D] = field(
@@ -9252,7 +9252,7 @@ class Contour3DT:
         metadata={
             "name": "NURBS3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9265,7 +9265,7 @@ class CrossFlow(CrossFlowT):
     connected by a piping system and part of the same Compartment.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9292,14 +9292,14 @@ class FreeEdgeCurve3DT(EntityBaseT):
     """
     class Meta:
         name = "FreeEdgeCurve3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     circum_arc3_d: List[CircumArc3D] = field(
         default_factory=list,
         metadata={
             "name": "CircumArc3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     line3_d: List[Line3D] = field(
@@ -9307,7 +9307,7 @@ class FreeEdgeCurve3DT(EntityBaseT):
         metadata={
             "name": "Line3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     composite_curve3_d: List[CompositeCurve3D] = field(
@@ -9315,7 +9315,7 @@ class FreeEdgeCurve3DT(EntityBaseT):
         metadata={
             "name": "CompositeCurve3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     poly_line3_d: List[PolyLine3D] = field(
@@ -9323,7 +9323,7 @@ class FreeEdgeCurve3DT(EntityBaseT):
         metadata={
             "name": "PolyLine3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbs3_d: List[Nurbs3D] = field(
@@ -9331,7 +9331,7 @@ class FreeEdgeCurve3DT(EntityBaseT):
         metadata={
             "name": "NURBS3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     is_uvspace: bool = field(
@@ -9350,14 +9350,14 @@ class TraceLineT:
     """
     class Meta:
         name = "TraceLine_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     circum_arc3_d: List[CircumArc3D] = field(
         default_factory=list,
         metadata={
             "name": "CircumArc3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbs3_d: List[Nurbs3D] = field(
@@ -9365,7 +9365,7 @@ class TraceLineT:
         metadata={
             "name": "NURBS3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ellipse3_d: List[Ellipse3D] = field(
@@ -9373,7 +9373,7 @@ class TraceLineT:
         metadata={
             "name": "Ellipse3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     circum_circle3_d: List[CircumCircle3D] = field(
@@ -9381,7 +9381,7 @@ class TraceLineT:
         metadata={
             "name": "CircumCircle3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     circle3_d: List[Circle3D] = field(
@@ -9389,7 +9389,7 @@ class TraceLineT:
         metadata={
             "name": "Circle3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     composite_curve3_d: List[CompositeCurve3D] = field(
@@ -9397,7 +9397,7 @@ class TraceLineT:
         metadata={
             "name": "CompositeCurve3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     line3_d: List[Line3D] = field(
@@ -9405,7 +9405,7 @@ class TraceLineT:
         metadata={
             "name": "Line3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     poly_line3_d: List[PolyLine3D] = field(
@@ -9413,7 +9413,7 @@ class TraceLineT:
         metadata={
             "name": "PolyLine3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9435,7 +9435,7 @@ class ConnectionConfiguration(ConnectionConfigurationT):
     shipbuilding.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9444,7 +9444,7 @@ class Contour(Contour3DT):
     The contour of a surface or structure part.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9460,7 +9460,7 @@ class FaceBoundaryCurve(Contour3DT):
             space.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     is_uvspace: bool = field(
         default=False,
@@ -9478,7 +9478,7 @@ class FreeEdgeCurve3D(FreeEdgeCurve3DT):
     are used to represent a free edge of a panel or plate in shipbuilding.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9487,7 +9487,7 @@ class InnerContour(Contour3DT):
     Any closed contour of an inner opening in a plate.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9497,7 +9497,7 @@ class OuterContour(Contour3DT):
     set of trim curves or a closed curve primitive.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9512,21 +9512,21 @@ class PenetrationT(ConnectionConfigurationT):
     """
     class Meta:
         name = "Penetration_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     slot_parameters: Optional[SlotParameters] = field(
         default=None,
         metadata={
             "name": "SlotParameters",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     tightness: Optional[TightnessValue] = field(
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9552,14 +9552,14 @@ class PhysicalSpaceT(EntityBaseT):
     """
     class Meta:
         name = "PhysicalSpace_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     compartment_properties: Optional[CompartmentProperties] = field(
         default=None,
         metadata={
             "name": "CompartmentProperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9568,7 +9568,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "Cell",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -9577,7 +9577,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "CrossFlow",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     external_geometry_ref: Optional[ExternalGeometryRef] = field(
@@ -9585,7 +9585,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "ExternalGeometryRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulk_cargo: List[BulkCargo] = field(
@@ -9593,7 +9593,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "BulkCargo",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     liquid_cargo: List[LiquidCargo] = field(
@@ -9601,7 +9601,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "LiquidCargo",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     unit_cargo: List[UnitCargo] = field(
@@ -9609,7 +9609,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "UnitCargo",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     compartment_purpose: Optional[CompartmentPurposeValue] = field(
@@ -9617,7 +9617,7 @@ class PhysicalSpaceT(EntityBaseT):
         metadata={
             "name": "compartmentPurpose",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9629,7 +9629,7 @@ class SectionInnerShape(Contour3DT):
     Optional arbitrary inner section shape for hollow sections.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9640,7 +9640,7 @@ class SectionOuterShape(Contour3DT):
     the trace line.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9649,7 +9649,7 @@ class TraceLine(TraceLineT):
     The landing curve on the moulded panel surface represented by any Curve3D type.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9660,14 +9660,14 @@ class CutByT:
     """
     class Meta:
         name = "CutBy_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     inner_contour: List[InnerContour] = field(
         default_factory=list,
         metadata={
             "name": "InnerContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     hole2_dcontour: List[Hole2Dcontour] = field(
@@ -9675,7 +9675,7 @@ class CutByT:
         metadata={
             "name": "Hole2DContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     slot_contour: Optional[SlotContour] = field(
@@ -9683,7 +9683,7 @@ class CutByT:
         metadata={
             "name": "SlotContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9692,14 +9692,14 @@ class CutByT:
 class EdgeReinforcementT(StructurePartT):
     class Meta:
         name = "EdgeReinforcement_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     section_ref: Optional[SectionRef] = field(
         default=None,
         metadata={
             "name": "SectionRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9708,7 +9708,7 @@ class EdgeReinforcementT(StructurePartT):
         metadata={
             "name": "MaterialRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9717,7 +9717,7 @@ class EdgeReinforcementT(StructurePartT):
         metadata={
             "name": "Inclination",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9726,7 +9726,7 @@ class EdgeReinforcementT(StructurePartT):
         metadata={
             "name": "EdgeCurveRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -9735,7 +9735,7 @@ class EdgeReinforcementT(StructurePartT):
         metadata={
             "name": "TraceLine",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9744,7 +9744,7 @@ class EdgeReinforcementT(StructurePartT):
         metadata={
             "name": "functionType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9757,14 +9757,14 @@ class Hole2DT(DescriptionBaseT):
     """
     class Meta:
         name = "Hole2D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     rectangular_hole: Optional[RectangularHole] = field(
         default=None,
         metadata={
             "name": "RectangularHole",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     super_elliptical: Optional[SuperElliptical] = field(
@@ -9772,7 +9772,7 @@ class Hole2DT(DescriptionBaseT):
         metadata={
             "name": "SuperElliptical",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     symmetrical_hole: Optional[SymmetricalHole] = field(
@@ -9780,7 +9780,7 @@ class Hole2DT(DescriptionBaseT):
         metadata={
             "name": "SymmetricalHole",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     parametric_circle: Optional[ParametricCircle] = field(
@@ -9788,7 +9788,7 @@ class Hole2DT(DescriptionBaseT):
         metadata={
             "name": "ParametricCircle",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     contour: Optional[Contour] = field(
@@ -9796,7 +9796,7 @@ class Hole2DT(DescriptionBaseT):
         metadata={
             "name": "Contour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     guidref: Optional[str] = field(
@@ -9804,7 +9804,7 @@ class Hole2DT(DescriptionBaseT):
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_length": 1,
             "max_length": 40,
         }
@@ -9827,14 +9827,14 @@ class LimitedByT:
     """
     class Meta:
         name = "LimitedBy_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     free_edge_curve3_d: List[FreeEdgeCurve3D] = field(
         default_factory=list,
         metadata={
             "name": "FreeEdgeCurve3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ocx_item_ptr: List[OcxItemPtr] = field(
@@ -9842,7 +9842,7 @@ class LimitedByT:
         metadata={
             "name": "OcxItemPtr",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     grid_ref: List[GridRef] = field(
@@ -9850,7 +9850,7 @@ class LimitedByT:
         metadata={
             "name": "GridRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9862,7 +9862,7 @@ class Penetration(PenetrationT):
     shipbuilding.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9872,7 +9872,7 @@ class PhysicalSpace(PhysicalSpaceT):
     defined by  enclosing  structure panels.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -9882,14 +9882,14 @@ class SeamT(EntityBaseT):
     """
     class Meta:
         name = "Seam_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     trace_line: Optional[TraceLine] = field(
         default=None,
         metadata={
             "name": "TraceLine",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9907,14 +9907,14 @@ class SurfaceT(GeometryRepresentationT):
     """
     class Meta:
         name = "Surface_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     area: Optional[Area] = field(
         default=None,
         metadata={
             "name": "Area",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9923,7 +9923,7 @@ class SurfaceT(GeometryRepresentationT):
         metadata={
             "name": "FaceBoundaryCurve",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -9943,14 +9943,14 @@ class UserDefinedBarSectionT:
     """
     class Meta:
         name = "UserDefinedBarSection_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     section_properties: Optional[SectionProperties] = field(
         default=None,
         metadata={
             "name": "SectionProperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -9959,7 +9959,7 @@ class UserDefinedBarSectionT:
         metadata={
             "name": "UserDefinedParameter",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     section_outer_shape: Optional[SectionOuterShape] = field(
@@ -9967,7 +9967,7 @@ class UserDefinedBarSectionT:
         metadata={
             "name": "SectionOuterShape",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     section_inner_shape: Optional[SectionInnerShape] = field(
@@ -9975,7 +9975,7 @@ class UserDefinedBarSectionT:
         metadata={
             "name": "SectionInnerShape",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     number_of_parameters: Optional[int] = field(
@@ -10001,14 +10001,14 @@ class Cone3DT(SurfaceT):
     """
     class Meta:
         name = "Cone3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     origin: Optional[Origin] = field(
         default=None,
         metadata={
             "name": "Origin",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10017,7 +10017,7 @@ class Cone3DT(SurfaceT):
         metadata={
             "name": "Tip",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10026,7 +10026,7 @@ class Cone3DT(SurfaceT):
         metadata={
             "name": "BaseRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10035,7 +10035,7 @@ class Cone3DT(SurfaceT):
         metadata={
             "name": "TipRadius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10047,7 +10047,7 @@ class CutBy(CutByT):
     hole or a set of generic trim curves.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10064,14 +10064,14 @@ class Cylinder3DT(SurfaceT):
     """
     class Meta:
         name = "Cylinder3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     origin: Optional[Origin] = field(
         default=None,
         metadata={
             "name": "Origin",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10080,7 +10080,7 @@ class Cylinder3DT(SurfaceT):
         metadata={
             "name": "Axis",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10089,7 +10089,7 @@ class Cylinder3DT(SurfaceT):
         metadata={
             "name": "Radius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10098,7 +10098,7 @@ class Cylinder3DT(SurfaceT):
         metadata={
             "name": "Height",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10117,7 +10117,7 @@ class EdgeReinforcement(EdgeReinforcementT):
     actual extent of the reinforcement.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10128,14 +10128,14 @@ class ExtrudedSurfaceT(SurfaceT):
     """
     class Meta:
         name = "ExtrudedSurface_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     base_curve: Optional[BaseCurve] = field(
         default=None,
         metadata={
             "name": "BaseCurve",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10144,7 +10144,7 @@ class ExtrudedSurfaceT(SurfaceT):
         metadata={
             "name": "Sweep",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     sweep_curve: Optional[SweepCurve] = field(
@@ -10152,7 +10152,7 @@ class ExtrudedSurfaceT(SurfaceT):
         metadata={
             "name": "SweepCurve",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10163,7 +10163,7 @@ class Hole2D(Hole2DT):
     A 2D hole shape defined either by a parametric hole or a curve contour.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10175,7 +10175,7 @@ class LimitedBy(LimitedByT):
     sequence.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10195,14 +10195,14 @@ class NurbssurfaceT(SurfaceT):
     """
     class Meta:
         name = "NURBSSurface_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     u_nurbsproperties: Optional[UNurbsproperties] = field(
         default=None,
         metadata={
             "name": "U_NURBSproperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10211,7 +10211,7 @@ class NurbssurfaceT(SurfaceT):
         metadata={
             "name": "UknotVector",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10220,7 +10220,7 @@ class NurbssurfaceT(SurfaceT):
         metadata={
             "name": "V_NURBSproperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10229,7 +10229,7 @@ class NurbssurfaceT(SurfaceT):
         metadata={
             "name": "VknotVector",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10238,7 +10238,7 @@ class NurbssurfaceT(SurfaceT):
         metadata={
             "name": "ControlPtList",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -10250,7 +10250,7 @@ class Seam(SeamT):
     Element describing the structure concept of a plate seam.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10260,14 +10260,14 @@ class Sphere3DT(SurfaceT):
     """
     class Meta:
         name = "Sphere3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     origin: Optional[Origin] = field(
         default=None,
         metadata={
             "name": "Origin",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10276,7 +10276,7 @@ class Sphere3DT(SurfaceT):
         metadata={
             "name": "Radius",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10288,7 +10288,7 @@ class UserDefinedBarSection(UserDefinedBarSectionT):
     User defined or unknown bar type.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10322,14 +10322,14 @@ class BarSectionT(DescriptionBaseT):
     """
     class Meta:
         name = "BarSection_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     rectangular_tube: Optional[RectangularTube] = field(
         default=None,
         metadata={
             "name": "RectangularTube",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     octagon_bar: Optional[OctagonBar] = field(
@@ -10337,7 +10337,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "OctagonBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     square_bar: Optional[SquareBar] = field(
@@ -10345,7 +10345,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "SquareBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulb_flat: Optional[BulbFlat] = field(
@@ -10353,7 +10353,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "BulbFlat",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     flat_bar: Optional[FlatBar] = field(
@@ -10361,7 +10361,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "FlatBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ubar: Optional[Ubar] = field(
@@ -10369,7 +10369,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "UBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ibar: Optional[Ibar] = field(
@@ -10377,7 +10377,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "IBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     lbar_of: Optional[LbarOf] = field(
@@ -10385,7 +10385,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "LBarOF",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     zbar: Optional[Zbar] = field(
@@ -10393,7 +10393,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "ZBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     round_bar: Optional[RoundBar] = field(
@@ -10401,7 +10401,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "RoundBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     lbar: Optional[Lbar] = field(
@@ -10409,7 +10409,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "LBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     tbar: Optional[Tbar] = field(
@@ -10417,7 +10417,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "TBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     lbar_ow: Optional[LbarOw] = field(
@@ -10425,7 +10425,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "LBarOW",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     half_round_bar: Optional[HalfRoundBar] = field(
@@ -10433,7 +10433,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "HalfRoundBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     hexagon_bar: Optional[HexagonBar] = field(
@@ -10441,7 +10441,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "HexagonBar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     tube: Optional[Tube] = field(
@@ -10449,7 +10449,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "Tube",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     user_defined_bar_section: Optional[UserDefinedBarSection] = field(
@@ -10457,7 +10457,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "UserDefinedBarSection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     type_code: Optional[str] = field(
@@ -10478,7 +10478,7 @@ class BarSectionT(DescriptionBaseT):
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     guidref: Optional[str] = field(
@@ -10486,7 +10486,7 @@ class BarSectionT(DescriptionBaseT):
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_length": 1,
             "max_length": 40,
         }
@@ -10499,7 +10499,7 @@ class Cone3D(Cone3DT):
     Cone surface defined by origin, radius and position of cone tip.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10508,7 +10508,7 @@ class Cylinder3D(Cylinder3DT):
     Cylindrical surface defined by origin, axis direction, radius and height.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10517,7 +10517,7 @@ class ExtrudedSurface(ExtrudedSurfaceT):
     An extruded surface defined by a base curve and a sweep path with extent.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10531,14 +10531,14 @@ class HoleShapeCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "HoleShapeCatalogue_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     hole2_d: List[Hole2D] = field(
         default_factory=list,
         metadata={
             "name": "Hole2D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -10551,14 +10551,14 @@ class MemberT(StructurePartT):
     """
     class Meta:
         name = "Member_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     limited_by: Optional[LimitedBy] = field(
         default=None,
         metadata={
             "name": "LimitedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10571,7 +10571,7 @@ class Nurbssurface(NurbssurfaceT):
     """
     class Meta:
         name = "NURBSSurface"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10587,14 +10587,14 @@ class Plane3DT(SurfaceT):
     """
     class Meta:
         name = "Plane3D_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     origin: Optional[Origin] = field(
         default=None,
         metadata={
             "name": "Origin",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10603,7 +10603,7 @@ class Plane3DT(SurfaceT):
         metadata={
             "name": "Normal",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -10612,7 +10612,7 @@ class Plane3DT(SurfaceT):
         metadata={
             "name": "UDirection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     limited_by: Optional[LimitedBy] = field(
@@ -10620,7 +10620,7 @@ class Plane3DT(SurfaceT):
         metadata={
             "name": "LimitedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10631,7 +10631,7 @@ class Sphere3D(Sphere3DT):
     Spherical surface defined by origin and radius.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10642,14 +10642,14 @@ class SplitByT:
     """
     class Meta:
         name = "SplitBy_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     seam: List[Seam] = field(
         default_factory=list,
         metadata={
             "name": "Seam",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -10679,14 +10679,14 @@ class StiffenerT(StructurePartT):
     """
     class Meta:
         name = "Stiffener_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     trace_line: List[TraceLine] = field(
         default_factory=list,
         metadata={
             "name": "TraceLine",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 4,
         }
     )
@@ -10695,7 +10695,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "MaterialRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 4,
         }
     )
@@ -10704,7 +10704,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "SectionRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 4,
         }
     )
@@ -10713,7 +10713,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "Inclination",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 4,
         }
     )
@@ -10722,7 +10722,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "EndCutEnd1",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     end_cut_end2: List[EndCutEnd2] = field(
@@ -10730,7 +10730,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "EndCutEnd2",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     offset: List[Offset] = field(
@@ -10738,7 +10738,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "Offset",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     connection_configuration: List[ConnectionConfiguration] = field(
@@ -10746,7 +10746,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "ConnectionConfiguration",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     penetration: List[Penetration] = field(
@@ -10754,7 +10754,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "Penetration",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cut_by: List[CutBy] = field(
@@ -10762,7 +10762,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "CutBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     limited_by: List[LimitedBy] = field(
@@ -10770,7 +10770,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "LimitedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     function_type: Optional[FunctionTypeValue] = field(
@@ -10778,7 +10778,7 @@ class StiffenerT(StructurePartT):
         metadata={
             "name": "functionType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10789,7 +10789,7 @@ class BarSection(BarSectionT):
     A catalogue of rolled and welded cross-sections recognised by the Society.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10798,7 +10798,7 @@ class HoleShapeCatalogue(HoleShapeCatalogueT):
     Catalogue of 2D hole shapes.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10820,14 +10820,14 @@ class PillarT(MemberT):
     """
     class Meta:
         name = "Pillar_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     material_ref: List[MaterialRef] = field(
         default_factory=list,
         metadata={
             "name": "MaterialRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -10836,7 +10836,7 @@ class PillarT(MemberT):
         metadata={
             "name": "SectionRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -10845,7 +10845,7 @@ class PillarT(MemberT):
         metadata={
             "name": "TraceLine",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -10854,7 +10854,7 @@ class PillarT(MemberT):
         metadata={
             "name": "Inclination",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cut_by: List[CutBy] = field(
@@ -10862,7 +10862,7 @@ class PillarT(MemberT):
         metadata={
             "name": "CutBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     penetration: List[Penetration] = field(
@@ -10870,7 +10870,7 @@ class PillarT(MemberT):
         metadata={
             "name": "Penetration",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     connection_configuration: List[ConnectionConfiguration] = field(
@@ -10878,7 +10878,7 @@ class PillarT(MemberT):
         metadata={
             "name": "ConnectionConfiguration",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     function_type: Optional[FunctionTypeValue] = field(
@@ -10886,7 +10886,7 @@ class PillarT(MemberT):
         metadata={
             "name": "functionType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10897,7 +10897,7 @@ class Plane3D(Plane3DT):
     Planar surface defined by origin and Normal direction.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10907,7 +10907,7 @@ class SplitBy(SplitByT):
     one or more seams.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10917,7 +10917,7 @@ class Stiffener(StiffenerT):
     to plating and constitutes the scantlings.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10926,7 +10926,7 @@ class Pillar(PillarT):
     Structural concept for pillars used as vertical support in ship building.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -10937,14 +10937,14 @@ class StiffenedByT:
     """
     class Meta:
         name = "StiffenedBy_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     stiffener: List[Stiffener] = field(
         default_factory=list,
         metadata={
             "name": "Stiffener",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     edge_reinforcement: List[EdgeReinforcement] = field(
@@ -10952,7 +10952,7 @@ class StiffenedByT:
         metadata={
             "name": "EdgeReinforcement",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -10961,14 +10961,14 @@ class StiffenedByT:
 class SurfaceCollectionT(DescriptionBaseT):
     class Meta:
         name = "SurfaceCollection_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     plane3_d: List[Plane3D] = field(
         default_factory=list,
         metadata={
             "name": "Plane3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbssurface: List[Nurbssurface] = field(
@@ -10976,7 +10976,7 @@ class SurfaceCollectionT(DescriptionBaseT):
         metadata={
             "name": "NURBSSurface",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     extruded_surface: List[ExtrudedSurface] = field(
@@ -10984,7 +10984,7 @@ class SurfaceCollectionT(DescriptionBaseT):
         metadata={
             "name": "ExtrudedSurface",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     sphere3_d: List[Sphere3D] = field(
@@ -10992,7 +10992,7 @@ class SurfaceCollectionT(DescriptionBaseT):
         metadata={
             "name": "Sphere3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cone3_d: List[Cone3D] = field(
@@ -11000,7 +11000,7 @@ class SurfaceCollectionT(DescriptionBaseT):
         metadata={
             "name": "Cone3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cylinder3_d: List[Cylinder3D] = field(
@@ -11008,7 +11008,7 @@ class SurfaceCollectionT(DescriptionBaseT):
         metadata={
             "name": "Cylinder3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     guidref: Optional[str] = field(
@@ -11016,7 +11016,7 @@ class SurfaceCollectionT(DescriptionBaseT):
         metadata={
             "name": "GUIDRef",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_length": 1,
             "max_length": 40,
         }
@@ -11030,14 +11030,14 @@ class UnboundedGeometryT:
     """
     class Meta:
         name = "UnboundedGeometry_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     plane3_d: List[Plane3D] = field(
         default_factory=list,
         metadata={
             "name": "Plane3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbssurface: List[Nurbssurface] = field(
@@ -11045,7 +11045,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "NURBSSurface",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     extruded_surface: List[ExtrudedSurface] = field(
@@ -11053,7 +11053,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "ExtrudedSurface",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     sphere3_d: List[Sphere3D] = field(
@@ -11061,7 +11061,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "Sphere3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cone3_d: List[Cone3D] = field(
@@ -11069,7 +11069,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "Cone3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cylinder3_d: List[Cylinder3D] = field(
@@ -11077,7 +11077,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "Cylinder3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     surface_ref: Optional[SurfaceRef] = field(
@@ -11085,7 +11085,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "SurfaceRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     grid_ref: List[GridRef] = field(
@@ -11093,7 +11093,7 @@ class UnboundedGeometryT:
         metadata={
             "name": "GridRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11106,14 +11106,14 @@ class XsectionCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "XSectionCatalogue_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     bar_section: List[BarSection] = field(
         default_factory=list,
         metadata={
             "name": "BarSection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -11125,7 +11125,7 @@ class StiffenedBy(StiffenedByT):
     Structural concept defining the stiffeners which belongs to a panel.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11137,7 +11137,7 @@ class SurfaceCollection(SurfaceCollectionT):
     geometry definition of the vessel.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11146,7 +11146,7 @@ class UnboundedGeometry(UnboundedGeometryT):
     The unbounded surface geometry of the parent element.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11157,7 +11157,7 @@ class XsectionCatalogue(XsectionCatalogueT):
     """
     class Meta:
         name = "XSectionCatalogue"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11167,14 +11167,14 @@ class BracketT(StructurePartT):
     """
     class Meta:
         name = "Bracket_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     bracket_parameters: List[BracketParameters] = field(
         default_factory=list,
         metadata={
             "name": "BracketParameters",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -11183,7 +11183,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "PlateMaterial",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -11192,7 +11192,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "Offset",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     outer_contour: List[OuterContour] = field(
@@ -11200,7 +11200,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "OuterContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -11209,7 +11209,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "UnboundedGeometry",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     limited_by: List[LimitedBy] = field(
@@ -11217,7 +11217,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "LimitedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cut_by: List[CutBy] = field(
@@ -11225,7 +11225,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "CutBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     inner_contour: List[InnerContour] = field(
@@ -11233,7 +11233,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "InnerContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     stiffened_by: List[StiffenedBy] = field(
@@ -11241,7 +11241,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "StiffenedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     function_type: Optional[FunctionTypeValue] = field(
@@ -11249,7 +11249,7 @@ class BracketT(StructurePartT):
         metadata={
             "name": "functionType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11268,14 +11268,14 @@ class ClassCatalogueT(DescriptionBaseT):
     """
     class Meta:
         name = "ClassCatalogue_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     material_catalogue: List[MaterialCatalogue] = field(
         default_factory=list,
         metadata={
             "name": "MaterialCatalogue",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     xsection_catalogue: List[XsectionCatalogue] = field(
@@ -11283,7 +11283,7 @@ class ClassCatalogueT(DescriptionBaseT):
         metadata={
             "name": "XSectionCatalogue",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     hole_shape_catalogue: List[HoleShapeCatalogue] = field(
@@ -11291,7 +11291,7 @@ class ClassCatalogueT(DescriptionBaseT):
         metadata={
             "name": "HoleShapeCatalogue",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11308,14 +11308,14 @@ class CompartmentFaceT(EntityBaseT):
     """
     class Meta:
         name = "CompartmentFace_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     unbounded_geometry: Optional[UnboundedGeometry] = field(
         default=None,
         metadata={
             "name": "UnboundedGeometry",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -11324,7 +11324,7 @@ class CompartmentFaceT(EntityBaseT):
         metadata={
             "name": "FaceBoundaryCurve",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -11353,14 +11353,14 @@ class PlateT(StructurePartT):
     """
     class Meta:
         name = "Plate_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     limited_by: List[LimitedBy] = field(
         default_factory=list,
         metadata={
             "name": "LimitedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -11369,7 +11369,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "OuterContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -11378,7 +11378,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "PlateMaterial",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 3,
         }
     )
@@ -11387,7 +11387,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "Offset",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     unbounded_geometry: List[UnboundedGeometry] = field(
@@ -11395,7 +11395,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "UnboundedGeometry",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     inner_contour: List[InnerContour] = field(
@@ -11403,7 +11403,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "InnerContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cut_by: List[CutBy] = field(
@@ -11411,7 +11411,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "CutBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     function_type: Optional[FunctionTypeValue] = field(
@@ -11419,7 +11419,7 @@ class PlateT(StructurePartT):
         metadata={
             "name": "functionType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11431,14 +11431,14 @@ class ReferenceSurfacesT:
     """
     class Meta:
         name = "ReferenceSurfaces_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     surface_collection: List[SurfaceCollection] = field(
         default_factory=list,
         metadata={
             "name": "SurfaceCollection",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     plane3_d: List[Plane3D] = field(
@@ -11446,7 +11446,7 @@ class ReferenceSurfacesT:
         metadata={
             "name": "Plane3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     nurbssurface: List[Nurbssurface] = field(
@@ -11454,7 +11454,7 @@ class ReferenceSurfacesT:
         metadata={
             "name": "NURBSSurface",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     extruded_surface: List[ExtrudedSurface] = field(
@@ -11462,7 +11462,7 @@ class ReferenceSurfacesT:
         metadata={
             "name": "ExtrudedSurface",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     sphere3_d: List[Sphere3D] = field(
@@ -11470,7 +11470,7 @@ class ReferenceSurfacesT:
         metadata={
             "name": "Sphere3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cone3_d: List[Cone3D] = field(
@@ -11478,7 +11478,7 @@ class ReferenceSurfacesT:
         metadata={
             "name": "Cone3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cylinder3_d: List[Cylinder3D] = field(
@@ -11486,7 +11486,7 @@ class ReferenceSurfacesT:
         metadata={
             "name": "Cylinder3D",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11497,7 +11497,7 @@ class Bracket(BracketT):
     Structural concept of brackets used in shipbuilding.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11508,7 +11508,7 @@ class ClassCatalogue(ClassCatalogueT):
     materials, hole shapes etc.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11517,7 +11517,7 @@ class CompartmentFace(CompartmentFaceT):
     The face of a compartment defined by a surface boundary.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11526,7 +11526,7 @@ class Plate(PlateT):
     Structural concept of plates used in shipbuilding.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11536,7 +11536,7 @@ class ReferenceSurfaces(ReferenceSurfacesT):
     object.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11559,14 +11559,14 @@ class CompartmentT(EntityBaseT):
     """
     class Meta:
         name = "Compartment_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     compartment_properties: Optional[CompartmentProperties] = field(
         default=None,
         metadata={
             "name": "CompartmentProperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -11575,7 +11575,7 @@ class CompartmentT(EntityBaseT):
         metadata={
             "name": "CompartmentFace",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -11584,7 +11584,7 @@ class CompartmentT(EntityBaseT):
         metadata={
             "name": "ExternalGeometryRef",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bulk_cargo: List[BulkCargo] = field(
@@ -11592,7 +11592,7 @@ class CompartmentT(EntityBaseT):
         metadata={
             "name": "BulkCargo",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     liquid_cargo: List[LiquidCargo] = field(
@@ -11600,7 +11600,7 @@ class CompartmentT(EntityBaseT):
         metadata={
             "name": "LiquidCargo",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     unit_cargo: List[UnitCargo] = field(
@@ -11608,7 +11608,7 @@ class CompartmentT(EntityBaseT):
         metadata={
             "name": "UnitCargo",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     compartment_purpose: Optional[CompartmentPurposeValue] = field(
@@ -11616,7 +11616,7 @@ class CompartmentT(EntityBaseT):
         metadata={
             "name": "compartmentPurpose",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -11626,14 +11626,14 @@ class CompartmentT(EntityBaseT):
 class ComposedOfT:
     class Meta:
         name = "ComposedOf_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     plate: List[Plate] = field(
         default_factory=list,
         metadata={
             "name": "Plate",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 1,
         }
     )
@@ -11642,7 +11642,7 @@ class ComposedOfT:
         metadata={
             "name": "Bracket",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     pillar: List[Pillar] = field(
@@ -11650,7 +11650,7 @@ class ComposedOfT:
         metadata={
             "name": "Pillar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11662,7 +11662,7 @@ class Compartment(CompartmentT):
     closed volume (space) defined by enclosing surface geometry.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11671,7 +11671,7 @@ class ComposedOf(ComposedOfT):
     Element representing the structural concepts which composes a structure Panel.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11687,14 +11687,14 @@ class ArrangementT(DescriptionBaseT):
     """
     class Meta:
         name = "Arrangement_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     compartment: List[Compartment] = field(
         default_factory=list,
         metadata={
             "name": "Compartment",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     physical_space: List[PhysicalSpace] = field(
@@ -11702,7 +11702,7 @@ class ArrangementT(DescriptionBaseT):
         metadata={
             "name": "PhysicalSpace",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11736,14 +11736,14 @@ class PanelT(EntityBaseT):
     """
     class Meta:
         name = "Panel_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     unbounded_geometry: List[UnboundedGeometry] = field(
         default_factory=list,
         metadata={
             "name": "UnboundedGeometry",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
         }
     )
@@ -11752,7 +11752,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "LimitedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
         }
     )
@@ -11761,7 +11761,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "PhysicalProperties",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     outer_contour: List[OuterContour] = field(
@@ -11769,7 +11769,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "OuterContour",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     composed_of: List[ComposedOf] = field(
@@ -11777,7 +11777,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "ComposedOf",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     stiffened_by: List[StiffenedBy] = field(
@@ -11785,7 +11785,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "StiffenedBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     split_by: List[SplitBy] = field(
@@ -11793,7 +11793,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "SplitBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     cut_by: List[CutBy] = field(
@@ -11801,7 +11801,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "CutBy",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     function_type: Optional[FunctionTypeValue] = field(
@@ -11809,7 +11809,7 @@ class PanelT(EntityBaseT):
         metadata={
             "name": "functionType",
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -11817,7 +11817,7 @@ class PanelT(EntityBaseT):
         default=None,
         metadata={
             "type": "Attribute",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "required": True,
         }
     )
@@ -11829,7 +11829,7 @@ class Arrangement(ArrangementT):
     The vessel arrangement or capacity plan defined by its compartments.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11839,7 +11839,7 @@ class Panel(PanelT):
     Panels can typically be composed of plates, seams and stiffeners.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -11869,14 +11869,14 @@ class VesselT(FormT):
     """
     class Meta:
         name = "Vessel_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     coordinate_system: List[CoordinateSystem] = field(
         default_factory=list,
         metadata={
             "name": "CoordinateSystem",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
         }
     )
@@ -11885,7 +11885,7 @@ class VesselT(FormT):
         metadata={
             "name": "ClassificationData",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
             "min_occurs": 2,
         }
     )
@@ -11894,7 +11894,7 @@ class VesselT(FormT):
         metadata={
             "name": "BuilderInformation",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     tonnage_data: List[TonnageData] = field(
@@ -11902,7 +11902,7 @@ class VesselT(FormT):
         metadata={
             "name": "TonnageData",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     statutory_data: List[StatutoryData] = field(
@@ -11910,7 +11910,7 @@ class VesselT(FormT):
         metadata={
             "name": "StatutoryData",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     ship_designation: List[ShipDesignation] = field(
@@ -11918,7 +11918,7 @@ class VesselT(FormT):
         metadata={
             "name": "ShipDesignation",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     design_view: List[DesignView] = field(
@@ -11926,7 +11926,7 @@ class VesselT(FormT):
         metadata={
             "name": "DesignView",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     arrangement: List[Arrangement] = field(
@@ -11934,7 +11934,7 @@ class VesselT(FormT):
         metadata={
             "name": "Arrangement",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     reference_surfaces: List[ReferenceSurfaces] = field(
@@ -11942,7 +11942,7 @@ class VesselT(FormT):
         metadata={
             "name": "ReferenceSurfaces",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     panel: List[Panel] = field(
@@ -11950,7 +11950,7 @@ class VesselT(FormT):
         metadata={
             "name": "Panel",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     plate: List[Plate] = field(
@@ -11958,7 +11958,7 @@ class VesselT(FormT):
         metadata={
             "name": "Plate",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     stiffener: List[Stiffener] = field(
@@ -11966,7 +11966,7 @@ class VesselT(FormT):
         metadata={
             "name": "Stiffener",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     bracket: List[Bracket] = field(
@@ -11974,7 +11974,7 @@ class VesselT(FormT):
         metadata={
             "name": "Bracket",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     pillar: List[Pillar] = field(
@@ -11982,7 +11982,7 @@ class VesselT(FormT):
         metadata={
             "name": "Pillar",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
 
@@ -11993,7 +11993,7 @@ class Vessel(VesselT):
     Vessel asset subject to Classification.
     """
     class Meta:
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
 
 @dataclass
@@ -12011,14 +12011,14 @@ class OcxXmlT(DocumentBaseT):
     """
     class Meta:
         name = "ocxXML_T"
-        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        target_namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"
 
     vessel: List[Vessel] = field(
         default_factory=list,
         metadata={
             "name": "Vessel",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     equipment: List[Equipment] = field(
@@ -12026,7 +12026,7 @@ class OcxXmlT(DocumentBaseT):
         metadata={
             "name": "Equipment",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
     class_catalogue: List[ClassCatalogue] = field(
@@ -12034,10 +12034,10 @@ class OcxXmlT(DocumentBaseT):
         metadata={
             "name": "ClassCatalogue",
             "type": "Element",
-            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd",
+            "namespace": "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd",
         }
     )
-    'units_ml': List[UnitsMl] = field(
+    units_ml: List[UnitsMl] = field(
         default_factory=list,
         metadata={
             "name": "UnitsML",
@@ -12054,4 +12054,4 @@ class OcxXml(OcxXmlT):
     """
     class Meta:
         name = "ocxXML"
-        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b3//OCX_Schema.xsd"
+        namespace = "https://3docx.org/fileadmin//ocx_schema//V300b4//OCX_Schema.xsd"

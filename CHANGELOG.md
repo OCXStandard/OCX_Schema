@@ -1,5 +1,13 @@
 # OCX_Schema: Changelog
 
+## 3.0.0b3 2023.11.10
+
+Bump to 3.0.0b4
+
+### Issues
+1. [#70 Typo in Point3D](https://github.com/OCXStandard/OCX_Schema/issues/70)
+
+
 ## 3.0.0b3 2023.10.26
 
 Bump to 3.0.0b3

@@ -9,7 +9,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "OCX"
-version = "3.0.0b3"
+version = "3.0.0b4"
 description = ""
 authors = ["ocastrup <ole.christain.astrup@dnv.com>"]
 readme = "DATABINDING.md"
@@ -27,7 +27,7 @@ ocx_databinding = "*"
 github_url = "https://github.com/OCXStandard/OCX_Schema"
 
 [tool.tbump.version]
-current = "3.0.0b3"
+current = "3.0.0b4"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before

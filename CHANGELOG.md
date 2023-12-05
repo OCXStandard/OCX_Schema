@@ -1,6 +1,13 @@
 # OCX_Schema: Changelog
 
-## 3.0.0b3 2023.11.10
+## 3.0.0b5 2023.12.05
+
+Bump to 3.0.0b5
+
+### Issues
+1. [#Remove license boilerplate](https://github.com/OCXStandard/OCX_Schema/issues/73)
+
+## 3.0.0b4 2023.11.10
 
 Bump to 3.0.0b4
 

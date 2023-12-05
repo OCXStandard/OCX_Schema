@@ -17,7 +17,7 @@ packages = [{include = "ocx"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-xsdata = "^23.6"
+xsdata = "*"
 packaging = "^23.1"
 tbump = "*"
 ocx_databinding = "*"

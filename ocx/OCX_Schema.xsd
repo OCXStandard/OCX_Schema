@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2024 (x64) (http://www.altova.com) by Astrup, Ole Christian (DNV AS) -->
-<!-- Copyright 2023 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
+<!-- Copyright 2024 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
 			Licensed under the Apache License, Version 2.0 (the "License"); 
 			You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 			Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an 
@@ -17,7 +17,7 @@
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
 		<xs:documentation>
-			Copyright 2023 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
+			Copyright 2024 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)
 			Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 			http://www.apache.org/licenses/LICENSE-2.0
 			Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an
@@ -157,7 +157,7 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DocumentBase_T">
-				<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:sequence>
 					<xs:element ref="ocx:Form"/>
 					<xs:element ref="ocx:ClassCatalogue">
 						<xs:annotation>
@@ -170,7 +170,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="unitsml:UnitsML"/>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -400,10 +400,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityRefBase_T">
-				<xs:choice minOccurs="2" maxOccurs="2">
+				<xs:sequence minOccurs="2" maxOccurs="2">
 					<xs:element ref="ocx:OffsetU"/>
 					<xs:element ref="ocx:OffsetV"/>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:BarSection"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -792,6 +792,9 @@ information are derived.</xs:documentation>
 				<xs:sequence>
 					<xs:element ref="ocx:RootRef"/>
 					<xs:choice maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Any numbers of Occurrence or OccurrenceGroup can be present. At least one instance must exist.</xs:documentation>
+						</xs:annotation>
 						<xs:element ref="ocx:Occurrence"/>
 						<xs:element ref="ocx:OccurrenceGroup"/>
 					</xs:choice>
@@ -849,6 +852,9 @@ information are derived.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:choice maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Any numbers of Occurrence or OccurrenceGroup can be present. At least one instance must exist.</xs:documentation>
+					</xs:annotation>
 					<xs:element ref="ocx:Occurrence"/>
 					<xs:element ref="ocx:OccurrenceGroup"/>
 				</xs:choice>
@@ -960,7 +966,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Form_T">
-				<xs:choice minOccurs="2" maxOccurs="unbounded">
+				<xs:sequence minOccurs="2" maxOccurs="2">
 					<xs:element ref="ocx:CoordinateSystem" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>The vessel coordinate system definition. If not present, it is assumed that the Vessel is modelled in the global coordinate frame.</xs:documentation>
@@ -972,7 +978,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:StatutoryData" minOccurs="0"/>
 					<xs:element ref="ocx:ShipDesignation" minOccurs="0"/>
 					<xs:element ref="ocx:DesignView" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:sequence>
 						<xs:element ref="ocx:Arrangement"/>
 						<xs:element ref="ocx:ReferenceSurfaces">
 							<xs:annotation>
@@ -980,12 +986,12 @@ information are derived.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element ref="ocx:Panel"/>
-						<xs:element ref="ocx:Plate"/>
-						<xs:element ref="ocx:Stiffener"/>
-						<xs:element ref="ocx:Bracket"/>
+						<xs:element ref="ocx:Plate" minOccurs="0"/>
+						<xs:element ref="ocx:Stiffener" minOccurs="0"/>
+						<xs:element ref="ocx:Bracket" minOccurs="0"/>
 						<xs:element ref="ocx:Member" minOccurs="0"/>
-					</xs:choice>
-				</xs:choice>
+					</xs:sequence>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -1034,7 +1040,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice minOccurs="4" maxOccurs="unbounded">
+				<xs:sequence minOccurs="4" maxOccurs="4">
 					<xs:element ref="ocx:TraceLine"/>
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
@@ -1066,7 +1072,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>The references to limiting objects forming a closed contour of the parent element.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -1100,9 +1106,9 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>The type definition of the stiffener TraceLine.</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="unbounded">
+		<xs:sequence maxOccurs="unbounded">
 			<xs:element ref="ocx:Curve3D" minOccurs="0"/>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
 		<xs:annotation>
@@ -1134,7 +1140,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Member_T">
-				<xs:choice minOccurs="3" maxOccurs="unbounded">
+				<xs:sequence minOccurs="3" maxOccurs="3">
 					<xs:element ref="ocx:MaterialRef"/>
 					<xs:element ref="ocx:SectionRef"/>
 					<xs:element ref="ocx:TraceLine">
@@ -1150,7 +1156,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>The connection configuration at end 1 and/or end 2 of the pillar.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -1166,7 +1172,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice minOccurs="2" maxOccurs="unbounded">
+				<xs:sequence>
 					<xs:element ref="ocx:UnboundedGeometry">
 						<xs:annotation>
 							<xs:documentation>The unbounded surface geometry of the parent element. Can be a patch of connected surfaces.</xs:documentation>
@@ -1187,7 +1193,7 @@ information are derived.</xs:documentation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-out on panels will cut material on all the panel plates touched by the cut-out shape. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:functionType" use="required"/>
 				<xs:attribute ref="ocx:tightness" use="required"/>
 			</xs:extension>
@@ -1216,7 +1222,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice minOccurs="3" maxOccurs="unbounded">
+				<xs:sequence>
 					<xs:element ref="ocx:LimitedBy"/>
 					<xs:element ref="ocx:OuterContour"/>
 					<xs:element ref="ocx:PlateMaterial"/>
@@ -1226,13 +1232,13 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:UnboundedGeometry" minOccurs="0"/>
-					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:InnerContour" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -1248,7 +1254,7 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:StructurePart_T">
-				<xs:choice minOccurs="3" maxOccurs="unbounded">
+				<xs:sequence minOccurs="3" maxOccurs="3">
 					<xs:element ref="ocx:BracketParameters"/>
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:Offset" minOccurs="0"/>
@@ -1258,7 +1264,7 @@ information are derived.</xs:documentation>
 					<xs:element ref="ocx:CutBy" minOccurs="0"/>
 					<xs:element ref="ocx:InnerContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -1269,10 +1275,10 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice maxOccurs="2">
+				<xs:sequence>
 					<xs:element ref="ocx:PhysicalProperties"/>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -1290,7 +1296,7 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Type definition of the LimitedBy (reference to limiting objects forming a closed contour of the parent element).</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="unbounded">
+		<xs:sequence maxOccurs="unbounded">
 			<xs:element ref="ocx:FreeEdgeCurve3D">
 				<xs:annotation>
 					<xs:documentation>Collection of non-closed Curve3D types. Used to represent a free edge to form a closed contour together with the limiting objects.</xs:documentation>
@@ -1302,7 +1308,7 @@ information are derived.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:GridRef"/>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ReferencePlane" type="ocx:ReferencePlane_T" abstract="true">
 		<xs:annotation>
@@ -1551,7 +1557,7 @@ information are derived.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Cope parameters.</xs:documentation>
 		</xs:annotation>
-		<xs:choice>
+		<xs:sequence>
 			<xs:element ref="ocx:CopeRadius"/>
 			<xs:element ref="ocx:CopeLength" minOccurs="0">
 				<xs:annotation>
@@ -1563,7 +1569,7 @@ information are derived.</xs:documentation>
 					<xs:documentation>The height of the cope measured along the cross section local V-direction from the root point to the center of the cope radius.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EndCut_T">
 		<xs:annotation>
@@ -1571,14 +1577,14 @@ information are derived.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:choice minOccurs="2" maxOccurs="6">
+				<xs:sequence>
 					<xs:element ref="ocx:CutbackDistance"/>
 					<xs:element ref="ocx:WebCutBackAngle"/>
 					<xs:element ref="ocx:WebNoseHeight" minOccurs="0"/>
 					<xs:element ref="ocx:FlangeCutBackAngle" minOccurs="0"/>
 					<xs:element ref="ocx:FlangeNoseHeight" minOccurs="0"/>
 					<xs:element ref="ocx:FeatureCope" minOccurs="0"/>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute name="symmetricFlange" type="xs:boolean" default="false">
 					<xs:annotation>
 						<xs:documentation>The end cut is symmetrical.</xs:documentation>
@@ -1795,10 +1801,10 @@ information are derived.</xs:documentation>
 			<xs:documentation>Type definition of  a structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:choice>
+			<xs:sequence>
 				<xs:element ref="ocx:InnerContour" maxOccurs="unbounded"/>
 				<xs:element ref="ocx:Hole2DContour" maxOccurs="unbounded"/>
-			</xs:choice>
+			</xs:sequence>
 			<xs:element ref="ocx:SlotContour" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -1809,7 +1815,7 @@ information are derived.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="StiffenedBy_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of the structural concept defining the stiffeners which belongs to a panel.</xs:documentation>
+			<xs:documentation>Type definition of the structural concept defining the stiffeners which belongs to a panel as a coice of a Stiffener or EdgeReinforcement.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:element ref="ocx:Stiffener" maxOccurs="unbounded"/>
@@ -1852,11 +1858,11 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
-					<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:sequence maxOccurs="unbounded">
 						<xs:element ref="ocx:BulkCargo"/>
 						<xs:element ref="ocx:LiquidCargo"/>
 						<xs:element ref="ocx:UnitCargo"/>
-					</xs:choice>
+					</xs:sequence>
 				</xs:sequence>
 				<xs:attribute ref="ocx:compartmentPurpose" use="required"/>
 			</xs:extension>
@@ -1903,11 +1909,11 @@ information are derived.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
-					<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:sequence maxOccurs="unbounded">
 						<xs:element ref="ocx:BulkCargo"/>
 						<xs:element ref="ocx:LiquidCargo"/>
 						<xs:element ref="ocx:UnitCargo"/>
-					</xs:choice>
+					</xs:sequence>
 				</xs:sequence>
 				<xs:attribute ref="ocx:compartmentPurpose" use="required"/>
 			</xs:extension>
@@ -2649,10 +2655,10 @@ gaseous state.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Type definition of a collection of surfaces.</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="unbounded">
+		<xs:sequence>
 			<xs:element ref="ocx:SurfaceCollection"/>
-			<xs:element ref="ocx:Surface" minOccurs="0"/>
-		</xs:choice>
+			<xs:element ref="ocx:Surface" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Surface" type="ocx:Surface_T" abstract="true">
 		<xs:annotation>
@@ -2767,10 +2773,10 @@ gaseous state.</xs:documentation>
 			<xs:extension base="ocx:Surface_T">
 				<xs:sequence>
 					<xs:element ref="ocx:BaseCurve"/>
-					<xs:choice>
+					<xs:sequence>
 						<xs:element ref="ocx:Sweep"/>
 						<xs:element ref="ocx:SweepCurve"/>
-					</xs:choice>
+					</xs:sequence>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -2869,16 +2875,14 @@ gaseous state.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Type definition of an unbounded surface geometry of the parent element.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:choice>
-				<xs:annotation>
-					<xs:documentation>The unbounded surface of the parent object, defined by either the Surface itself OR indirectly defined by the plane of the GridRef reference also allowing to specify an offset from the plane OR a reference to a Surface object instance.</xs:documentation>
-				</xs:annotation>
-				<xs:element ref="ocx:Surface" maxOccurs="unbounded"/>
-				<xs:element ref="ocx:SurfaceRef"/>
-				<xs:element ref="ocx:GridRef" maxOccurs="unbounded"/>
-			</xs:choice>
-		</xs:sequence>
+		<xs:choice>
+			<xs:annotation>
+				<xs:documentation>The unbounded surface of the parent object, defined by either the Surface itself OR indirectly defined by the plane of the GridRef reference also allowing to specify an offset from the plane OR a reference to a Surface object instance.</xs:documentation>
+			</xs:annotation>
+			<xs:element ref="ocx:Surface"/>
+			<xs:element ref="ocx:GridRef"/>
+			<xs:element ref="ocx:SurfaceRef"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:element name="SurfaceCollection" type="ocx:SurfaceCollection_T">
 		<xs:annotation>
@@ -2888,9 +2892,9 @@ gaseous state.</xs:documentation>
 	<xs:complexType name="SurfaceCollection_T">
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:Surface" minOccurs="0"/>
-				</xs:choice>
+				<xs:sequence>
+					<xs:element ref="ocx:Surface" maxOccurs="unbounded"/>
+				</xs:sequence>
 				<xs:attribute ref="ocx:GUIDRef"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -3010,7 +3014,7 @@ gaseous state.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Curve3D_T">
-				<xs:choice maxOccurs="3">
+				<xs:sequence>
 					<xs:element ref="ocx:Diameter">
 						<xs:annotation>
 							<xs:documentation>The circle diameter.</xs:documentation>
@@ -3026,7 +3030,7 @@ gaseous state.</xs:documentation>
 							<xs:documentation>The normal vector of the circle plane.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -3125,14 +3129,14 @@ gaseous state.</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>The geometry of a closed contour limiting a surface, represented by a set of trim curves or a closed curve primitive.</xs:documentation>
 		</xs:annotation>
-		<xs:choice>
-			<xs:choice>
+		<xs:sequence>
+			<xs:choice minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>One of the closed 3DCurve types.</xs:documentation>
 				</xs:annotation>
-				<xs:element ref="ocx:Ellipse3D" minOccurs="0"/>
-				<xs:element ref="ocx:CircumCircle3D" minOccurs="0"/>
-				<xs:element ref="ocx:Circle3D" minOccurs="0"/>
+				<xs:element ref="ocx:Ellipse3D"/>
+				<xs:element ref="ocx:CircumCircle3D"/>
+				<xs:element ref="ocx:Circle3D"/>
 			</xs:choice>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
@@ -3144,7 +3148,7 @@ gaseous state.</xs:documentation>
 				<xs:element ref="ocx:PolyLine3D"/>
 				<xs:element ref="ocx:NURBS3D"/>
 			</xs:choice>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="FreeEdgeCurve3D" type="ocx:FreeEdgeCurve3D_T">
 		<xs:annotation>
@@ -3379,12 +3383,12 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
-				<xs:choice maxOccurs="4">
+				<xs:sequence>
 					<xs:element ref="ocx:XRefPlanes"/>
 					<xs:element ref="ocx:YRefPlanes" minOccurs="0"/>
 					<xs:element ref="ocx:ZRefPlanes" minOccurs="0"/>
 					<xs:element ref="ocx:LocalCartesian" minOccurs="0"/>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute name="isGlobal" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
 						<xs:documentation>If set to true, the coordinate system is the global world coordinate frame with right-handed convention. This is the default.</xs:documentation>
@@ -3520,149 +3524,9 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:extension base="ocx:EntityBase_T"/>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ReferencePlanes">
-		<xs:annotation>
-			<xs:documentation>The collection of reference planes used to limit objects</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:ReferencePlanes_T"/>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="ReferencePlanes_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of the ReferencePlanes element</xs:documentation>
-		</xs:annotation>
-		<xs:choice maxOccurs="3"/>
-	</xs:complexType>
-	<xs:element name="XGrid" type="ocx:XGrid_T">
-		<xs:annotation>
-			<xs:documentation>The Vessel X coordinate system organised as a frame table or X-grid</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="XGrid_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of XGrid definition.</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:DistanceToAP"/>
-					<xs:element ref="ocx:XSpacingGroup" maxOccurs="unbounded"/>
-				</xs:sequence>
-				<xs:attribute name="isReversed" type="xs:boolean" default="false">
-					<xs:annotation>
-						<xs:documentation>true if the frame table is reversed with the origin at the fore of the vessel. The default is false.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="isMainSystem" type="xs:boolean" default="true">
-					<xs:annotation>
-						<xs:documentation>True if the FrameTable defines the main vessel grid. The default is true.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 	<xs:element name="DistanceToAP" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>The offset  of  frame zero (#0) from the After Perpendicular (AP). The default is zero offset (#0 is located at AP)</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="XSpacingGroup" type="ocx:GridSpacingSystem_T">
-		<xs:annotation>
-			<xs:documentation>The definition of a frame spacing group for a sequence of frame positions with equal spacing</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="YGrid">
-		<xs:annotation>
-			<xs:documentation>The definition of the vessel Y grid system</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:YGrid_T"/>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="YGrid_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of YGrid</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:YSpacingGroup" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:element name="ZGrid">
-		<xs:annotation>
-			<xs:documentation>The definition of the vessel Z grid system</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:ZGrid_T"/>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="ZGrid_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of ZGrid</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:sequence>
-					<xs:element ref="ocx:ZSpacingGroup" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:element name="YSpacingGroup" type="ocx:GridSpacingSystem_T">
-		<xs:annotation>
-			<xs:documentation>The definition of a grid spacing group for a sequence of grid positions with equal spacing</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="ZSpacingGroup" type="ocx:GridSpacingSystem_T">
-		<xs:annotation>
-			<xs:documentation>The definition of a grid spacing group for a sequence of grid positions with equal spacing</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="GridSpacingSystem_T">
-		<xs:annotation>
-			<xs:documentation>The type definition of the grid system</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:GridPosition">
-						<xs:annotation>
-							<xs:documentation>The location of the first grid position in the spacing group.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:Spacing"/>
-				</xs:choice>
-				<xs:attribute name="firstGridNumber" type="xs:integer" use="required">
-					<xs:annotation>
-						<xs:documentation>The first grid number in this group</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="count" type="xs:integer" use="required">
-					<xs:annotation>
-						<xs:documentation>Number of repeated grid spacings</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:element name="GridPosition" type="ocx:Quantity_T">
-		<xs:annotation>
-			<xs:documentation>The position of the first grid in the spacing group along the grid axis.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="Spacing" type="ocx:Quantity_T">
-		<xs:annotation>
-			<xs:documentation>The grid spacing of the spacing group</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<!-- ===================================================  -->
@@ -3730,7 +3594,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 	</xs:element>
 	<xs:element name="Point3D" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>Compact definition of  a point in 3D space composed of  a lsequence of thre double values representing X, Y and Z coordinate values all of same unit given by the unit ID.</xs:documentation>
+			<xs:documentation>Compact definition of  a point in 3D space composed of  a sequence of three double values representing X, Y and Z coordinate values all of the same unit given by the unit ID.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Point3D_T">
@@ -3777,10 +3641,10 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>The type definition of the ContourBounds</xs:documentation>
 		</xs:annotation>
-		<xs:choice minOccurs="2" maxOccurs="2">
+		<xs:sequence>
 			<xs:element ref="ocx:ContourStart"/>
 			<xs:element ref="ocx:ContourEnd"/>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ContourStart" type="ocx:Point3D_T">
 		<xs:annotation>
@@ -4302,23 +4166,23 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:choice maxOccurs="unbounded">
-					<xs:element ref="ocx:MaterialCatalogue">
+				<xs:sequence maxOccurs="3">
+					<xs:element ref="ocx:MaterialCatalogue" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Catalogue of material types and their properties.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:XSectionCatalogue">
+					<xs:element ref="ocx:XSectionCatalogue" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Catalogue of section types and their properties.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:HoleShapeCatalogue">
+					<xs:element ref="ocx:HoleShapeCatalogue" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Catalogue of 2D hole shapes.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -4365,7 +4229,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 		<xs:annotation>
 			<xs:documentation>Type definition of the  main vessel particulars required by the Society.</xs:documentation>
 		</xs:annotation>
-		<xs:choice minOccurs="8" maxOccurs="unbounded">
+		<xs:sequence>
 			<xs:element ref="ocx:Lpp"/>
 			<xs:element ref="ocx:RuleLength"/>
 			<xs:element ref="ocx:BlockCoefficient"/>
@@ -4374,7 +4238,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:MouldedDepth"/>
 			<xs:element ref="ocx:ScantlingDraught"/>
 			<xs:element ref="ocx:DesignSpeed"/>
-			<xs:element ref="ocx:FreeboardLength" minOccurs="0"/>
+			<xs:element ref="ocx:FreeboardLength"/>
 			<xs:element ref="ocx:NormalBallastDraught" minOccurs="0"/>
 			<xs:element ref="ocx:HeavyBallastDraught" minOccurs="0"/>
 			<xs:element ref="ocx:SlammingDraughtEmptyFP" minOccurs="0"/>
@@ -4388,7 +4252,7 @@ m=+n-1 knots where p is the polynomial basis degree and n is the number of contr
 			<xs:element ref="ocx:WaterPlaneArea" minOccurs="0"/>
 			<xs:element ref="ocx:ZPosDeckline" minOccurs="0"/>
 			<xs:element ref="ocx:SpeedFactor" minOccurs="0"/>
-		</xs:choice>
+		</xs:sequence>
 		<xs:attribute name="hasDeadweightLessThan" type="xs:boolean">
 			<xs:annotation>
 				<xs:documentation>The ship has dead-weight less than 50000 tonnes (boolean).</xs:documentation>
@@ -4486,7 +4350,7 @@ Type &apos;A&apos; ship is one which:
 	</xs:element>
 	<xs:complexType name="Hole2D_T">
 		<xs:annotation>
-			<xs:documentation>Type definition for a 2D hole shape defined either by a parametric hole or a curve contour.</xs:documentation>
+			<xs:documentation>Type definition for a 2D hole shape defined either by a choice of a parametric hole or a contour curve.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
@@ -4752,14 +4616,14 @@ Type &apos;A&apos; ship is one which:
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
-				<xs:choice maxOccurs="unbounded">
+				<xs:sequence>
 					<xs:element ref="ocx:Density"/>
 					<xs:element ref="ocx:YoungsModulus"/>
 					<xs:element ref="ocx:PoissonRatio"/>
 					<xs:element ref="ocx:YieldStress"/>
 					<xs:element ref="ocx:UltimateStress"/>
 					<xs:element ref="ocx:ThermalExpansionCoefficient" minOccurs="0"/>
-				</xs:choice>
+				</xs:sequence>
 				<xs:attribute ref="ocx:grade" use="required"/>
 				<xs:attribute ref="ocx:GUIDRef"/>
 			</xs:extension>
@@ -4782,23 +4646,26 @@ Type &apos;A&apos; ship is one which:
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:choice>
-					<xs:element ref="ocx:RectangularTube"/>
-					<xs:element ref="ocx:OctagonBar"/>
-					<xs:element ref="ocx:SquareBar"/>
-					<xs:element ref="ocx:BulbFlat"/>
-					<xs:element ref="ocx:FlatBar"/>
-					<xs:element ref="ocx:UBar"/>
-					<xs:element ref="ocx:IBar"/>
-					<xs:element ref="ocx:LBarOF"/>
-					<xs:element ref="ocx:ZBar"/>
-					<xs:element ref="ocx:RoundBar"/>
-					<xs:element ref="ocx:LBar"/>
-					<xs:element ref="ocx:TBar"/>
-					<xs:element ref="ocx:LBarOW"/>
-					<xs:element ref="ocx:HalfRoundBar"/>
-					<xs:element ref="ocx:HexagonBar"/>
-					<xs:element ref="ocx:Tube"/>
-					<xs:element ref="ocx:UserDefinedBarSection"/>
+					<xs:annotation>
+						<xs:documentation>A coice of bar type. Only one type can be chosen.</xs:documentation>
+					</xs:annotation>
+					<xs:element ref="ocx:RectangularTube" minOccurs="0"/>
+					<xs:element ref="ocx:OctagonBar" minOccurs="0"/>
+					<xs:element ref="ocx:SquareBar" minOccurs="0"/>
+					<xs:element ref="ocx:BulbFlat" minOccurs="0"/>
+					<xs:element ref="ocx:FlatBar" minOccurs="0"/>
+					<xs:element ref="ocx:UBar" minOccurs="0"/>
+					<xs:element ref="ocx:IBar" minOccurs="0"/>
+					<xs:element ref="ocx:LBarOF" minOccurs="0"/>
+					<xs:element ref="ocx:ZBar" minOccurs="0"/>
+					<xs:element ref="ocx:RoundBar" minOccurs="0"/>
+					<xs:element ref="ocx:LBar" minOccurs="0"/>
+					<xs:element ref="ocx:TBar" minOccurs="0"/>
+					<xs:element ref="ocx:LBarOW" minOccurs="0"/>
+					<xs:element ref="ocx:HalfRoundBar" minOccurs="0"/>
+					<xs:element ref="ocx:HexagonBar" minOccurs="0"/>
+					<xs:element ref="ocx:Tube" minOccurs="0"/>
+					<xs:element ref="ocx:UserDefinedBarSection" minOccurs="0"/>
 				</xs:choice>
 				<xs:attributeGroup ref="ocx:barSectionAttributes"/>
 				<xs:attribute ref="ocx:GUIDRef"/>
@@ -5203,14 +5070,14 @@ Type &apos;A&apos; ship is one which:
 		<xs:annotation>
 			<xs:documentation>Type definition of the main vessel data including Class Notation required by the Classification Society.</xs:documentation>
 		</xs:annotation>
-		<xs:choice maxOccurs="2">
+		<xs:sequence>
 			<xs:element ref="ocx:PrincipalParticulars">
 				<xs:annotation>
 					<xs:documentation>Information that specifies design and intended performance characteristics of the ship in accordance with classification society rules and statutory regulations (see ISO 10303-218, section 4.2.36).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:ClassNotation" minOccurs="0"/>
-		</xs:choice>
+		</xs:sequence>
 		<xs:attribute ref="ocx:newbuildingSociety" use="required"/>
 		<xs:attribute name="identification" type="xs:string" use="required">
 			<xs:annotation>
@@ -5286,10 +5153,10 @@ Type &apos;A&apos; ship is one which:
 		<xs:annotation>
 			<xs:documentation>The information pertinent to the tonnage of the ship.</xs:documentation>
 		</xs:annotation>
-		<xs:choice>
+		<xs:all>
 			<xs:element ref="ocx:Tonnage"/>
 			<xs:element ref="ocx:DeadWeight"/>
-		</xs:choice>
+		</xs:all>
 	</xs:complexType>
 	<xs:element name="BuilderInformation" type="ocx:BuilderInformation_T">
 		<xs:annotation>
@@ -5903,9 +5770,9 @@ Type &apos;A&apos; ship is one which:
 		<xs:complexType>
 			<xs:complexContent>
 				<xs:restriction base="ocx:Point3DList_T">
-					<xs:choice>
+					<xs:sequence>
 						<xs:element ref="ocx:Point3D" minOccurs="3" maxOccurs="3"/>
-					</xs:choice>
+					</xs:sequence>
 				</xs:restriction>
 			</xs:complexContent>
 		</xs:complexType>

@@ -1,11 +1,19 @@
 # OCX_Schema: Changelog
 
-## 3.0.0b5 2023.12.05
+## 3.0.0b6 - 2024.01.09
+
+Bump to 3.0.0b6
+
+### Issues
+1. [#72 Cardinality of elements and xs:choice](https://github.com/OCXStandard/OCX_Schema/issues/72)
+
+
+## 3.0.0b5 - 2023.12.05
 
 Bump to 3.0.0b5
 
 ### Issues
-1. [#Remove license boilerplate](https://github.com/OCXStandard/OCX_Schema/issues/73)
+1. [#73 Remove license boilerplate](https://github.com/OCXStandard/OCX_Schema/issues/73)
 
 ## 3.0.0b4 2023.11.10
 
@@ -15,7 +23,7 @@ Bump to 3.0.0b4
 1. [#70 Typo in Point3D](https://github.com/OCXStandard/OCX_Schema/issues/70)
 
 
-## 3.0.0b3 2023.10.26
+## 3.0.0b3 - 2023.10.26
 
 Bump to 3.0.0b3
 
@@ -24,7 +32,7 @@ Bump to 3.0.0b3
 2. [#63 Cleanup CoordinateSystem](https://github.com/OCXStandard/OCX_Schema/issues/63)
 2. [#64 Cleanup FeatureCope](https://github.com/OCXStandard/OCX_Schema/issues/64)
 
-## 3.0.0b0 2023.09.22
+## 3.0.0b0 - 2023.09.22
 ### Changed
 Bumped to schema version 3.0.0b0
 
@@ -32,7 +40,7 @@ Bumped to schema version 3.0.0b0
 1. [#56 Remove SectionRef from EndCutEnd](https://github.com/OCXStandard/OCX_Schema/issues/56)
 2. [#58 Remove unused substitution groups](https://github.com/OCXStandard/OCX_Schema/issues/58)
 
-## 3.0.0b0 2023.09.20
+## 3.0.0b0 - 2023.09.20
 
 ### Issues
 1. [#49 ReferencePlanes & FrameTable: Revert changes in Issue #36](https://github.com/OCXStandard/OCX_Schema/issues/49)
@@ -42,7 +50,7 @@ Bumped to schema version 3.0.0b0
 
 
 
-## 3.0.0a2 2023.09.08
+## 3.0.0a2 - 2023.09.08
 
 ### Issues
 1. [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
@@ -51,7 +59,7 @@ Bumped to schema version 3.0.0b0
 4. [#35 Remove the duplicate trace line definition on the Stiffener](https://github.com/OCXStandard/OCX_Schema/issues/35)
 5. [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/8)
 
-## 3.0.0a1 2023.08.28
+## 3.0.0a1 - 2023.08.28
 
 ### Issues
 1. [#42 Fix bug in ```Hole2D```](https://github.com/OCXStandard/OCX_Schema/issues/42)
@@ -59,7 +67,7 @@ Bumped to schema version 3.0.0b0
 3. [#38 Broken link in ```ShipDesignation```](https://github.com/OCXStandard/OCX_Schema/issues/38)
 
 
-## 3.0.0a0 2023.07.10
+## 3.0.0a0 - 2023.07.10
 
 ### Issues
 

@@ -2,7 +2,7 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SOURCE = ./ocx
-CONDA_ENV = ocx_schema
+CONDA_ENV = ocx
 # PS replacements for sh
 RM = 'del -Confirmed False'
 

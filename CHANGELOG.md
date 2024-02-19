@@ -1,89 +1,128 @@
 # OCX_Schema: Changelog
 
-## 3.0.0b6 - 2024.01.09
+All notable changes to the OCX schema will be documented in this file.
 
-Bump to 3.0.0b6
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to the Python [PEP 440 versioning recommendations](https://peps.python.org/pep-0440/).
 
-### Issues
+### Types of changes
+* ``Added`` for new features.
+* ``Changed`` for changes in existing functionality.
+* ``Deprecated`` for soon-to-be removed features.
+* ``Removed`` for now removed features.
+* ``Fixed`` for any bug fixes.
+* ``Security`` in case of vulnerabilities.
+
+## [3.0.0rc1] - 2024.02.22
+
+## [3.0.0b7] - 2024.02.16
+
+Bump to pre-release 3.0.0b7
+### Fixed
+* [Typo in XRefPlanes #69](https://github.com/OCXStandard/OCX_Schema/issues/69)
+
+### Changed
+* [Move Area from Surface to Plate #87](https://github.com/OCXStandard/OCX_Schema/issues/87)
+* [Change serialization of Vector3 #86](https://github.com/OCXStandard/OCX_Schema/issues/86)
+* [Cardinalities of LimitedBy #79](https://github.com/OCXStandard/OCX_Schema/issues/79)
+* [Naming duplicate between the OCX schema nad UnitsML schema: the Length type #78](https://github.com/OCXStandard/OCX_Schema/issues/78)
+
+### Removed
+* [#76 OcxItemPtr can be used in replacement for specific reference types](https://github.com/OCXStandard/OCX_Schema/issues/76)
+* [Remove InnerContour from Plate #96](https://github.com/OCXStandard/OCX_Schema/issues/96)
+
+### Added
+*[Add a Generic Key Value Concept #12](https://github.com/OCXStandard/OCX_Schema/issues/12)
+
+## [3.0.0b6] - 2024.01.09
+Release tag [v3.0.0b6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0b6)
+
+Bump to pre-release 3.0.0b6
+
+### Changed
 1. [#72 Cardinality of elements and xs:choice](https://github.com/OCXStandard/OCX_Schema/issues/72)
 
 
-## 3.0.0b5 - 2023.12.05
+## [3.0.0b5] - 2023.12.05
 
-Bump to 3.0.0b5
+Bump to pre-release 3.0.0b5
 
-### Issues
-1. [#73 Remove license boilerplate](https://github.com/OCXStandard/OCX_Schema/issues/73)
+### Removed
+Release tag [v3.0.0b5](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0b5)
 
-## 3.0.0b4 2023.11.10
+* [#73 Remove license boilerplate](https://github.com/OCXStandard/OCX_Schema/issues/73)
 
-Bump to 3.0.0b4
+## [3.0.0b4] 2023.11.10
+Release tag [v3.0.0b4](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0b4)
 
-### Issues
-1. [#70 Typo in Point3D](https://github.com/OCXStandard/OCX_Schema/issues/70)
+Bump to pre-release 3.0.0b4
 
 
-## 3.0.0b3 - 2023.10.26
+
+### Fixed
+* [#70 Typo in Point3D](https://github.com/OCXStandard/OCX_Schema/issues/70)
+
+
+## [3.0.0b3] - 2023.10.26
 
 Bump to 3.0.0b3
 
-### Issues
-1. [#60 Minor schema fixes](https://github.com/OCXStandard/OCX_Schema/issues/60)
-2. [#63 Cleanup CoordinateSystem](https://github.com/OCXStandard/OCX_Schema/issues/63)
-2. [#64 Cleanup FeatureCope](https://github.com/OCXStandard/OCX_Schema/issues/64)
-
-## 3.0.0b0 - 2023.09.22
+### FIxed
+* [#60 Minor schema fixes](https://github.com/OCXStandard/OCX_Schema/issues/60)
 ### Changed
-Bumped to schema version 3.0.0b0
+* [#63 Cleanup CoordinateSystem](https://github.com/OCXStandard/OCX_Schema/issues/63)
+* [#64 Cleanup FeatureCope](https://github.com/OCXStandard/OCX_Schema/issues/64)
 
-### Issues
-1. [#56 Remove SectionRef from EndCutEnd](https://github.com/OCXStandard/OCX_Schema/issues/56)
-2. [#58 Remove unused substitution groups](https://github.com/OCXStandard/OCX_Schema/issues/58)
+## [3.0.0b2] - 2023.09.22
 
-## 3.0.0b0 - 2023.09.20
+Bumped to pre-release 3.0.0b2
 
-### Issues
-1. [#49 ReferencePlanes & FrameTable: Revert changes in Issue #36](https://github.com/OCXStandard/OCX_Schema/issues/49)
-2. [#50 Remove WebContour and FlangeContour from the schema](https://github.com/OCXStandard/OCX_Schema/issues/50)
-3. [#51 LimitedBy BoundingBox: Use the contour start and end points instead](https://github.com/OCXStandard/OCX_Schema/issues/51)
-4. [#35 Remove the duplicate trace line definition on the Stiffener and Seam](https://github.com/OCXStandard/OCX_Schema/issues/35)
+### Removed
+ * [#56 Remove SectionRef from EndCutEnd](https://github.com/OCXStandard/OCX_Schema/issues/56)
+ * [#58 Remove unused substitution groups](https://github.com/OCXStandard/OCX_Schema/issues/58)
 
-
-
-## 3.0.0a2 - 2023.09.08
-
-### Issues
-1. [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
-2. [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
-3. [#36 Resolve naming confusion of FrameTables](https://github.com/OCXStandard/OCX_Schema/issues/36)
-4. [#35 Remove the duplicate trace line definition on the Stiffener](https://github.com/OCXStandard/OCX_Schema/issues/35)
-5. [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/8)
-
-## 3.0.0a1 - 2023.08.28
-
-### Issues
-1. [#42 Fix bug in ```Hole2D```](https://github.com/OCXStandard/OCX_Schema/issues/42)
-2. [#20 Compact representation of ```Point3D```](https://github.com/OCXStandard/OCX_Schema/issues/20)
-3. [#38 Broken link in ```ShipDesignation```](https://github.com/OCXStandard/OCX_Schema/issues/38)
+## [3.0.0b0] - 2023.09.20
+Bumped to pre-release 3.0.0b0
+### Changed
+* [#49 ReferencePlanes & FrameTable: Revert changes in Issue #36](https://github.com/OCXStandard/OCX_Schema/issues/49)
+### Removed
+* [#35 Remove the duplicate trace line definition on the Stiffener and Seam](https://github.com/OCXStandard/OCX_Schema/issues/35)
+* [#50 Remove WebContour and FlangeContour from the schema](https://github.com/OCXStandard/OCX_Schema/issues/50)
+### Changed
+* [#51 LimitedBy BoundingBox: Use the contour start and end points instead](https://github.com/OCXStandard/OCX_Schema/issues/51)
 
 
-## 3.0.0a0 - 2023.07.10
-
-### Issues
-
-1. [#3 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/issues/3)
-2. [#4 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/pull/4)
-3. [#2 Add public license to schema](https://github.com/OCXStandard/OCX_Schema/pull/2)
-4. [#5 Assign a valid schema URL](https://github.com/OCXStandard/OCX_Schema/issues/5)
-5. [#7 Bulb profile definition](https://github.com/OCXStandard/OCX_Schema/issues/7)
-6. [#16 and #17 Fix schema typos](https://github.com/OCXStandard/OCX_Schema/issues/16)
-7. [#20 Add compact representation of points](https://github.com/OCXStandard/OCX_Schema/issues/20)
+## [3.0.0a2] - 2023.09.08
 
 ### Changed
+* [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
+* [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
+* [#36 Resolve naming confusion of FrameTables](https://github.com/OCXStandard/OCX_Schema/issues/36)
+* [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/8)
+### Removed
+* [#35 Remove the duplicate trace line definition on the Stiffener](https://github.com/OCXStandard/OCX_Schema/issues/35)
+
+
+## [3.0.0a1] - 2023.08.28
+
+### Fixed
+* [#42 Fix bug in ```Hole2D```](https://github.com/OCXStandard/OCX_Schema/issues/42)
+* [#38 Broken link in ```ShipDesignation```](https://github.com/OCXStandard/OCX_Schema/issues/38)
+### Changed
+* [#20 Compact representation of ```Point3D```](https://github.com/OCXStandard/OCX_Schema/issues/20)
+
+
+
+## [3.0.0a0] - 2023.07.10
+
+### Removed
   - Delete ``SchemaChange`` documentation as we have converted to this ``CHANGELOG.md``
   - Remove ``substitutionGroup`` from ``entityRefBase`` and ``BoundedRef``
-  - Add ``Hole2DContour`` to ``refType``
-  - Made ``FlangeWidth`` optional on ``BulbFlat`` element.  (oca) ([#7](https://github.com/OCXStandard/OCX_Schema/issues/7))
+### Fixed
+1. [#3 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/issues/3)
+2. [#4 Fix bug in ```CompartmentFace```](https://github.com/OCXStandard/OCX_Schema/pull/4)
+3. [#16 and #17 Fix schema typos](https://github.com/OCXStandard/OCX_Schema/issues/16)
+
   - Rename ``functionType`` enumerator: ``DECK: Weateher deck -> DECK: Weather deck``. (oca)  ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
   - Rename ``functionType`` enumerator: ``DECK: Tweeen deck -> DECK: Tween deck``.  (oca)  ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
   - Rename ``functionType`` enumerator: ``DECK: DECK: Weelhouse deck -> DECK: Wheelhouse deck``.  (oca)   ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
@@ -97,18 +136,25 @@ Bumped to schema version 3.0.0b0
   - Rename ``gaseousCargoType`` enumerator: ``liquified petroleum gas -> liquefied petroleum gas``.  (oca)  ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
   - Rename ``itemRef`` enumerator: ``OccurenceGroup -> OccurrenceGroup``.  (oca)   ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
 ### Added
+1. [#2 Add public license to schema](https://github.com/OCXStandard/OCX_Schema/pull/2)
+2. [#5 Assign a valid schema URL](https://github.com/OCXStandard/OCX_Schema/issues/5)
+  - Add ``Hole2DContour`` to ``refType``
   - Include boilerplate Apache 2.0 license information to the ``Header`` attribute: ``license``.  (oca)  
-### Fixed
+### Changed
+1. [#7 Bulb profile definition](https://github.com/OCXStandard/OCX_Schema/issues/7)
+2. [#20 Add compact representation of points](https://github.com/OCXStandard/OCX_Schema/issues/20)
+  - Made ``FlangeWidth`` optional on ``BulbFlat`` element.  (oca) ([#7](https://github.com/OCXStandard/OCX_Schema/issues/7))
 
-  - Several typos in the schema annotation strings.  (oca) ([#16](https://github.com/OCXStandard/OCX_Schema/issues/16))
+## [2.8.6_fix] - 2022-10-06 
+Intermediate version.
 
-## 2.8.6_fix - 2022-10-06 
 Release tag: [v2.8.6_fix](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.8.6_fix)
 
 
 ### Changed
   - Added the ``UnboundedGeometry`` tag to ``CompartmentFace``.  (oca)  ([#3](https://github.com/OCXStandard/OCX_Schema/issues/3))
-## 2.8.6 - 2021-06-10
+## [2.8.6] - 2021-06-10
+Bumped to version v2.8.6
 Release tag: [v2.8.6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.8.6)
 
 ### Added

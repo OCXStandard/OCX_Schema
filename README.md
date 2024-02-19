@@ -23,7 +23,7 @@ Follow [the recipe on the Wiki](https://github.com/OCXStandard/OCX_Schema/wiki) 
 
 
 ## Schema versioning
-The UnitsML schema is following the Python [PEP 440 versioning recommendations](https://peps.python.org/pep-0440/).
+The OCX schema is following the Python [PEP 440 versioning recommendations](https://peps.python.org/pep-0440/).
 
 Following PEP 440, the canonical public version identifiers MUST comply with the following scheme:
 

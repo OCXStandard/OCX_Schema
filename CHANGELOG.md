@@ -13,9 +13,9 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
-## [3.0.0rc1] - 2024.02.22
 
 ## [3.0.0b7] - 2024.02.16
+Release tag: [v3.0.0b7](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0b7)
 
 Bump to pre-release 3.0.0b7
 ### Fixed

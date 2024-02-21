@@ -20,7 +20,7 @@ python = "^3.11"
 xsdata = "*"
 packaging = "^23.1"
 tbump = "*"
-ocx_databinding = "*"
+ocx_databinding = "2.6.2"
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:

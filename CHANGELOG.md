@@ -13,6 +13,25 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
+## [3.0.0rc1] - 2024.02.28
+Bump to 3.0.0rc1
+
+Release tag: [v3.0.0rc1](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0rc1)
+
+Release candidate 1 for version 3.0.0
+
+### Fixed
+* [Add type to Occurrence #98](https://github.com/OCXStandard/OCX_Schema/issues/98)
+* [CellBoundary does not hav a refType #100](https://github.com/OCXStandard/OCX_Schema/issues/100)
+* [Make SurfaceCollection unbounded #102](https://github.com/OCXStandard/OCX_Schema/issues/102)
+* [Wrong cardinality on curves in CompositeCurve3D #103](https://github.com/OCXStandard/OCX_Schema/issues/103)
+* [Remove SlotContour from Panel #109](https://github.com/OCXStandard/OCX_Schema/issues/109)
+
+### Changed
+* [Modify TraceLine and OuterContour to reflect the change of CompositeCurve3D #105](https://github.com/OCXStandard/OCX_Schema/issues/105)
+* [Add SeamRef and HoleRef to Occurrence #107](https://github.com/OCXStandard/OCX_Schema/issues/107)
+* [Make catalogue items to have a mandatory name #111](https://github.com/OCXStandard/OCX_Schema/issues/111)
+* [Change UserDefinedBarSection to use CustomProperty #113](https://github.com/OCXStandard/OCX_Schema/issues/113)
 
 ## [3.0.0b7] - 2024.02.16
 Release tag: [v3.0.0b7](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0b7)

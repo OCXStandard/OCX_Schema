@@ -13,6 +13,22 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
+
+## [3.0.0rc2] - 2024.03.01
+Bump to 3.0.0rc2
+
+Release tag: [v3.0.0rc2](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0rc2)
+
+Release candidate 2 for version 3.0.0
+
+### Fixed
+
+* [Inclination is unary, but shall be unbounded #115](https://github.com/OCXStandard/OCX_Schema/issues/115)
+* [PlateCutBY has no type #116](https://github.com/OCXStandard/OCX_Schema/issues/116)
+* [Change FreeEdgeCurve3D to be a choise between a CompositCurve3D or a ClosedCurve #117](https://github.com/OCXStandard/OCX_Schema/issues/117)
+* [Fix wrong format on OCX date items and refType on EdgeCurveRef #120](https://github.com/OCXStandard/OCX_Schema/issues/120)
+
+
 ## [3.0.0rc1] - 2024.02.28
 Bump to 3.0.0rc1
 

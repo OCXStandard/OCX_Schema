@@ -14,6 +14,18 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.0.0rc3] - 2024.03.00
+Bump to 3.0.0rc3
+
+Release tag: [v3.0.0rc3](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0rc3)
+
+Release candidate #3 for version 3.0.0
+
+### Fixed
+ * [ExtrudedSurface require both SweeCurve AND Sweep #125](https://github.com/OCXStandard/OCX_Schema/issues/125)
+ * [ConnectedBracketRef_T missing its ref. #123](https://github.com/OCXStandard/OCX_Schema/issues/123)
+ * [Enum encoding error for classification society name #122](https://github.com/OCXStandard/OCX_Schema/issues/122)
+
 ## [3.0.0rc2] - 2024.03.01
 Bump to 3.0.0rc2
 

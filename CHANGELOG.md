@@ -14,7 +14,16 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
-## [3.0.0rc3] - 2024.03.00
+## [3.0.0rc3a] - 2024.03.11
+Bump to 3.0.0rc3a
+
+Release tag: [v3.0.0rc3a](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0rc3a)
+
+Release candidate #3 for version 3.0.0
+### Change
+* Downgrade databinding to Python 3.10
+
+## [3.0.0rc3] - 2024.03.08
 Bump to 3.0.0rc3
 
 Release tag: [v3.0.0rc3](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0rc3)

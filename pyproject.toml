@@ -16,11 +16,11 @@ readme = "DATABINDING.md"
 packages = [{include = "ocx"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 xsdata = "*"
 packaging = "^23.1"
 tbump = "*"
-ocx_databinding = "2.6.2"
+ocx_databinding = "^2.6"
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:

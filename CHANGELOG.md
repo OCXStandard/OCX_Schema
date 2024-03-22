@@ -14,6 +14,20 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+
+## [3.0.0rc5] - 2024.03.22
+Bump to 3.0.0rc35
+
+Release tag: [v3.0.0rc5](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.0.0rc5)
+
+Release candidate for version 3.0.0
+
+### Change
+* [Positions #130](https://github.com/OCXStandard/OCX_Schema/issues/130)
+* [Get rid of OpenCurve/ClosedCurve #129](https://github.com/OCXStandard/OCX_Schema/issues/129)
+* [Simplify ocx:NURBS3D's and ocx:NURBSSurface control point representation #128](https://github.com/OCXStandard/OCX_Schema/issues/128)
+
+
 ## [3.0.0rc4] - 2024.03.11
 Bump to 3.0.0rc34
 

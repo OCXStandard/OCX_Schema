@@ -7,7 +7,6 @@ CONDA_ENV = ocx
 RM = 'del -Confirmed False'
 
 PACKAGE := ocx
-MODULES := $(wildcard $(PACKAGE)/*.py)
 
 # CONDA TASKS ##################################################################
 # PROJECT setup using conda and powershell
@@ -66,8 +65,8 @@ doc: ## Build the html docs using Sphinx. For other Sphinx options, run make in 
 	@$(SPHINXBUILD)  "$(SOURCEDIR)" "$(BUILDDIR)/$(SPHINXOPTS)" -b "$(SPHINXOPTS)"
 
 
-publish: ## Publishe the dist to pypi
-	@poetry publish  --username=__token__ --password=pypi-<copy token here>
+publish: ## Publish the dist to pypi
+	@poetry publish  --username=__token__ --password=<TOKEN>>
 
 # HELP ########################################################################
 

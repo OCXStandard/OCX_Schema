@@ -1,4 +1,4 @@
-name: ocx-schema
+name: ocx
 channels:
   - conda-forge
   - msys2 # for m2-grep
@@ -14,5 +14,5 @@ dependencies:
   - m2-grep # Grep for windows. For Makefile sh
   - m2-gawk # awk for windows. for Makefile sh
   - pip:
-      - xsdata[cli,lxml, soap]==23.8  # xsdata with all dependencies
-      - twine
+      - xsdata[cli,lxml, soap]  # xsdata with all dependencies
+      - ocx_databinding

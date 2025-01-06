@@ -15,8 +15,23 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 
 ## [3.1.0rc1] - 2025.01.03
+### Schema release candidate
+
+Bump to 3.1.0rc1
+
+Release tag: [v3.1.0rc1](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.01.0rc1)
+
+
 ### Changed
-*[compartmentPurpose is missing purposes](https://github.com/OCXStandard/OCX_Schema/issues/147)
+* [compartmentPurpose is missing purposes #147](https://github.com/OCXStandard/OCX_Schema/issues/147)
+* [Add a boolean to RefPlane to say if it is part of the vessel display grid #160](https://github.com/OCXStandard/OCX_Schema/issues/160)
+* [HalfRoundBar schema is inconsistent with respect to the attributes "Height" and "Width" #157](https://github.com/OCXStandard/OCX_Schema/issues/157)
+* [EdgeReinforcement on edges defined by GridRef bounds are not supported in schema 3.0.0/3.0.1 #156](https://github.com/OCXStandard/OCX_Schema/issues/156)
+* [Consistancy of GUIDRef/id between reference and referenced #154](https://github.com/OCXStandard/OCX_Schema/issues/154)
+
+### Fixed
+* [Add Hole Curve Reference for EdgeReinforcements #145](https://github.com/OCXStandard/OCX_Schema/issues/145)
+* [Documentation of EnumeratedRootUnit:prefix is wrong #141](https://github.com/OCXStandard/OCX_Schema/issues/141)
 
 ## [3.0.1] - 2024.06.20
 Bump to 3.0.1

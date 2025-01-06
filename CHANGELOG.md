@@ -14,6 +14,25 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.1.0rc1] - 2025.01.03
+### Schema release candidate
+
+Bump to 3.1.0rc1
+
+Release tag: [v3.1.0rc1](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.01.0rc1)
+
+
+### Changed
+* [compartmentPurpose is missing purposes #147](https://github.com/OCXStandard/OCX_Schema/issues/147)
+* [Add a boolean to RefPlane to say if it is part of the vessel display grid #160](https://github.com/OCXStandard/OCX_Schema/issues/160)
+* [HalfRoundBar schema is inconsistent with respect to the attributes "Height" and "Width" #157](https://github.com/OCXStandard/OCX_Schema/issues/157)
+* [EdgeReinforcement on edges defined by GridRef bounds are not supported in schema 3.0.0/3.0.1 #156](https://github.com/OCXStandard/OCX_Schema/issues/156)
+* [Consistancy of GUIDRef/id between reference and referenced #154](https://github.com/OCXStandard/OCX_Schema/issues/154)
+
+### Fixed
+* [Add Hole Curve Reference for EdgeReinforcements #145](https://github.com/OCXStandard/OCX_Schema/issues/145)
+* [Documentation of EnumeratedRootUnit:prefix is wrong #141](https://github.com/OCXStandard/OCX_Schema/issues/141)
+
 ## [3.0.1] - 2024.06.20
 Bump to 3.0.1
 
@@ -21,7 +40,7 @@ Release tag: [v3.0.1](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.
 
 Schema release version
 
-### Change
+### Changed
 * [Wrong cardinality on PlateCutBy #148](https://github.com/OCXStandard/OCX_Schema/issues/148)
 
 Committed missing changes in previous commits:
@@ -55,7 +74,7 @@ Release tag: [v3.0.0rc7](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 
 Release candidate for version 3.0.0
 
-### Change
+### Changed
 * [Add type to Occurrence and OccurrenceGroup attribute 'type' #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
 
 
@@ -66,7 +85,7 @@ Release tag: [v3.0.0rc6](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 
 Release candidate for version 3.0.0
 
-### Change
+### Changed
 * [Add Occurrence attribute id, nam and type #133](https://github.com/OCXStandard/OCX_Schema/issues/133)
 
 
@@ -77,7 +96,7 @@ Release tag: [v3.0.0rc5](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 
 Release candidate for version 3.0.0
 
-### Change
+### Changed
 * [Positions #130](https://github.com/OCXStandard/OCX_Schema/issues/130)
 * [Get rid of OpenCurve/ClosedCurve #129](https://github.com/OCXStandard/OCX_Schema/issues/129)
 * [Simplify ocx:NURBS3D's and ocx:NURBSSurface control point representation #128](https://github.com/OCXStandard/OCX_Schema/issues/128)
@@ -90,7 +109,7 @@ Release tag: [v3.0.0rc4](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 
 Release candidate #3 for version 3.0.0
 
-### Change
+### Changed
 * Downgrade databinding to Python 3.10
 
 ## [3.0.0rc3] - 2024.03.08

@@ -6,6 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+# ToDo: Add a github workflow to trigger build and deployment of the ocx-validator: https://medium.com/hostspaceng/triggering-workflows-in-another-repository-with-github-actions-4f581f8e0ceb
 
 name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 

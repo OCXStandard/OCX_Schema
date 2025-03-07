@@ -13,6 +13,17 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
+## [3.1.0rc4] - 2025.03.07
+### Schema release candidate
+
+Bump to 3.1.0rc4
+
+Release tag: [v3.1.0rc4](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.01.0rc4)
+
+
+### Changed
+* [Error in VesselRef and StiffenerRef: Missing mandatory GUIDRef #168](https://github.com/OCXStandard/OCX_Schema/issues/168)
+
 
 ## [3.1.0rc3] - 2025.01.16
 ### Schema release candidate

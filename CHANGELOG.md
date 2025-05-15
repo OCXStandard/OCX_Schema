@@ -13,6 +13,14 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
+
+
+
+## [3.1.0] - 2025.05.15
+
+Bump to 3.1.0
+Release tag: [v3.1.0](https://github.com/OCXStandard/OCX_Schema/releases/tag/v3.1.0)
+
 ## [3.1.0rc4] - 2025.03.07
 ### Schema release candidate
 

@@ -4,10 +4,10 @@
     Website: http://unitsml.nist.gov
     Version History: http://unitsml.nist.gov/Schema/schema_changes.txt
 -->
-<xsd:schema xmlns="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.9.18">
+<xsd:schema xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.9.18">
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<!--=== Root-Node of an UnitsML document ===-->
-	<xsd:element name="UnitsML" type="UnitsMLType">
+	<xsd:element name="UnitsML" type="unitsml:UnitsMLType">
 		<xsd:annotation>
 			<xsd:documentation>Container for UnitsML units, quantities, and prefixes.</xsd:documentation>
 		</xsd:annotation>
@@ -17,84 +17,84 @@
 			<xsd:documentation>ComplexType for the root element of an UnitsML document.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="UnitSet" minOccurs="0"/>
-			<xsd:element ref="DimensionSet" minOccurs="0"/>
+			<xsd:element ref="unitsml:UnitSet" minOccurs="0"/>
+			<xsd:element ref="unitsml:DimensionSet" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<!--=== Global document elements ===-->
 	<!--     === Unit elements ===-->
-	<xsd:element name="UnitSet" type="UnitSetType">
+	<xsd:element name="UnitSet" type="unitsml:UnitSetType">
 		<xsd:annotation>
 			<xsd:documentation>Container for units. Use in UnitsML container or directly incorporate into a host schema.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="Unit" type="UnitType">
+	<xsd:element name="Unit" type="unitsml:UnitType">
 		<xsd:annotation>
 			<xsd:documentation>Element for describing units. Use in containers UnitSet or directly incorporate into a host schema.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="UnitName" type="NameType">
+	<xsd:element name="UnitName" type="unitsml:NameType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the unit name.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="UnitSymbol" type="SymbolType">
+	<xsd:element name="UnitSymbol" type="unitsml:SymbolType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing various unit symbols.  Examples include Aring (ASCII), Å (HTML).</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="RootUnits" type="RootUnitsType">
+	<xsd:element name="RootUnits" type="unitsml:RootUnitsType">
 		<xsd:annotation>
 			<xsd:documentation>Container for defining derived units in terms of their root units. This allows a precise definition of a wide range of units. The goal is to improve interoperability among applications and databases which use derived units based on commonly encountered root units.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="EnumeratedRootUnit" type="EnumeratedRootUnitType">
+	<xsd:element name="EnumeratedRootUnit" type="unitsml:EnumeratedRootUnitType">
 		<xsd:annotation>
 			<xsd:documentation>Element for a root unit (from an extensive enumerated list) allowing an optional prefix and power. E.g., mm^2</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<!--     === Dimension elements ===-->
-	<xsd:element name="DimensionSet" type="DimensionSetType">
+	<xsd:element name="DimensionSet" type="unitsml:DimensionSetType">
 		<xsd:annotation>
 			<xsd:documentation>Container for dimensions.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="Dimension" type="DimensionType">
+	<xsd:element name="Dimension" type="unitsml:DimensionType">
 		<xsd:annotation>
 			<xsd:documentation>Element to express the dimension of a unit or quantity in terms of the SI base quantities length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="Length" type="LengthType">
+	<xsd:element name="Length" type="unitsml:LengthType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity length.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="Mass" type="MassType">
+	<xsd:element name="Mass" type="unitsml:MassType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity mass.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="Time" type="TimeType">
+	<xsd:element name="Time" type="unitsml:TimeType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity time.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="ElectricCurrent" type="ElectricCurrentType">
+	<xsd:element name="ElectricCurrent" type="unitsml:ElectricCurrentType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity electric current.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="ThermodynamicTemperature" type="ThermodynamicTemperatureType">
+	<xsd:element name="ThermodynamicTemperature" type="unitsml:ThermodynamicTemperatureType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity thermodynamic temerature.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="AmountOfSubstance" type="AmountOfSubstanceType">
+	<xsd:element name="AmountOfSubstance" type="unitsml:AmountOfSubstanceType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity amount of substance.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:element name="LuminousIntensity" type="LuminousIntensityType">
+	<xsd:element name="LuminousIntensity" type="unitsml:LuminousIntensityType">
 		<xsd:annotation>
 			<xsd:documentation>Element containing the dimension of the quantity luminous intensity.</xsd:documentation>
 		</xsd:annotation>
@@ -306,7 +306,7 @@
 			<xsd:documentation>Type for the unit container.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="Unit" maxOccurs="unbounded">
+			<xsd:element ref="unitsml:Unit" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Element for describing units. Use in containers UnitSet or directly incorporate into a host schema.</xsd:documentation>
 				</xsd:annotation>
@@ -318,16 +318,16 @@
 			<xsd:documentation>Type for the unit.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="UnitName" maxOccurs="unbounded"/>
-			<xsd:element ref="UnitSymbol" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element ref="RootUnits" minOccurs="0">
+			<xsd:element ref="unitsml:UnitName" maxOccurs="unbounded"/>
+			<xsd:element ref="unitsml:UnitSymbol" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="unitsml:RootUnits" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Container for defining derived units in terms of their root units. This allows a precise definition of a wide range of units. The goal is to improve interoperability among applications and databases which use derived units based on commonly encountered root units.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute ref="xml:id" use="required"/>
-		<xsd:attributeGroup ref="dimensionURL">
+		<xsd:attributeGroup ref="unitsml:dimensionURL">
 			<xsd:annotation>
 				<xsd:documentation>Reference to a representation of the unit or quantity in terms of the 7 SI base dimensions.</xsd:documentation>
 			</xsd:annotation>
@@ -338,7 +338,7 @@
 			<xsd:documentation>Type for the container for defining derived units in terms of their root units. This allows a precise definition of a wide range of units. The goal is to improve interoperability among applications and databases which use derived units based on commonly encountered base units.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="EnumeratedRootUnit" minOccurs="0" maxOccurs="unbounded">
+			<xsd:element ref="unitsml:EnumeratedRootUnit" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Element for a root unit (from an extensive enumerated list) allowing an optional prefix and power. E.g., mm^2</xsd:documentation>
 				</xsd:annotation>
@@ -355,41 +355,181 @@
 			</xsd:annotation>
 			<xsd:simpleType>
 				<xsd:restriction base="xsd:token">
-					<xsd:enumeration value="meter"/>
-					<xsd:enumeration value="gram"/>
-					<xsd:enumeration value="second"/>
-					<xsd:enumeration value="ampere"/>
-					<xsd:enumeration value="kelvin"/>
-					<xsd:enumeration value="mole"/>
-					<xsd:enumeration value="candela"/>
-					<xsd:enumeration value="radian"/>
-					<xsd:enumeration value="steradian"/>
-					<xsd:enumeration value="hertz"/>
-					<xsd:enumeration value="newton"/>
-					<xsd:enumeration value="pascal"/>
-					<xsd:enumeration value="joule"/>
-					<xsd:enumeration value="watt"/>
-					<xsd:enumeration value="coulomb"/>
-					<xsd:enumeration value="volt"/>
-					<xsd:enumeration value="farad"/>
-					<xsd:enumeration value="ohm"/>
-					<xsd:enumeration value="siemens"/>
-					<xsd:enumeration value="weber"/>
-					<xsd:enumeration value="tesla"/>
-					<xsd:enumeration value="henry"/>
-					<xsd:enumeration value="degree_Celsius"/>
-					<xsd:enumeration value="lumen"/>
-					<xsd:enumeration value="lux"/>
-					<xsd:enumeration value="katal"/>
-					<xsd:enumeration value="becquerel"/>
-					<xsd:enumeration value="gray"/>
-					<xsd:enumeration value="sievert"/>
-					<xsd:enumeration value="minute"/>
-					<xsd:enumeration value="hour"/>
-					<xsd:enumeration value="day"/>
-					<xsd:enumeration value="arc_degree"/>
-					<xsd:enumeration value="arc_minute"/>
-					<xsd:enumeration value="arc_second"/>
+					<xsd:enumeration value="meter">
+						<xsd:annotation>
+							<xsd:documentation>The base unit of length in the International System of Units (SI).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="gram">
+						<xsd:annotation>
+							<xsd:documentation>The base unit of mass in the SI system, defined as one-thousandth of a kilogram.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="second">
+					<xsd:annotation>
+						<xsd:documentation>The base unit of time in the SI system.</xsd:documentation>
+					</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="ampere">
+						<xsd:annotation>
+							<xsd:documentation>The base unit of electric current in the SI system.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="kelvin">
+						<xsd:annotation>
+							<xsd:documentation>The base unit of thermodynamic temperature in the SI system.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="mole">
+						<xsd:annotation>
+							<xsd:documentation>The base unit of amount of substance in the SI system.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="candela">
+						<xsd:annotation>
+							<xsd:documentation>The base unit of luminous intensity in the SI system.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="radian">
+						<xsd:annotation>
+							<xsd:documentation>The derived SI unit of angular measure, equal to the angle subtended at the center of a circle by an arc whose length is equal to the circle’s radius.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="steradian">
+						<xsd:annotation>
+							<xsd:documentation>The SI unit of solid angle measure.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="hertz">
+						<xsd:annotation>
+							<xsd:documentation>The SI unit of frequency, defined as one cycle per second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="newton">
+						<xsd:annotation>
+							<xsd:documentation>The SI unit of force, defined as the force required to accelerate a one-kilogram mass by one meter per second squared.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="pascal">
+						<xsd:annotation>
+							<xsd:documentation>The SI unit of pressure, defined as one newton per square meter.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="joule">
+						<xsd:annotation>
+							<xsd:documentation>The SI unit of energy, defined as one newton-meter.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="watt">
+						<xsd:annotation>
+							<xsd:documentation>The SI unit of power, defined as one joule per second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="coulomb">
+						<xsd:annotation>
+							<xsd:documentation>The coulomb (C) is the SI unit of electric charge, defined as the amount of charge transported by a constant current of one ampere in one second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="volt">
+						<xsd:annotation>
+							<xsd:documentation>The volt (V) is the SI unit of electric potential and electromotive force, defined as the potential difference across a conductor when a current of one ampere dissipates one watt of power.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="farad">
+						<xsd:annotation>
+							<xsd:documentation>The farad (F) is the SI unit of electrical capacitance, defined as the ability of a capacitor to store one coulomb of charge with a potential difference of one volt.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="ohm">
+						<xsd:annotation>
+							<xsd:documentation>The ohm (Ω) is the SI unit of electrical resistance, defined as the resistance between two points of a conductor when a voltage of one volt produces a current of one ampere.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="siemens">
+						<xsd:annotation>
+							<xsd:documentation>The siemens (S) is the SI unit of electrical conductance, defined as the reciprocal of resistance in ohms.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="weber">
+						<xsd:annotation>
+							<xsd:documentation>The weber (Wb) is the SI unit of magnetic flux, defined as the flux that produces an electromotive force of one volt in a circuit with one turn when reduced to zero at a uniform rate in one second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="tesla">
+						<xsd:annotation>
+							<xsd:documentation>The tesla (T) is the SI unit of magnetic flux density, defined as one weber per square meter.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="henry">
+						<xsd:annotation>
+							<xsd:documentation>The henry (H) is the SI unit of inductance, defined as the inductance of a closed circuit in which an electromotive force of one volt is induced when the current changes at a rate of one ampere per second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="degree_Celsius">
+						<xsd:annotation>
+							<xsd:documentation>The degree Celsius (°C) is a unit of temperature, defined relative to the Kelvin scale, where 0°C corresponds to 273.15 K.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="lumen">
+						<xsd:annotation>
+							<xsd:documentation>The lumen (lm) is the SI unit of luminous flux, defined as the total quantity of visible light emitted by a source per unit time.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="lux">
+						<xsd:annotation>
+							<xsd:documentation>The lux (lx) is the SI unit of illuminance, defined as one lumen per square meter.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="katal">
+						<xsd:annotation>
+							<xsd:documentation>The katal (kat) is the SI unit of catalytic activity, defined as the amount of enzyme activity that converts one mole of substrate per second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="becquerel">
+						<xsd:annotation>
+							<xsd:documentation>The becquerel (Bq) is the SI unit of radioactivity, defined as one disintegration per second.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="gray">
+						<xsd:annotation>
+							<xsd:documentation>The gray (Gy) is the SI unit of absorbed radiation dose, defined as the absorption of one joule of radiation energy per kilogram of matter.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="sievert">
+						<xsd:annotation>
+							<xsd:documentation>The sievert (Sv) is the SI unit of equivalent radiation dose, used to measure the biological effects of radiation.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="minute">
+						<xsd:annotation>
+							<xsd:documentation>A minute (min) is a unit of time equal to 60 seconds.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="hour">
+						<xsd:annotation>
+							<xsd:documentation>An hour (h) is a unit of time equal to 60 minutes or 3600 seconds.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="day">
+						<xsd:annotation>
+							<xsd:documentation>A day (d) is a unit of time equal to 24 hours.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="arc_degree">
+						<xsd:annotation>
+							<xsd:documentation>An arc degree (°) is a unit of angular measurement, equal to 1/360th of a full rotation.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="arc_minute">
+						<xsd:annotation>
+							<xsd:documentation>An arc minute (′) is a unit of angular measurement, equal to 1/60th of a degree.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="arc_second">
+						<xsd:annotation>
+							<xsd:documentation>An arc second (″) is a unit of angular measurement, equal to 1/60th of an arc minute.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
 					<xsd:enumeration value="liter"/>
 					<xsd:enumeration value="metric_ton"/>
 					<xsd:enumeration value="electronvolt"/>
@@ -586,28 +726,86 @@
 					<xsd:enumeration value="shake"/>
 					<xsd:enumeration value="denier"/>
 					<xsd:enumeration value="tex"/>
-					<xsd:enumeration value="gon"/>
-					<xsd:enumeration value="nato_mil"/>
-					<xsd:enumeration value="pound_mole"/>
-					<xsd:enumeration value="ton_refrigeration"/>
-					<xsd:enumeration value="circular_mil"/>
-					<xsd:enumeration value="bel"/>
-					<xsd:enumeration value="neper"/>
-					<xsd:enumeration value="pH"/>
-					<xsd:enumeration value="petro_barrel"/>
-					<xsd:enumeration value="footlambert"/>
-					<xsd:enumeration value="footcandle"/>
-					<xsd:enumeration value="carat"/>
+					<xsd:enumeration value="denier">
+						<xsd:annotation>
+							<xsd:documentation>A unit of measure for the linear mass density of fibers, defined as the mass in grams per 9,000 meters of fiber.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="tex">
+						<xsd:annotation>
+							<xsd:documentation>A unit of measure for the linear mass density of fibers, defined as the mass in grams per 1,000 meters of fiber.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="gon">
+						<xsd:annotation>
+							<xsd:documentation>A unit of angular measure where one full rotation is divided into 400 gons, commonly used in surveying.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="nato_mil">
+						<xsd:annotation>
+							<xsd:documentation>A unit of angular measure used in military applications, where 1 NATO mil equals 1/6400 of a circle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="pound_mole">
+						<xsd:annotation>
+							<xsd:documentation>A unit of amount of substance in which the quantity is expressed in pounds rather than grams per mole.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="ton_refrigeration">
+						<xsd:annotation>
+							<xsd:documentation>A unit of power used in refrigeration and air conditioning, defined as the rate of heat transfer needed to freeze 1 short ton (2,000 lb) of water at 32°F in 24 hours.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="circular_mil">
+						<xsd:annotation>
+							<xsd:documentation>A unit of area used in electrical engineering to represent wire cross-sectional area, equal to the area of a circle with a diameter of one mil (1/1000 inch).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="bel">
+						<xsd:annotation>
+							<xsd:documentation>A logarithmic unit used to measure ratios, primarily in acoustics and electronics; 1 bel equals 10 decibels.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="neper">
+						<xsd:annotation>
+							<xsd:documentation>A logarithmic unit used to express ratios, mainly in signal processing and acoustics, based on natural logarithms.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="pH">
+						<xsd:annotation>
+							<xsd:documentation>A unitless measure of acidity or alkalinity of a solution, defined as the negative logarithm of the hydrogen ion concentration.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="petro_barrel">
+						<xsd:annotation>
+							<xsd:documentation>A unit of volume used for crude oil and petroleum products, equal to 42 US gallons (approximately 159 liters).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="footlambert">
+						<xsd:annotation>
+							<xsd:documentation>A unit of luminance, defined as 1/π candela per square foot.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="footcandle">
+						<xsd:annotation>
+							<xsd:documentation>A unit of illuminance, representing the amount of light that falls on a surface one foot away from a standard candle source.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="carat">
+						<xsd:annotation>
+							<xsd:documentation>A unit of mass used for gemstones, equivalent to 200 milligrams.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
 				</xsd:restriction>
 			</xsd:simpleType>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="sourceURL"/>
-		<xsd:attributeGroup ref="prefix">
+		<xsd:attributeGroup ref="unitsml:sourceURL"/>
+		<xsd:attributeGroup ref="unitsml:prefix">
 			<xsd:annotation>
 				<xsd:documentation>Prefix identifier; e.g., m, k, M, G. [Enumeration order is by prefix magnitude (Y to y) followed by binary prefixes.]</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attributeGroup>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<!--     === Dimension specific Types ===-->
 	<xsd:complexType name="DimensionSetType">
@@ -615,7 +813,7 @@
 			<xsd:documentation>Type for the dimension container.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="Dimension" maxOccurs="unbounded">
+			<xsd:element ref="unitsml:Dimension" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Element to express a unit or quantity in terms of the SI base quantities length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity.</xsd:documentation>
 				</xsd:annotation>
@@ -630,13 +828,13 @@
 			<xsd:annotation>
 				<xsd:documentation>This unbounded sequence allows any order of any number of elements; e.g., L^1 · L^-1.</xsd:documentation>
 			</xsd:annotation>
-			<xsd:element ref="Length" minOccurs="0"/>
-			<xsd:element ref="Mass" minOccurs="0"/>
-			<xsd:element ref="Time" minOccurs="0"/>
-			<xsd:element ref="ElectricCurrent" minOccurs="0"/>
-			<xsd:element ref="ThermodynamicTemperature" minOccurs="0"/>
-			<xsd:element ref="AmountOfSubstance" minOccurs="0"/>
-			<xsd:element ref="LuminousIntensity" minOccurs="0"/>
+			<xsd:element ref="unitsml:Length" minOccurs="0"/>
+			<xsd:element ref="unitsml:Mass" minOccurs="0"/>
+			<xsd:element ref="unitsml:Time" minOccurs="0"/>
+			<xsd:element ref="unitsml:ElectricCurrent" minOccurs="0"/>
+			<xsd:element ref="unitsml:ThermodynamicTemperature" minOccurs="0"/>
+			<xsd:element ref="unitsml:AmountOfSubstance" minOccurs="0"/>
+			<xsd:element ref="unitsml:LuminousIntensity" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute ref="xml:id" use="required"/>
 		<xsd:attribute name="dimensionless" type="xsd:boolean" use="optional" default="0">
@@ -654,7 +852,7 @@
 				<xsd:documentation>Symbol of the quantity length.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<xsd:complexType name="MassType">
 		<xsd:annotation>
@@ -665,7 +863,7 @@
 				<xsd:documentation>Symbol of the quantity mass.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<xsd:complexType name="TimeType">
 		<xsd:annotation>
@@ -676,7 +874,7 @@
 				<xsd:documentation>Symbol of the quantity time.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<xsd:complexType name="ElectricCurrentType">
 		<xsd:annotation>
@@ -687,7 +885,7 @@
 				<xsd:documentation>Symbol of the quantity electric current.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<xsd:complexType name="ThermodynamicTemperatureType">
 		<xsd:annotation>
@@ -698,7 +896,7 @@
 				<xsd:documentation>Symbol of the quantity thermodynamic temperature.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<xsd:complexType name="AmountOfSubstanceType">
 		<xsd:annotation>
@@ -709,7 +907,7 @@
 				<xsd:documentation>Symbol of the quantity amount of substance.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<xsd:complexType name="LuminousIntensityType">
 		<xsd:annotation>
@@ -720,7 +918,7 @@
 				<xsd:documentation>Symbol of the quantity luminous intensity.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="powerRational"/>
+		<xsd:attributeGroup ref="unitsml:powerRational"/>
 	</xsd:complexType>
 	<!--     === General Types ===-->
 	<xsd:complexType name="NameType">

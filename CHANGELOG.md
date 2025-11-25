@@ -17,7 +17,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 ## [3.2.rc1] - 2025.11.25
 
 ### Added
-* [Add Support renwal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
+* [Add Support renewal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
 
 
 ## [3.1.0] - 2025.05.15

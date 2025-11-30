@@ -4611,8 +4611,21 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			<xs:element ref="ocx:ScantlingDraught"/>
 			<xs:element ref="ocx:DesignSpeed"/>
 			<xs:element ref="ocx:FreeboardLength"/>
-			<xs:element ref="ocx:NormalBallastDraught" minOccurs="0"/>
-			<xs:element ref="ocx:HeavyBallastDraught" minOccurs="0"/>
+			<xs:element ref="ocx:NormalBallastDraught" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>is defined as the minimum design normal ballast draught amidships (measured in meters). At this draught, the strength requirements for the ship's structure are met. It represents the minimum draught of any ballast condition in the loading manual, and covers both departure and arrival conditions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:MinimumBallastDraught" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This represents the lowest draught in any ballast condition that is allowed by the loading manual, including both departure and arrival conditions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:HeavyBallastDraught" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This is the minimum design heavy ballast draught amidships, considered for ships with heavy ballast condition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="ocx:SlammingDraughtEmptyFP" minOccurs="0"/>
 			<xs:element ref="ocx:SlammingDraughtFullFP" minOccurs="0"/>
 			<xs:element ref="ocx:LengthOfWaterline" minOccurs="0"/>
@@ -6371,6 +6384,11 @@ and represents the full load condition. The scantling draught is to be not less 
 	<xs:element name="VoluntaryThicknessAddition" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>Voluntary thickness addition  is the thickness that is voluntarily added by the owner or builder as extra margin against corrosion wastage, beyond what is required by the applicable rules.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MinimumBallastDraught">
+		<xs:annotation>
+			<xs:documentation>is defined as the minimum design normal ballast draught amidships (measured in meters). At this draught, the strength requirements for the ship's structure are met. It represents the minimum draught of any ballast condition in the loading manual, and covers both departure and arrival conditions.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 </xs:schema>

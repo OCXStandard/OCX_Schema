@@ -1879,16 +1879,8 @@
 					<xs:documentation>The idealised moulded center of gravity of the structure part.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PhysicalDryWeight" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The physical or volume-based mass of the structure part.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PhysicalMouldedCenterOfGravity" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The physical or volume-based center of gravity of the structure part.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:PhysicalDryWeight" minOccurs="0"/>
+			<xs:element ref="ocx:PhysicalMouldedCenterOfGravity" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="CutBy" type="ocx:CutBy_T">
@@ -5116,26 +5108,10 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="LBarOF_T">
 		<xs:sequence>
-			<xs:element name="Height" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Profile height, measured along the web.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Width" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Profile width and web thickness.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="WebThickness" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Thickness of the web.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="FlangeThickness" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Thickness of the flange.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:Height"/>
+			<xs:element ref="ocx:Width"/>
+			<xs:element ref="ocx:WebThickness"/>
+			<xs:element ref="ocx:FlangeThickness"/>
 			<xs:element ref="ocx:Overshoot"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -5893,11 +5869,6 @@ NetAra*t*density = DryWeight</xs:documentation>
 			<xs:documentation>The length of the cope.  (The default is CopeLength=CopeRadius)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="DryWeight" type="ocx:Quantity_T">
-		<xs:annotation>
-			<xs:documentation>The total dry weight of the parent member.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="UpperRadius" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>The upper radius of an opening or a slot.</xs:documentation>
@@ -6354,11 +6325,29 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>Voluntary thickness addition  is the thickness that is voluntarily added by the owner or builder as extra margin against corrosion wastage, beyond what is required by the applicable rules.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="MinimumBallastDraught">
+	<xs:element name="MinimumBallastDraught" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>is defined as the minimum design normal ballast draught amidships (measured in meters). At this draught, the strength requirements for the ship's structure are met. It represents the minimum draught of any ballast condition in the loading manual, and covers both departure and arrival conditions.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="MouldedCenterOfGravity"/>
-	<xs:element name="MouldedDryWeight"/>
+	<xs:element name="MouldedCenterOfGravity" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation> The idealised moulded center of gravity of the structure part.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MouldedDryWeight" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The idealised moulded dry weight of the structure part.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PhysicalDryWeight" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation> The physical or mass center of gravity of the structure part</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PhysicalMouldedCenterOfGravity" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The physical or mass dry weight of the structure part.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>

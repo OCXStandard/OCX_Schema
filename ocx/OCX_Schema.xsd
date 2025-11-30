@@ -5210,7 +5210,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="RoundBar_T">
 		<xs:sequence>
-			<xs:element ref="ocx:Height">
+			<xs:element ref="ocx:Diameter">
 				<xs:annotation>
 					<xs:documentation>Profile diameter.</xs:documentation>
 				</xs:annotation>

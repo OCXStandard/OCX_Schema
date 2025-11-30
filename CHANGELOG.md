@@ -28,7 +28,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Change LBarOF local properties to reference global properties #189](https://github.com/OCXStandard/OCX_Schema/issues/189)
 * [Make FlangeDirection mandatory for Inclination #196](https://github.com/OCXStandard/OCX_Schema/issues/196)
 * [Make RectangularMickeyMouseEars  part of the ParametricHole2D substitution group #174](https://github.com/OCXStandard/OCX_Schema/issues/174)
-* [Change RectangularTube local properties to reference global properties #195](https://github.com/OCXStandard/OCX_Schema/issues/195)
+* [Change RoundBar Heght with Diameter #177](https://github.com/OCXStandard/OCX_Schema/issues/177)
 
 ### Removed
 * [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)

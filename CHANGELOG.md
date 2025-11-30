@@ -18,6 +18,10 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 ### Added
 * [Add Support renewal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
+* [add Density to BulkCargo #185](https://github.com/OCXStandard/OCX_Schema/issues/185)
+
+### Changed
+* [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
 
 
 ## [3.1.0] - 2025.05.15

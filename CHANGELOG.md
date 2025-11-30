@@ -26,6 +26,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
 * [Material grade aligned with IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7 #182](https://github.com/OCXStandard/OCX_Schema/issues/182)
 * [Change LBarOF local properties to reference global properties #189](https://github.com/OCXStandard/OCX_Schema/issues/189)
+* [Make FlangeDirection mandatory for Inclination #196](https://github.com/OCXStandard/OCX_Schema/issues/196)
 
 ### Removed
 * [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)

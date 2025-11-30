@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by Ole Christian Astrup (DNV AS) -->
 <!-- Copyright 2025 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)	Licensed under the Apache License, Version 2.0 (the "License"); You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0	.	Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.  -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V320rc1//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V320rc1//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
@@ -202,14 +203,14 @@
 			<xs:documentation>A globally unique ID referring to an entity in the authoring application. The sending application creates and holds the GUID. Used to establish a unique reference to an entity persistent  between applications.</xs:documentation>
 		</xs:annotation>
 	</xs:attribute>
-<xs:simpleType name="guid">
-	<xs:annotation>
-		<xs:documentation>The GUID of the entity referenced, in the form of a string containing 32 hex digits, typically formatted as 8-4-4-4-12 hex digits (e.g., 123e4567-e89b-12d3-a456-426614174000).</xs:documentation>
-	</xs:annotation>
-	<xs:restriction base="xs:string">
-		<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
-	</xs:restriction>
-</xs:simpleType>
+	<xs:simpleType name="guid">
+		<xs:annotation>
+			<xs:documentation>The GUID of the entity referenced, in the form of a string containing 32 hex digits, typically formatted as 8-4-4-4-12 hex digits (e.g., 123e4567-e89b-12d3-a456-426614174000).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<!-- ========================================================================================  -->
 	<!--OCX References-->
 	<!-- ========================================================================================  -->
@@ -2127,6 +2128,11 @@
 			<xs:documentation>Type definition of dry cargo properties, reference is made to ISO 10303-215:2004.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element ref="ocx:Density">
+				<xs:annotation>
+					<xs:documentation>The density of  ballast, bunker or dry cargo content.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="ocx:StowageFactor" minOccurs="0"/>
 			<xs:element ref="ocx:Permeability" minOccurs="0"/>
 			<xs:element ref="ocx:AngleOfRepose" minOccurs="0"/>

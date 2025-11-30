@@ -21,6 +21,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Add Density to BulkCargo #185](https://github.com/OCXStandard/OCX_Schema/issues/185)
 * [Add MinimumBallastDraught to PrincipalParticulars #184](https://github.com/OCXStandard/OCX_Schema/issues/184)
 * [Add optional volume properties for to MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+* [Add normal Ellipse to Hole2D catalogue and fix SuperElliptical #175](https://github.com/OCXStandard/OCX_Schema/issues/175)
 
 ### Changed
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
@@ -28,12 +29,15 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Change LBarOF local properties to reference global properties #189](https://github.com/OCXStandard/OCX_Schema/issues/189)
 * [Make FlangeDirection mandatory for Inclination #196](https://github.com/OCXStandard/OCX_Schema/issues/196)
 * [Make RectangularMickeyMouseEars  part of the ParametricHole2D substitution group #174](https://github.com/OCXStandard/OCX_Schema/issues/174)
-* [Change RoundBar Heght with Diameter #177](https://github.com/OCXStandard/OCX_Schema/issues/177)
+* [Change RoundBar Height with Diameter #177](https://github.com/OCXStandard/OCX_Schema/issues/177)
 
 ### Removed
 * [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 * [DryWeight has been replaced with MouldedDryWeight #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 * [CenterOfGravity has been replaced with MouldedCenterOfGravity #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+
+### Deprecated
+* [SuperElliptical will be removed from the schema in a future release and is replaced by Ellipse #175](https://github.com/OCXStandard/OCX_Schema/issues/175)
 
 ## [3.1.0] - 2025.05.15
 

@@ -4815,12 +4815,20 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:ParametricHole2D_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Height"/>
-					<xs:element ref="ocx:Width"/>
+					<xs:element ref="ocx:MajorDiameter">
+						<xs:annotation>
+							<xs:documentation>The ellipse major diameter. == 2a.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:MinorDiameter">
+						<xs:annotation>
+							<xs:documentation>The ellipse minor diameter  ==2b.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="exponent" type="xs:double" use="required">
+				<xs:attribute name="exponent" type="xs:double" use="optional" default="2.0">
 					<xs:annotation>
-						<xs:documentation>The exponent of the super ellipse equation (x/Height)**e + (y/Width)**e = 1. If e=2.5 the result is a super ellipse while e=2.0 results in a normal ellipse.</xs:documentation>
+						<xs:documentation>The exponent of the super ellipse equation. If e=2.5 the result is a super ellipse while e=2.0 results in a normal ellipse.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -6342,4 +6350,22 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>The physical or mass dry weight of the structure part.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:element name="Ellipse" type="ocx:Ellipse_T" substitutionGroup="ocx:ParametricHole2D">
+		<xs:annotation>
+			<xs:documentation>A super-elliptical hole. It can also describe a true ellipse.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Ellipse_T" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Type definition of a parametric Ellipse</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:ParametricHole2D_T">
+				<xs:sequence>
+					<xs:element ref="ocx:MajorDiameter"/>
+					<xs:element ref="ocx:MinorDiameter"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 </xs:schema>

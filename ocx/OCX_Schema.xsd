@@ -1168,7 +1168,11 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="ocx:WebDirection"/>
-			<xs:element ref="ocx:FlangeDirection" minOccurs="0"/>
+			<xs:element ref="ocx:FlangeDirection">
+				<xs:annotation>
+					<xs:documentation>Direction of the stiffener flange. allways required to determine the material side of symmetric profiles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="ocx:Position"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -4853,7 +4857,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="RectangularMickeyMouseEars" type="ocx:RectangularMickeyMouseEars_T">
+	<xs:element name="RectangularMickeyMouseEars" type="ocx:RectangularMickeyMouseEars_T" substitutionGroup="ocx:ParametricHole2D">
 		<xs:annotation>
 			<xs:documentation>A rectangular hole with corner radii in the form of Mickey Mouse ears.</xs:documentation>
 		</xs:annotation>

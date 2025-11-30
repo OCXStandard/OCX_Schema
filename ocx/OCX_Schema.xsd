@@ -5295,21 +5295,9 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 	</xs:element>
 	<xs:complexType name="RectangularTube_T">
 		<xs:sequence>
-			<xs:element name="Height" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Profile outer diameter.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Width" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Profile width.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Thickness" type="ocx:Quantity_T">
-				<xs:annotation>
-					<xs:documentation>Wall thickness.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:Height"/>
+			<xs:element ref="ocx:Width"/>
+			<xs:element ref="ocx:Thickness"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="UserDefinedBarSection" type="ocx:UserDefinedBarSection_T">

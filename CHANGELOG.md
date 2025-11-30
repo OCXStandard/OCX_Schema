@@ -14,17 +14,22 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
-## [3.2.rc1] - 2025.11.25
+## [3.2.rc1] - 2025.11.30
 
 ### Added
 * [Add Support renewal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
 * [Add Density to BulkCargo #185](https://github.com/OCXStandard/OCX_Schema/issues/185)
 * [Add MinimumBallastDraught to PrincipalParticulars #184](https://github.com/OCXStandard/OCX_Schema/issues/184)
+* [Add optional volume properties for to MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 
 ### Changed
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
 * [Material grade aligned with IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7 #182](https://github.com/OCXStandard/OCX_Schema/issues/182)
 
+### Removed
+* [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+* [DryWeight has been replaced with MouldedDryWeight #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+* [CenterOfGravity has been replaced with MouldedCenterOfGravity #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 
 ## [3.1.0] - 2025.05.15
 

@@ -1269,7 +1269,7 @@
 							<xs:documentation>The element representing the structural concepts which composes the structural Panel. If no ComposedOf definition is given, the Panel is treated as a virtual panel. A virtual panel is used to limit other objects defining the model topology.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:PhysicalProperties" minOccurs="0"/>
+					<xs:element ref="ocx:MasslProperties" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
@@ -1361,7 +1361,7 @@
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:PhysicalProperties"/>
+					<xs:element ref="ocx:MasslProperties"/>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1859,18 +1859,36 @@
 			<xs:documentation>An optional contour for the detailed slot shape given as a reference to a catalogue shape with a transformation.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="PhysicalProperties" type="ocx:PhysicalProperties_T">
+	<xs:element name="MasslProperties" type="ocx:MassProperties_T">
 		<xs:annotation>
-			<xs:documentation>Basic physical properties of structure objects (weight and centre of gravity). These properties are provided by the exporting application and can be used as a quality measure by the receiving application to ensure correctness of the import.</xs:documentation>
+			<xs:documentation>The mass properties of structure objects (weight and centre of gravity). These properties are provided by the exporting application and can be used as a quality measure by the receiving application to ensure correctness of the import. Both moulded and volume properties can be provided. The volume properties rpresent the physical mass property of the structure part, while the moulded properties are idealised.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:complexType name="PhysicalProperties_T">
+	<xs:complexType name="MassProperties_T">
 		<xs:annotation>
-			<xs:documentation>Type definition of physical properties of structure objects (weight and centre of gravity).</xs:documentation>
+			<xs:documentation>Type definition of mass properties of structure objects (weight and centre of gravity).</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element ref="ocx:DryWeight"/>
-			<xs:element ref="ocx:CenterOfGravity"/>
+			<xs:element ref="ocx:MouldedDryWeight">
+				<xs:annotation>
+					<xs:documentation>The idealised moulded weight of the structure part.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:MouldedCenterOfGravity">
+				<xs:annotation>
+					<xs:documentation>The idealised moulded center of gravity of the structure part.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhysicalDryWeight" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The physical or volume-based mass of the structure part.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhysicalMouldedCenterOfGravity" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The physical or volume-based center of gravity of the structure part.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="CutBy" type="ocx:CutBy_T">
@@ -4931,7 +4949,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 						<xs:documentation>High strength steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-		</xs:restriction>
+			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
 	<xs:element name="Material" type="ocx:Material_T">
@@ -6341,4 +6359,6 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>is defined as the minimum design normal ballast draught amidships (measured in meters). At this draught, the strength requirements for the ship's structure are met. It represents the minimum draught of any ballast condition in the loading manual, and covers both departure and arrival conditions.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:element name="MouldedCenterOfGravity"/>
+	<xs:element name="MouldedDryWeight"/>
 </xs:schema>

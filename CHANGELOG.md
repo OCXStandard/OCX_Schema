@@ -23,6 +23,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 ### Changed
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
+* [Material grade aligned with IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7 #182](https://github.com/OCXStandard/OCX_Schema/issues/182)
 
 
 ## [3.1.0] - 2025.05.15

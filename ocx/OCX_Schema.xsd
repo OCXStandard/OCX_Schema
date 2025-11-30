@@ -4897,91 +4897,41 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 	</xs:attribute>
 	<xs:attribute name="grade">
 		<xs:annotation>
-			<xs:documentation> Weldable normal and higher strength hull structural steels - Ref. IACS UR W11.</xs:documentation>
+			<xs:documentation> Weldable normal and higher strength hull structural steels - Ref. IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="A">
 					<xs:annotation>
-						<xs:documentation>Normal strength steel. Ref. IACS UR W11.</xs:documentation>
+						<xs:documentation>Mild steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="B">
 					<xs:annotation>
-						<xs:documentation>Normal strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="C">
-					<xs:annotation>
-						<xs:documentation>Normal strength steel. Ref. IACS UR W11.</xs:documentation>
+						<xs:documentation>Mild steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="D">
 					<xs:annotation>
-						<xs:documentation>Normal strength steel. Ref. IACS UR W11.</xs:documentation>
+						<xs:documentation>Mild steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="A32">
+				<xs:enumeration value="AH">
 					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
+						<xs:documentation>High Tensil stell.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="D32">
+				<xs:enumeration value="DH">
 					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
+						<xs:documentation>High strength steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="E32">
+				<xs:enumeration value="EH">
 					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
+						<xs:documentation>High strength steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
-				<xs:enumeration value="F32">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="A36">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="D36">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="E36">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="F36">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="A40">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="D40">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="E40">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-				<xs:enumeration value="F40">
-					<xs:annotation>
-						<xs:documentation>High strength steel. Ref. IACS UR W11.</xs:documentation>
-					</xs:annotation>
-				</xs:enumeration>
-			</xs:restriction>
+		</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
 	<xs:element name="Material" type="ocx:Material_T">

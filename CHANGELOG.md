@@ -14,7 +14,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
-## [3.2.rc1] - 2025.11.30
+## [3.2.rc1] - 2025.12.03
 
 ### Added
 * [Add Support renewal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
@@ -22,6 +22,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Add MinimumBallastDraught to PrincipalParticulars #184](https://github.com/OCXStandard/OCX_Schema/issues/184)
 * [Add optional volume properties for to MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 * [Add normal Ellipse to Hole2D catalogue and fix SuperElliptical #175](https://github.com/OCXStandard/OCX_Schema/issues/175)
+* [Add OTHER to newbuildingSocietyName #166](https://github.com/OCXStandard/OCX_Schema/issues/166)
 
 ### Changed
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)

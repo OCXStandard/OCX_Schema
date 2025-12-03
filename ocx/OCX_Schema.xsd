@@ -5542,7 +5542,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			</xs:enumeration>
 			<xs:enumeration value="IRS">
 				<xs:annotation>
-					<xs:documentation>	Indian Register of Shipping.</xs:documentation>
+					<xs:documentation>Indian Register of Shipping.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="KR">
@@ -5623,6 +5623,11 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			<xs:enumeration value="VR">
 				<xs:annotation>
 					<xs:documentation>Vietnam Register of Shipping.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OTHER">
+				<xs:annotation>
+					<xs:documentation>Any other society not in the list.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>

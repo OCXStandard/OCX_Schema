@@ -3014,8 +3014,8 @@
 		<xs:annotation>
 			<xs:documentation>Type definition of a collection of surfaces.</xs:documentation>
 		</xs:annotation>
-		<xs:choice>
-			<xs:element ref="ocx:Surface" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="ocx:Surface" maxOccurs="unbounded"/>
 			<xs:element ref="ocx:SurfaceCollection" maxOccurs="unbounded"/>
 		</xs:choice>
 	</xs:complexType>

@@ -215,7 +215,7 @@
 							<xsd:documentation>milli: thousandth</xsd:documentation>
 						</xsd:annotation>
 					</xsd:enumeration>
-					<xsd:enumeration value="mu">
+					<xsd:enumeration value="u">
 						<xsd:annotation>
 							<xsd:documentation>micro: millonth</xsd:documentation>
 						</xsd:annotation>

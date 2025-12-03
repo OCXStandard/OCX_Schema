@@ -18,26 +18,61 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 ### Added
 * [Add Support renewal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
+    
+  **Impact:** None (optional fields)
 * [Add Density to BulkCargo #185](https://github.com/OCXStandard/OCX_Schema/issues/185)
+  
+  **Impact:** Translator change (mandatory field)
 * [Add MinimumBallastDraught to PrincipalParticulars #184](https://github.com/OCXStandard/OCX_Schema/issues/184)
+  
+  **Impact:** None (optional field)
 * [Add optional volume properties for to MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+
+  **Impact:** None (optional fields)
 * [Add normal Ellipse to Hole2D catalogue and fix SuperElliptical #175](https://github.com/OCXStandard/OCX_Schema/issues/175)
+
+    **Impact:** Translator change (new catalogue item, attribute name change)
 * [Add OTHER to newbuildingSocietyName #166](https://github.com/OCXStandard/OCX_Schema/issues/166)
+
+  **Impact:** Translator change (new enumerator field)
 
 ### Changed
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
+
+    **Impact:** None (GUID format validation)
 * [Material grade aligned with IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7 #182](https://github.com/OCXStandard/OCX_Schema/issues/182)
+  
+  **Impact:** Translator change (new enumerator fields)
 * [Change LBarOF local properties to reference global properties #189](https://github.com/OCXStandard/OCX_Schema/issues/189)
+
+    **Impact:** None
 * [Make FlangeDirection mandatory for Inclination #196](https://github.com/OCXStandard/OCX_Schema/issues/196)
+
+  **Impact:** Translator change (mandatory field)
 * [Make RectangularMickeyMouseEars  part of the ParametricHole2D substitution group #174](https://github.com/OCXStandard/OCX_Schema/issues/174)
+
+    **Impact:** Translator change (new substitution item)
 * [Change RoundBar Height to Diameter #177](https://github.com/OCXStandard/OCX_Schema/issues/177)
+
+    **Impact:** Translator change (attribute name change)
 * [Document Plane3D attributes #80](https://github.com/OCXStandard/OCX_Schema/issues/80)
+
+    **Impact:** None (documentation only)
 
 ### Removed
 * [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+
+    **Impact:** Translator change (new element and name change)
+    
 * [DryWeight has been replaced with MouldedDryWeight #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+
+    **Impact:** Translator change (name change)
 * [CenterOfGravity has been replaced with MouldedCenterOfGravity #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+
+    **Impact:** Translator change (name change)**
 * [Delete WebStiffenerRef_T as it is not used #170](https://github.com/OCXStandard/OCX_Schema/issues/170)
+
+    **Impact:** None
 
 ### Deprecated
 * [SuperElliptical will be removed from the schema in a future release and is replaced by Ellipse #175](https://github.com/OCXStandard/OCX_Schema/issues/175)

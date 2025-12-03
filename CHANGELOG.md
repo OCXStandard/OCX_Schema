@@ -35,6 +35,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 * [DryWeight has been replaced with MouldedDryWeight #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 * [CenterOfGravity has been replaced with MouldedCenterOfGravity #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
+* [Delete WebStiffenerRef_T as it is not used #170](https://github.com/OCXStandard/OCX_Schema/issues/170)
 
 ### Deprecated
 * [SuperElliptical will be removed from the schema in a future release and is replaced by Ellipse #175](https://github.com/OCXStandard/OCX_Schema/issues/175)

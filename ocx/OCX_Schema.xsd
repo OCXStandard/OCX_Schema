@@ -1749,20 +1749,6 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="WebStiffenerRef_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of WebStiffener connection.</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:ReferenceBase_T">
-				<xs:attribute ref="ocx:position">
-					<xs:annotation>
-						<xs:documentation>The position of the web stiffener relative to the penetrating stiffener end.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 	<xs:element name="WebStiffener" type="ocx:WebStiffener_T">
 		<xs:annotation>
 			<xs:documentation>Connection configuration with one web stiffener with a single bracket connection.</xs:documentation>

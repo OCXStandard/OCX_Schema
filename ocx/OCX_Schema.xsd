@@ -3246,7 +3246,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 					</xs:element>
 					<xs:element ref="ocx:Normal">
 						<xs:annotation>
-							<xs:documentation>The planes normal.</xs:documentation>
+							<xs:documentation>The planes normal vector.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:UDirection" minOccurs="0">

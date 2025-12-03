@@ -37,6 +37,10 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
     **Impact:** Translator change (new enumerator field)
 
 ### Changed
+* [Extend ReferenceSurfaces to allow for a combination of Surface and SurfaceColecction #201](https://github.com/OCXStandard/OCX_Schema/issues/201)
+
+    **Impact:** None (only impact validation)
+
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
 
     **Impact:** None (GUID format validation)

@@ -17,6 +17,10 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 ## [3.2.0rc1] - 2025.12.03
 
 ### Added
+* [Add support for Aluminium material #181](https://github.com/OCXStandard/OCX_Schema/issues/181)
+
+    **Impact:** None, optional entity
+
 * [Add Support renewal thickness #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
     
     **Impact:** None (optional fields)

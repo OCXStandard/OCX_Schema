@@ -305,6 +305,9 @@
 				<xs:sequence>
 					<xs:element ref="ocx:OffsetU"/>
 					<xs:element ref="ocx:OffsetV"/>
+					<xs:element ref="ocx:FlangeRenewalThickness" minOccurs="0"/>
+					<xs:element ref="ocx:WebRenewalThickness" minOccurs="0"/>
+					<xs:element ref="ocx:VoluntaryThicknessAddition" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:BarSection"/>
 			</xs:extension>
@@ -1273,7 +1276,7 @@
 							<xs:documentation>The element representing the structural concepts which composes the structural Panel. If no ComposedOf definition is given, the Panel is treated as a virtual panel. A virtual panel is used to limit other objects defining the model topology.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element ref="ocx:MasslProperties" minOccurs="0"/>
+					<xs:element ref="ocx:MassProperties" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
@@ -1365,7 +1368,7 @@
 		<xs:complexContent>
 			<xs:extension base="ocx:EntityBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:MasslProperties"/>
+					<xs:element ref="ocx:MassProperties"/>
 					<xs:element ref="ocx:ExternalGeometryRef" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1849,7 +1852,7 @@
 			<xs:documentation>An optional contour for the detailed slot shape given as a reference to a catalogue shape with a transformation.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="MasslProperties" type="ocx:MassProperties_T">
+	<xs:element name="MassProperties" type="ocx:MassProperties_T">
 		<xs:annotation>
 			<xs:documentation>The mass properties of structure objects (weight and centre of gravity). These properties are provided by the exporting application and can be used as a quality measure by the receiving application to ensure correctness of the import. Both moulded and volume properties can be provided. The volume properties rpresent the physical mass property of the structure part, while the moulded properties are idealised.</xs:documentation>
 		</xs:annotation>
@@ -6359,4 +6362,14 @@ and represents the full load condition. The scantling draught is to be not less 
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="FlangeRenewalThickness" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The flange renewal thickness of the profile. Renewal thickness refers to the minimum allowable flange thickness, below which steel renewal must be carried out.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="WebRenewalThickness" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>The web renewal thickness of the profile. Renewal thickness refers to the minimum allowable web thickness, below which steel renewal must be carried out.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>

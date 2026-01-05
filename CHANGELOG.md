@@ -14,7 +14,8 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
-## [3.2.0rc1] - 2025.12.03
+## [3.2.0rc1] - 2026.01.05
+### Schema release candidate
 
 ### Added
 * [Add support for Aluminium material #181](https://github.com/OCXStandard/OCX_Schema/issues/181)
@@ -41,6 +42,10 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
     **Impact:** Translator change (new enumerator field)
 
 ### Changed
+* [Add Aluminium to the MaterialCatalogue and rename Material to Steel #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
+
+    **Impact:** Translator change: Material renamed to Steel.
+
 * [Extend ReferenceSurfaces to allow for a combination of Surface and SurfaceCollection #201](https://github.com/OCXStandard/OCX_Schema/issues/201)
 
     **Impact:** None (only impact validation)
@@ -68,6 +73,10 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
     **Impact:** None (documentation only)
 
 ### Removed
+* [Material has been replaced by Steel #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
+  
+   **Impact:** Translator change (new element and name change)
+
 * [PhysicalProperties has been replaced by MassProperties #180](https://github.com/OCXStandard/OCX_Schema/issues/180)
 
     **Impact:** Translator change (new element and name change)

@@ -307,7 +307,8 @@
 					<xs:element ref="ocx:OffsetV"/>
 					<xs:element ref="ocx:FlangeRenewalThickness" minOccurs="0"/>
 					<xs:element ref="ocx:WebRenewalThickness" minOccurs="0"/>
-					<xs:element ref="ocx:VoluntaryThicknessAddition" minOccurs="0"/>
+					<xs:element ref="ocx:VoluntaryFlangeThicknessAddition" minOccurs="0"/>
+					<xs:element ref="ocx:VoluntaryWebThicknessAddition" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:BarSection"/>
 			</xs:extension>
@@ -6325,14 +6326,24 @@ and represents the full load condition. The scantling draught is to be not less 
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
+	<xs:element name="VoluntaryThicknessAddition">
+		<xs:annotation>
+			<xs:documentation>Voluntary thickness addition  is the thickness that is voluntarily added by the owner or builder as extra margin against corrosion wastage, beyond what is required by the applicable rules.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="RenewalThickness" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>Renewal thickness refers to the minimum allowable plate or structural member thickness, below which steel renewal must be carried out.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="VoluntaryThicknessAddition" type="ocx:Quantity_T">
+	<xs:element name="VoluntaryFlangeThicknessAddition" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Voluntary thickness addition  is the thickness that is voluntarily added by the owner or builder as extra margin against corrosion wastage, beyond what is required by the applicable rules.</xs:documentation>
+			<xs:documentation>Voluntary stiffener flange thickness addition. Voluntary thickness addition  is the thickness that is voluntarily added by the owner or builder as extra margin against corrosion wastage, beyond what is required by the applicable rules.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VoluntaryWebThicknessAddition" type="ocx:Quantity_T">
+		<xs:annotation>
+			<xs:documentation>Voluntary stiffener web thickness addition. Voluntary thickness addition  is the thickness that is voluntarily added by the owner or builder as extra margin against corrosion wastage, beyond what is required by the applicable rules.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="MinimumBallastDraught" type="ocx:Quantity_T">

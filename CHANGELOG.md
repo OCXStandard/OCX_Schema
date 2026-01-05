@@ -15,10 +15,9 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 
 ## [3.2.0rc1] - 2026.01.05
-### Schema release candidate
 
 ### Added
-* [Add support for Aluminium material #181](https://github.com/OCXStandard/OCX_Schema/issues/181)
+* [Add voluntary thickness addition for flange and web #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
 
     **Impact:** None, optional entity
 

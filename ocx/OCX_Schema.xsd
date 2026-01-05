@@ -4573,8 +4573,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:DescriptionBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Material" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:Aluminium" minOccurs="0"/>
+					<xs:element ref="ocx:MetallicMaterial" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -4907,6 +4906,46 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
+	<xs:element name="Steel" type="ocx:Steel_T" substitutionGroup="ocx:MetallicMaterial">
+		<xs:annotation>
+			<xs:documentation>Physical properties of a material.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Steel_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of a Material with physical properties.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:MetallicMaterial_T">
+				<xs:sequence>
+					<xs:element ref="ocx:YieldStress"/>
+					<xs:element ref="ocx:UltimateStress"/>
+				</xs:sequence>
+				<xs:attribute ref="ocx:grade" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MetallicMaterial" type="ocx:MetallicMaterial_T" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Metallic material types</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MetallicMaterial_T">
+		<xs:annotation>
+			<xs:documentation>Type definition of metallic material</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:NamedEntity_T">
+				<xs:sequence>
+					<xs:element ref="ocx:Density"/>
+					<xs:element ref="ocx:YoungsModulus"/>
+					<xs:element ref="ocx:PoissonRatio"/>
+					<xs:element ref="ocx:ThermalExpansionCoefficient" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="ocx:GUIDRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:attribute name="grade">
 		<xs:annotation>
 			<xs:documentation> Weldable normal and higher strength hull structural steels - Ref. IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7.</xs:documentation>
@@ -4946,30 +4985,6 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	<xs:element name="Material" type="ocx:Material_T">
-		<xs:annotation>
-			<xs:documentation>Physical properties of a material.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="Material_T">
-		<xs:annotation>
-			<xs:documentation>Type definition of a Material with physical properties.</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="ocx:NamedEntity_T">
-				<xs:sequence>
-					<xs:element ref="ocx:Density"/>
-					<xs:element ref="ocx:YoungsModulus"/>
-					<xs:element ref="ocx:PoissonRatio"/>
-					<xs:element ref="ocx:YieldStress"/>
-					<xs:element ref="ocx:UltimateStress"/>
-					<xs:element ref="ocx:ThermalExpansionCoefficient" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attribute ref="ocx:grade" use="required"/>
-				<xs:attribute ref="ocx:GUIDRef"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 	<xs:element name="BarSection">
 		<xs:annotation>
 			<xs:documentation>A catalogue of rolled and welded cross-sections recognised by the Society.</xs:documentation>
@@ -6373,37 +6388,34 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>The web renewal thickness of the profile. Renewal thickness refers to the minimum allowable web thickness, below which steel renewal must be carried out.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="Aluminium" type="ocx:Aluminium_T">
+	<xs:element name="Aluminium" type="ocx:Aluminium_T" substitutionGroup="ocx:MetallicMaterial">
 		<xs:annotation>
 			<xs:documentation>High-strength, corrosion-resistant alloy commonly used in marine, aerospace, and structural applications</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Aluminium_T">
 		<xs:complexContent>
-			<xs:extension base="ocx:DescriptionBase_T">
+			<xs:extension base="ocx:MetallicMaterial_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Density"/>
-					<xs:element ref="ocx:YoungsModulus"/>
-					<xs:element ref="ocx:PoissonRatio"/>
-					<xs:element ref="ocx:UnWeldedYieldStrength"/>
+					<xs:element ref="ocx:UnweldedYieldStrength"/>
 					<xs:element ref="ocx:WeldedYieldStrength"/>
-					<xs:element ref="ocx:UnWeldedTensileStrength"/>
+					<xs:element ref="ocx:UnweldedTensileStrength"/>
 					<xs:element ref="ocx:WeldedTensileStrength"/>
 				</xs:sequence>
-				<xs:attribute name="standardReference">
-					<xs:annotation>
-						<xs:documentation>A reference to the associated alloy standard.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
 				<xs:attribute name="alloyDesignation" type="xs:string" use="required">
 					<xs:annotation>
 						<xs:documentation>The alloy according to e.g. the International Alloy Designation System (AA)</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
+				<xs:attribute name="standardReference">
+					<xs:annotation>
+						<xs:documentation>A reference to the associated alloy standard.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="UnWeldedYieldStrength" type="ocx:Quantity_T">
+	<xs:element name="UnweldedYieldStrength" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation>Yield strength of the base material before welding.</xs:documentation>
 		</xs:annotation>
@@ -6413,7 +6425,7 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>Yield strength. Properties after welding, where strength typically decreases due to thermal effects.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="UnWeldedTensileStrength" type="ocx:Quantity_T">
+	<xs:element name="UnweldedTensileStrength" type="ocx:Quantity_T">
 		<xs:annotation>
 			<xs:documentation> The maximum stress the material can withstand before breaking. Properties of the base material before welding.</xs:documentation>
 		</xs:annotation>

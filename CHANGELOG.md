@@ -14,9 +14,18 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
-## [3.2.0rc1] - 2026.01.05
+## [3.2.0rc1] - 2026.01.07
 
 ### Added
+
+* [Add a reference to the standard profile section at the Bar Section level #226](https://github.com/OCXStandard/OCX_Schema/issues/226)
+
+    **Impact:** None, optional attribute
+
+* [Add Aluminium to the MaterialCatalogue #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
+
+    **Impact:** Translator change: New entity Aluminium.
+
 * [Add voluntary thickness addition for flange and web #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
 
     **Impact:** None, optional entity
@@ -41,7 +50,20 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
     **Impact:** Translator change (new enumerator field)
 
 ### Changed
-* [Add Aluminium to the MaterialCatalogue and rename Material to Steel #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
+
+* [Panel LimitedBy Ambiguity #192](https://github.com/OCXStandard/OCX_Schema/issues/192)
+
+    **Impact:** Translator change (The definition of the BoundedRef for Panel LimitedBy has changed adding a contour mid-point and a point on the surface)
+
+* [Bulbflat Description #190](https://github.com/OCXStandard/OCX_Schema/issues/190)
+
+    **Impact:** None (Documentation change only)
+
+* [Add mandatory bulb radius, angle, bulb width and height #225](https://github.com/OCXStandard/OCX_Schema/issues/225)
+
+    **Impact:** Translator change (Made FlangeWidth, BulbOuterRadius and BulbAngle mandatory)
+
+* [Rename Material to Steel #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
 
     **Impact:** Translator change: Material renamed to Steel.
 
@@ -52,6 +74,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
 
     **Impact:** None (GUID format validation)
+
 * [Material grade aligned with IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7 #182](https://github.com/OCXStandard/OCX_Schema/issues/182)
   
     **Impact:** Translator change (new enumerator fields)
@@ -185,7 +208,7 @@ Release tag: [v3.0.0rc7](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 Release candidate for version 3.0.0
 
 ### Changed
-* [Add type to Occurrence and OccurrenceGroup attribute ``type`` #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
+* [Add type to Occurrence and OccurrenceGroup attribute "type" #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
 
 
 ## [3.0.0rc6] - 2024.04.04
@@ -420,7 +443,7 @@ Release tag: [v2.8.6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.
   - Add the ``EdgeReinforcement`` entity. (oca)  ``StiffenedBy``
   - Add ``TraceLine``.  (oca)  ``EdgeReinforcement``
   - Add ``ChildRef`` to occurrence group.  (oca)  ``EntityRefBase``
-  - Add missing mandatory attribute ``refType``.  (oca)  ``RootRef``
+  - Add missing mandatory attribute ``refType``..  (oca)  ``RootRef``
   - Add a new ``ZGrid`` concept which defines the grid positions of the vessel along the Z axis.  (oca)  ``ZGrid``
   - Add a new ``YGrid`` concept which defines the grid positions of the vessel along the Y axis.  (oca)  ``YGrid``
   - Add a new ``XGrid`` representing a frame table concept which is not to be confused with the existing ``FrameTables`` (in plural) entity.The ``XGrid`` is a concept which defines the frame positions of the vessel along the X axis by giving frame number, spacing and count.The purpose of the ``XGrid`` concept is to give a compact definition of the vessel grid system for navigating the 3D model. This concept shall not be used for crating bounds to other objects in ``LimitedBy``.  (oca)  ``XGrid``

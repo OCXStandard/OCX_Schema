@@ -138,7 +138,7 @@ Release tag: [v3.1.0rc1](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 
 ### Changed
 * [EdgeReinforcement on edges defined by GridRef bounds are not supported in schema 3.0.0/3.0.1 #156](https://github.com/OCXStandard/OCX_Schema/issues/156)
-* [Consistancy of GUIDRef/id between reference and referenced #154](https://github.com/OCXStandard/OCX_Schema/issues/154)
+* [Consistency of GUIDRef/id between reference and referenced #154](https://github.com/OCXStandard/OCX_Schema/issues/154)
 
 ### Fixed
 * [Add Hole Curve Reference for EdgeReinforcements #145](https://github.com/OCXStandard/OCX_Schema/issues/145)
@@ -185,7 +185,7 @@ Release tag: [v3.0.0rc7](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 Release candidate for version 3.0.0
 
 ### Changed
-* [Add type to Occurrence and OccurrenceGroup attribute 'type' #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
+* [Add type to Occurrence and OccurrenceGroup attribute ``type`` #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
 
 
 ## [3.0.0rc6] - 2024.04.04
@@ -245,7 +245,7 @@ Release candidate 2 for version 3.0.0
 
 * [Inclination is unary, but shall be unbounded #115](https://github.com/OCXStandard/OCX_Schema/issues/115)
 * [PlateCutBY has no type #116](https://github.com/OCXStandard/OCX_Schema/issues/116)
-* [Change FreeEdgeCurve3D to be a choise between a CompositCurve3D or a ClosedCurve #117](https://github.com/OCXStandard/OCX_Schema/issues/117)
+* [Change FreeEdgeCurve3D to be a choice between a CompositeCurve3D or a ClosedCurve #117](https://github.com/OCXStandard/OCX_Schema/issues/117)
 * [Fix wrong format on OCX date items and refType on EdgeCurveRef #120](https://github.com/OCXStandard/OCX_Schema/issues/120)
 
 
@@ -322,7 +322,7 @@ Bump to pre-release 3.0.0b4
 
 Bump to 3.0.0b3
 
-### FIxed
+### Fixed
 * [#60 Minor schema fixes](https://github.com/OCXStandard/OCX_Schema/issues/60)
 ### Changed
 * [#63 Cleanup CoordinateSystem](https://github.com/OCXStandard/OCX_Schema/issues/63)
@@ -351,7 +351,7 @@ Bumped to pre-release 3.0.0b0
 
 ### Changed
 * [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
-* [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
+* [#40 rename edgeReinforcement attribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
 * [#36 Resolve naming confusion of FrameTables](https://github.com/OCXStandard/OCX_Schema/issues/36)
 * [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/8)
 ### Removed
@@ -420,7 +420,7 @@ Release tag: [v2.8.6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.
   - Add the ``EdgeReinforcement`` entity. (oca)  ``StiffenedBy``
   - Add ``TraceLine``.  (oca)  ``EdgeReinforcement``
   - Add ``ChildRef`` to occurrence group.  (oca)  ``EntityRefBase``
-  - Add missing mandatory attribute ``refType``..  (oca)  ``RootRef``
+  - Add missing mandatory attribute ``refType``.  (oca)  ``RootRef``
   - Add a new ``ZGrid`` concept which defines the grid positions of the vessel along the Z axis.  (oca)  ``ZGrid``
   - Add a new ``YGrid`` concept which defines the grid positions of the vessel along the Y axis.  (oca)  ``YGrid``
   - Add a new ``XGrid`` representing a frame table concept which is not to be confused with the existing ``FrameTables`` (in plural) entity.The ``XGrid`` is a concept which defines the frame positions of the vessel along the X axis by giving frame number, spacing and count.The purpose of the ``XGrid`` concept is to give a compact definition of the vessel grid system for navigating the 3D model. This concept shall not be used for crating bounds to other objects in ``LimitedBy``.  (oca)  ``XGrid``
@@ -439,11 +439,11 @@ Release tag: [v2.8.6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.
   - Change supertype from ``EntityBase`` to ``GeometryRepresentation``  (oca)  ``Cell``
   - Remove assertion on ``EntityBase`` as this is not necessary when ``IdBase`` has a mandatory attribute ``id``.  (oca)  ``EntityBase``
   - Rename  ``FrameTable`` to ``XGrid`` for a consistent semantic.  (oca)  ``VesselGrid``
-  - Rename ``EdgeReinforcement -> FlangeEdgeReinforcement`` as we now introduced a new ``EdgeReinforcement`` concept..  (oca)  ``BracketParameters``
+  - Rename ``EdgeReinforcement -> FlangeEdgeReinforcement`` as we now introduced a new ``EdgeReinforcement`` concept.  (oca)  ``BracketParameters``
 
 ### Fixed
   - Make ``LimitedBy`` optional.  (oca)  ``Bracket``
   - Typo in the attribute name ``firstGridNumber``.  (oca)  ``XSpacingGroup``
   - Make ``LimitedBy`` optional.  (oca)  ``Pillar``
-  - The ``FrameTables`` entity is kept for backward compatibility. It might change in a future schema version..  (oca)  ``CoordinateSystem``
+  - The ``FrameTables`` entity is kept for backward compatibility. It might change in a future schema version.  (oca)  ``CoordinateSystem``
   - Make attribute ``id`` mandatory on all elements inheriting from ``IdBase``.  (oca)  ``IdBase``

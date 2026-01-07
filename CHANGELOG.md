@@ -14,9 +14,18 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
-## [3.2.0rc1] - 2026.01.05
+## [3.2.0rc1] - 2026.01.07
 
 ### Added
+
+* [Add a reference to the standard profile section at the Bar Section level #226](https://github.com/OCXStandard/OCX_Schema/issues/226)
+
+    **Impact:** None, optional attribute
+
+* [Add Aluminium to the MaterialCatalogue #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
+
+    **Impact:** Translator change: New entity Aluminium.
+
 * [Add voluntary thickness addition for flange and web #9](https://github.com/OCXStandard/OCX_Schema/issues/9)
 
     **Impact:** None, optional entity
@@ -41,7 +50,20 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
     **Impact:** Translator change (new enumerator field)
 
 ### Changed
-* [Add Aluminium to the MaterialCatalogue and rename Material to Steel #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
+
+* [Panel LimitedBy Ambiguity #192](https://github.com/OCXStandard/OCX_Schema/issues/192)
+
+    **Impact:** Translator change (The definition of the BoundedRef for Panel LimitedBy has changed adding a contour mid-point and a point on the surface)
+
+* [Bulbflat Description #190](https://github.com/OCXStandard/OCX_Schema/issues/190)
+
+    **Impact:** None (Documentation change only)
+
+* [Add mandatory bulb radius, angle, bulb width and height #225](https://github.com/OCXStandard/OCX_Schema/issues/225)
+
+    **Impact:** Translator change (Made FlangeWidth, BulbOuterRadius and BulbAngle mandatory)
+
+* [Rename Material to Steel #227](https://github.com/OCXStandard/OCX_Schema/issues/227)
 
     **Impact:** Translator change: Material renamed to Steel.
 
@@ -52,6 +74,7 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * [Add strict formatting of GUID #199](https://github.com/OCXStandard/OCX_Schema/issues/199)
 
     **Impact:** None (GUID format validation)
+
 * [Material grade aligned with IACS Unified Requirements S6 “Use of Steel Grades for Various Hull Members – Ships of 90m in Length and Above – Rev.9 Corr.2 Nov 2021” Table 7 #182](https://github.com/OCXStandard/OCX_Schema/issues/182)
   
     **Impact:** Translator change (new enumerator fields)
@@ -138,7 +161,7 @@ Release tag: [v3.1.0rc1](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 
 ### Changed
 * [EdgeReinforcement on edges defined by GridRef bounds are not supported in schema 3.0.0/3.0.1 #156](https://github.com/OCXStandard/OCX_Schema/issues/156)
-* [Consistancy of GUIDRef/id between reference and referenced #154](https://github.com/OCXStandard/OCX_Schema/issues/154)
+* [Consistency of GUIDRef/id between reference and referenced #154](https://github.com/OCXStandard/OCX_Schema/issues/154)
 
 ### Fixed
 * [Add Hole Curve Reference for EdgeReinforcements #145](https://github.com/OCXStandard/OCX_Schema/issues/145)
@@ -185,7 +208,7 @@ Release tag: [v3.0.0rc7](https://github.com/OCXStandard/OCX_Schema/releases/tag/
 Release candidate for version 3.0.0
 
 ### Changed
-* [Add type to Occurrence and OccurrenceGroup attribute 'type' #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
+* [Add type to Occurrence and OccurrenceGroup attribute "type" #137](https://github.com/OCXStandard/OCX_Schema/issues/137)
 
 
 ## [3.0.0rc6] - 2024.04.04
@@ -245,7 +268,7 @@ Release candidate 2 for version 3.0.0
 
 * [Inclination is unary, but shall be unbounded #115](https://github.com/OCXStandard/OCX_Schema/issues/115)
 * [PlateCutBY has no type #116](https://github.com/OCXStandard/OCX_Schema/issues/116)
-* [Change FreeEdgeCurve3D to be a choise between a CompositCurve3D or a ClosedCurve #117](https://github.com/OCXStandard/OCX_Schema/issues/117)
+* [Change FreeEdgeCurve3D to be a choice between a CompositeCurve3D or a ClosedCurve #117](https://github.com/OCXStandard/OCX_Schema/issues/117)
 * [Fix wrong format on OCX date items and refType on EdgeCurveRef #120](https://github.com/OCXStandard/OCX_Schema/issues/120)
 
 
@@ -322,7 +345,7 @@ Bump to pre-release 3.0.0b4
 
 Bump to 3.0.0b3
 
-### FIxed
+### Fixed
 * [#60 Minor schema fixes](https://github.com/OCXStandard/OCX_Schema/issues/60)
 ### Changed
 * [#63 Cleanup CoordinateSystem](https://github.com/OCXStandard/OCX_Schema/issues/63)
@@ -351,7 +374,7 @@ Bumped to pre-release 3.0.0b0
 
 ### Changed
 * [#41 Make Length and Area mandatory on geometry entities](https://github.com/OCXStandard/OCX_Schema/issues/41)
-* [#40 rename edgeReinforcement atttribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
+* [#40 rename edgeReinforcement attribute](https://github.com/OCXStandard/OCX_Schema/issues/40)
 * [#36 Resolve naming confusion of FrameTables](https://github.com/OCXStandard/OCX_Schema/issues/36)
 * [#8 Root Point vs Trace Line Definition](https://github.com/OCXStandard/OCX_Schema/issues/8)
 ### Removed
@@ -439,11 +462,11 @@ Release tag: [v2.8.6](https://github.com/OCXStandard/OCX_Schema/releases/tag/v2.
   - Change supertype from ``EntityBase`` to ``GeometryRepresentation``  (oca)  ``Cell``
   - Remove assertion on ``EntityBase`` as this is not necessary when ``IdBase`` has a mandatory attribute ``id``.  (oca)  ``EntityBase``
   - Rename  ``FrameTable`` to ``XGrid`` for a consistent semantic.  (oca)  ``VesselGrid``
-  - Rename ``EdgeReinforcement -> FlangeEdgeReinforcement`` as we now introduced a new ``EdgeReinforcement`` concept..  (oca)  ``BracketParameters``
+  - Rename ``EdgeReinforcement -> FlangeEdgeReinforcement`` as we now introduced a new ``EdgeReinforcement`` concept.  (oca)  ``BracketParameters``
 
 ### Fixed
   - Make ``LimitedBy`` optional.  (oca)  ``Bracket``
   - Typo in the attribute name ``firstGridNumber``.  (oca)  ``XSpacingGroup``
   - Make ``LimitedBy`` optional.  (oca)  ``Pillar``
-  - The ``FrameTables`` entity is kept for backward compatibility. It might change in a future schema version..  (oca)  ``CoordinateSystem``
+  - The ``FrameTables`` entity is kept for backward compatibility. It might change in a future schema version.  (oca)  ``CoordinateSystem``
   - Make attribute ``id`` mandatory on all elements inheriting from ``IdBase``.  (oca)  ``IdBase``

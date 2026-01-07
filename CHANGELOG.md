@@ -14,6 +14,9 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.2.0rc2] - 2026.01.07
+Bump to 3.2.0rc2 and publish release candidate
+
 ## [3.2.0rc1] - 2026.01.07
 
 ### Added

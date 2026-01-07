@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by Ole Christian Astrup (DNV AS) -->
-<!-- Copyright 2025 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)	Licensed under the Apache License, Version 2.0 (the "License"); You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0	.	Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.  -->
+<!-- Copyright 2026 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)	Licensed under the Apache License, Version 2.0 (the "License"); You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0	.	Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.  -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V320rc1//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V320rc1//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
@@ -20,7 +20,7 @@
 	</xs:complexType>
 	<xs:attributeGroup name="header">
 		<xs:annotation>
-			<xs:documentation>Attribute group defining the header of an XML export (time stamp, name, author ...) and the public license.</xs:documentation>
+			<xs:documentation>Attribute group defining the header of an XML export (time stamp, name, author .) and the public license.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="time_stamp" type="xs:dateTime" use="required">
 			<xs:annotation>
@@ -72,7 +72,7 @@
 		</xs:sequence>
 		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="3.2.0rc1">
 			<xs:annotation>
-				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc...] z : Minor backward compatible changes (Ex - adding an optional attribute, etc).</xs:documentation>
+				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc.] z : Minor backward compatible changes (Ex - adding an optional attribute, etc.).</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="language" type="xs:language" use="optional" default="en">
@@ -383,6 +383,11 @@
 			<xs:extension base="ocx:ReferenceBase_T">
 				<xs:sequence>
 					<xs:element ref="ocx:ContourBounds" minOccurs="0"/>
+					<xs:element ref="ocx:PointOnSurface" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>For multiple surface solutions, a point on the resulting surface must be provided.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1174,7 +1179,7 @@
 			<xs:element ref="ocx:WebDirection"/>
 			<xs:element ref="ocx:FlangeDirection">
 				<xs:annotation>
-					<xs:documentation>Direction of the stiffener flange. allways required to determine the material side of symmetric profiles.</xs:documentation>
+					<xs:documentation>Direction of the stiffener flange. always required to determine the material side of symmetric profiles.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:Position"/>
@@ -1855,7 +1860,7 @@
 	</xs:element>
 	<xs:element name="MassProperties" type="ocx:MassProperties_T">
 		<xs:annotation>
-			<xs:documentation>The mass properties of structure objects (weight and centre of gravity). These properties are provided by the exporting application and can be used as a quality measure by the receiving application to ensure correctness of the import. Both moulded and volume properties can be provided. The volume properties rpresent the physical mass property of the structure part, while the moulded properties are idealised.</xs:documentation>
+			<xs:documentation>The mass properties of structure objects (weight and centre of gravity). These properties are provided by the exporting application and can be used as a quality measure by the receiving application to ensure correctness of the import. Both moulded and volume properties can be provided. The volume properties represent the physical mass property of the structure part, while the moulded properties are idealised.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="MassProperties_T">
@@ -1870,7 +1875,7 @@
 			</xs:element>
 			<xs:element ref="ocx:MouldedCenterOfGravity">
 				<xs:annotation>
-					<xs:documentation>The idealised moulded center of gravity of the structure part.</xs:documentation>
+					<xs:documentation>The idealised moulded centre of gravity of the structure part.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:PhysicalDryWeight" minOccurs="0"/>
@@ -2576,7 +2581,7 @@
 				</xs:enumeration>
 				<xs:enumeration value="waterjet_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for waterjets.></xs:documentation>
+						<xs:documentation> The compartment is designated for water jets.></xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="wheelhouse">
@@ -3038,6 +3043,16 @@
 					<xs:element ref="ocx:FaceBoundaryCurve" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation> A collection of 3D curves making up a closed boundary. To be used whenever the surface need to be bounded.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:PointOnSurface">
+						<xs:annotation>
+							<xs:documentation>The point on the surface where the surface normal vector is defined.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ocx:Normal">
+						<xs:annotation>
+							<xs:documentation>A unit normal vector to a surface. This surface normal overrides the parent surface normal for NURBS and planar surfaces if specified.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -3590,7 +3605,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 				<xs:extension base="ocx:Contour3D_T">
 					<xs:attribute name="isUVspace" type="xs:boolean" default="false">
 						<xs:annotation>
-							<xs:documentation>If set to True, the FacBoundaryCurve is defined in the parametric UV space. The Pont3D X and Y corresponds to U and V while the Z coordinate is disregarded. The default is False, i.e. the FaceBoundaryCurve is defined in the 3D space.</xs:documentation>
+							<xs:documentation>If set to True, the FacBoundaryCurve is defined in the parametric UV space. The Pont3D X and Y correspond to U and V, while the Z coordinate is disregarded. The default is False, i.e., the FaceBoundaryCurve is defined in 3D space.</xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
 				</xs:extension>
@@ -4020,6 +4035,11 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 		<xs:sequence>
 			<xs:element ref="ocx:ContourStart"/>
 			<xs:element ref="ocx:ContourEnd"/>
+			<xs:element ref="ocx:ContourMidPoint" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If the contour bound is a closed curve, a mid point must be provided to identify the correct segment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ContourStart" type="ocx:Point3D_T">
@@ -4533,7 +4553,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 	<!-- ========================================================================================  -->
 	<xs:element name="ClassCatalogue" type="ocx:ClassCatalogue_T">
 		<xs:annotation>
-			<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the societys definitions of cross-sections, materials, hole shapes etc.</xs:documentation>
+			<xs:documentation>The Class catalogues provided as part of the OCX. The catalogue can hold the society’s definitions of cross-sections, materials, hole shapes etc.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="ClassCatalogue_T">
@@ -4970,7 +4990,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 				</xs:enumeration>
 				<xs:enumeration value="AH">
 					<xs:annotation>
-						<xs:documentation>High Tensil stell.</xs:documentation>
+						<xs:documentation>High Tensile steel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="DH">
@@ -5024,6 +5044,11 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 					<xs:element ref="ocx:Tube"/>
 					<xs:element ref="ocx:UserDefinedBarSection"/>
 				</xs:choice>
+				<xs:attribute name="catalogueReference" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>A reference to a standard catalogue such as e.g. British Steel, ANSI etc.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attributeGroup ref="ocx:barSectionAttributes"/>
 				<xs:attribute ref="ocx:GUIDRef"/>
 			</xs:extension>
@@ -5045,9 +5070,13 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:WebThickness"/>
-			<xs:element ref="ocx:FlangeWidth" minOccurs="0"/>
-			<xs:element ref="ocx:BulbAngle" minOccurs="0"/>
-			<xs:element ref="ocx:BulbOuterRadius" minOccurs="0"/>
+			<xs:element ref="ocx:FlangeWidth">
+				<xs:annotation>
+					<xs:documentation>The bulb Section profile flange width NOT including the web thickness.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:BulbAngle"/>
+			<xs:element ref="ocx:BulbOuterRadius"/>
 			<xs:element ref="ocx:BulbInnerRadius" minOccurs="0"/>
 			<xs:element ref="ocx:BulbTopRadius" minOccurs="0"/>
 			<xs:element ref="ocx:BulbBottomRadius" minOccurs="0"/>
@@ -5927,27 +5956,27 @@ NetAra*t*density = DryWeight</xs:documentation>
 	</xs:element>
 	<xs:element name="BulbAngle" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>Profile width and web thickness.</xs:documentation>
+			<xs:documentation>The bulb angle. The opening angle of the bulb taken as the angle between  the upper and lower  bulb straight parts.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbOuterRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The outer radius of the bulb.</xs:documentation>
+			<xs:documentation>The radius of the bulb nose.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbInnerRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The inner radius of the bulb.</xs:documentation>
+			<xs:documentation>The inner radius of the bulb taken as the radius between the web and the lower part of the bulb. Normally equal to the BulbOuterRadius.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbTopRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The radius at the top of the bulb.</xs:documentation>
+			<xs:documentation>The radius at the top of the bulb taken as the radius between the web side and the bulb upper flange.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BulbBottomRadius" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The radius at the bottom of the web.</xs:documentation>
+			<xs:documentation>The radius at the bottom of the web where the bulb is normally welded to a plate.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FilletRadius" type="ocx:Quantity_T">
@@ -5972,7 +6001,7 @@ NetAra*t*density = DryWeight</xs:documentation>
 	</xs:element>
 	<xs:element name="RuleLength" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>The Rule length $L$ is the distance, in metres, measured on the waterline at the scantling draught from the fore side of the stem to the after side of the rudder post, or the centre of the rudder stock if there is no rudder post. $L$ is not to be less than 96%, and need not be greater than 97%, of the extreme length on the waterline at the scantling draught. In ships without rudder stock (e.g. ships fitted with azimuth thrusters), the Rule length $L$ is to be taken equal to 97% of the extreme length on the waterline at the scantling draught. In ships with unusual stern and bow arrangement the Rule length $L$ will be specially considered.(ref. IACS S2 Definition of Ship's Length $L$ and of Block Coefficient $C_b$ - S2.1 Rule Lenght).</xs:documentation>
+			<xs:documentation>The Rule length $L$ is the distance, in metres, measured on the waterline at the scantling draught from the fore side of the stem to the after side of the rudder post, or the centre of the rudder stock if there is no rudder post. $L$ is not to be less than 96%, and need not be greater than 97%, of the extreme length on the waterline at the scantling draught. In ships without rudder stock (e.g. ships fitted with azimuth thrusters), the Rule length $L$ is to be taken equal to 97% of the extreme length on the waterline at the scantling draught. In ships with unusual stern and bow arrangement the Rule length $L$ will be specially considered.(ref. IACS S2 Definition of Ship's Length $L$ and of Block Coefficient $C_b$ - S2.1 Rule Length).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="BlockCoefficient" type="ocx:Quantity_T">
@@ -5982,7 +6011,7 @@ $$C_b=\frac{Moulded displacement [m^3] at scantling draught T_s}{LBT_s} $$
 Where: 
   * B : Greatest moulded breadth, in m, measured amidships at the scantling draught, Ts. 
   * Ts : Scantling draught, in m, at which the strength requirements for the scantlings of the ship are met 
-and represents the full load condition. The scantling draught is to be not less than that corresponding to the assigned freeboard.(ref. IACS S2 Definition of Ship's Length L and of Block Coefficient Cb - S2.2 Block Coefficient $C_b$)</xs:documentation>
+and represents the full load condition. The scantling draught is to be not less than that corresponding to the assigned free-board.(ref. IACS S2 Definition of Ship's Length L and of Block Coefficient Cb - S2.2 Block Coefficient $C_b$)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FP_Pos" type="ocx:Quantity_T">
@@ -6353,7 +6382,7 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:element name="MouldedCenterOfGravity" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation> The idealised moulded center of gravity of the structure part.</xs:documentation>
+			<xs:documentation> The idealised moulded centre of gravity of the structure part.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="MouldedDryWeight" type="ocx:Quantity_T">
@@ -6363,7 +6392,7 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:element name="PhysicalDryWeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation> The physical or mass center of gravity of the structure part</xs:documentation>
+			<xs:documentation> The physical or mass centre of gravity of the structure part</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="PhysicalMouldedCenterOfGravity" type="ocx:Quantity_T">
@@ -6446,4 +6475,6 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>The maximum stress the material can withstand before breaking. Properties after welding, where strength typically decreases due to thermal effects.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:element name="ContourMidPoint" type="ocx:Point3D_T"/>
+	<xs:element name="PointOnSurface" type="ocx:Point3D_T"/>
 </xs:schema>

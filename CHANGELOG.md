@@ -15,7 +15,9 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 
 ## [3.2.0rc3] - 2026.01.08
+Bump to 3.2.0rc3 and publish release candidate
 
+## [3.2.0rc3] - 2026.01.08
 
 ### Changed
 * [Surface and Panel must support multiple outer contours/face boundary curves #233](https://github.com/OCXStandard/OCX_Schema/issues/233)

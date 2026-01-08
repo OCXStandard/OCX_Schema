@@ -1283,7 +1283,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:MassProperties" minOccurs="0"/>
-					<xs:element ref="ocx:OuterContour" minOccurs="0"/>
+					<xs:element ref="ocx:OuterContour" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
@@ -3040,7 +3040,7 @@
 		<xs:complexContent>
 			<xs:extension base="ocx:GeometryRepresentation_T">
 				<xs:sequence>
-					<xs:element ref="ocx:FaceBoundaryCurve" minOccurs="0">
+					<xs:element ref="ocx:FaceBoundaryCurve" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation> A collection of 3D curves making up a closed boundary. To be used whenever the surface need to be bounded.</xs:documentation>
 						</xs:annotation>

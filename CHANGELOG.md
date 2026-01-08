@@ -14,6 +14,18 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.2.0rc3] - 2026.01.08
+
+
+### Changed
+* [Surface and Panel must support multiple outer contours/face boundary curves #233](https://github.com/OCXStandard/OCX_Schema/issues/233)
+
+    **Impact:** Translator change (Cardinality change)
+
+* [StiffenedBy need to support a combination of Stiffener and EdgeReinforcement #200](https://github.com/OCXStandard/OCX_Schema/issues/200)
+
+  **Impact:** Translator change (Cardinality change)
+
 ## [3.2.0rc2] - 2026.01.07
 Bump to 3.2.0rc2 and publish release candidate
 

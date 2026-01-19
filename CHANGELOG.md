@@ -15,6 +15,9 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 
 
 ## [3.2.0rc4] - 2026.01.19
+Bump to 3.2.0rc4 and publish release candidate
+
+## [3.2.0rc4] - 2026.01.19
 
 ### Changed
 * [PointOnSurface needs to be global and implemented for both Panel and Plate #235](https://github.com/OCXStandard/OCX_Schema/issues/235)

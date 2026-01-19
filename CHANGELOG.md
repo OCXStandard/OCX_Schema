@@ -14,6 +14,13 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.2.0rc4] - 2026.01.19
+
+### Changed
+* [PointOnSurface needs to be global and implemented for both Panel and Plate #235](https://github.com/OCXStandard/OCX_Schema/issues/235)
+
+    **Impact:** Translator change (Cardinality change and new optional PointOnSurface element)
+
 ## [3.2.0rc3] - 2026.01.08
 Bump to 3.2.0rc3 and publish release candidate
 

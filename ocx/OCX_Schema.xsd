@@ -383,11 +383,6 @@
 			<xs:extension base="ocx:ReferenceBase_T">
 				<xs:sequence>
 					<xs:element ref="ocx:ContourBounds" minOccurs="0"/>
-					<xs:element ref="ocx:PointOnSurface" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>For multiple surface solutions, a point on the resulting surface must be provided.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1284,6 +1279,11 @@
 					</xs:element>
 					<xs:element ref="ocx:MassProperties" minOccurs="0"/>
 					<xs:element ref="ocx:OuterContour" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ocx:PointOnSurface" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>For multiple surface solutions, a point on the resulting surface must be provided.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="ocx:StiffenedBy" minOccurs="0"/>
 					<xs:element ref="ocx:SplitBy" minOccurs="0"/>
 					<xs:element ref="ocx:CutBy" minOccurs="0">
@@ -1322,7 +1322,7 @@
 			<xs:extension base="ocx:StructurePart_T">
 				<xs:sequence>
 					<xs:element ref="ocx:NetArea"/>
-					<xs:element ref="ocx:OuterContour"/>
+					<xs:element ref="ocx:OuterContour" maxOccurs="unbounded"/>
 					<xs:element ref="ocx:PlateMaterial"/>
 					<xs:element ref="ocx:LimitedBy" minOccurs="0"/>
 					<xs:element ref="ocx:Offset" minOccurs="0">
@@ -1336,6 +1336,7 @@
 							<xs:documentation>A structural concept defining a cut-out in a surface defined by a parametric hole or a set of generic trim curves. Cut-outs on plate will only remove material of the parent plate, no other parts. Apply cutBy either on Panel or on Plate level, but not on both.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element ref="ocx:PointOnSurface" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
 			</xs:extension>
@@ -6475,6 +6476,14 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>The maximum stress the material can withstand before breaking. Properties after welding, where strength typically decreases due to thermal effects.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="ContourMidPoint" type="ocx:Point3D_T"/>
-	<xs:element name="PointOnSurface" type="ocx:Point3D_T"/>
+	<xs:element name="ContourMidPoint" type="ocx:Point3D_T">
+		<xs:annotation>
+			<xs:documentation>A mid-point on the contour boundary defined by an intersecting surface. The mid-point is needed to identify the correct contour segment if the intersection results in a closed contour.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PointOnSurface" type="ocx:Point3D_T">
+		<xs:annotation>
+			<xs:documentation>For multiple surface solutions, a point on the target surface must be provided.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>

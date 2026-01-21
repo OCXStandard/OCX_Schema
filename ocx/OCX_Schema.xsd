@@ -6381,7 +6381,7 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>is defined as the minimum design normal ballast draught amidships (measured in meters). At this draught, the strength requirements for the ship's structure are met. It represents the minimum draught of any ballast condition in the loading manual, and covers both departure and arrival conditions.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="MouldedCenterOfGravity" type="ocx:Quantity_T">
+	<xs:element name="MouldedCenterOfGravity" type="ocx:Point3D_T">
 		<xs:annotation>
 			<xs:documentation> The idealised moulded centre of gravity of the structure part.</xs:documentation>
 		</xs:annotation>
@@ -6396,7 +6396,7 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation> The physical or mass centre of gravity of the structure part</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="PhysicalMouldedCenterOfGravity" type="ocx:Quantity_T">
+	<xs:element name="PhysicalMouldedCenterOfGravity" type="ocx:Point3D_T">
 		<xs:annotation>
 			<xs:documentation>The physical or mass dry weight of the structure part.</xs:documentation>
 		</xs:annotation>

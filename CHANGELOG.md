@@ -24,7 +24,7 @@ Bump to 3.2.0rc5 and publish release candidate
 ### Added
 * [Add mounting rule for stiffeners supplementing the Inclination information #238](https://github.com/OCXStandard/OCX_Schema/issues/238)
 
-    **Impact:** No impact on translator (optional attributes)
+    **Impact:** No impact on the translator (optional attributes)
 
 * [Add Offset and OffsetDirection to BoundedRef and make them mandatory #241](https://github.com/OCXStandard/OCX_Schema/issues/241)
 

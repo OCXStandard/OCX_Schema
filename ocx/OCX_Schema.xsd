@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by Ole Christian Astrup (DNV AS) -->
-<!-- Copyright 2026 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)	Licensed under the Apache License, Version 2.0 (the "License"); You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0	.	Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.  -->
+<!-- Copyright 2026 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)	Licensed under the Apache License, Version 2.0 (the "License") You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0	.	Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.  -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V320rc4//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V320rc4//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:annotation>
-		<xs:documentation>Copyright 2025 Open Class 3D Exchange (OCX) Consortium (https://3docx.org). Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.</xs:documentation>
+		<xs:documentation>Copyright 2025 Open Class 3D Exchange (OCX) Consortium (https://3docx.org). Licensed under the Apache License, Version 2.0 (the "License") you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.</xs:documentation>
 	</xs:annotation>
 	<xs:element name="Header" type="ocx:Header_T">
 		<xs:annotation>
@@ -382,7 +382,9 @@
 		<xs:complexContent>
 			<xs:extension base="ocx:ReferenceBase_T">
 				<xs:sequence>
-					<xs:element ref="ocx:ContourBounds" minOccurs="0"/>
+					<xs:element ref="ocx:ContourBounds"/>
+					<xs:element ref="ocx:Offset"/>
+					<xs:element ref="ocx:OffsetDirection"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1158,6 +1160,16 @@
 					</xs:element>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
+				<xs:attribute name="normal" type="xs:boolean">
+					<xs:annotation>
+						<xs:documentation>If true, the stiffener is mounted normal to it's parent surface.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute ref="ocx:orientationRule">
+					<xs:annotation>
+						<xs:documentation>The orientation rule for the stiffener. The rule will help to orientate the stiffener. The stiffener Inclination determines the orientation of the flange and the web side.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -1196,6 +1208,7 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="ocx:CompositeCurve3D"/>
+			<xs:element ref="ocx:BoundedRef" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="EdgeReinforcement" type="ocx:EdgeReinforcement_T">
@@ -1218,6 +1231,7 @@
 					</xs:choice>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
+				<xs:attribute ref="ocx:orientationRule"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2282,317 +2296,317 @@
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="access_trunk">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as an access trunk.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as an access trunk.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="aft_peak_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank aft of the aftmost bulkhead of the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank aft of the aftmost bulkhead of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="auxiliary_engine_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as an auxiliary engine room space.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as an auxiliary engine room space.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="ballast_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a watertight compartment to hold water ballast.></xs:documentation>
+						<xs:documentation> The compartment is a watertight compartment to hold water ballast.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="battery_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for batteries.></xs:documentation>
+						<xs:documentation> The compartment is designated for batteries.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="berthing_compartment">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as a berthing space.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as a berthing space.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="boiler_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for boilers.></xs:documentation>
+						<xs:documentation> The compartment is designated for boilers.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="bottom_wing_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the ship side/bottom and a sloping longitudinal bulkhead. ></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the ship side/bottom and a sloping longitudinal bulkhead. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="bow_thruster_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as the bow thruster room.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as the bow thruster room.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="cabin">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as a cabin space.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as a cabin space.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="cargo_compartment">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to carry liquid, bulk, or containerized goods. NOTE 1: These goods may be consumed during the voyage, as in the case of food or fuel, or they may be temporarily stored for transport between ports. NOTE 2: A tank compartment may also be used for the storage or transportation of liquid cargo. ></xs:documentation>
+						<xs:documentation> The compartment is designed to carry liquid, bulk, or containerized goods. NOTE 1: These goods may be consumed during the voyage, as in the case of food or fuel, or they may be temporarily stored for transport between ports. NOTE 2: A tank compartment may also be used for the storage or transportation of liquid cargo. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="centre_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank that occupies a large part of a ship cross section and that is symmetrical to the ship centre line.EXAMPLE: Crude oil tankers often have several centre tanks.></xs:documentation>
+						<xs:documentation> The compartment is a tank that occupies a large part of a ship cross section and that is symmetrical to the ship centre line.EXAMPLE: Crude oil tankers often have several centre tanks.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="chainlocker">
 					<xs:annotation>
-						<xs:documentation> The compartment is where anchor chain is stored.></xs:documentation>
+						<xs:documentation> The compartment is where anchor chain is stored.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="cofferdam">
 					<xs:annotation>
-						<xs:documentation> The compartment is a narrow void space between two bulkheads or floors that prevents leakage between the adjoining compartments.></xs:documentation>
+						<xs:documentation> The compartment is a narrow void space between two bulkheads or floors that prevents leakage between the adjoining compartments.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="compressor_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for compressors.></xs:documentation>
+						<xs:documentation> The compartment is designated for compressors.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="control">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used for ship command and control functions. ></xs:documentation>
+						<xs:documentation> The compartment is designed to be used for ship command and control functions. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="crossover_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank used for dynamic stabilisation of the ship. ></xs:documentation>
+						<xs:documentation> The compartment is a tank used for dynamic stabilisation of the ship. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="deck_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is an independent tank located on the main deck.></xs:documentation>
+						<xs:documentation> The compartment is an independent tank located on the main deck.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="deep_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank extending from the bottom or inner bottom up to, or higher than, the lower deck. A deep tank is often fitted with hatches so that they may also be used for dry cargo in lieu of fuel oil, ballast water, or liquid cargo.></xs:documentation>
+						<xs:documentation> The compartment is a tank extending from the bottom or inner bottom up to, or higher than, the lower deck. A deep tank is often fitted with hatches so that they may also be used for dry cargo in lieu of fuel oil, ballast water, or liquid cargo.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="diving_well">
 					<xs:annotation>
-						<xs:documentation> The compartment is a space for divers to exit to the sea through a hatch in the bottom of the vessel. ></xs:documentation>
+						<xs:documentation> The compartment is a space for divers to exit to the sea through a hatch in the bottom of the vessel. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="double_bottom_and_side_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the outer and inner bottom and bounded by an outer and inner side of the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the outer and inner bottom and bounded by an outer and inner side of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="double_bottom_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the outer and inner bottom of the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the outer and inner bottom of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="double_side_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank between the outer ship side and the inner ship side.></xs:documentation>
+						<xs:documentation> The compartment is a tank between the outer ship side and the inner ship side.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="drill_well">
 					<xs:annotation>
-						<xs:documentation> The compartment is a space for drilling through an opening in the bottom of the vessel.></xs:documentation>
+						<xs:documentation> The compartment is a space for drilling through an opening in the bottom of the vessel.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="duct_keel">
 					<xs:annotation>
-						<xs:documentation> The compartment is located between the bottom and the inner bottom running along the the centre line of the ship. ></xs:documentation>
+						<xs:documentation> The compartment is located between the bottom and the inner bottom running along the the centre line of the ship. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="electric_motor_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for electric motors.></xs:documentation>
+						<xs:documentation> The compartment is designated for electric motors.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="emergency_fire_pump_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for emergency fire pumps.></xs:documentation>
+						<xs:documentation> The compartment is designated for emergency fire pumps.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="equipment_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated to be used as an equipment room. ></xs:documentation>
+						<xs:documentation> The compartment is designated to be used as an equipment room. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="escape_trunk">
 					<xs:annotation>
-						<xs:documentation> The compartment is a vertical trunk fitted with a ladder to permit personnel to escape if trapped. Usually provided from the after end of the shaft tunnel to topside spaces.></xs:documentation>
+						<xs:documentation> The compartment is a vertical trunk fitted with a ladder to permit personnel to escape if trapped. Usually provided from the after end of the shaft tunnel to topside spaces.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="fore_peak_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located forward of the foremost bulkhead of the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank located forward of the foremost bulkhead of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="forecastle">
 					<xs:annotation>
-						<xs:documentation> The compartment is a superstructure fitted at the extreme forward end of the upper deck.></xs:documentation>
+						<xs:documentation> The compartment is a superstructure fitted at the extreme forward end of the upper deck.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="habitable_compartment">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed as a habitable space, which is primarily designated as suitable for occupancy by humans. Passenger safety and comfort are subject to international, national, class society, or other regulations usually covered by product specifications and applicable class and register notations.></xs:documentation>
+						<xs:documentation> The compartment is designed as a habitable space, which is primarily designated as suitable for occupancy by humans. Passenger safety and comfort are subject to international, national, class society, or other regulations usually covered by product specifications and applicable class and register notations.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="heeling_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank used for adjusting the heeling of the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank used for adjusting the heeling of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="hopper_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the ship side/bottom and a sloping longitudinal bulkhead. ></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the ship side/bottom and a sloping longitudinal bulkhead. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="insulated_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a container constructed to hold one or more thermally insulated tanks for liquids ></xs:documentation>
+						<xs:documentation> The compartment is a container constructed to hold one or more thermally insulated tanks for liquids </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="lounge">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as a lounge space.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as a lounge space.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="machinery_compartment">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to contain machinery for the operation of the ship or in support of its mission. EXAMPLE: Engine room and bow thruster room are types of machinery compartments.></xs:documentation>
+						<xs:documentation> The compartment is designed to contain machinery for the operation of the ship or in support of its mission. EXAMPLE: Engine room and bow thruster room are types of machinery compartments.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="main_engine_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as the main engine room.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as the main engine room.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="medical">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as a medical space.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as a medical space.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="passageway">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to be used as a passageway.></xs:documentation>
+						<xs:documentation> The compartment is designed to be used as a passageway.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="poop">
 					<xs:annotation>
-						<xs:documentation> The compartment is a superstructure fitted at the after end of the upper deck.></xs:documentation>
+						<xs:documentation> The compartment is a superstructure fitted at the after end of the upper deck.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="pump_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for pumps.></xs:documentation>
+						<xs:documentation> The compartment is designated for pumps.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="rudder_trunk">
 					<xs:annotation>
-						<xs:documentation> The compartment is the trunk housing the rudder shaft.></xs:documentation>
+						<xs:documentation> The compartment is the trunk housing the rudder shaft.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="separator_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for separators.></xs:documentation>
+						<xs:documentation> The compartment is designated for separators.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="settling_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a fuel oil tank used for separating entrained water from oil></xs:documentation>
+						<xs:documentation> The compartment is a fuel oil tank used for separating entrained water from oil</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="shaft_tunnel">
 					<xs:annotation>
-						<xs:documentation> The compartment is a watertight enclosure for the propeller shafting, large enough to walk in, extending aft from the engine room to provide access and protection to the shafting. Also known as a shaft alley.></xs:documentation>
+						<xs:documentation> The compartment is a watertight enclosure for the propeller shafting, large enough to walk in, extending aft from the engine room to provide access and protection to the shafting. Also known as a shaft alley.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="side_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the ship side and a longitudinal bulkhead.></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the ship side and a longitudinal bulkhead.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="side_wing_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the ship side/bottom and a longitudinal bulkhead.></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the ship side/bottom and a longitudinal bulkhead.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="stabiliser_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for stabilisers.></xs:documentation>
+						<xs:documentation> The compartment is designated for stabilisers.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="stability_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank used for dynamic stabilisation of the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank used for dynamic stabilisation of the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="steering_gear_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for steering gear.></xs:documentation>
+						<xs:documentation> The compartment is designated for steering gear.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="stern_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located at the aftmost location in the ship.></xs:documentation>
+						<xs:documentation> The compartment is a tank located at the aftmost location in the ship.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="stool_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank in the closed hull structure at either upper or lower end of a transverse bulkhead. ></xs:documentation>
+						<xs:documentation> The compartment is a tank in the closed hull structure at either upper or lower end of a transverse bulkhead. </xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed to carry liquids used in the mission of the ship, or for the storage of liquid cargoes transported by the ship. EXAMPLE: Fuels for propulsion of the ship, potable water for the passengers and crew, waste products, petroleum product cargo, and fuel for aircraft supported by the ship are carried in tank compartments.></xs:documentation>
+						<xs:documentation> The compartment is designed to carry liquids used in the mission of the ship, or for the storage of liquid cargoes transported by the ship. EXAMPLE: Fuels for propulsion of the ship, potable water for the passengers and crew, waste products, petroleum product cargo, and fuel for aircraft supported by the ship are carried in tank compartments.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="thruster_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for thrusters.></xs:documentation>
+						<xs:documentation> The compartment is designated for thrusters.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="top_wing_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located between the ship side/deck and a sloping longitudinal bulkhead.></xs:documentation>
+						<xs:documentation> The compartment is a tank located between the ship side/deck and a sloping longitudinal bulkhead.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="trimming_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located near the ends of a ship. Seawater or fuel oil is carried in such tanks as necessary to change trim.></xs:documentation>
+						<xs:documentation> The compartment is a tank located near the ends of a ship. Seawater or fuel oil is carried in such tanks as necessary to change trim.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="trunk">
 					<xs:annotation>
-						<xs:documentation> The compartment is a vertical or inclined space or passage formed by bulkheads or casings, extending one or more deck heights, around openings in the decks, through which access can be obtained and cargo or stores handled, or ventilation provided without disturbing or interfering with the contents or arrangements of the adjoining spaces.></xs:documentation>
+						<xs:documentation> The compartment is a vertical or inclined space or passage formed by bulkheads or casings, extending one or more deck heights, around openings in the decks, through which access can be obtained and cargo or stores handled, or ventilation provided without disturbing or interfering with the contents or arrangements of the adjoining spaces.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="user_defined">
 					<xs:annotation>
-						<xs:documentation> The compartment function is other than one of the pre-defined values and is specified by the user_def_function attribute.></xs:documentation>
+						<xs:documentation> The compartment function is other than one of the pre-defined values and is specified by the user_def_function attribute.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="void">
 					<xs:annotation>
-						<xs:documentation> The compartment is designed as an inaccessible, closed space that is never used to carry cargo or to be regularly occupied by humans. The main uses of a void compartment are segregating the cargo and fluids that are necessary to operate the ship, or to provide emergency access to other spaces.></xs:documentation>
+						<xs:documentation> The compartment is designed as an inaccessible, closed space that is never used to carry cargo or to be regularly occupied by humans. The main uses of a void compartment are segregating the cargo and fluids that are necessary to operate the ship, or to provide emergency access to other spaces.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="waterjet_room">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for water jets.></xs:documentation>
+						<xs:documentation> The compartment is designated for water jets.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="wheelhouse">
 					<xs:annotation>
-						<xs:documentation> The compartment is designated for primary steerage and control of the ship. Also known as the bridge.></xs:documentation>
+						<xs:documentation> The compartment is designated for primary steerage and control of the ship. Also known as the bridge.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="wing_tank">
 					<xs:annotation>
-						<xs:documentation> The compartment is a tank located well outboard adjacent to the side shell plating, often consisting of a continuation of the double bottom up the sides to a deck or flat.></xs:documentation>
+						<xs:documentation> The compartment is a tank located well outboard adjacent to the side shell plating, often consisting of a continuation of the double bottom up the sides to a deck or flat.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 			</xs:restriction>
@@ -3413,7 +3427,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 					</xs:element>
 					<xs:element ref="ocx:MajorDiameter">
 						<xs:annotation>
-							<xs:documentation>The ellipse major diameter. It is expected that MajorDiameter > MinorDiameter.</xs:documentation>
+							<xs:documentation>The ellipse major diameter. It is expected that MajorDiameter  MinorDiameter.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="ocx:MinorDiameter">
@@ -4189,17 +4203,17 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 				</xs:enumeration>
 				<xs:enumeration value="HATCHWAY_COAMING">
 					<xs:annotation>
-						<xs:documentation>Hatch Coming is the vertical plating built around the hatchways to prevent water from entering the hold; and to serve as a framework for the hatch covers.</xs:documentation>
+						<xs:documentation>Hatch Coming is the vertical plating built around the hatchways to prevent water from entering the hold and to serve as a framework for the hatch covers.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="HATCHWAY_COAMING: End coaming">
 					<xs:annotation>
-						<xs:documentation>Hatch Coming is the vertical plating built around the hatchways to prevent water from entering the hold; and to serve as a framework for the hatch covers.</xs:documentation>
+						<xs:documentation>Hatch Coming is the vertical plating built around the hatchways to prevent water from entering the hold and to serve as a framework for the hatch covers.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="HATCHWAY_COAMING: Side coaming">
 					<xs:annotation>
-						<xs:documentation>Hatch Coming is the vertical plating built around the hatchways to prevent water from entering the hold; and to serve as a framework for the hatch covers.</xs:documentation>
+						<xs:documentation>Hatch Coming is the vertical plating built around the hatchways to prevent water from entering the hold and to serve as a framework for the hatch covers.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="HATCH_COVER">
@@ -6147,7 +6161,7 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:element name="Offset" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation>An offset from a reference plane or surface. A positive offset value is in the direction of the surface normal vector.</xs:documentation>
+			<xs:documentation>An offset from a reference plane or surface. A positive offset value is in the direction of the surface normal vector. Give an Offset=0 if there is no offset from the referred  object.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="FlangeThickness" type="ocx:Quantity_T">
@@ -6403,7 +6417,7 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:element name="Ellipse" type="ocx:Ellipse_T" substitutionGroup="ocx:ParametricHole2D">
 		<xs:annotation>
-			<xs:documentation>A super-elliptical hole. It can also describe a true ellipse.</xs:documentation>
+			<xs:documentation>An elliptical hole.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="Ellipse_T" abstract="true">
@@ -6484,6 +6498,45 @@ and represents the full load condition. The scantling draught is to be not less 
 	<xs:element name="PointOnSurface" type="ocx:Point3D_T">
 		<xs:annotation>
 			<xs:documentation>For multiple surface solutions, a point on the target surface must be provided.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:attribute name="orientationRule">
+		<xs:annotation>
+			<xs:documentation>The orientation rule for the stiffener. The rule will help to orientate the stiffener together with the Inclination. The stiffener Inclination determines the orientation of the flange and the web side.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="X-plane">
+					<xs:annotation>
+						<xs:documentation>The stiffener is mounted with the WebDirection aligned with the global YZ-Plane. The Inclination gives the flange orientation and the web material side.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Y-plane">
+					<xs:annotation>
+						<xs:documentation>The stiffener is mounted with the WebDirection aligned with the global XZ-Plane. The Inclination gives the flange orientation and the web material side.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Z-plane">
+					<xs:annotation>
+						<xs:documentation>The stiffener is mounted with the WebDirection aligned with the global XZPlane. The Inclination gives the flange orientation and the web material side.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Inclined">
+					<xs:annotation>
+						<xs:documentation>The Inclination determines both the exact web direction, flange orientation and the web material side.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Twisted">
+					<xs:annotation>
+						<xs:documentation>The stiffener is mounted with the WebDirection “Twisted” along the Traceline. The Inclinations give the twist orientation vector along the length of the stiffener. It is assumed that the twist varies linearly along the length of the stiffener's trace-line between inclinations.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:element name="OffsetDirection" type="ocx:Vector3D_T">
+		<xs:annotation>
+			<xs:documentation>The direction of an offset from a reference object. The direction is only interpreted if a non-zero Offset is given.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 </xs:schema>

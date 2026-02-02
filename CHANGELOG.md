@@ -14,6 +14,23 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+
+## [3.2.0rc5] - 2026.02.02
+
+Bump to 3.2.0rc5 and publish release candidate
+
+
+## [3.2.0rc5] - 2026.01.30
+### Added
+* [Add mounting rule for stiffeners supplementing the Inclination information #238](https://github.com/OCXStandard/OCX_Schema/issues/238)
+
+    **Impact:** No impact on translator (optional attributes)
+
+* [Add Offset and OffsetDirection to BoundedRef and make them mandatory #241](https://github.com/OCXStandard/OCX_Schema/issues/241)
+
+   **Impact:** Translator change (Mandatory new elements)
+
+
 ## [3.2.0rc4] - 2026.01.19
 Bump to 3.2.0rc4 and publish release candidate
 

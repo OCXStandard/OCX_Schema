@@ -13,6 +13,16 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
+## [3.2.0rc6] - 2026.02.08
+
+Bump to 3.2.0rc6 and publish release candidate
+
+
+## [3.2.0rc6] - 2026.02.08
+### Changed
+* [Wrong naming of MassProperty element #243](https://github.com/OCXStandard/OCX_Schema/issues/243)
+
+    **Impact:** Translator change (Renaming entity from PhysicalMouldedCenterOfGravity to PhysicalCenterOfGravity)
 
 
 ## [3.2.0rc5] - 2026.02.02

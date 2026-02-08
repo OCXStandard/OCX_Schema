@@ -1883,18 +1883,18 @@
 			<xs:documentation>Type definition of mass properties of structure objects (weight and centre of gravity).</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element ref="ocx:MouldedDryWeight">
-				<xs:annotation>
-					<xs:documentation>The idealised moulded weight of the structure part.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element ref="ocx:MouldedDryWeight"/>
 			<xs:element ref="ocx:MouldedCenterOfGravity">
 				<xs:annotation>
 					<xs:documentation>The idealised moulded centre of gravity of the structure part.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element ref="ocx:PhysicalDryWeight" minOccurs="0"/>
-			<xs:element ref="ocx:PhysicalMouldedCenterOfGravity" minOccurs="0"/>
+			<xs:element ref="ocx:PhysicalDryWeight" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> The physical volumetric dry weight  of the structure part</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ocx:PhysicalCenterOfGravity" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="CutBy" type="ocx:CutBy_T">
@@ -6407,12 +6407,12 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:element name="PhysicalDryWeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation> The physical or mass centre of gravity of the structure part</xs:documentation>
+			<xs:documentation> The physical volumetric dry weght  of the structure part</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="PhysicalMouldedCenterOfGravity" type="ocx:Point3D_T">
+	<xs:element name="PhysicalCenterOfGravity" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The physical or mass dry weight of the structure part.</xs:documentation>
+			<xs:documentation>The physical volumetric mass center of gravity of the structure part.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Ellipse" type="ocx:Ellipse_T" substitutionGroup="ocx:ParametricHole2D">

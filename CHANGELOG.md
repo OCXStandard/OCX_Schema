@@ -27,7 +27,7 @@ Bump to 3.2.0rc7 and publish release candidate
 
      **Impact:** No impact on the translator (removed abstract attribute from Ellipse)
 
-* [Add BracketRef to the Penetrtion #250](https://github.com/OCXStandard/OCX_Schema/issues/250)
+* [Add BracketRef to the Penetration #250](https://github.com/OCXStandard/OCX_Schema/issues/250)
 
      **Impact:** Added BracketRef to Penetration as an optional reference to a bracket.
 

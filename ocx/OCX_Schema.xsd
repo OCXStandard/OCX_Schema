@@ -4,14 +4,14 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V320rc6//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V320rc6//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
-	<xs:annotation>
-		<xs:documentation>Copyright 2025 Open Class 3D Exchange (OCX) Consortium (https://3docx.org). Licensed under the Apache License, Version 2.0 (the "License") you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.</xs:documentation>
-	</xs:annotation>
 	<xs:element name="Header" type="ocx:Header_T">
 		<xs:annotation>
 			<xs:documentation>The header information of an XML export.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:annotation>
+		<xs:documentation>Copyright 2025 Open Class 3D Exchange (OCX) Consortium (https://3docx.org). Licensed under the Apache License, Version 2.0 (the "License") you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.</xs:documentation>
+	</xs:annotation>
 	<xs:complexType name="Header_T">
 		<xs:annotation>
 			<xs:documentation>Type definition for the Header information for an XML instance.</xs:documentation>
@@ -383,8 +383,6 @@
 			<xs:extension base="ocx:ReferenceBase_T">
 				<xs:sequence>
 					<xs:element ref="ocx:ContourBounds"/>
-					<xs:element ref="ocx:Offset"/>
-					<xs:element ref="ocx:OffsetDirection"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -518,10 +516,25 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<!-- Collection of references to physical structure which are not used to bound other objects-->
+	<xs:element name="EdgeReinforcementRef" type="ocx:EdgeReinforcementRef_T" substitutionGroup="ocx:BoundedRef">
+		<xs:annotation>
+			<xs:documentation>A reference to a structure EdgeReinforecement instance.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="EdgeReinforcementRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:BoundedRef_T">
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:EdgeReinforcement"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Collection of references to physical structure parts which are not used to bound other objects-->
 	<xs:element name="StructureRef" type="ocx:StructureRef_T" abstract="true" substitutionGroup="ocx:ReferenceBase">
 		<xs:annotation>
-			<xs:documentation>Collection of references to physical structure parts with a geometry.</xs:documentation>
+			<xs:documentation>Collection of references to physical structure part instances. Typically used as Occurrence in a DesignView.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="StructureRef_T" abstract="true">
@@ -534,9 +547,44 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="StrStiffenerRef" type="ocx:StrStiffenerRef_T" substitutionGroup="ocx:StructureRef">
+		<xs:annotation>
+			<xs:documentation>A reference to a structure Stiffener instance.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="StrStiffenerRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:StructureRef_T">
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Stiffener"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="StrSeamRef" substitutionGroup="ocx:StructureRef">
+		<xs:annotation>
+			<xs:documentation>A reference to a structure Stiffener instance.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ocx:StrSeamRef_T"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="StrSeamRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:StructureRef_T">
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Seam"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="PlateRef" substitutionGroup="ocx:StructureRef">
 		<xs:annotation>
-			<xs:documentation>The reference to a connected Plate.</xs:documentation>
+			<xs:documentation>A reference to a structure Plate instance.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -556,7 +604,7 @@
 	</xs:complexType>
 	<xs:element name="BracketRef" substitutionGroup="ocx:StructureRef">
 		<xs:annotation>
-			<xs:documentation>A  reference to a Bracket instance.</xs:documentation>
+			<xs:documentation>A reference to a structure Bracket instance.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -576,7 +624,7 @@
 	</xs:complexType>
 	<xs:element name="LugPlateRef" substitutionGroup="ocx:StructureRef">
 		<xs:annotation>
-			<xs:documentation>The reference to plate lugs with additional lug parameters.</xs:documentation>
+			<xs:documentation>A reference to a structure LugPlate instance.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -604,7 +652,7 @@
 	</xs:complexType>
 	<xs:element name="PillarRef" substitutionGroup="ocx:StructureRef">
 		<xs:annotation>
-			<xs:documentation>The reference to a connected Member (Pillar).</xs:documentation>
+			<xs:documentation>A reference to a structure Pillar instance.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -622,18 +670,17 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="EdgeReinforcementRef" type="ocx:EdgeReinforcementRef_T" substitutionGroup="ocx:BoundedRef">
+	<xs:element name="StrEdgeReinforcementRef" type="ocx:StrEdgeReinforcementRef_T" substitutionGroup="ocx:StructureRef">
 		<xs:annotation>
-			<xs:documentation>A  reference to an EdgeReinforcement.</xs:documentation>
+			<xs:documentation>A reference to a structure EdgeReinforecement instance.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:complexType name="EdgeReinforcementRef_T">
+	<xs:complexType name="StrEdgeReinforcementRef_T">
 		<xs:annotation>
 			<xs:documentation>Type definition</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="ocx:BoundedRef_T">
-				<xs:attribute ref="ocx:GUIDRef" use="required"/>
+			<xs:extension base="ocx:StructureRef_T">
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:EdgeReinforcement"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -945,9 +992,6 @@
 			<xs:extension base="ocx:IdBase_T">
 				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="ocx:StructureRef" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:StiffenerRef" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:SeamRef" maxOccurs="unbounded"/>
-					<xs:element ref="ocx:EdgeReinforcementRef" maxOccurs="unbounded"/>
 				</xs:choice>
 				<xs:attribute name="name" type="xs:string" use="required">
 					<xs:annotation>
@@ -1515,6 +1559,7 @@
 								<xs:documentation>The reference to the connected Stiffener at this end configuration.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element ref="ocx:BracketRef"/>
 					</xs:choice>
 					<xs:sequence>
 						<xs:element ref="ocx:Point3D">
@@ -1763,16 +1808,21 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="WebStiffenerRef" substitutionGroup="ocx:ReferenceBase">
+	<xs:element name="WebStiffenerRef" type="ocx:WebStiffenerRef_T" substitutionGroup="ocx:ReferenceBase">
 		<xs:annotation>
 			<xs:documentation>Web stiffener connection.</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="ocx:StiffenerRef_T"/>
-			</xs:complexContent>
-		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="WebStiffenerRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:StructureRef_T">
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Stiffener"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="WebStiffener" type="ocx:WebStiffener_T">
 		<xs:annotation>
 			<xs:documentation>Connection configuration with one web stiffener with a single bracket connection.</xs:documentation>
@@ -3273,16 +3323,6 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="ocx:Surface_T">
 				<xs:sequence>
-					<xs:element ref="ocx:Origin">
-						<xs:annotation>
-							<xs:documentation>A point on the plane.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="ocx:Normal">
-						<xs:annotation>
-							<xs:documentation>The planes normal vector.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element ref="ocx:UDirection" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Optional local U direction of the plane.</xs:documentation>
@@ -6420,7 +6460,7 @@ and represents the full load condition. The scantling draught is to be not less 
 			<xs:documentation>An elliptical hole.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:complexType name="Ellipse_T" abstract="true">
+	<xs:complexType name="Ellipse_T">
 		<xs:annotation>
 			<xs:documentation>Type definition of a parametric Ellipse</xs:documentation>
 		</xs:annotation>

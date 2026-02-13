@@ -34,7 +34,7 @@ Bump to 3.2.0rc7 and publish release candidate
 ### Added
 * [Make WebStiffenerRef a reference without ContourBounds #248](https://github.com/OCXStandard/OCX_Schema/issues/248)
 
-     **Impact:** Added new element StrWebStiffenerRef without ContourBounds).
+     **Impact:** Added new element StrWebStiffenerRef without ContourBounds.
 
 * [ContourBounds should not be present in DesignView #249](https://github.com/OCXStandard/OCX_Schema/issues/249)
 

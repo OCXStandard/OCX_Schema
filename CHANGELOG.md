@@ -13,6 +13,34 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Fixed`` for any bug fixes.
 * ``Security`` in case of vulnerabilities.
 
+
+## [3.2.0rc7] - 2026.02.13
+
+Bump to 3.2.0rc7 and publish release candidate
+
+### Changed
+* [Fix side effects of issues #172: duplicate Normal on Plane3D #245](https://github.com/OCXStandard/OCX_Schema/issues/245)
+
+     **Impact:** No impact on the translator (removed duplicate Normal and Origin elements from Plane3D)
+
+* [Fix bug introduced in #175: Ellipse is wrongly attributed as an abstract element #247](https://github.com/OCXStandard/OCX_Schema/issues/247)
+
+     **Impact:** No impact on the translator (removed abstract attribute from Ellipse)
+
+* [Add BracketRef to the Penetrtion #250](https://github.com/OCXStandard/OCX_Schema/issues/250)
+
+     **Impact:** Added BracketRef to Penetration as an optional reference to a bracket.
+
+### Added
+* [Make WebStiffenerRef a reference without ContourBounds #248](https://github.com/OCXStandard/OCX_Schema/issues/248)
+
+     **Impact:** Added new element StrWebStiffenerRef without ContourBounds).
+
+* [ContourBounds should not be present in DesignView #249](https://github.com/OCXStandard/OCX_Schema/issues/249)
+
+     **Impact:** Created StrStiffenerRef, StrSeamRef and StrEdgeReinforcement as pure references without ContourBounds.
+
+
 ## [3.2.0rc6] - 2026.02.08
 
 Bump to 3.2.0rc6 and publish release candidate

@@ -383,6 +383,8 @@
 			<xs:extension base="ocx:ReferenceBase_T">
 				<xs:sequence>
 					<xs:element ref="ocx:ContourBounds"/>
+					<xs:element ref="ocx:Offset"/>
+					<xs:element ref="ocx:OffsetDirection"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -407,6 +409,22 @@
 					<xs:element ref="ocx:Offset" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="ocx:GUIDRef" use="required"/>
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:ReferencePlane"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="UnboundedGridRef" type="ocx:UnboundedGridRef_T" substitutionGroup="ocx:ReferenceBase">
+		<xs:annotation>
+			<xs:documentation>An element that makes a reference to a grid definition. An offset along the grid reference normal vector can be given.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="UnboundedGridRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:ReferenceBase_T">
+				<xs:attribute ref="ocx:GUIDRef"/>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:ReferencePlane"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -448,6 +466,22 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="ocx:BoundedRef_T">
+				<xs:attribute ref="ocx:GUIDRef"/>
+				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Surface"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="UnboundedSurfaceRef" type="ocx:UnboundedSurfaceRef_T" substitutionGroup="ocx:ReferenceBase">
+		<xs:annotation>
+			<xs:documentation>The reference to a Surface geometry which is used in a LimitedBy.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="UnboundedSurfaceRef_T">
+		<xs:annotation>
+			<xs:documentation>Type definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ocx:ReferenceBase_T">
 				<xs:attribute ref="ocx:GUIDRef"/>
 				<xs:attribute ref="ocx:refType" use="required" fixed="ocx:Surface"/>
 			</xs:extension>
@@ -3347,8 +3381,8 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 				<xs:documentation>The unbounded surface of the parent object, defined by either the Surface itself OR indirectly defined by the plane of the GridRef reference also allowing to specify an offset from the plane OR a reference to a Surface object instance.</xs:documentation>
 			</xs:annotation>
 			<xs:element ref="ocx:Surface" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:GridRef" maxOccurs="unbounded"/>
-			<xs:element ref="ocx:SurfaceRef" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:UnboundedGridRef" maxOccurs="unbounded"/>
+			<xs:element ref="ocx:UnboundedSurfaceRef" maxOccurs="unbounded"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:element name="SurfaceCollection" type="ocx:SurfaceCollection_T">
@@ -5127,7 +5161,7 @@ either a sweep direction and length or a sweep curve.</xs:documentation>
 			<xs:element ref="ocx:WebThickness"/>
 			<xs:element ref="ocx:FlangeWidth">
 				<xs:annotation>
-					<xs:documentation>The bulb Section profile flange width NOT including the web thickness.</xs:documentation>
+					<xs:documentation>The overall (total)  flange width  of the bulb Section profile</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ocx:BulbAngle"/>
@@ -6447,12 +6481,12 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:element name="PhysicalDryWeight" type="ocx:Quantity_T">
 		<xs:annotation>
-			<xs:documentation> The physical volumetric dry weght  of the structure part</xs:documentation>
+			<xs:documentation> The physical volumetric dry weight  of the structure part</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="PhysicalCenterOfGravity" type="ocx:Point3D_T">
 		<xs:annotation>
-			<xs:documentation>The physical volumetric mass center of gravity of the structure part.</xs:documentation>
+			<xs:documentation>The physical volumetric mass centre of gravity of the structure part.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="Ellipse" type="ocx:Ellipse_T" substitutionGroup="ocx:ParametricHole2D">

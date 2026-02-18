@@ -14,6 +14,23 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.2.0rc8] - 2026.02.18
+
+Bump to 3.2.0rc8 and publish release candidate
+
+### Changed
+
+* [Offset and OffsetDirection missing from in BoundedRef #253](https://github.com/OCXStandard/OCX_Schema/issues/253)
+
+    ** Impact:** Translator change (Re-installed missing Offset and OffsetDirection to BoundedRef accidentally removed in rc7)
+
+### Added
+
+* [Remove mandatory contour bounds for GridRef and SurfaceRef in LimitedBy #254](https://github.com/OCXStandard/OCX_Schema/issues/254)
+
+    **Impact:** Translator change (Added new types UnboundedSurfaceRef and UnboundedGridRef without ContourBounds)
+
+
 ## [3.2.0rc7] - 2026.02.13
 
 Bump to 3.2.0rc7 and publish release candidate

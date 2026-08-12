@@ -5,7 +5,8 @@
 	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery;xqu"/>
 	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
 	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
-		<File FilePath="C:\PythonDev\ocx-extension-comments\XSD\ocx_comments.xsd" HomeFolder="Yes"/>
+		<File FilePath="OCX_Schema.xsd" HomeFolder="Yes"/>
+		<File FilePath="unitsmlSchema_lite-0.9.18.xsd" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="Entities" ExtStr="ent"/>
 </Project>

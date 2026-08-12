@@ -14,6 +14,17 @@ and this project adheres to the Python [PEP 440 versioning recommendations](http
 * ``Security`` in case of vulnerabilities.
 
 
+## [3.2.0] - 2026.08.12
+
+Bump to 3.2.0 and publish release version.
+
+### Changed
+* [Contours in PlateCutBy are named OuterContour instead of InnerContour #260](https://github.com/OCXStandard/OCX_Schema/issues/260)
+
+* [Stiffener attributes: move normal attribute to orientationRule enum #269](https://github.com/OCXStandard/OCX_Schema/issues/269)
+
+* [SlotParameters: Add direct to the slotType enum.#270](https://github.com/OCXStandard/OCX_Schema/issues/270)
+
 ## [3.2.0rc8] - 2026.02.18
 
 Bump to 3.2.0rc8 and publish release candidate

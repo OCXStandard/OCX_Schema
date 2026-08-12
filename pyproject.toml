@@ -11,6 +11,7 @@ build-backend = "poetry.core.masonry.api"
 name = "OCX"
 version = "3.2.0rc6"
 description = ""
+requires-python = ">=3.9"
 authors = [
     {name="ocastrup", email= "ole.christian.astrup@dnv.com"}
 ]

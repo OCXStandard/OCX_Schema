@@ -9,13 +9,18 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "OCX"
-version = "3.2.0rc6"
+version = "3.2.0"
 description = ""
+requires-python = ">=3.9"
 authors = [
     {name="ocastrup", email= "ole.christian.astrup@dnv.com"}
 ]
 readme = "README.md"
 packages = [{include = "ocx"}]
+dependencies = [
+    "typing-extensions>=4.16.0",
+    "xsdata[cli]>=25.7",
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -29,7 +34,7 @@ twine = "*"
 github_url = "https://github.com/OCXStandard/OCX_Schema"
 
 [tool.tbump.version]
-current = "3.2.0rc6"
+current = "3.2.0"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before

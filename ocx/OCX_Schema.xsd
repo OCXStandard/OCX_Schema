@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by Ole Christian Astrup (DNV AS) -->
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Ole Christian Astrup (DNV AS) -->
 <!-- Copyright 2026 Open Class 3D Exchange (OCX) Consortium (https://3docx.org)	Licensed under the Apache License, Version 2.0 (the "License") You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0	.	Unless required by applicable law or agreed to in writing, the 3Docx standard and software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.	The OCX Consortium is not liable to any use whatsoever of the distributed standard or software based on the standard. See the License for the specific language governing permissions and limitations under the License.  -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V320rc6//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V320rc6//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:ocx="https://3docx.org/fileadmin//ocx_schema//V320//OCX_Schema.xsd" xmlns:unitsml="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" targetNamespace="https://3docx.org/fileadmin//ocx_schema//V320//OCX_Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.0">
 	<!-- Import the NIST unitsML lite schema -->
 	<xs:import namespace="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema_lite-0.9.18" schemaLocation="https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd"/>
 	<xs:element name="Header" type="ocx:Header_T">
@@ -70,7 +70,7 @@
 		<xs:sequence>
 			<xs:element ref="ocx:Header"/>
 		</xs:sequence>
-		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="3.2.0rc6">
+		<xs:attribute name="schemaVersion" type="xs:string" use="required" fixed="3.2.0">
 			<xs:annotation>
 				<xs:documentation>Current XML schema version (Format - x.y.z) x : Incremented for backward incompatible changes ( Ex - Adding a required attribute, etc.) y : Major backward compatible changes [ Ex - Adding a new node ,fixing major CRs,etc.] z : Minor backward compatible changes (Ex - adding an optional attribute, etc.).</xs:documentation>
 			</xs:annotation>
@@ -1238,11 +1238,6 @@
 					</xs:element>
 				</xs:sequence>
 				<xs:attribute ref="ocx:functionType"/>
-				<xs:attribute name="normal" type="xs:boolean">
-					<xs:annotation>
-						<xs:documentation>If true, the stiffener is mounted normal to it's parent surface.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
 				<xs:attribute ref="ocx:orientationRule">
 					<xs:annotation>
 						<xs:documentation>The orientation rule for the stiffener. The rule will help to orientate the stiffener. The stiffener Inclination determines the orientation of the flange and the web side.</xs:documentation>
@@ -2002,7 +1997,7 @@
 		</xs:annotation>
 		<xs:choice maxOccurs="unbounded">
 			<xs:element ref="ocx:Hole2DContour"/>
-			<xs:element ref="ocx:OuterContour"/>
+			<xs:element ref="ocx:InnerContour"/>
 			<xs:element ref="ocx:SlotContour"/>
 		</xs:choice>
 	</xs:complexType>
@@ -6424,12 +6419,25 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:attribute>
 	<xs:attribute name="slotType" default="Open">
 		<xs:annotation>
-			<xs:documentation>The type of slot for a stiffener penetrating a primary supporting member.</xs:documentation>
+			<xs:documentation>The slot type for a stiffener penetrating a primary supporting member (PSM).</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="Slit"/>
-				<xs:enumeration value="Open"/>
+				<xs:enumeration value="Slit">
+					<xs:annotation>
+						<xs:documentation>A slot opening of Slit type is where the stiffener is directly welded to the penetrating plate on both sides of the web. No lug plates shall be fitted.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Open">
+					<xs:annotation>
+						<xs:documentation>A slot opening of Open type is where the stiffener has no directly welded connection to the penetrating plate on on either side of the web. The connection to the PSM must be ensured by fitting lug plate(s).</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Direct">
+					<xs:annotation>
+						<xs:documentation>A slot opening of Direct type is where the stiffener has one directly welded connection to the penetrating plate on on either side of the web. An additional lug plate may also be fitted to the stiffener on the opposite side.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -6576,23 +6584,23 @@ and represents the full load condition. The scantling draught is to be not less 
 	</xs:element>
 	<xs:attribute name="orientationRule">
 		<xs:annotation>
-			<xs:documentation>The orientation rule for the stiffener. The rule will help to orientate the stiffener together with the Inclination. The stiffener Inclination determines the orientation of the flange and the web side.</xs:documentation>
+			<xs:documentation>The orientation rule for the stiffener. The rule is used to orientate the stiffener together with the Inclination. The stiffener Inclination determines the orientation of the flange and the web side.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="X-plane">
 					<xs:annotation>
-						<xs:documentation>The stiffener is mounted with the WebDirection aligned with the global YZ-Plane. The Inclination gives the flange orientation and the web material side.</xs:documentation>
+						<xs:documentation>The stiffener is mounted with the WebDirection normal to the the global YZ-Plane. The Inclination WebDirection determines if the stiffener is monted in the positive or negative direction. The Inclination FlangeDirection gives the flange orientation and the web material side.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="Y-plane">
 					<xs:annotation>
-						<xs:documentation>The stiffener is mounted with the WebDirection aligned with the global XZ-Plane. The Inclination gives the flange orientation and the web material side.</xs:documentation>
+						<xs:documentation>The stiffener is mounted with the WebDirection normal to the the global XZ-Plane.  The Inclination WebDirection determines if the stiffener is monted in the positive or negative direction. The Inclination FlangeDirection gives the flange orientation and the web material side.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="Z-plane">
 					<xs:annotation>
-						<xs:documentation>The stiffener is mounted with the WebDirection aligned with the global XZPlane. The Inclination gives the flange orientation and the web material side.</xs:documentation>
+						<xs:documentation>The stiffener is mounted with the WebDirection normal to the the global XY-Plane.  The Inclination WebDirection determines if the stiffener is monted in the positive or negative direction. The Inclination FlangeDirection gives the flange orientation and the web material side.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 				<xs:enumeration value="Inclined">
@@ -6603,6 +6611,11 @@ and represents the full load condition. The scantling draught is to be not less 
 				<xs:enumeration value="Twisted">
 					<xs:annotation>
 						<xs:documentation>The stiffener is mounted with the WebDirection “Twisted” along the Traceline. The Inclinations give the twist orientation vector along the length of the stiffener. It is assumed that the twist varies linearly along the length of the stiffener's trace-line between inclinations.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="Normal">
+					<xs:annotation>
+						<xs:documentation>The stiffener is mounted with the WebDirection normal to the mounting plane. The Inclination WebDirection determines if the stiffener is monted in the positive or negative direction. The Inclination FlangeDirection gives the flange orientation and the web material side.</xs:documentation>
 					</xs:annotation>
 				</xs:enumeration>
 			</xs:restriction>
